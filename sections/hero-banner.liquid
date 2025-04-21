@@ -1,0 +1,113 @@
+{{ 'section-banner.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+<div class='custom-banner page-width section-{{ section.id }}-padding'>
+  <a href='{{ section.settings.banner_link }}'>
+    {% comment %} <img src="{{ section.settings.desktop_banner_image | image_url }}" alt="Desktop Banner Image" class="desktop-banner" height="850px" width="2000px"> {% endcomment %}
+    {% if section.settings.video_banner_image_select_desktop %}
+      {{
+        section.settings.video_banner_image_desktop
+        | video_tag: autoplay: true, loop: true, class: 'desktop-banner', image_size: '850x2000'
+      }}
+    {% else %}
+      <img
+        src='{{ section.settings.desktop_banner_image | image_url }}'
+        alt='Desktop Banner Image'
+        class='desktop-banner'
+        height='850px'
+        width='2000px'
+      >
+    {% endif %}
+    {% if section.settings.video_banner_image_select_mobile %}
+      {{
+        section.settings.video_banner_image_mobile
+        | video_tag: autoplay: true, loop: true, class: 'mobile-banner', image_size: '350x490'
+      }}
+    {% else %}
+      <img
+        src='{{ section.settings.mobile_banner_image | image_url }}'
+        alt='Mobile Banner Image'
+        class='mobile-banner'
+        height='490px'
+        width='350px'
+      >
+    {% endif %}
+    <div class='banner-text'>{{ section.settings.banner_text }}</div>
+  </a>
+</div>
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_banner_image",
+      "label": "Desktop Banner Image"
+    },
+    {
+      "type": "video",
+      "id": "video_banner_image_desktop",
+      "label": "Desktop Banner Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_banner_image_select_desktop",
+      "label": "Turn Video On"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_banner_image",
+      "label": "Mobile Banner Image"
+    },
+    {
+      "type": "video",
+      "id": "video_banner_image_mobile",
+      "label": "Mobile Banner Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_banner_image_select_mobile",
+      "label": "Turn Video On"
+    },
+    {
+      "type": "text",
+      "id": "banner_text",
+      "label": "Banner Text",
+      "default": ""
+    },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "Banner Link",
+      "default": "/"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
