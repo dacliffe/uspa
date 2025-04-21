@@ -1,8 +1,8 @@
 {{ 'section-banner.css' | asset_url | stylesheet_tag }}
 {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
-<div class='custom-banner page-width section-{{ section.id }}-padding'>
-  <a href='{{ section.settings.banner_link }}'>
+<div class="custom-banner page-width section-{{ section.id }}-padding">
+  <a href="{{ section.settings.banner_link }}">
     {% comment %} <img src="{{ section.settings.desktop_banner_image | image_url }}" alt="Desktop Banner Image" class="desktop-banner" height="850px" width="2000px"> {% endcomment %}
     {% if section.settings.video_banner_image_select_desktop %}
       {{
@@ -11,11 +11,11 @@
       }}
     {% else %}
       <img
-        src='{{ section.settings.desktop_banner_image | image_url }}'
-        alt='Desktop Banner Image'
-        class='desktop-banner'
-        height='850px'
-        width='2000px'
+        src="{{ section.settings.desktop_banner_image | image_url }}"
+        alt="Desktop Banner Image"
+        class="desktop-banner"
+        height="850px"
+        width="2000px"
       >
     {% endif %}
     {% if section.settings.video_banner_image_select_mobile %}
@@ -25,14 +25,14 @@
       }}
     {% else %}
       <img
-        src='{{ section.settings.mobile_banner_image | image_url }}'
-        alt='Mobile Banner Image'
-        class='mobile-banner'
-        height='490px'
-        width='350px'
+        src="{{ section.settings.mobile_banner_image | image_url }}"
+        alt="Mobile Banner Image"
+        class="mobile-banner"
+        height="490px"
+        width="350px"
       >
     {% endif %}
-    <div class='banner-text'>{{ section.settings.banner_text }}</div>
+    <div class="banner-text">{{ section.settings.banner_text }}</div>
   </a>
 </div>
 
@@ -73,8 +73,7 @@
     {
       "type": "text",
       "id": "banner_text",
-      "label": "Banner Text",
-      "default": ""
+      "label": "Banner Text"
     },
     {
       "type": "url",
