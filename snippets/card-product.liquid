@@ -287,6 +287,95 @@
               {% endif %}
             {%- endif -%}
           </div>
+          {%- assign style_group = card_product.metafields.custom.style_group.value -%}
+          {%- if style_group != blank -%}
+            {%- assign style_group_products = style_group.products.value | reverse | reverse -%}
+            {%- if style_group_products.size > 0 -%}
+              <style>
+                .card-swatches {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 0.6rem;
+                  margin: 0.8rem 0;
+                }
+                .card-swatch {
+                  width: 25px;
+                  height: 25px;
+                  border-radius: 100%;
+                  transition: transform 0.2s ease;
+                  padding: 2px;
+                  box-sizing: border-box;
+                }
+                .card-swatch--current {
+                  pointer-events: none;
+                  border: 2px solid rgba(var(--color-foreground), 0.7);
+                }
+                .card-swatch-inner {
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 100%;
+                  display: block;
+                }
+                .card-swatch--{{ p.id }} .card-swatch-inner {
+                  opacity: 0;
+                  transition: opacity 0.3s ease-in-out;
+                  background: {{ hex }};
+                }
+              </style>
+              <div class="card-swatches">
+                {% for p in style_group_products %}
+                  {%- assign swatch = p.metafields.custom.colour_swatch.value -%}
+                  {%- assign hex = swatch.colour -%}
+                  {%- assign src = swatch.image.src -%}
+                  <style>
+                    .card-swatch--{{ p.id }} .card-swatch-inner {
+                      opacity: 0;
+                      transition: opacity 0.3s ease-in-out;
+                    {% if src != blank %}
+                      background: center center url('{{ src | image_url: width: 40, height: 40, crop: 'center' }}');
+                      background-size: 20px 20px;
+                    {% else %}
+                      background: {{ hex }};
+                    {% endif %}
+                    }
+                    .card-swatch--{{ p.id }}.is-available .card-swatch-inner {
+                      opacity: 1;
+                    }
+                    .card-swatch--{{ p.id }}.not-available {
+                      display: none;
+                    }
+                  </style>
+                  <a
+                    href="{{ p.url }}"
+                    class="card-swatch card-swatch--{{ p.id }} {% if p.handle == card_product.handle %}card-swatch--current{% endif %}"
+                    title="{{ p.title | escape }}"
+                  >
+                    <span class="card-swatch-inner"></span>
+                    <span class="visually-hidden">{{ p.title }}</span>
+                  </a>
+                  <script>
+                    (() => {
+                      fetch(`{{ p.url }}.json`)
+                        .then((res) => {
+                          if (!res.ok) {
+                            throw new Error("Can't find product", { cause: response });
+                          } else {
+                            document
+                              .querySelectorAll('.card-swatch--{{ p.id }}')
+                              .forEach((swatch) => swatch.classList.add('is-available'));
+                          }
+                        })
+                        .catch((err) => {
+                          document
+                            .querySelectorAll('.card-swatch--{{ p.id }}')
+                            .forEach((swatch) => swatch.classList.add('not-available'));
+                        });
+                    })();
+                  </script>
+                {% endfor %}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
         </div>
         {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
         {% if quick_add == 'standard' %}

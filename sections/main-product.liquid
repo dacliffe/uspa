@@ -193,6 +193,8 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
+              {%- when 'swatches' -%}
+                {% render 'custom-swatches' %}
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
@@ -769,6 +771,11 @@
           "label": "t:sections.main-product.blocks.text.settings.text_style.label"
         }
       ]
+    },
+    {
+      "type": "swatches",
+      "name": "Color Swatches",
+      "limit": 1
     },
     {
       "type": "title",

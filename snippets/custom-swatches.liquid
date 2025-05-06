@@ -1,0 +1,87 @@
+{%- liquid
+  assign style_group = product.metafields.custom.style_group.value
+  assign style_group_products = style_group.products.value | reverse | reverse
+-%}
+
+{%- if style_group_products.size > 0 -%}
+  <style>
+    .swatches {
+      --swatch-color-text: rgba(var(--color-foreground), 1);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-block-end: 3rem;
+    }
+    .swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 100%;
+      transition: transform 0.2s ease;
+      padding: 2px;
+      box-sizing: border-box;
+    }
+    .swatch--current {
+      pointer-events: none;
+      border: 2px solid rgba(var(--color-foreground), 0.7);
+    }
+    .swatch-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      display: block;
+    }
+  </style>
+  <p class="form__label">Colour</p>
+  <div class="swatches">
+    {% for p in style_group_products %}
+      {%- assign swatch = p.metafields.custom.colour_swatch.value -%}
+      {%- assign hex = swatch.colour -%}
+      {%- assign src = swatch.image.src -%}
+      <style>
+          .swatch--{{ p.id }} .swatch-inner {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+          {% if src != blank %}
+            background: center center url('{{ src | image_url: width: 64, height: 64, crop: 'center' }}');
+            background-size: 32px 32px;
+          {% else %}
+            background: {{ hex }};
+          {% endif %}
+        }
+        .swatch--{{ p.id }}.is-available .swatch-inner {
+          opacity: 1;
+        }
+        .swatch--{{ p.id }}.not-available {
+          display: none;
+        }
+      </style>
+      <a
+        href="{{ p.url }}"
+        class="swatch swatch--{{ p.id }} {% if p.handle == product.handle %}swatch--current{% endif %}"
+        title="{{ p.title | escape }}"
+      >
+        <span class="swatch-inner"></span>
+        <span class="visually-hidden">{{ p.title }}</span>
+      </a>
+      <script>
+        (() => {
+          fetch(`{{ p.url }}.json`)
+            .then((res) => {
+              if (!res.ok) {
+                throw new Error("Can't find product", { cause: response });
+              } else {
+                document
+                  .querySelectorAll('.swatch--{{ p.id }}')
+                  .forEach((swatch) => swatch.classList.add('is-available'));
+              }
+            })
+            .catch((err) => {
+              document
+                .querySelectorAll('.swatch--{{ p.id }}')
+                .forEach((swatch) => swatch.classList.add('not-available'));
+            });
+        })();
+      </script>
+    {% endfor %}
+  </div>
+{%- endif -%}
