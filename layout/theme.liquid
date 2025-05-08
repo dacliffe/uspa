@@ -296,6 +296,9 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    {% if template contains 'collection' %}
+      <script src="{{ 'collection-load-more.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">

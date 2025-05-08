@@ -1,0 +1,55 @@
+.load-more_btn {
+    position: relative;
+    min-width: 200px;
+    min-height: 45px;
+    background-color: #14294b;
+}
+
+.load-more__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.button-text {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    color: #fff;
+}
+
+.load-more__spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    width: 20px;
+    height: 20px;
+}
+
+.load-more__spinner svg {
+    filter: brightness(0) invert(1);
+}
+
+.load-more__spinner.hidden {
+    display: none;
+}
+
+.load-more_btn[data-loading] .button-text {
+    opacity: 0;
+}
+
+.load-more_btn[data-loading] .load-more__spinner {
+    opacity: 1;
+}
+
+.load-more {
+    position: relative !important;
+    justify-content: center !important;
+    display: flex !important;
+}
