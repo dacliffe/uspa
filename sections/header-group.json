@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -8,32 +17,62 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "text_alignment": "center",
-            "color_scheme": "scheme-1",
+            "text": "Free delivery Over $150",
+            "link": ""
+          }
+        },
+        "announcement_eVk4yM": {
+          "type": "announcement",
+          "settings": {
+            "text": "Easy 28 Day Returns",
+            "link": ""
+          }
+        },
+        "announcement_ijjVVh": {
+          "type": "announcement",
+          "settings": {
+            "text": "Sign Up For 10% Off",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
-      ]
+        "announcement-bar-0",
+        "announcement_eVk4yM",
+        "announcement_ijjVVh"
+      ],
+      "settings": {
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "color_scheme": "scheme-d6f39085-9077-4cd0-9b2d-b427a6003b4e",
+        "show_line_separator": false,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
     },
     "header": {
       "type": "header",
       "settings": {
-        "color_scheme": "scheme-1",
+        "show_strip": true,
+        "strip_image": "shopify://shop_images/uspoloassn-stripe-2000x30.png",
+        "show_strip_color": true,
+        "strip_color": "#a41d35",
+        "strip_height": 29,
         "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
         "mobile_logo_position": "center",
+        "menu": "shop",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": false,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": true,
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 8,
+        "padding_bottom": 8
       }
     }
   },
