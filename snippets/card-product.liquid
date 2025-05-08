@@ -59,54 +59,64 @@
       >
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
-            <div class="media media--transparent media--hover-effect">
-              {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-              <img
-                srcset="
-                  {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
-                  {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
-                  {%- if card_product.featured_media.width >= 533 -%}{{ card_product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
-                  {%- if card_product.featured_media.width >= 720 -%}{{ card_product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
-                  {%- if card_product.featured_media.width >= 940 -%}{{ card_product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
-                  {%- if card_product.featured_media.width >= 1066 -%}{{ card_product.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
-                  {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w
-                "
-                src="{{ card_product.featured_media | image_url: width: 533 }}"
-                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                alt="{{ card_product.featured_media.alt | escape }}"
-                class="motion-reduce"
-                {% unless lazy_load == false %}
-                  loading="lazy"
-                {% endunless %}
-                width="{{ card_product.featured_media.width }}"
-                height="{{ card_product.featured_media.height }}"
-              >
-              {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
-
-              {%- if card_product.media[1] != null and show_secondary_image -%}
-                <img
-                  srcset="
-                    {%- if card_product.media[1].width >= 165 -%}{{ card_product.media[1] | image_url: width: 165 }} 165w,{%- endif -%}
-                    {%- if card_product.media[1].width >= 360 -%}{{ card_product.media[1] | image_url: width: 360 }} 360w,{%- endif -%}
-                    {%- if card_product.media[1].width >= 533 -%}{{ card_product.media[1] | image_url: width: 533 }} 533w,{%- endif -%}
-                    {%- if card_product.media[1].width >= 720 -%}{{ card_product.media[1] | image_url: width: 720 }} 720w,{%- endif -%}
-                    {%- if card_product.media[1].width >= 940 -%}{{ card_product.media[1] | image_url: width: 940 }} 940w,{%- endif -%}
-                    {%- if card_product.media[1].width >= 1066 -%}{{ card_product.media[1] | image_url: width: 1066 }} 1066w,{%- endif -%}
-                    {{ card_product.media[1] | image_url }} {{ card_product.media[1].width }}w
-                  "
-                  src="{{ card_product.media[1] | image_url: width: 533 }}"
-                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                  alt="{{ card_product.media[1].alt | escape }}"
-                  class="motion-reduce"
-                  loading="lazy"
-                  width="{{ card_product.media[1].width }}"
-                  height="{{ card_product.media[1].height }}"
-                >
-              {%- endif -%}
+            <div class="card__media-carousel">
+              <div class="card__media-carousel-track">
+                {%- for media in card_product.media limit: 4 -%}
+                  <div
+                    class="card__media-slide{% if forloop.first %} active{% endif %}"
+                    data-index="{{ forloop.index0 }}"
+                  >
+                    <div class="media media--transparent media--hover-effect">
+                      {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+                      <img
+                        srcset="
+                          {%- if media.width >= 165 -%}{{ media | image_url: width: 165 }} 165w,{%- endif -%}
+                          {%- if media.width >= 360 -%}{{ media | image_url: width: 360 }} 360w,{%- endif -%}
+                          {%- if media.width >= 533 -%}{{ media | image_url: width: 533 }} 533w,{%- endif -%}
+                          {%- if media.width >= 720 -%}{{ media | image_url: width: 720 }} 720w,{%- endif -%}
+                          {%- if media.width >= 940 -%}{{ media | image_url: width: 940 }} 940w,{%- endif -%}
+                          {%- if media.width >= 1066 -%}{{ media | image_url: width: 1066 }} 1066w,{%- endif -%}
+                          {{ media | image_url }} {{ media.width }}w
+                        "
+                        src="{{ media | image_url: width: 533 }}"
+                        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                        alt="{{ media.alt | escape }}"
+                        class="motion-reduce"
+                        {% unless forloop.first %}
+                          loading="lazy"
+                        {% endunless %}
+                        width="{{ media.width }}"
+                        height="{{ media.height }}"
+                      >
+                      {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
+                    </div>
+                  </div>
+                {%- endfor -%}
+              </div>
             </div>
           </div>
         {%- endif -%}
         <div class="card__content">
+          {%- if card_product.media.size > 1 -%}
+            <div class="card__media-nav">
+              <button
+                type="button"
+                class="card__media-nav-button card__media-nav-next"
+                data-direction="prev"
+                aria-label="{{ 'products.product.media.previous' | t }}"
+              >
+                {% render 'icon-caret' %}
+              </button>
+              <button
+                type="button"
+                class="card__media-nav-button card__media-nav-prev"
+                data-direction="next"
+                aria-label="{{ 'products.product.media.next' | t }}"
+              >
+                {% render 'icon-caret' %}
+              </button>
+            </div>
+          {%- endif -%}
           <div class="card__information">
             <h3
               class="card__heading"
@@ -349,6 +359,11 @@
                     href="{{ p.url }}"
                     class="card-swatch card-swatch--{{ p.id }} {% if p.handle == card_product.handle %}card-swatch--current{% endif %}"
                     title="{{ p.title | escape }}"
+                    data-url="{{ p.url }}"
+                    data-id="{{ p.id }}"
+                    data-variant-id="{{ p.selected_or_first_available_variant.id }}"
+                    data-badge="{% if p.available == false %}{{ 'products.product.sold_out' | t }}{% elsif p.compare_at_price > p.price and p.available %}{{ 'products.product.on_sale' | t }}{% endif %}"
+                    data-label=""
                   >
                     <span class="card-swatch-inner"></span>
                     <span class="visually-hidden">{{ p.title }}</span>
