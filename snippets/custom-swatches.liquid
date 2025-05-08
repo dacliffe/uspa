@@ -13,12 +13,14 @@
       margin-block-end: 3rem;
     }
     .swatch {
-      width: 28px;
-      height: 28px;
-      border-radius: 100%;
+      width: 56px;
+      height: 70px;
+      border-radius: 10%;
       transition: transform 0.2s ease;
       padding: 2px;
       box-sizing: border-box;
+      border: 2px solid #ddd;
+      overflow: hidden;
     }
     .swatch--current {
       pointer-events: none;
@@ -27,40 +29,36 @@
     .swatch-inner {
       width: 100%;
       height: 100%;
-      border-radius: 100%;
       display: block;
+      object-fit: cover;
+    }
+    .swatch:hover {
+      border-color: #000;
     }
   </style>
-  <p class="form__label">Colour</p>
+  <p class="form__label">COLOURS</p>
   <div class="swatches">
     {% for p in style_group_products %}
       {%- assign swatch = p.metafields.custom.colour_swatch.value -%}
-      {%- assign hex = swatch.colour -%}
-      {%- assign src = swatch.image.src -%}
-      <style>
-          .swatch--{{ p.id }} .swatch-inner {
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-          {% if src != blank %}
-            background: center center url('{{ src | image_url: width: 64, height: 64, crop: 'center' }}');
-            background-size: 32px 32px;
-          {% else %}
-            background: {{ hex }};
-          {% endif %}
-        }
-        .swatch--{{ p.id }}.is-available .swatch-inner {
-          opacity: 1;
-        }
-        .swatch--{{ p.id }}.not-available {
-          display: none;
-        }
-      </style>
+      {%- assign swatch_image = p.metafields.general.swatch_image -%}
+      {%- if swatch_image != blank -%}
+        {%- assign product_image = swatch_image -%}
+      {%- else -%}
+        {%- assign product_image = p.featured_image -%}
+      {%- endif -%}
       <a
         href="{{ p.url }}"
         class="swatch swatch--{{ p.id }} {% if p.handle == product.handle %}swatch--current{% endif %}"
         title="{{ p.title | escape }}"
       >
-        <span class="swatch-inner"></span>
+        <img
+          src="{{ product_image | img_url: '220x275', crop: 'center', scale: 2 }}"
+          alt="{{ p.title }}"
+          class="swatch-inner"
+          width="56"
+          height="70"
+          loading="lazy"
+        >
         <span class="visually-hidden">{{ p.title }}</span>
       </a>
       <script>
