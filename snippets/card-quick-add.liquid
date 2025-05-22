@@ -1,0 +1,42 @@
+{% assign variants = product.variants %}
+<div class="relative">
+  <div class="quick-add-container hidden">
+    <ul id="variant-list">
+      {% for variant in variants %}
+        <li>
+          <input
+            type="radio"
+            data-variant-id="{{ variant.id }}"
+            class="visually-hidden"
+            id="variant-{{ variant.id }}"
+            name="variant-{{ product.id }}"
+          >
+          <label
+            class="add-to-cart-button{% unless variant.available %} unavailable{% endunless %}"
+            data-variant-id="{{ variant.id }}"
+            for="variant-{{ variant.id }}"
+          >
+            {{ variant.option1 }}
+          </label>
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="quick-add-submit-container">
+      <button
+        type="button"
+        class="button button--primary button--full-width"
+        style="height: 20px !important; min-height: 30px !important; font-size: 12px; text-transform: uppercase; background-color: #14294b !important;"
+        data-variant-id=""
+        {% unless product.available %}
+          disabled
+        {% endunless %}
+      >
+        Add to Cart
+      </button>
+    </div>
+    <div class="spinner-container hidden">
+      <div class="added-to-cart hidden">Added to cart</div>
+      {% render 'loading-spinner' %}
+    </div>
+  </div>
+</div>
