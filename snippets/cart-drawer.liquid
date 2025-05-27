@@ -74,6 +74,8 @@
           </span>
         </button>
       </div>
+      {% render 'cart-progress-bar-custom' %}
+
       <cart-drawer-items
         {% if cart == empty %}
           class=" is-empty"

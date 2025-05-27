@@ -87,6 +87,58 @@ class CartItems extends HTMLElement {
     this.validateQuantity(event);
   }
 
+  updateProgressBar(cartTotal, itemCount) {
+    const progressWrapper = document.getElementById('cart-progress-wrapper');
+    if (!progressWrapper) return;
+
+    const moneyFormat = progressWrapper.dataset.moneyFormat;
+    const progressThreshold = parseInt(progressWrapper.dataset.threshold, 10);
+    const preGoalMessageTemplate = progressWrapper.dataset.preGoalMessageTemplate;
+    const postGoalMessage = progressWrapper.dataset.postGoalMessage;
+
+    const progressBar = document.getElementById('cart-progress-bar');
+    const goalMessageElement = document.querySelector('.goal-message');
+
+    if (itemCount === 0 || cartTotal === 0) {
+      if (progressWrapper) {
+        progressWrapper.style.display = 'none';
+      }
+      if (goalMessageElement) {
+        goalMessageElement.style.display = 'none';
+      }
+    } else {
+      if (progressWrapper) {
+        progressWrapper.style.display = 'block';
+      }
+      if (progressBar) {
+        progressBar.style.display = 'block';
+        const progressPercentage = Math.min((cartTotal / progressThreshold) * 100, 100);
+        progressBar.style.width = `${progressPercentage}%`;
+
+        if (progressPercentage >= 100) {
+          progressWrapper.classList.add('full');
+        } else {
+          progressWrapper.classList.remove('full');
+        }
+      }
+
+      if (goalMessageElement) {
+        goalMessageElement.style.display = 'block';
+        let remainingForGoal = progressThreshold - cartTotal;
+
+        if (remainingForGoal < 0) {
+          remainingForGoal = 0;
+        }
+
+        const remainingAmount = remainingForGoal / 100;
+        const remainingAmountFormatted = moneyFormat.replace('{{amount}}', remainingAmount.toFixed(2));
+        const preGoalMessage = preGoalMessageTemplate.replace('[remainingForGoalFormatted]', remainingAmountFormatted);
+
+        goalMessageElement.innerHTML = remainingForGoal > 0 ? preGoalMessage : postGoalMessage;
+      }
+    }
+  }
+
   onCartUpdate() {
     if (this.tagName === 'CART-DRAWER-ITEMS') {
       return fetch(`${routes.cart_url}?section_id=cart-drawer`)
@@ -101,6 +153,8 @@ class CartItems extends HTMLElement {
               targetElement.replaceWith(sourceElement);
             }
           }
+          // Update progress bar after cart update
+          this.updateProgressBar(window.cart.total_price, window.cart.item_count);
         })
         .catch((e) => {
           console.error(e);
@@ -112,6 +166,8 @@ class CartItems extends HTMLElement {
           const html = new DOMParser().parseFromString(responseText, 'text/html');
           const sourceQty = html.querySelector('cart-items');
           this.innerHTML = sourceQty.innerHTML;
+          // Update progress bar after cart update
+          this.updateProgressBar(window.cart.total_price, window.cart.item_count);
         })
         .catch((e) => {
           console.error(e);
@@ -182,7 +238,8 @@ class CartItems extends HTMLElement {
 
           this.getSectionsToRender().forEach((section) => {
             const elementToReplace =
-              document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+              document.getElementById(section.id).querySelector(section.selector) ||
+              document.getElementById(section.id);
             elementToReplace.innerHTML = this.getSectionInnerHTML(
               parsedState.sections[section.section],
               section.selector
@@ -284,8 +341,9 @@ if (!customElements.get('cart-note')) {
           'input',
           debounce((event) => {
             const body = JSON.stringify({ note: event.target.value });
-            fetch(`${routes.cart_update_url}`, { ...fetchConfig(), ...{ body } })
-              .then(() => CartPerformance.measureFromEvent('note-update:user-action', event));
+            fetch(`${routes.cart_update_url}`, { ...fetchConfig(), ...{ body } }).then(() =>
+              CartPerformance.measureFromEvent('note-update:user-action', event)
+            );
           }, ON_CHANGE_DEBOUNCE_TIMER)
         );
       }

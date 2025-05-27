@@ -1449,6 +1449,51 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
+      },
+      {
+        "type": "header",
+        "content": "Cart Progress Bar Settings"
+      },
+      {
+        "type": "text",
+        "id": "cart_progress_threshold",
+        "label": "Progress Threshold",
+        "default": "49",
+        "info": "Set the cart total required to unlock the goal."
+      },
+      {
+        "type": "text",
+        "id": "cart_pre_goal_message",
+        "label": "Pre-Goal Message",
+        "default": "You're only [remainingForGoalFormatted] away from <strong>FREE SHIPPING</strong>",
+        "info": "Message displayed before reaching the goal. Use [remainingForGoalFormatted] to insert the dynamic remaining amount."
+      },
+      {
+        "type": "text",
+        "id": "cart_post_goal_message",
+        "label": "Post-Goal Message",
+        "default": "🎉 Congrats! You've unlocked <strong>FREE SHIPPING</strong>",
+        "info": "Message displayed after reaching the goal."
+      },
+      {
+        "type": "color",
+        "id": "cart_progress_bar_color",
+        "label": "Progress Bar Color",
+        "default": "#d53600",
+        "info": "Color of the progress bar."
+      },
+      {
+        "type": "color",
+        "id": "cart_progress_bar_full_color",
+        "label": "Progress Bar Full Color",
+        "default": "#d53600",
+        "info": "Color of the progress bar when complete."
+      },
+      {
+        "type": "color",
+        "id": "cart_progress_bar_text_color",
+        "label": "Progress Bar Text Color",
+        "default": "#333"
       }
     ]
   }
