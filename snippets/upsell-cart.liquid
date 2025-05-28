@@ -1,0 +1,493 @@
+{% assign first_cart_item = cart.items | first %}
+{% comment %} {% assign upsell_product_item = null %} {% endcomment %}
+
+{% if first_cart_item %}
+  <tr id="Upsell-Product" class="cart-item" role="row" style="display: none;">
+    <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
+      <a href="" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
+      <img
+        class="cart-item__image"
+        src=""
+        alt=""
+        loading="lazy"
+        width="150"
+        height="150"
+      >
+    </td>
+
+    <td class="cart-item__details" role="cell" headers="CartDrawer-ColumnProduct">
+      <a href="" class="cart-item__name h4 break"></a>
+      <div class="cart-item__price">
+        <strong class="cart-item__final-price product-option"></strong>
+      </div>
+      <div class="upsell-product__variants"></div>
+    </td>
+
+    <td>
+      <button class="upsell-product__button" data-product-handle="">
+        <span class="add-to-cart">ADD</span>
+        {%- render 'loading-spinner', class: 'cart-spinner loading__spinner hidden' -%}
+      </button>
+    </td>
+  </tr>
+
+  <style>
+    table:not([class]) {
+      box-shadow: none;
+    }
+
+    table:not([class]) td,
+    table:not([class]) th {
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    fieldset.js.product-form__input.product-form__input--pill {
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    .cart-spinner {
+      position: relative;
+      right: 0 !important;
+      padding: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .price-label {
+      font-size: 10px;
+    }
+
+    .cart-item__final-price.product-option {
+      padding-left: 5px;
+    }
+
+    .cart-item.loading {
+      transition: opacity 0.3s ease;
+    }
+    .upsell-product {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-top: 1px solid #e1e1e1;
+    }
+
+    .upsell-product__image img {
+      max-width: 80px;
+      margin-right: 10px;
+    }
+
+    .upsell-product__details {
+      flex-grow: 1;
+    }
+
+    .upsell-product__title {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .upsell-product__price {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .upsell-product__button {
+      background-color: #13294c;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .upsell-variants {
+      display: flex;
+    }
+
+    .upsell-header {
+      margin: 15px 0;
+      display: grid !important;
+      border-top: 1px solid rgba(var(--color-foreground), 0.1);
+      padding-top: 10px;
+    }
+
+    .upsell-variant-radio {
+      display: none;
+    }
+
+    .upsell-variant-label {
+      padding: 8px 12px;
+      margin-right: 10px;
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .upsell-variant-label:hover {
+      border-color: #a0a0a0;
+    }
+
+    .upsell-variant-radio:checked + .upsell-variant-label {
+      background-color: #f0f0f0;
+      border-color: #f0f0f0;
+      font-weight: bold;
+      color: white;
+    }
+
+    .upsell-variant-label.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+
+  <script>
+
+    // Function to get current cart products
+    function getCartProducts() {
+      return [
+        {% for item in cart.items %}
+          {
+            id: {{ item.product.id }},
+            title: '{{ item.product.title | escape }}',
+            handle: '{{ item.product.handle }}'
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ];
+    }
+
+    // Function to update the product card with related product
+    function updateProductCard(relatedProduct) {
+      const productCard = document.querySelector('#Upsell-Product');
+      if (productCard) {
+        productCard.style.display = ''; // Show the product card first
+        const image = productCard.querySelector('.cart-item__image');
+        if (image && relatedProduct.images && relatedProduct.images.length > 0) {
+          image.src = 'https:' + relatedProduct.images[0];
+          image.alt = relatedProduct.title;
+        }
+
+        const title = productCard.querySelector('.cart-item__name');
+        if (title) {
+          title.textContent = relatedProduct.title;
+          title.href = '/products/' + relatedProduct.handle;
+        }
+
+        // Handle variants
+        const variantsContainer = productCard.querySelector('.upsell-product__variants');
+        if (variantsContainer && relatedProduct.variants && relatedProduct.variants.length > 0) {
+          if (relatedProduct.variants.length > 1) {
+            let variantsHtml = `
+              <fieldset class="js product-form__input product-form__input--pill">
+                <legend class="form__label">Size</legend>
+                <div class="upsell-variants">
+            `;
+            
+            relatedProduct.variants.forEach((variant, index) => {
+              const isAvailable = variant.available;
+              variantsHtml += `
+                <input
+                  type="radio"
+                  id="variant-${variant.id}"
+                  name="upsell-variant"
+                  value="${variant.id}"
+                  data-price="${(variant.price / 100).toLocaleString('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                  })}"
+                  ${index === 0 ? 'checked' : ''}
+                  ${!isAvailable ? 'class="disabled" disabled' : ''}
+                  class="upsell-variant-radio"
+                >
+                <label for="variant-${variant.id}"
+                  class="upsell-variant-label"
+                  ${!isAvailable ? 'class="disabled"' : ''}
+                >
+                  ${variant.title.split(' / ')[0]}
+                </label><br>
+              `;
+            });
+            
+            variantsHtml += `
+                </div>
+              </fieldset>
+            `;
+            variantsContainer.innerHTML = variantsHtml;
+          } else {
+            // Single variant - hidden input
+            variantsContainer.innerHTML = `
+              <input
+                type="radio"
+                id="variant-${relatedProduct.variants[0].id}"
+                name="upsell-variant"
+                value="${relatedProduct.variants[0].id}"
+                data-price="${(relatedProduct.variants[0].price / 100).toLocaleString('en-US', {
+                  style: 'currency',
+                  currency: 'USD'
+                })}"
+                checked
+                style="display: none;"
+              >
+            `;
+          }
+        }
+
+        const button = productCard.querySelector('.upsell-product__button');
+        if (button) {
+          button.dataset.productHandle = relatedProduct.handle;
+        }
+
+        // Update price if available
+        const price = productCard.querySelector('.cart-item__final-price');
+        if (price && relatedProduct.variants && relatedProduct.variants.length > 0) {
+          price.textContent = (relatedProduct.variants[0].price / 100).toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+          });
+        }
+      }
+    }
+
+    // Function to fetch and update related products
+    function fetchAndUpdateRelatedProducts() {
+      return new Promise((resolve, reject) => {
+        const cartProducts = getCartProducts();
+
+        // Get the first cart item's ID
+        const firstCartItem = cartProducts[0];
+        if (!firstCartItem) {
+          const upsellSection = document.querySelector('#Upsell-Product');
+          if (upsellSection) {
+            upsellSection.style.display = 'none';
+          }
+          return resolve();
+        }
+
+        const relatedProductUrl = `/recommendations/products.json?product_id=${firstCartItem.id}&limit=4&intent=related`;
+        
+        // Show loading state
+        const productCard = document.querySelector('#Upsell-Product');
+        if (productCard) {
+          const loadingSpinner = productCard.querySelector('.loading__spinner');
+          const addButton = productCard.querySelector('.add-to-cart');
+          if (loadingSpinner && addButton) {
+            addButton.style.display = 'none';
+            loadingSpinner.classList.remove('hidden');
+          }
+          productCard.classList.add('loading');
+          productCard.style.opacity = '0.5';
+        }
+        
+        fetch(relatedProductUrl)
+          .then(response => response.json())
+          .then(data => {
+
+            // Find first related product not in cart
+            const relatedProduct = data.products.find(product =>
+              !cartProducts.some(cartItem => cartItem.id === product.id)
+            );
+
+            if (relatedProduct) {
+              updateProductCard(relatedProduct);
+            } else {
+              // Hide the upsell section if no eligible related products
+              const upsellSection = document.querySelector('#Upsell-Product');
+              if (upsellSection) {
+                upsellSection.style.display = 'none';
+              }
+            }
+            resolve();
+          })
+          .catch(error => {
+            reject(error);
+          })
+          .finally(() => {
+            // Hide loading state
+            if (productCard) {
+              const loadingSpinner = productCard.querySelector('.loading__spinner');
+              const addButton = productCard.querySelector('.add-to-cart');
+              if (loadingSpinner && addButton) {
+                addButton.style.display = '';
+                loadingSpinner.classList.add('hidden');
+              }
+              productCard.classList.remove('loading');
+              productCard.style.opacity = '';
+            }
+          });
+      });
+    }
+
+    // Initial fetch of related products
+    fetchAndUpdateRelatedProducts();
+
+    // Debounce function to limit update frequency
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
+    // Flag to prevent recursive updates
+    let isUpdatingUpsell = false;
+
+    // Debounced version of fetchAndUpdateRelatedProducts
+    const debouncedFetchAndUpdate = debounce(() => {
+      if (isUpdatingUpsell) return;
+      isUpdatingUpsell = true;
+      
+      fetchAndUpdateRelatedProducts()
+        .catch(error => {
+        })
+        .finally(() => {
+          isUpdatingUpsell = false;
+        });
+    }, 300); // Reduced debounce time for better responsiveness
+
+    // Set up observer to watch for cart changes
+    const cartDrawerObserver = new MutationObserver((mutations) => {
+      // Ignore mutations if we're currently updating
+      if (isUpdatingUpsell) return;
+
+      // Check if the mutations affect cart items
+      const cartChanged = mutations.some(mutation => {
+        const target = mutation.target;
+        
+        // Ignore mutations to the upsell product itself
+        if (target.closest('#Upsell-Product')) return false;
+        
+        // Look for changes in cart items
+        const isCartItemsChange = target.classList.contains('cart-items') ||
+                                target.closest('.cart-items');
+        const hasNodeChanges = mutation.addedNodes.length > 0 || 
+                             mutation.removedNodes.length > 0;
+        
+        return isCartItemsChange || hasNodeChanges;
+      });
+
+      if (cartChanged) {
+        debouncedFetchAndUpdate();
+      }
+    });
+
+    // Start observing the cart drawer for changes
+    const cartDrawer = document.querySelector('#CartDrawer');
+    if (cartDrawer) {
+      cartDrawerObserver.observe(cartDrawer, {
+        childList: true,
+        subtree: true,
+        attributes: false, // Only watch for content changes
+        characterData: false
+      });
+    }
+
+    // Rest of the HTML remains the same until the handleUpsellAddToCart function
+
+    function handleUpsellAddToCart(event) {
+      const upsellButton = event.target.closest('.upsell-product__button');
+      if (!upsellButton) return;
+
+      const loadingSpinner = upsellButton.querySelector('.loading__spinner');
+      const addToCartSpan = upsellButton.querySelector('.add-to-cart');
+      const selectedVariant = document.querySelector('input[name="upsell-variant"]:checked');
+      const productCard = document.querySelector('#Upsell-Product');
+
+      if (!selectedVariant) {
+        return;
+      }
+
+      const variantId = selectedVariant.value;
+
+      // Show loading state
+      addToCartSpan.style.display = 'none';
+      loadingSpinner.classList.remove('hidden');
+      if (productCard) {
+        productCard.classList.add('loading');
+        productCard.style.opacity = '0.5';
+      }
+
+      const formData = {
+        items: [
+          {
+            id: variantId,
+            quantity: 1,
+          },
+        ],
+      };
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          fetch('/cart')
+            .then((response) => response.text())
+            .then((html) => {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              
+              // Store the current upsell product element
+              const currentUpsell = document.querySelector('#Upsell-Product');
+              const currentUpsellParent = currentUpsell ? currentUpsell.parentNode : null;
+              
+              // Update cart drawer
+              document.querySelector('#CartDrawer').innerHTML = doc.querySelector('#CartDrawer').innerHTML;
+              
+              // If we had an upsell product, restore it to its parent
+              if (currentUpsell && currentUpsellParent) {
+                currentUpsellParent.appendChild(currentUpsell);
+              }
+              
+              
+              // Fetch and update related products after successful cart update
+              fetchAndUpdateRelatedProducts();
+            })
+            .catch(error => {
+              console.error('Error updating cart drawer:', error);
+            })
+            .finally(() => {
+              // Reset loading states
+              if (productCard) {
+                productCard.classList.remove('loading');
+                productCard.style.opacity = '';
+              }
+              addToCartSpan.style.display = '';
+              loadingSpinner.classList.add('hidden');
+            });
+        })
+        .catch((error) => {
+          console.error('Error adding upsell product to cart:', error);
+          // Reset loading states on error
+          if (productCard) {
+            productCard.classList.remove('loading');
+            productCard.style.opacity = '';
+          }
+          addToCartSpan.style.display = '';
+          loadingSpinner.classList.add('hidden');
+        });
+    }
+
+    document.body.addEventListener('click', function (event) {
+      if (event.target.closest('.upsell-product__button')) {
+        handleUpsellAddToCart(event);
+      }
+    });
+  </script>
+{% endif %}
