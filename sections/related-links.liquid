@@ -1,0 +1,147 @@
+{% schema %}
+{
+  "name": "Related Collections",
+  "settings": [
+    {
+      "type": "range",
+      "id": "image_size",
+      "min": 80,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Image Size",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Image Border Color",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Border Width",
+      "default": 2
+    }
+  ],
+  "presets": [
+    {
+      "name": "Related Collections",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .related-collections {
+    width: 100%;
+    padding: 20px 5px;
+  }
+
+  .link-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .link-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .link-list-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  @media (min-width: 0px) {
+    .link-list-wrapper {
+      justify-content: center;
+    }
+
+    .link-list:not(:only-child) {
+      justify-content: flex-start;
+    }
+  }
+
+  .link-list li {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 120px;
+  }
+
+  .collection-image {
+    width: {{ section.settings.image_size }}px;
+    height: {{ section.settings.image_size }}px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+  }
+
+  .related-link-title {
+    color: #121212;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    text-underline-offset: 2px;
+    font-size: 12px;
+  }
+
+  .collection-link {
+    text-decoration: none;
+  }
+
+  .debug-info {
+    background: #f4f4f4;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: monospace;
+    font-size: 12px;
+  }
+</style>
+
+{% assign related_collections = collection.metafields.custom.related_collections %}
+
+{% if related_collections != blank %}
+  {% assign related_collections = related_collections.value %}
+{% endif %}
+
+<div class="related-collections">
+  <div class="link-list-wrapper">
+    <ul class="link-list">
+      {% if related_collections != blank %}
+        {% for collection in related_collections %}
+          {% assign product_image = collection.products.first.images.first %}
+          <li>
+            <a href="{{ collection.url }}" class="collection-link">
+              <img
+                src="{% if collection.image == blank %}{{ product_image | img_url: '200x200', crop: 'center' }}{% else %}{{ collection.image | img_url: '200x200', crop: 'center' }}{% endif %}"
+                alt="{{ collection.title }}"
+                class="collection-image"
+                width="{{ section.settings.image_size }}"
+                height="{{ section.settings.image_size }}"
+              >
+              <span class="related-link-title"
+                ><label class="h6">{{ collection.title }}</label></span
+              >
+            </a>
+          </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+</div>
