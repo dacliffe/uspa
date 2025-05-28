@@ -128,21 +128,12 @@
           "type": "description",
           "settings": {}
         },
-        "collapsible-row-0": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Details",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Composition",
             "icon": "none",
-            "content": "",
+            "content": "<p>{{ product.metafields.custom.composition.value }}</p>",
             "page": ""
           }
         },
@@ -151,7 +142,7 @@
           "settings": {
             "heading": "Wash Instructions",
             "icon": "none",
-            "content": "",
+            "content": "<p>{{ product.metafields.custom_fields.wash_instruct.value }}</p>",
             "page": ""
           }
         },
@@ -160,7 +151,7 @@
           "settings": {
             "heading": "Product SKU",
             "icon": "none",
-            "content": "",
+            "content": "<p>{{ product.metafields.custom.product_sku.value }}</p>",
             "page": ""
           }
         },
@@ -184,7 +175,6 @@
         "buy_buttons",
         "afterpay_on_site_messaging_payments_messaging_jaXxLT",
         "description",
-        "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
@@ -196,7 +186,7 @@
         "media_size": "medium",
         "constrain_to_viewport": false,
         "media_fit": "cover",
-        "gallery_layout": "stacked",
+        "gallery_layout": "columns",
         "mobile_thumbnails": "hide",
         "media_position": "left",
         "image_zoom": "hover",

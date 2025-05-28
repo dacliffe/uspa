@@ -100,10 +100,10 @@
     "drawer_shadow_horizontal_offset": 0,
     "drawer_shadow_vertical_offset": 4,
     "drawer_shadow_blur": 5,
-    "badge_position": "bottom left",
+    "badge_position": "top right",
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-5",
-    "sold_out_badge_color_scheme": "scheme-3",
+    "sold_out_badge_color_scheme": "scheme-1478faab-3045-495b-92e1-6345b1a48a30",
     "social_facebook_link": "#",
     "social_instagram_link": "#",
     "social_youtube_link": "#",
@@ -121,6 +121,9 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "new-arrivals-clothing-accessories",
+    "cart_post_goal_message": "YOU'RE ELEGIBLE FOR FREE SHIPPING <strong>FREE SHIPPING</strong>",
+    "cart_progress_bar_color": "#a41d35",
+    "cart_progress_bar_full_color": "#242833",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
