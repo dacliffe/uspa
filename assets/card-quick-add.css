@@ -38,12 +38,10 @@
     align-items: center;
     left: 0;
     background-color: #ffffffc7;
-    padding: 10px 0;
 }
 
 .quick-add-submit-container {
     width: 100%;
-    padding: 10px;
     display: flex;
     justify-content: center;
     opacity: 0;
