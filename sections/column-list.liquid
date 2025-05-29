@@ -1,0 +1,380 @@
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .card-column-title {
+    width: 100%;
+    display: flex;
+    justify-content: start !important;
+    align-items: end !important;
+    padding: 20px;
+    z-index: 1;
+    background: linear-gradient(1turn, rgba(0, 0, 0, 0.3), transparent 35%);
+  }
+
+  .card-cta-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .column-card-heading {
+    color: white;
+  }
+
+  .cta-header {
+    margin: 0;
+  }
+  .cta-container {
+    margin: auto !important;
+  }
+
+  .card_heading_style_2 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 5px 20px;
+    color: #6d6e71;
+    font-size: 16px;
+    font-weight: 400;
+  }
+</style>
+{%- liquid
+  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+  assign show_mobile_slider = false
+  if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+    assign show_mobile_slider = true
+  endif
+-%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="collection-list-wrapper page-width isolate{% if show_mobile_slider %} page-width-desktop{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
+    {% comment %} Header {% endcomment %}
+    {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper-with-link {% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
+        <h2
+          id="SectionHeading-{{ section.id }}"
+          class="collection-list-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        >
+          {{ section.settings.title }}
+        </h2>
+        {%- if section.settings.show_view_all and show_mobile_slider -%}
+          <a
+            href="{{ routes.collections_url }}"
+
+            id="ViewAll-{{ section.id }}"
+
+            class="link underlined-link large-up-hide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+
+            aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}"
+          >
+            {{- 'sections.collection_list.view_all' | t -}}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endunless -%}
+    {% comment %} Mobile Slide {% endcomment %}
+
+    <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <ul
+        class="collection-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
+        id="Slider-{{ section.id }}"
+        role="list"
+      >
+        {%- liquid
+          assign columns = section.blocks.size
+          if columns > 3
+            assign columns = 3
+          endif
+        -%}
+        {%- for block in section.blocks -%}
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="{% if show_mobile_slider %} slider__slide{% endif %}collection-list__item grid__item{% if block.settings.image == nil %} collection-list__item--no-media{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} cta-container"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+            {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+            {%- if block.type == 'column' -%}
+              {% render 'card-column',
+                card_column: block.settings,
+                media_aspect_ratio: section.settings.image_ratio,
+                columns: section.settings.columns_desktop,
+                placeholder_image: placeholder_image,
+                heading_type: section.settings.heading_type
+              %}
+            {%- else -%}
+              {% render 'card-cta', card_cta: block.settings, columns: section.settings.columns_desktop %}
+            {% endif %}
+          </li>
+        {%- endfor -%}
+      </ul>
+      {%- if show_mobile_slider -%}
+        <div class="slider-buttons column-slider">
+          <button
+            type="button"
+
+            class="slider-button slider-button--prev"
+
+            name="previous"
+
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+
+          {% comment %}
+            <div class="slider-counter caption">
+
+              <span class="slider-counter--current">1</span>
+
+              <span aria-hidden="true"> / </span>
+
+              <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+
+              <span class="slider-counter--total">{{ section.blocks.size }}</span>
+
+            </div>
+          {% endcomment %}
+
+          <button
+            type="button"
+
+            class="slider-button slider-button--next"
+
+            name="next"
+
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+        </div>
+      {%- endif -%}
+    </slider-component>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Column List",
+  "tag": "section",
+  "class": "section section-collection-list",
+  "max_blocks": 15,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Column List",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        },
+        {
+          "value": "hxl",
+          "label": "Extra Large"
+        },
+        {
+          "value": "hxxl",
+          "label": "2X Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "square",
+      "label": "Image ratio"
+    },
+    {
+      "type": "select",
+      "id": "heading_type",
+      "options": [
+        {
+          "value": "style-1",
+          "label": "Style 1"
+        },
+        {
+          "value": "style-2",
+          "label": "Style 2"
+        }
+      ],
+      "default": "style-1",
+      "label": "Heading style"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "Number of columns on desktop"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        }
+      ],
+      "default": "1",
+      "label": "Number of columns on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "Enable swipe on mobile"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "default": "Column Title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "name": "CTA",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "default": "Column Title",
+          "label": "Title"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Button Label"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Column List",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

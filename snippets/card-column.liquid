@@ -1,0 +1,63 @@
+{%- liquid
+  assign ratio = 1
+  if card_column.image and media_aspect_ratio == 'portrait'
+    assign ratio = 0.8
+  elsif card_column.image and media_aspect_ratio == 'adapt'
+    assign ratio = card_column.image.aspect_ratio
+  endif
+  if ratio == 0 or ratio == null
+    assign ratio = 1
+  endif
+  assign card_color_scheme = settings.color_scheme
+  assign card_style = 'standard'
+-%}
+
+<div class="card-wrapper animate-arrow">
+  <a href="{{ card_column.url }}" class="full-unstyled-link">
+    <div
+      class="card card--{{ card_style }}{% if card_column.image %} card--media{% else %} card--text{% endif %} color-{{ card_color_scheme }} gradient"
+      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+    >
+      <div
+        class="card__inner{% if card_column.image %} ratio{% endif %}"
+        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+      >
+        {%- if card_column.image -%}
+          <div class="card__media">
+            <div class="media media--transparent media--hover-effect">
+              <img
+                src="{{ card_column.image | image_url: width: 750 }}"
+                alt="{{ card_column.image.alt | escape }}"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        {%- else -%}
+          <div class="card__media">
+            {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+        {% if card_column.title != blank %}
+          {% if heading_type == 'style-1' %}
+            <div class="card-column-title">
+              <h3 class="card__heading column-card-heading h2">
+                {{ card_column.title }}
+                <span class="icon-wrap">{% render 'icon-arrow' %}</span>
+              </h3>
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+      {% if card_column.title != blank %}
+        {% if heading_type == 'style-2' %}
+          <div>
+            <h3 class="card__heading card_heading_style_2 h3">
+              {{ card_column.title }}
+              {% comment %} <span class="icon-wrap">{% render 'icon-arrow' %}</span> {% endcomment %}
+            </h3>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </a>
+</div>

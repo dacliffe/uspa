@@ -1,0 +1,41 @@
+{%- liquid
+  assign ratio = 1
+  if card_cta.image and media_aspect_ratio == 'portrait'
+    assign ratio = 0.8
+  elsif card_cta.image and media_aspect_ratio == 'adapt'
+    assign ratio = card_cta.image.aspect_ratio
+  endif
+  if ratio == 0 or ratio == null
+    assign ratio = 1
+  endif
+  assign card_color_scheme = settings.color_scheme
+  assign card_style = 'standard'
+-%}
+
+<div class="card-wrapper animate-arrow">
+  <div
+    class="card card--{{ card_style }}{% if card_cta.image %} card--media{% else %} card--text{% endif %} color-{{ card_color_scheme }} gradient card-cta-container"
+    style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+  >
+    <div
+      class="card__inner{% if card_cta.image %} ratio{% endif %}"
+      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+    >
+      <div class="">
+        <h3 class="h1 cta-header">
+          {{ card_cta.title }}
+        </h3>
+      </div>
+    </div>
+    <div class="card-column-description">
+      <p>
+        {{ card_cta.description }}
+      </p>
+    </div>
+    <a href="{{ card_cta.url}}">
+      <button class="button">
+        {{ card_cta.button }}
+      </button>
+    </a>
+  </div>
+</div>
