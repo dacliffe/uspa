@@ -17,21 +17,21 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Free delivery Over $150",
+            "text": "FREE DELIVERY OVER $150",
             "link": ""
           }
         },
         "announcement_eVk4yM": {
           "type": "announcement",
           "settings": {
-            "text": "Easy 28 Day Returns",
+            "text": "EASY 28 DAY RETURNS",
             "link": ""
           }
         },
         "announcement_ijjVVh": {
           "type": "announcement",
           "settings": {
-            "text": "Sign Up For 10% Off",
+            "text": "SIGN UP FOR 10% OFF",
             "link": ""
           }
         }
@@ -45,7 +45,7 @@
         "auto_rotate": true,
         "change_slides_speed": 3,
         "color_scheme": "scheme-055eabee-0096-4320-8a98-d4178b3ba047",
-        "show_line_separator": false,
+        "show_line_separator": true,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false
@@ -53,19 +53,120 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "mega_menu_announcement_HtEmxk": {
+          "type": "mega_menu_announcement",
+          "settings": {
+            "menu_title": "NEW",
+            "announcement_text": "AUTUMN WINTER 25 NOW AVAILABLE",
+            "announcement_link": "",
+            "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
+          }
+        },
+        "menu_title_LzDcr7": {
+          "type": "menu_title",
+          "settings": {
+            "menu_title": "NEW",
+            "title_text": "NEW ARRIVALS",
+            "title_style": "h4"
+          }
+        },
+        "mega_menu_image_BCVmWY": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "NEW",
+            "image_title": "Mens",
+            "image_link": "shopify://collections/mens-new-arrivals",
+            "image": "shopify://shop_images/MUP4129-J09-MS_1.JPG",
+            "image_order": 1
+          }
+        },
+        "mega_menu_image_C3KY4m": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "NEW",
+            "image_title": "Womens",
+            "image_link": "",
+            "image": "shopify://shop_images/WUP0397-D53-MS_1.JPG",
+            "image_order": 2
+          }
+        },
+        "mega_menu_image_CAxBMb": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "NEW",
+            "image_title": "Kids",
+            "image_link": "",
+            "image": "shopify://shop_images/USP2370-P90-MS_1.JPG",
+            "image_order": 3
+          }
+        },
+        "mega_menu_image_cFfpBf": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "POLO SHIRTS",
+            "image_title": "Mens",
+            "image_link": "",
+            "image": "shopify://shop_images/MUP3312-L45-MS_1.JPG",
+            "image_order": 1
+          }
+        },
+        "mega_menu_image_M7fGWE": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "POLO SHIRTS",
+            "image_title": "Womens",
+            "image_link": "",
+            "image": "shopify://shop_images/WUP1311-002-MS_1.jpg",
+            "image_order": 2
+          }
+        },
+        "mega_menu_image_cD6Prn": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "POLO SHIRTS",
+            "image_title": "Kids",
+            "image_link": "",
+            "image": "shopify://shop_images/USP3095-L45-MS_1.JPG",
+            "image_order": 2
+          }
+        },
+        "mega_menu_image_wFEU9d": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "ABOUT US",
+            "image_title": "",
+            "image_link": "",
+            "image": "shopify://shop_images/MBP07448GCsemi_1024x1024_ec40c01b-8598-4b44-a5f4-a71dbadb88ee.webp",
+            "image_order": 1
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_announcement_HtEmxk",
+        "menu_title_LzDcr7",
+        "mega_menu_image_BCVmWY",
+        "mega_menu_image_C3KY4m",
+        "mega_menu_image_CAxBMb",
+        "mega_menu_image_cFfpBf",
+        "mega_menu_image_M7fGWE",
+        "mega_menu_image_cD6Prn",
+        "mega_menu_image_wFEU9d"
+      ],
       "settings": {
         "show_strip": true,
         "strip_image": "shopify://shop_images/uspoloassn-stripe-2000x30.png",
         "show_strip_color": true,
-        "strip_color": "#a41d35",
-        "strip_height": 29,
+        "strip_color": "#000000",
+        "strip_height": 19,
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
         "menu": "header-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
+        "hide_menu_items_desktop": "none",
         "show_line_separator": false,
-        "color_scheme": "scheme-1",
+        "color_scheme": "",
         "menu_color_scheme": "",
         "enable_country_selector": false,
         "enable_language_selector": false,
@@ -74,10 +175,36 @@
         "padding_top": 8,
         "padding_bottom": 8
       }
+    },
+    "announcement_bar_qQdiXV": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_P4R7im": {
+          "type": "announcement",
+          "settings": {
+            "text": "25% OFF POLO SHIRTS",
+            "link": "shopify://collections/polo-shirts"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_P4R7im"
+      ],
+      "disabled": true,
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-1",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "announcement_bar_qQdiXV"
   ]
 }

@@ -17,6 +17,14 @@
         "color_scheme": "scheme-1"
       }
     },
+    "related_links_7cTrMM": {
+      "type": "related-links",
+      "settings": {
+        "image_size": 100,
+        "border_color": "#f4f4f4",
+        "border_width": 2
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -34,16 +42,7 @@
         "filter_type": "horizontal",
         "enable_sorting": true,
         "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "related_links_7cTrMM": {
-      "type": "related-links",
-      "name": "Related Collections",
-      "settings": {
-        "image_size": 100,
-        "border_color": "#f4f4f4",
-        "border_width": 2
+        "padding_bottom": 40
       }
     }
   },

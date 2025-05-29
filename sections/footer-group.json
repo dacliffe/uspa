@@ -35,8 +35,15 @@
             "menu": "terms-policies"
           }
         },
+        "uspa_logo_dGnxjq": {
+          "type": "uspa_logo",
+          "settings": {
+            "logo": "shopify://shop_images/uspa-footer-logo_-_Edited.png"
+          }
+        },
         "footer-2": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "heading": "",
             "subtext": "<p><strong>U.S. Polo Assn.</strong>is the official brand of the<strong>United States Polo Association (USPA).</strong>The non-profit governing body for the sport of polo in the United States, founded in 1890. U.S. Polo Assn. promotes the lifestyle of the sport by designing modern and relevant wardrobe essentials that reinforce the authentic heritage and spirit of the global, sport-inspired brand.</p>"
@@ -47,11 +54,12 @@
         "footer-0",
         "footer-1",
         "link_list_E8CLGr",
+        "uspa_logo_dGnxjq",
         "footer-2"
       ],
       "settings": {
         "color_scheme": "scheme-055eabee-0096-4320-8a98-d4178b3ba047",
-        "newsletter_enable": true,
+        "newsletter_enable": false,
         "newsletter_color_scheme": "scheme-1",
         "newsletter_heading": "Subscribe to our emails",
         "newsletter_text": "<p>Sign up to receive updates on new arrivals and special offers</p>",
