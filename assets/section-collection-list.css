@@ -19,8 +19,8 @@
   }
 
   .section-collection-list .collection-list:not(.slider) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    /* padding-left: 1.5rem;
+    padding-right: 1.5rem; */
   }
 }
 
@@ -36,6 +36,7 @@
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
+
   .slider.collection-list--1-items,
   .slider.collection-list--2-items,
   .slider.collection-list--3-items,

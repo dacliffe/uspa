@@ -33,6 +33,7 @@
   margin: 0;
   word-break: break-word;
   visibility: visible !important;
+  font-size: 1.2rem;
 }
 
 .accordion .svg-wrapper {
