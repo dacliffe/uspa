@@ -118,30 +118,30 @@
 
 {% if related_collections != blank %}
   {% assign related_collections = related_collections.value %}
-{% endif %}
 
-<div class="related-collections">
-  <div class="link-list-wrapper">
-    <ul class="link-list">
-      {% if related_collections != blank %}
-        {% for collection in related_collections %}
-          {% assign product_image = collection.products.first.images.first %}
-          <li>
-            <a href="{{ collection.url }}" class="collection-link">
-              <img
-                src="{% if collection.image == blank %}{{ product_image | img_url: '200x200', crop: 'center' }}{% else %}{{ collection.image | img_url: '200x200', crop: 'center' }}{% endif %}"
-                alt="{{ collection.title }}"
-                class="collection-image"
-                width="{{ section.settings.image_size }}"
-                height="{{ section.settings.image_size }}"
-              >
-              <span class="related-link-title"
-                ><label class="h6">{{ collection.title }}</label></span
-              >
-            </a>
-          </li>
-        {% endfor %}
-      {% endif %}
-    </ul>
+  <div class="related-collections">
+    <div class="link-list-wrapper">
+      <ul class="link-list">
+        {% if related_collections != blank %}
+          {% for collection in related_collections %}
+            {% assign product_image = collection.products.first.images.first %}
+            <li>
+              <a href="{{ collection.url }}" class="collection-link">
+                <img
+                  src="{% if collection.image == blank %}{{ product_image | img_url: '200x200', crop: 'center' }}{% else %}{{ collection.image | img_url: '200x200', crop: 'center' }}{% endif %}"
+                  alt="{{ collection.title }}"
+                  class="collection-image"
+                  width="{{ section.settings.image_size }}"
+                  height="{{ section.settings.image_size }}"
+                >
+                <span class="related-link-title"
+                  ><label class="h6">{{ collection.title }}</label></span
+                >
+              </a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
   </div>
-</div>
+{% endif %}
