@@ -1,0 +1,148 @@
+<style>
+  .carousel-item {
+    backface-visibility: visible;
+    transition: transform 0.6s ease;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 5%;
+  }
+
+  .carousel-indicators li {
+    background-color: #b3b3b3;
+  }
+
+  .carousel-indicators .active {
+    background-color: #121212;
+  }
+
+  .carousel-indicators {
+    z-index: 2;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Image Slider",
+  "settings": [
+    {
+      "type": "number",
+      "id": "slide_interval",
+      "label": "Slide Interval (milliseconds)",
+      "default": 5000,
+      "info": "Time between slide transitions. Set to 0 to disable auto-sliding."
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "image_slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "url",
+          "id": "slide_link",
+          "label": "Slide Link"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Slide heading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Slider",
+      "blocks": [
+        {
+          "type": "image_slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div
+  id="carouselExampleIndicators"
+  style="padding: 0;"
+  class="carousel slide page-width custom-banner image-slider"
+  data-ride="carousel"
+  data-interval="{{ section.settings.slide_interval }}"
+>
+  <ol class="carousel-indicators">
+    {%- for block in section.blocks -%}
+      <li
+        data-target="#carouselExampleIndicators"
+        data-slide-to="{{ forloop.index0 }}"
+        {% if forloop.first %}
+          class="active"
+        {% endif %}
+      ></li>
+    {%- endfor -%}
+  </ol>
+
+  <div class="carousel-inner">
+    {%- for block in section.blocks -%}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        {%- if block.settings.slide_link -%}<a href="{{ block.settings.slide_link }}">{%- endif -%}
+        <picture>
+          <source media="(min-width: 768px)" srcset="{{ block.settings.desktop_image | img_url: 'master' }}">
+          <source media="(max-width: 767px)" srcset="{{ block.settings.mobile_image | img_url: 'master' }}">
+          <img
+            class="d-block w-100"
+            src="{{ block.settings.desktop_image | img_url: 'master' }}"
+            alt="{{ block.settings.heading }}"
+            width="1000"
+            height="500"
+          >
+        </picture>
+        {%- if block.settings.heading -%}
+          <div class="carousel-caption">
+            <h2>{{ block.settings.heading }}</h2>
+          </div>
+        {%- endif -%}
+        {%- if block.settings.slide_link -%}</a>{%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span
+      type="button"
+      class="slider-button slider-button--prev"
+      name="previous"
+      aria-label="{{ 'general.slider.previous_slide' | t }}"
+    >
+      {% render 'icon-caret' %}
+    </span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span
+      type="button"
+      class="slider-button slider-button--next"
+      name="next"
+      aria-label="{{ 'general.slider.next_slide' | t }}"
+    >
+      {% render 'icon-caret' %}
+    </span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="slider-buttons"></div>
