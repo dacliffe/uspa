@@ -407,7 +407,7 @@ blockquote {
 .field__input,
 .form__label,
 .select__select {
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   letter-spacing: 0.04rem;
   font-weight: 600;
@@ -527,6 +527,27 @@ a:not([href]) {
   cursor: not-allowed;
 }
 
+/* Override Bootstrap link styles */
+a:hover,
+a:focus,
+a:active {
+  color: inherit !important;
+  text-decoration: none !important;
+  text-underline-offset: none !important;
+  /* text-decoration-thickness: 0.1rem !important; */
+  /* transition: text-decoration-thickness var(--duration-short) ease !important; */
+}
+
+button:focus {
+  outline: none !important;
+}
+
+/* a:hover,
+a:focus,
+a:active {
+  text-decoration-thickness: 0.2rem !important;
+} */
+
 .circle-divider::after {
   content: '\2022';
   margin: 0 1.3rem 0 1.5rem;
@@ -616,8 +637,8 @@ details>* {
 .underlined-link:hover,
 .customer a:hover,
 .inline-richtext a:hover {
-  color: rgb(var(--color-link));
-  text-decoration-thickness: 0.2rem;
+  color: rgb(var(--color-link)) !important;
+  text-decoration-thickness: 0.2rem !important;
 }
 
 .icon-arrow {
@@ -2253,7 +2274,7 @@ input[type='checkbox'] {
   margin-bottom: 0 !important;
   display: flex;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
 }
 
 .announcement-bar-slider--fade-in-next .announcement-bar__message,
@@ -3623,4 +3644,29 @@ details-disclosure>details {
 
 .product-form__input--pill input[type=radio]:checked+label {
   background-color: #14294b !important;
+}
+
+.underline-links-hover:hover a {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.underline-links-hover a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.no-underline-hover:hover {
+  text-decoration: none !important;
+}
+
+/* Add specific hover styles for card elements */
+.card-swatches a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.card__media-carousel a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
 }
