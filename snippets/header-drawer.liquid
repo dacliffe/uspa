@@ -30,12 +30,7 @@
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
                       >
                         {{ link.title | escape }}
-                        <span class="svg-wrapper">
-                          {{- 'icon-arrow.svg' | inline_asset_content -}}
-                        </span>
-                        <span class="svg-wrapper">
-                          {{- 'icon-caret.svg' | inline_asset_content -}}
-                        </span>
+                        {% render 'icon-caret', class: 'header-drawer__icon-caret' %}
                       </summary>
                       <div
                         id="link-{{ link.handle | escape }}"
@@ -61,7 +56,10 @@
                                       aria-current="page"
                                     {% endif %}
                                   >
-                                    {{ childlink.title | escape }}
+                                    <span class="childlink">
+                                      {{ childlink.title | escape }}
+                                    </span>
+                                    {% render 'icon-caret', class: 'header-drawer__icon-caret' %}
                                   </a>
                                 {%- else -%}
                                   <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
@@ -69,12 +67,9 @@
                                       id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
                                       class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
                                     >
-                                      {{ childlink.title | escape }}
-                                      <span class="svg-wrapper">
-                                        {{- 'icon-arrow.svg' | inline_asset_content -}}
-                                      </span>
-                                      <span class="svg-wrapper">
-                                        {{- 'icon-caret.svg' | inline_asset_content -}}
+                                      <span class="childlink">
+                                        {{ childlink.title | escape }}
+                                        {% render 'icon-caret', class: 'header-drawer__icon-caret' %}
                                       </span>
                                     </summary>
                                     <div

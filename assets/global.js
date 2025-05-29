@@ -67,21 +67,67 @@ class HTMLUpdateUtility {
     });
   }
 }
-
-document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
-  summary.setAttribute('role', 'button');
+document.querySelectorAll('[id^="Details-HeaderMenu-"]').forEach((summary) => {
+  // Ensure the initial aria-expanded state is set correctly
   summary.setAttribute('aria-expanded', summary.parentNode.hasAttribute('open'));
 
-  if (summary.nextElementSibling.getAttribute('id')) {
-    summary.setAttribute('aria-controls', summary.nextElementSibling.id);
+  summary.addEventListener('click', (event) => {
+    const detailsElement = event.currentTarget.closest('details');
+    const isOpen = detailsElement.hasAttribute('open');
+
+    // Toggle the aria-expanded attribute based on the current state
+    summary.setAttribute('aria-expanded', !isOpen);
+  });
+
+  function isDesktop() {
+    return window.innerWidth >= 991;
   }
 
-  summary.addEventListener('click', (event) => {
-    event.currentTarget.setAttribute('aria-expanded', !event.currentTarget.closest('details').hasAttribute('open'));
+  let closeTimer;
+  const menuDetails = summary.closest('details');
+  const menuContent = menuDetails.querySelector('.mega-menu__content');
+
+  summary.addEventListener('mouseenter', (event) => {
+    if (isDesktop()) {
+      clearTimeout(closeTimer);
+      menuDetails.setAttribute('open', 'true');
+      event.currentTarget.setAttribute('aria-expanded', 'true');
+    }
   });
+
+  summary.addEventListener('mouseleave', (event) => {
+    if (isDesktop()) {
+      closeTimer = setTimeout(() => {
+        menuDetails.removeAttribute('open');
+        event.currentTarget.setAttribute('aria-expanded', 'false');
+      }, 100);
+    }
+  });
+
+  if (menuContent) {
+    menuContent.addEventListener('mouseenter', () => {
+      if (isDesktop()) {
+        clearTimeout(closeTimer);
+      }
+    });
+
+    menuContent.addEventListener('mouseleave', () => {
+      if (isDesktop()) {
+        closeTimer = setTimeout(() => {
+          menuDetails.removeAttribute('open');
+          summary.setAttribute('aria-expanded', 'false');
+        }, 100);
+      }
+    });
+  }
 
   if (summary.closest('header-drawer, menu-drawer')) return;
   summary.parentElement.addEventListener('keyup', onKeyUpEscape);
+});
+
+document.querySelector('.menu-drawer-container summary').addEventListener('click', function () {
+  const isExpanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !isExpanded);
 });
 
 const trapFocusHandlers = {};
@@ -286,7 +332,6 @@ function debounce(fn, wait) {
     t = setTimeout(() => fn.apply(this, args), wait);
   };
 }
-
 
 function throttle(fn, delay) {
   let lastCall = 0;
@@ -1282,51 +1327,39 @@ if (!customElements.get('bulk-add')) {
 }
 
 class CartPerformance {
-  static #metric_prefix = "cart-performance"
+  static #metric_prefix = 'cart-performance';
 
   static createStartingMarker(benchmarkName) {
-    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`
+    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`;
     return performance.mark(`${metricName}:start`);
   }
 
   static measureFromEvent(benchmarkName, event) {
-    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`
+    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`;
     const startMarker = performance.mark(`${metricName}:start`, {
-      startTime: event.timeStamp
+      startTime: event.timeStamp,
     });
 
     const endMarker = performance.mark(`${metricName}:end`);
 
-    performance.measure(
-      metricName,
-      `${metricName}:start`,
-      `${metricName}:end`
-    );
+    performance.measure(metricName, `${metricName}:start`, `${metricName}:end`);
   }
 
   static measureFromMarker(benchmarkName, startMarker) {
-    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`
+    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`;
     const endMarker = performance.mark(`${metricName}:end`);
 
-    performance.measure(
-      metricName,
-      startMarker.name,
-      `${metricName}:end`
-    );
+    performance.measure(metricName, startMarker.name, `${metricName}:end`);
   }
 
   static measure(benchmarkName, callback) {
-    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`
+    const metricName = `${CartPerformance.#metric_prefix}:${benchmarkName}`;
     const startMarker = performance.mark(`${metricName}:start`);
 
     callback();
 
     const endMarker = performance.mark(`${metricName}:end`);
 
-    performance.measure(
-      metricName,
-      `${metricName}:start`,
-      `${metricName}:end`
-    );
+    performance.measure(metricName, `${metricName}:start`, `${metricName}:end`);
   }
 }

@@ -5,9 +5,58 @@
   {% render 'header-mega-menu' %}
 {% endcomment %}
 
+<style>
+  .menu-cta .cta-item img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .mega-menu__image-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .mega-menu__image-title {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .mega-menu__image-title h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .mega-menu__image-link:hover .mega-menu__image-title h3 {
+    text-decoration: underline;
+  }
+
+  .mega-menu__content .mega-menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: 0;
+  }
+
+  .mega-menu__content .mega-menu__list > * {
+    flex: 1 1 200px;
+    max-width: 200px;
+  }
+
+  .mega-menu__content .utility-bar {
+    flex: 0 0 100%;
+  }
+</style>
+
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
+      {%- assign header_menu_type = 'header' | append: forloop.index -%}
+      {%- assign header_menu_block = section.blocks | where: 'type', header_menu_type | first -%}
       <li>
         {%- if link.links != blank -%}
           <header-menu>
@@ -16,57 +65,194 @@
                 id="HeaderMenu-{{ link.handle }}"
                 class="header__menu-item list-menu__item link focus-inset"
               >
-                <span
-                  {%- if link.child_active %}
-                    class="header__active-menu-item"
+                <a
+                  id="HeaderMenu-{{ link.handle }}-{{ link.handle }}"
+                  class="mega-menu__link link {% if link.handle == "sale" and header_menu_block.settings.header_image_select %} red-highlight {% endif %}"
+                  href="{{ link.url }}"
+                  {% if link.current %}
+                    aria-current="page"
                   {% endif %}
                 >
-                  {{- link.title | escape -}}
-                </span>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
+                  <span
+                    {%- if link.child_active -%}
+                      class="header__active-menu-item"
+                    {%- endif -%}
+                  >
+                    {{- link.title | escape -}}
+                  </span>
+                </a>
+                {% comment %} {% render 'icon-caret' %} {% endcomment %}
               </summary>
               <div
                 id="MegaMenu-Content-{{ forloop.index }}"
-                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup {% if header_menu_block.settings.header_announcement_select != true%} mega-menu__content-padding  {% endif %}"
                 tabindex="-1"
               >
                 <ul
-                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                  class="mega-menu__list"
                   role="list"
                 >
+                  {% if link.levels == 1 %}
+                    <div class="mega-menu__list--condensed">
+                  {% endif %}
                   {%- for childlink in link.links -%}
-                    <li>
-                      <a
-                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                        href="{{ childlink.url }}"
-                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
-                        {% if childlink.current %}
-                          aria-current="page"
-                        {% endif %}
-                      >
-                        {{ childlink.title | escape }}
-                      </a>
-                      {%- if childlink.links != blank -%}
-                        <ul class="list-unstyled" role="list">
-                          {%- for grandchildlink in childlink.links -%}
-                            <li>
-                              <a
-                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                href="{{ grandchildlink.url }}"
-                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
-                                {% if grandchildlink.current %}
-                                  aria-current="page"
-                                {% endif %}
-                              >
-                                {{ grandchildlink.title | escape }}
-                              </a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
+                    {%- assign hide_items = section.settings.hide_menu_items_desktop | split: ',' -%}
+                    {%- assign should_hide = false -%}
+                    {%- assign current_id = 'HeaderMenu-'
+                      | append: link.handle
+                      | append: '-'
+                      | append: childlink.handle
+                    -%}
+                    {%- for hide_id in hide_items -%}
+                      {%- assign clean_id = hide_id | strip -%}
+                      {%- if clean_id == current_id -%}
+                        {%- assign should_hide = true -%}
+                        {%- break -%}
                       {%- endif -%}
-                    </li>
+                    {%- endfor -%}
+
+                    {%- unless should_hide -%}
+                      <li>
+                        <a
+                          id="{{ current_id }}"
+                          href="{{ childlink.url }}"
+                          class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                          {% if childlink.current %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          {{ childlink.title | escape }}
+                        </a>
+                        {%- if childlink.links != blank -%}
+                          <ul class="list-unstyled" role="list">
+                            {%- for grandchildlink in childlink.links -%}
+                              <li>
+                                <a
+                                  id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                  href="{{ grandchildlink.url }}"
+                                  class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                  {% if grandchildlink.current %}
+                                    aria-current="page"
+                                  {% endif %}
+                                >
+                                  {{ grandchildlink.title | escape }}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </li>
+                    {%- endunless -%}
+                  {%- endfor -%}
+                  {% if link.levels == 1 %}
+                    </div>
+                  {% endif %}
+
+                  {%- comment -%} Find and render image blocks for this menu {%- endcomment -%}
+                  {%- for block in section.blocks -%}
+                    {%- if block.type == 'mega_menu_image' and block.settings.menu_title == link.title -%}
+                      <div
+                        class="product-card-wrapper"
+                        style="--ratio-percent: 125%; order:{{ block.settings.image_order }}"
+                      >
+                        <div class="menu-cta-section">
+                          <div class="menu-cta">
+                            <div class="cta-item">
+                              {%- if block.settings.image_link != blank -%}
+                                <a href="{{ block.settings.image_link }}" class="mega-menu__image-link">
+                              {%- endif -%}
+                              <img
+                                srcset="
+                                  {%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                                  {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                                  {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                                  {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                                  {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                                  {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                                  {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
+                                "
+                                src="{{ block.settings.image | image_url: width: 533 }}"
+                                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                                alt="{{ block.settings.image_title | escape }}"
+                                class="motion-reduce"
+                                {% unless lazy_load == false %}
+                                  loading="lazy"
+                                {% endunless %}
+                                width="{{ block.settings.image.width }}"
+                                height="{{ block.settings.image.height }}"
+                              >
+                              {%- if block.settings.image_title != blank -%}
+                                <div class="mega-menu__image-title">
+                                  <h3 class="h4">{{ block.settings.image_title }}</h3>
+                                </div>
+                              {%- endif -%}
+                              {%- if block.settings.image_link != blank -%}
+                                </a>
+                              {%- endif -%}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  {%- endfor -%}
+
+                  {%- comment -%} Find and render collection blocks for this menu {%- endcomment -%}
+                  {%- for block in section.blocks -%}
+                    {%- if block.type == 'mega_menu_collection' and block.settings.menu_title == link.title -%}
+                      <div
+                        class="cart-drawer__collection header_collection"
+                        style="order:{{ block.settings.collection_order }}"
+                      >
+                        {% render 'card-collection-header',
+                          card_collection: block.settings.collection,
+                          columns: 1,
+                          media_aspect_ratio: portrait
+                        %}
+                      </div>
+                    {%- endif -%}
+                  {%- endfor -%}
+
+                  {%- comment -%} Find and render product blocks for this menu {%- endcomment -%}
+                  {%- for block in section.blocks -%}
+                    {%- if block.type == 'mega_menu_product' and block.settings.menu_title == link.title -%}
+                      <div class="card-product-header" style="order:{{ block.settings.product_order }}">
+                        {% render 'card-product-header',
+                          show_vendor: section.settings.show_vendor,
+                          card_product: block.settings.product,
+                          media_aspect_ratio: portrait
+                        %}
+                      </div>
+                    {%- endif -%}
                   {%- endfor -%}
                 </ul>
+
+                {%- comment -%} Find and render announcement blocks for this menu {%- endcomment -%}
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'mega_menu_announcement' and block.settings.menu_title == link.title -%}
+                    <div
+                      class="utility-bar color-{{ block.settings.announcement_color }} gradient header-announcement"
+                      {{ block.shopify_attributes }}
+                    >
+                      <div class="page-width utility-bar__grid">
+                        <div
+                          class="announcement-bar"
+                          role="region"
+                          aria-label="{{ 'sections.header.announcement' | t }}"
+                          {{ block.shopify_attributes }}
+                        >
+                          <a
+                            href="{{ block.settings.announcement_link }}"
+                            class="announcement-bar__link link link--text focus-inset animate-arrow"
+                          >
+                            <p class="announcement-bar__message h5">
+                              <span>{{ block.settings.announcement_text }}</span>
+                            </p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
               </div>
             </details>
           </header-menu>
@@ -80,9 +266,9 @@
             {% endif %}
           >
             <span
-              {%- if link.current %}
+              {%- if link.current -%}
                 class="header__active-menu-item"
-              {% endif %}
+              {%- endif -%}
             >
               {{- link.title | escape -}}
             </span>

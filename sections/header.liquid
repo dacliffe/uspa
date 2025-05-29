@@ -121,6 +121,20 @@
     line-height: calc(1 + 0.8 / var(--font-body-scale));
   }
 
+  .mega-menu__title {
+    margin: 0 0 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .mega-menu__title h2,
+  .mega-menu__title h3,
+  .mega-menu__title h4 {
+    margin: 0;
+    font-weight: 500;
+  }
+
   @media screen and (min-width: 750px) {
     .list-menu__item--link {
       padding-bottom: 0.5rem;
@@ -391,6 +405,7 @@
         this.getAttribute('data-sticky-type') === 'always' ||
         this.getAttribute('data-sticky-type') === 'reduce-logo-size';
       this.headerBounds = {};
+      this.isPortalNavVisible = false;
 
       this.setHeaderHeight();
 
@@ -409,6 +424,14 @@
 
       this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
       window.addEventListener('scroll', this.onScrollHandler, false);
+
+      // Listen for customer portal nav intersection
+      document.addEventListener('customer-portal:nav-intersection', (event) => {
+        this.isPortalNavVisible = event.detail.isIntersecting;
+        if (this.isPortalNavVisible) {
+          this.header.classList.remove('shopify-section-header-sticky', 'shopify-section-header-hidden');
+        }
+      });
 
       this.createObserver();
     }
@@ -435,6 +458,12 @@
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
       if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
+
+      // Don't process sticky behavior if portal nav is visible
+      if (this.isPortalNavVisible) {
+        this.header.classList.remove('shopify-section-header-sticky', 'shopify-section-header-hidden');
+        return;
+      }
 
       if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
@@ -537,7 +566,7 @@
 {
   "name": "t:sections.header.name",
   "class": "section-header",
-  "max_blocks": 3,
+  "max_blocks": 30,
   "settings": [
     {
       "type": "header",
@@ -669,6 +698,13 @@
       "label": "t:sections.header.settings.sticky_header_type.label"
     },
     {
+      "type": "text",
+      "id": "hide_menu_items_desktop",
+      "label": "Hide specific menu items on desktop",
+      "info": "Enter menu item IDs separated by commas (e.g. 'HeaderMenu-clothes-all-clothing, HeaderMenu-sale')",
+      "default": "none"
+    },
+    {
       "type": "checkbox",
       "id": "show_line_separator",
       "default": true,
@@ -717,6 +753,10 @@
     },
     {
       "type": "header",
+      "content": "t:sections.header.settings.mobile_layout.content"
+    },
+    {
+      "type": "header",
       "content": "t:sections.all.spacing"
     },
     {
@@ -757,6 +797,173 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "menu_title",
+      "name": "Menu Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Menu Title",
+          "info": "Enter the exact title of the menu this title belongs to"
+        },
+        {
+          "type": "text",
+          "id": "title_text",
+          "label": "Title Text",
+          "default": "Menu Title"
+        },
+        {
+          "type": "select",
+          "id": "title_style",
+          "label": "Title Style",
+          "options": [
+            {
+              "value": "h2",
+              "label": "Heading 2"
+            },
+            {
+              "value": "h3",
+              "label": "Heading 3"
+            },
+            {
+              "value": "h4",
+              "label": "Heading 4"
+            }
+          ],
+          "default": "h3"
+        }
+      ]
+    },
+    {
+      "type": "header_menu",
+      "name": "Header Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Menu Title",
+          "info": "Enter the exact title of the menu this block belongs to"
+        }
+      ]
+    },
+    {
+      "type": "mega_menu_image",
+      "name": "Mega Menu Image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Menu Title",
+          "info": "Enter the exact title of the menu this image belongs to"
+        },
+        {
+          "type": "text",
+          "id": "image_title",
+          "label": "Image Title",
+          "default": "Featured Image"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_order",
+          "min": -3,
+          "max": 3,
+          "step": 1,
+          "label": "Image position in menu",
+          "default": -1
+        }
+      ]
+    },
+    {
+      "type": "mega_menu_collection",
+      "name": "Mega Menu Collection",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Menu Title",
+          "info": "Enter the exact title of the menu this collection belongs to"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "collection_order",
+          "min": -3,
+          "max": 3,
+          "step": 1,
+          "label": "Collection position in menu",
+          "default": 2
+        }
+      ]
+    },
+    {
+      "type": "mega_menu_product",
+      "name": "Mega Menu Product",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Menu Title",
+          "info": "Enter the exact title of the menu this product belongs to"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "range",
+          "id": "product_order",
+          "min": -3,
+          "max": 3,
+          "step": 1,
+          "label": "Product position in menu",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "mega_menu_announcement",
+      "name": "Mega Menu Announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Menu Title",
+          "info": "Enter the exact title of the menu this announcement belongs to"
+        },
+        {
+          "type": "text",
+          "id": "announcement_text",
+          "label": "Announcement text",
+          "default": "Announcement text here"
+        },
+        {
+          "type": "url",
+          "id": "announcement_link",
+          "label": "Announcement link"
+        },
+        {
+          "type": "color_scheme",
+          "id": "announcement_color",
+          "label": "Announcement color scheme"
+        }
+      ]
     }
   ]
 }

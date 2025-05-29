@@ -2249,6 +2249,7 @@ input[type='checkbox'] {
   margin: 0;
   letter-spacing: 0.1rem;
   min-height: 3.8rem;
+  font-size: 1.1rem;
 }
 
 .announcement-bar-slider--fade-in-next .announcement-bar__message,
@@ -2837,6 +2838,16 @@ details[open]>.header__menu-item .icon-caret {
 .header__menu-item:hover .header__active-menu-item {
   text-decoration-thickness: 0.2rem;
 }
+
+details[open]>.list-menu__item .icon-caret {
+  transform: rotate(180deg);
+  padding-left: 15px;
+}
+
+.list-menu__item .icon-caret {
+  padding-right: 15px;
+}
+
 
 .header__submenu {
   transition: opacity var(--duration-default) ease, transform var(--duration-default) ease;
