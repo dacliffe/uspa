@@ -41,7 +41,7 @@
       assign ratio = 1
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="card-wrapper product-card-wrapper">
     <div
       class="
         card card--{{ settings.card_style }}
@@ -132,7 +132,7 @@
               <a
                 href="{{ card_product.url }}"
                 id="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}"
-                class="full-unstyled-link"
+                class="full-unstyled-link no-underline-hover"
                 aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
               >
                 {{ card_product.title | escape }}
@@ -169,7 +169,7 @@
             <a
               href="{{ card_product.url }}"
               id="CardLink-{{ section_id }}-{{ card_product.id }}"
-              class="full-unstyled-link"
+              class="full-unstyled-link no-underline-hover"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
               {{ card_product.title | escape }}
@@ -664,7 +664,7 @@
       assign ratio = 0.8
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="card-wrapper product-card-wrapper">
     <div
       class="
         card card--{{ settings.card_style }}

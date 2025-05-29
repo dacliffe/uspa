@@ -12,6 +12,7 @@ window.setupQuickAdd = function () {
     wrapper.classList.add('quick-add-initialized');
     let timeoutId;
     let selectedVariantId = null;
+    let isAddingToCart = false;
 
     const quickAddContainer = wrapper.querySelector('.quick-add-container');
     const variantButtons = wrapper.querySelectorAll('.add-to-cart-button');
@@ -90,7 +91,7 @@ window.setupQuickAdd = function () {
           return;
         }
 
-        if (quickAddContainer) {
+        if (quickAddContainer && !isAddingToCart) {
           timeoutId = setTimeout(() => {
             quickAddContainer.classList.remove('open');
             // Only hide fully if no variant is selected
@@ -118,17 +119,17 @@ window.setupQuickAdd = function () {
             return;
           }
 
-          timeoutId = setTimeout(() => {
-            this.classList.remove('open');
-            // Only hide fully if no variant is selected
-            if (selectedVariantId === null) {
-              this.classList.add('hidden');
-              // Hide the submit button container if quick add closes and no variant is selected
-              if (submitContainer) {
-                submitContainer.classList.remove('visible');
+          if (!isAddingToCart) {
+            timeoutId = setTimeout(() => {
+              this.classList.remove('open');
+              if (selectedVariantId === null) {
+                this.classList.add('hidden');
+                if (submitContainer) {
+                  submitContainer.classList.remove('visible');
+                }
               }
-            }
-          }, 100);
+            }, 100);
+          }
         });
       }
     }
@@ -174,6 +175,7 @@ window.setupQuickAdd = function () {
           return;
         }
 
+        isAddingToCart = true; // Set state when starting to add to cart
         addToCartButton.dataset.clicked = 'true';
         addToCartButton.disabled = true; // Disable while adding
 
@@ -199,12 +201,6 @@ window.setupQuickAdd = function () {
             addToCartButton.disabled = true;
             addToCartButton.dataset.variantId = '';
             delete addToCartButton.dataset.clicked;
-          }
-          if (quickAddContainer) {
-            quickAddContainer.classList.remove('open');
-            setTimeout(() => {
-              quickAddContainer.classList.add('hidden');
-            }, 300);
           }
         } catch (error) {
           console.error('Error in add to cart:', error);
@@ -289,17 +285,30 @@ class CartManager {
       if (!response.ok) throw new Error('Failed to add item');
 
       const quickAddContainer = card.querySelector('.quick-add-container');
+      const submitContainer = card.querySelector('.quick-add-submit-container');
+
       if (quickAddContainer) {
-        quickAddContainer.classList.add('quick-add-container-hold');
-        setTimeout(() => {
-          quickAddContainer.classList.remove('quick-add-container-hold');
-        }, 4000);
+        quickAddContainer.classList.add('open');
+        quickAddContainer.classList.remove('hidden');
+      }
+      if (submitContainer) {
+        submitContainer.classList.add('visible');
       }
 
       await this.updateCartCount();
-      await this.updateCartDrawer();
       button.dataset.clicked = 'false';
       this.hideSpinner(card);
+
+      setTimeout(async () => {
+        if (quickAddContainer) {
+          quickAddContainer.classList.remove('open');
+          quickAddContainer.classList.add('hidden');
+        }
+        if (submitContainer) {
+          submitContainer.classList.remove('visible');
+        }
+        await this.updateCartDrawer();
+      }, 3000);
 
       return response.json();
     } catch (error) {
@@ -310,7 +319,7 @@ class CartManager {
   hideSpinner(card) {
     const spinner = card.querySelector('.loading__spinner');
     const spinnerContainer = card.querySelector('.spinner-container');
-    const addedToCartMessage = spinnerContainer?.querySelector('.hidden');
+    const addedToCartMessage = spinnerContainer?.querySelector('.added-to-cart');
 
     if (spinner) spinner.classList.add('hidden');
 
@@ -319,7 +328,7 @@ class CartManager {
       setTimeout(() => {
         addedToCartMessage.classList.add('hidden');
         spinnerContainer?.classList.add('hidden');
-      }, 4000);
+      }, 2000);
     } else {
       spinnerContainer?.classList.add('hidden');
     }
@@ -341,6 +350,10 @@ class CartManager {
       const newDrawerInner = doc.querySelector('.drawer__inner');
 
       if (drawerInner && newDrawerInner) {
+        // Store the current state of quick add containers
+        const openContainers = document.querySelectorAll('.quick-add-container.open');
+        const visibleSubmitContainers = document.querySelectorAll('.quick-add-submit-container.visible');
+
         drawerInner.innerHTML = newDrawerInner.innerHTML;
         document.querySelectorAll('.drawer').forEach((drawer) => {
           drawer.classList.remove('is-empty');
@@ -348,6 +361,15 @@ class CartManager {
 
         cartDrawer.classList.remove('is-empty');
         cartDrawer.classList.add('animate', 'active');
+
+        // Restore the state of quick add containers
+        openContainers.forEach((container) => {
+          container.classList.add('open');
+          container.classList.remove('hidden');
+        });
+        visibleSubmitContainers.forEach((container) => {
+          container.classList.add('visible');
+        });
       }
     } catch (error) {
       console.error('Error updating cart drawer:', error);
