@@ -27,6 +27,23 @@
     background: linear-gradient(1turn, rgba(0, 0, 0, 0.3), transparent 35%);
   }
 
+  .hide-on-desktop {
+    display: none;
+  }
+
+  .hide-on-mobile {
+    display: block;
+  }
+
+  @media screen and (max-width: 749px) {
+    .hide-on-mobile {
+      display: none;
+    }
+    .hide-on-desktop {
+      display: block;
+    }
+  }
+
   .card-cta-container {
     display: grid;
     justify-content: center;
@@ -105,7 +122,7 @@
         {%- for block in section.blocks -%}
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="{% if show_mobile_slider %} slider__slide{% endif %}collection-list__item grid__item{% if block.settings.image == nil %} collection-list__item--no-media{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} cta-container"
+            class="{% if show_mobile_slider %} slider__slide{% endif %}collection-list__item grid__item{% if block.settings.image == nil %} collection-list__item--no-media{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} cta-container{% if block.settings.visibility == 'desktop' %} hide-on-mobile{% endif %}{% if block.settings.visibility == 'mobile' %} hide-on-desktop{% endif %}"
             {{ block.shopify_attributes }}
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
@@ -283,9 +300,17 @@
         {
           "value": "2",
           "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        },
+        {
+          "value": "4",
+          "label": "4 columns"
         }
       ],
-      "default": "1",
+      "default": "4",
       "label": "Number of columns on mobile"
     },
     {
@@ -339,6 +364,26 @@
           "type": "url",
           "id": "url",
           "label": "URL"
+        },
+        {
+          "type": "select",
+          "id": "visibility",
+          "label": "Visibility",
+          "options": [
+            {
+              "value": "both",
+              "label": "Show on all devices"
+            },
+            {
+              "value": "desktop",
+              "label": "Show on desktop only"
+            },
+            {
+              "value": "mobile",
+              "label": "Show on mobile only"
+            }
+          ],
+          "default": "both"
         }
       ]
     },
