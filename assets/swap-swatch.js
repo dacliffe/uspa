@@ -1,11 +1,19 @@
 // Function to fetch product data by handle
 window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, variantId, label) {
   const url = `/products/${handle}.js`;
+  console.log('Fetching product data for:', handle);
 
   // Show loading spinner
   const mediaContainer = cardWrapper.querySelector('.card__media');
+  let spinner;
   if (mediaContainer) {
-    const spinner = document.createElement('div');
+    // Remove any existing spinner first
+    const existingSpinner = mediaContainer.querySelector('.loading-spinner');
+    if (existingSpinner) {
+      existingSpinner.remove();
+    }
+
+    spinner = document.createElement('div');
     spinner.className = 'loading-spinner';
     spinner.innerHTML = `
       <svg class="spinner" viewBox="0 0 50 50">
@@ -15,14 +23,23 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
     mediaContainer.appendChild(spinner);
   }
 
+  const removeSpinner = () => {
+    console.log('Removing spinner');
+    if (spinner && spinner.parentNode) {
+      spinner.remove();
+    }
+  };
+
   fetch(url)
     .then((response) => {
+      console.log('Fetch response received');
       if (!response.ok) {
         throw new Error('Product not found');
       }
       return response.json();
     })
     .then((productData) => {
+      console.log('Product data received');
       let images = productData.images;
       let comparePrice = productData.variants[0].compare_at_price;
       let price = productData.variants[0].price;
@@ -77,6 +94,11 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
         variantList.innerHTML = '';
         // Iterate over each variant and create a list item
         productData.variants.forEach((variant) => {
+          // Extract just the size from the variant title (assuming format is "Size / Color")
+          const sizeOnly = variant.title.split('/')[0].trim();
+          console.log('Variant title:', variant.title);
+          console.log('Extracted size:', sizeOnly);
+
           const listItem = document.createElement('li');
           listItem.innerHTML = `
               <input type="radio" 
@@ -84,117 +106,139 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
                      class="visually-hidden">
               <label class="add-to-cart-button${variant.available ? '' : ' unavailable'}" 
                      data-variant-id="${variant.id}">
-                  ${variant.title}
+                  ${sizeOnly}
               </label>
             `;
           variantList.appendChild(listItem);
         });
       }
 
-      setTimeout(() => {
-        // Update price elements
-        const priceContainer = cardWrapper.querySelector('.price__container');
-        const comparePriceElement = cardWrapper.querySelector('.price-item--regular');
-        const salePriceElement = cardWrapper.querySelector('.price-item--sale.price-item--last');
+      // Update price elements
+      const priceContainer = cardWrapper.querySelector('.price__container');
+      const regularPriceElement = cardWrapper.querySelector('.price__regular .price-item--regular');
+      const salePriceElement = cardWrapper.querySelector('.price__sale .price-item--regular');
+      const finalPriceElement = cardWrapper.querySelector('.price__sale .price-item--sale.price-item--last');
 
-        // Update prices
-        if (comparePrice != null && comparePrice > 0) {
-          // Show compare price and update both prices
-          if (comparePriceElement) {
-            comparePriceElement.textContent = `$${(comparePrice / 100).toFixed(2)}`;
-            comparePriceElement.classList.remove('hidden');
-          }
-          if (salePriceElement) {
-            salePriceElement.textContent = `$${(price / 100).toFixed(2)}`;
-          }
+      console.log('Price elements found:', {
+        priceContainer,
+        regularPriceElement,
+        salePriceElement,
+        finalPriceElement,
+      });
+      console.log('Price data:', {
+        comparePrice,
+        price,
+      });
+
+      // Update prices
+      if (comparePrice != null && comparePrice > 0) {
+        // Show compare price and update both prices
+        if (regularPriceElement) {
+          regularPriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
+          console.log('Updated regular price:', regularPriceElement.textContent);
+        }
+        if (salePriceElement) {
+          salePriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
+          console.log('Updated sale price:', salePriceElement.textContent);
+        }
+        if (finalPriceElement) {
+          finalPriceElement.textContent = `$${(price / 100).toFixed(2)}`;
+          console.log('Updated final price:', finalPriceElement.textContent);
+        }
+      } else {
+        // No compare price - just show the regular price
+        if (regularPriceElement) {
+          regularPriceElement.textContent = `$${(price / 100).toFixed(2)} AUD`;
+          console.log('Updated regular price:', regularPriceElement.textContent);
+        }
+        if (salePriceElement) {
+          salePriceElement.textContent = '';
+          console.log('Cleared sale price');
+        }
+        if (finalPriceElement) {
+          finalPriceElement.textContent = '';
+          console.log('Cleared final price');
+        }
+      }
+
+      // Update the product title and URL
+      const headingElement = cardWrapper.querySelector('[id^="CardLink-"]');
+      console.log('Title element found:', headingElement);
+      console.log('New title:', title);
+      console.log('New URL:', productUrl);
+
+      if (headingElement) {
+        headingElement.textContent = title;
+        headingElement.href = productUrl;
+        console.log('Updated title element:', headingElement);
+        console.log('Current title content:', headingElement.textContent);
+      } else {
+        console.log('No title element found in card wrapper');
+      }
+
+      const mediaLink = cardWrapper.querySelector('.media-link');
+      if (mediaLink) {
+        mediaLink.href = productUrl;
+      }
+
+      // Update the badge content if the element and badge value exist
+      const badgeElement = cardWrapper.querySelector('.card__badge span');
+      if (badgeElement) {
+        badgeElement.textContent = badgeValue;
+        if (badgeValue === '') {
+          badgeElement.classList.add('hidden');
         } else {
-          // No compare price - just show the regular price
-          if (comparePriceElement) {
-            comparePriceElement.textContent = '';
-            comparePriceElement.classList.add('hidden');
-          }
-          if (salePriceElement) {
-            salePriceElement.textContent = `$${(price / 100).toFixed(2)}`;
-          }
+          badgeElement.classList.remove('hidden');
         }
+      }
 
-        // Update the product title and URL
-        const headingElement = cardWrapper.querySelector('.card__title a');
-        if (headingElement) {
-          headingElement.textContent = title;
-          headingElement.href = productUrl;
+      // Update the label content if the element and label value exist
+      const labelElement = cardWrapper.querySelector('.bottom-label-text');
+      if (labelElement) {
+        labelElement.textContent = label;
+        if (label === '') {
+          labelElement.classList.add('hidden');
+        } else {
+          labelElement.classList.remove('hidden');
         }
+      }
 
-        const mediaLink = cardWrapper.querySelector('.media-link');
-        if (mediaLink) {
-          mediaLink.href = productUrl;
+      // Update the Add to Wishlist button
+      const addToWishlistButton = cardWrapper.querySelector('.swym-button.swym-add-to-wishlist-view-product');
+      if (addToWishlistButton) {
+        addToWishlistButton.setAttribute('data-product-id', productId);
+        addToWishlistButton.setAttribute('data-variant-id', variantId);
+
+        const wishlistUrl = `/products/${handle}?variant=${variantId}`;
+        addToWishlistButton.setAttribute('href', wishlistUrl);
+
+        const currentClass = [...addToWishlistButton.classList].find((className) => className.startsWith('product_'));
+        if (currentClass) {
+          addToWishlistButton.classList.remove(currentClass);
         }
+        addToWishlistButton.classList.add(`product_${productId}`);
+      }
 
-        // Update the badge content if the element and badge value exist
-        const badgeElement = cardWrapper.querySelector('.card__badge span');
-        if (badgeElement) {
-          badgeElement.textContent = badgeValue;
-          if (badgeValue === '') {
-            badgeElement.classList.add('hidden');
-          } else {
-            badgeElement.classList.remove('hidden');
-          }
-        }
+      // Reset quick-add initialization state
+      cardWrapper.classList.remove('quick-add-initialized');
 
-        // Update the label content if the element and label value exist
-        const labelElement = cardWrapper.querySelector('.bottom-label-text');
-        if (labelElement) {
-          labelElement.textContent = label;
-          if (label === '') {
-            labelElement.classList.add('hidden');
-          } else {
-            labelElement.classList.remove('hidden');
-          }
-        }
+      // Reinitialize quick-add functionality
+      if (typeof window.setupQuickAdd === 'function') {
+        window.setupQuickAdd();
+      }
 
-        // Update the Add to Wishlist button
-        const addToWishlistButton = cardWrapper.querySelector('.swym-button.swym-add-to-wishlist-view-product');
-        if (addToWishlistButton) {
-          addToWishlistButton.setAttribute('data-product-id', productId);
-          addToWishlistButton.setAttribute('data-variant-id', variantId);
+      // Reinitialize cart manager if it exists
+      if (window.cartManager && typeof window.cartManager.initialize === 'function') {
+        window.cartManager.initialize();
+      }
 
-          const wishlistUrl = `/products/${handle}?variant=${variantId}`;
-          addToWishlistButton.setAttribute('href', wishlistUrl);
-
-          const currentClass = [...addToWishlistButton.classList].find((className) => className.startsWith('product_'));
-          if (currentClass) {
-            addToWishlistButton.classList.remove(currentClass);
-          }
-          addToWishlistButton.classList.add(`product_${productId}`);
-        }
-
-        // Reset quick-add initialization state
-        cardWrapper.classList.remove('quick-add-initialized');
-
-        // Reinitialize quick-add functionality
-        if (typeof window.setupQuickAdd === 'function') {
-          window.setupQuickAdd();
-        }
-
-        // Reinitialize cart manager if it exists
-        if (window.cartManager) {
-          window.cartManager.initialize();
-        }
-
-        // Remove loading spinner
-        const spinner = mediaContainer?.querySelector('.loading-spinner');
-        if (spinner) {
-          spinner.remove();
-        }
-      }, 50); // 50ms delay to allow images to load first
+      // Remove loading spinner
+      removeSpinner();
     })
     .catch((error) => {
       console.error('Error fetching product data:', error);
       // Remove loading spinner on error
-      const spinner = mediaContainer?.querySelector('.loading-spinner');
-      if (spinner) {
-        spinner.remove();
-      }
+      removeSpinner();
     });
 };
 
