@@ -27,7 +27,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 0 10px;
+    padding: 0;
     width: 100%;
     margin: 5px 0;
     position: relative;
@@ -139,7 +139,6 @@
 }
 
 .mobile-cart-icon {
-    display: none;
     position: absolute;
     bottom: 5px;
     right: 5px;
@@ -148,15 +147,24 @@
     border-radius: 50%;
     cursor: pointer;
     z-index: 2;
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: center;
+
+}
+
+.mobile-cart-icon.hidden {
+    display: none !important;
 }
 
 .mobile-cart-icon svg {
     width: 24px;
     height: 24px;
     fill: currentColor;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media screen and (min-width: 990px) {
