@@ -4,9 +4,310 @@
     transition: transform 0.6s ease;
   }
 
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: block !important;
+  }
+
+  .carousel-caption {
+    position: absolute;
+    width: auto;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+
+  /* Desktop Styles */
+  @media screen and (min-width: 768px) {
+    .carousel-caption {
+      width: auto;
+      max-width: 800px;
+    }
+
+    .carousel-caption[data-vertical='top'] {
+      top: 5%;
+      bottom: auto;
+    }
+
+    .carousel-caption[data-vertical='middle'] {
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+
+    .carousel-caption[data-vertical='bottom'] {
+      bottom: 5%;
+      top: auto;
+    }
+
+    .carousel-caption[data-horizontal='left'] {
+      left: 5%;
+      right: auto;
+      transform: none;
+    }
+
+    .carousel-caption[data-horizontal='center'] {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+    }
+
+    .carousel-caption[data-horizontal='right'] {
+      right: 5%;
+      left: auto;
+      transform: none;
+    }
+
+    .carousel-caption[data-content-align='left'] {
+      text-align: left;
+    }
+
+    .carousel-caption[data-content-align='center'] {
+      text-align: center;
+    }
+
+    .carousel-caption[data-content-align='right'] {
+      text-align: right;
+    }
+
+    .carousel-caption[data-vertical='middle'][data-horizontal='center'] {
+      top: 50%;
+      left: 50%;
+      right: auto;
+      bottom: auto;
+      transform: translate(-50%, -50%);
+    }
+
+    .carousel-caption[data-vertical='middle'][data-horizontal='left'] {
+      top: 50%;
+      left: 5%;
+      right: auto;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+
+    .carousel-caption[data-vertical='middle'][data-horizontal='right'] {
+      top: 50%;
+      right: 5%;
+      left: auto;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+  }
+
+  /* Mobile Styles */
+  @media screen and (max-width: 767px) {
+    .carousel-caption {
+      width: 90%;
+      max-width: 100%;
+      padding: 0 15px;
+      transform: none !important;
+    }
+
+    .carousel-caption[data-mobile-vertical='top'] {
+      top: 5%;
+      bottom: auto;
+      transform: none !important;
+    }
+
+    .carousel-caption[data-mobile-vertical='middle'] {
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%) !important;
+    }
+
+    .carousel-caption[data-mobile-vertical='bottom'] {
+      bottom: 5%;
+      top: auto;
+      transform: none !important;
+    }
+
+    .carousel-caption[data-mobile-horizontal='left'] {
+      left: 5%;
+      right: auto;
+      transform: none !important;
+    }
+
+    .carousel-caption[data-mobile-horizontal='center'] {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%) !important;
+    }
+
+    .carousel-caption[data-mobile-horizontal='right'] {
+      right: 5%;
+      left: auto;
+      transform: none !important;
+    }
+
+    .carousel-caption[data-mobile-content-align='left'] {
+      text-align: left;
+    }
+
+    .carousel-caption[data-mobile-content-align='center'] {
+      text-align: center;
+    }
+
+    .carousel-caption[data-mobile-content-align='right'] {
+      text-align: right;
+    }
+
+    .carousel-caption[data-mobile-vertical='middle'][data-mobile-horizontal='center'] {
+      top: 50%;
+      left: 50%;
+      right: auto;
+      bottom: auto;
+      transform: translate(-50%, -50%) !important;
+    }
+
+    .carousel-caption[data-mobile-vertical='middle'][data-mobile-horizontal='left'] {
+      top: 50%;
+      left: 5%;
+      right: auto;
+      bottom: auto;
+      transform: translateY(-50%) !important;
+    }
+
+    .carousel-caption[data-mobile-vertical='middle'][data-mobile-horizontal='right'] {
+      top: 50%;
+      right: 5%;
+      left: auto;
+      bottom: auto;
+      transform: translateY(-50%) !important;
+    }
+  }
+
+  .carousel-caption h2 {
+    margin-bottom: 1rem;
+    color: var(--title-color, #fff);
+  }
+
+  .carousel-caption p {
+    margin-bottom: 2rem;
+    color: var(--subtitle-color, #fff);
+  }
+
+  .carousel-buttons {
+    display: inline-flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .carousel-button {
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  @media screen and (max-width: 767px) {
+    .carousel-caption h2 {
+      font-size: {{ block.settings.mobile_title_font_size }}px;
+    }
+    .carousel-caption p {
+      font-size: {{ block.settings.mobile_subtitle_font_size }}px;
+    }
+    .carousel-button {
+      font-size: {{ block.settings.mobile_button_font_size }}px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .carousel-caption h2 {
+      font-size: {{ block.settings.title_font_size }}px;
+    }
+    .carousel-caption p {
+      font-size: {{ block.settings.subtitle_font_size }}px;
+    }
+    .carousel-button {
+      font-size: {{ block.settings.desktop_button_font_size }}px;
+    }
+  }
+
+  .carousel-button--primary {
+    background: var(--button-primary-bg, #fff);
+    color: var(--button-primary-text, #000);
+    border: 2px solid var(--button-primary-bg, #fff);
+  }
+
+  .carousel-button--secondary {
+    background: transparent;
+    color: var(--button-secondary-text, #fff);
+    border: 2px solid var(--button-secondary-border, #fff);
+  }
+
+  .carousel-button--tertiary {
+    background: transparent;
+    color: var(--button-tertiary-text, #fff);
+    border: none;
+    text-decoration: underline;
+    padding: 0.5rem 0;
+  }
+
+  .carousel-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .carousel-button--primary:hover {
+    background: var(--button-primary-hover-bg, #f0f0f0);
+    border-color: var(--button-primary-hover-bg, #f0f0f0);
+    color: var(--button-primary-text, #000) !important;
+  }
+
+  .carousel-button--secondary:hover {
+    background: var(--button-secondary-hover-bg, rgba(255, 255, 255, 0.1));
+  }
+
+  .carousel-button--tertiary:hover {
+    color: var(--button-tertiary-hover-text, #f0f0f0);
+    text-decoration: none;
+  }
+
   .carousel-control-next,
   .carousel-control-prev {
     width: 5%;
+  }
+
+  .slide-button {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    color: #fff !important;
+  }
+
+  .slide-button:hover {
+    transform: scale(1.1);
+  }
+
+  .slider-button {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    color: #fff !important;
+  }
+
+  .slider-button .icon-caret {
+    width: 30px;
+    height: 30px;
+    fill: #000;
+  }
+
+  .slider-button--prev .icon-caret {
+    transform: rotate(180deg);
   }
 
   .carousel-indicators li {
@@ -17,65 +318,41 @@
     background-color: #121212;
   }
 
+  .slider-button {
+    color: #fff !important;
+  }
+
   .carousel-indicators {
+    display: none;
     z-index: 2;
   }
-</style>
 
-{% schema %}
-{
-  "name": "Image Slider",
-  "settings": [
-    {
-      "type": "number",
-      "id": "slide_interval",
-      "label": "Slide Interval (milliseconds)",
-      "default": 5000,
-      "info": "Time between slide transitions. Set to 0 to disable auto-sliding."
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .desktop-only {
+      display: inline;
     }
-  ],
-  "max_blocks": 5,
-  "blocks": [
-    {
-      "type": "image_slide",
-      "name": "Slide",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "desktop_image",
-          "label": "Desktop Image"
-        },
-        {
-          "type": "image_picker",
-          "id": "mobile_image",
-          "label": "Mobile Image"
-        },
-        {
-          "type": "url",
-          "id": "slide_link",
-          "label": "Slide Link"
-        },
-        {
-          "type": "text",
-          "id": "heading",
-          "label": "Heading",
-          "default": "Slide heading"
-        }
-      ]
+    .mobile-only {
+      display: none;
     }
-  ],
-  "presets": [
-    {
-      "name": "Image Slider",
-      "blocks": [
-        {
-          "type": "image_slide"
-        }
-      ]
+  }
+
+  @media screen and (max-width: 767px) {
+    .desktop-only {
+      display: none;
     }
-  ]
-}
-{% endschema %}
+    .mobile-only {
+      display: inline;
+    }
+  }
+</style>
 
 <div
   id="carouselExampleIndicators"
@@ -100,22 +377,105 @@
     {%- for block in section.blocks -%}
       <div class="carousel-item {% if forloop.first %}active{% endif %}">
         {%- if block.settings.slide_link -%}<a href="{{ block.settings.slide_link }}">{%- endif -%}
-        <picture>
-          <source media="(min-width: 768px)" srcset="{{ block.settings.desktop_image | img_url: 'master' }}">
-          <source media="(max-width: 767px)" srcset="{{ block.settings.mobile_image | img_url: 'master' }}">
-          <img
-            class="d-block w-100"
-            src="{{ block.settings.desktop_image | img_url: 'master' }}"
-            alt="{{ block.settings.heading }}"
-            width="1000"
-            height="500"
-          >
-        </picture>
-        {%- if block.settings.heading -%}
-          <div class="carousel-caption">
-            <h2>{{ block.settings.heading }}</h2>
+        <div style="position: relative;">
+          <picture>
+            <source media="(min-width: 768px)" srcset="{{ block.settings.desktop_image | img_url: 'master' }}">
+            <source media="(max-width: 767px)" srcset="{{ block.settings.mobile_image | img_url: 'master' }}">
+            <img
+              class="d-block w-100"
+              src="{{ block.settings.desktop_image | img_url: 'master' }}"
+              alt="{{ block.settings.title }}"
+              width="1000"
+              height="500"
+            >
+          </picture>
+          <div
+            class="image-overlay"
+            style="opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }}; background: {{ block.settings.overlay_color }};"
+          ></div>
+        </div>
+        <div
+          class="carousel-caption"
+          data-vertical="{{ block.settings.vertical_alignment }}"
+          data-horizontal="{{ block.settings.horizontal_alignment }}"
+          data-content-align="{{ block.settings.content_alignment }}"
+          data-mobile-vertical="{{ block.settings.mobile_vertical_alignment }}"
+          data-mobile-horizontal="{{ block.settings.mobile_horizontal_alignment }}"
+          data-mobile-content-align="{{ block.settings.mobile_content_alignment }}"
+        >
+          {%- if block.settings.title -%}
+            <h2
+              style="font-weight: {% if block.settings.title_bold %}bold{% else %}normal{% endif %}; --title-color: {{ block.settings.title_color }};"
+            >
+              {{ block.settings.title }}
+            </h2>
+          {%- endif -%}
+          {%- if block.settings.subtitle -%}
+            <p
+              style="font-weight: {% if block.settings.subtitle_bold %}bold{% else %}normal{% endif %}; --subtitle-color: {{ block.settings.subtitle_color }};"
+            >
+              {{ block.settings.subtitle }}
+            </p>
+          {%- endif -%}
+          <div class="carousel-buttons">
+            {%- if block.settings.button1_text and block.settings.button1_link -%}
+              <a
+                href="{{ block.settings.button1_link }}"
+                class="carousel-button carousel-button--{{ block.settings.button1_type }}"
+                style="--button-primary-bg: {{ block.settings.button1_theme_color }}; --button-primary-text: {{ block.settings.button1_text_color }}; --button-secondary-border: {{ block.settings.button1_theme_color }}; --button-secondary-text: {{ block.settings.button1_text_color }}; --button-tertiary-text: {{ block.settings.button1_text_color }};"
+                data-desktop-text="{{ block.settings.button1_text }}"
+                data-mobile-text="{{ block.settings.mobile_button1_text | default: block.settings.button1_text }}"
+              >
+                <span class="desktop-only">{{ block.settings.button1_text }}</span>
+                <span class="mobile-only">
+                  {{- block.settings.mobile_button1_text | default: block.settings.button1_text -}}
+                </span>
+              </a>
+            {%- endif -%}
+            {%- if block.settings.button2_text and block.settings.button2_link -%}
+              <a
+                href="{{ block.settings.button2_link }}"
+                class="carousel-button carousel-button--{{ block.settings.button2_type }}"
+                style="--button-primary-bg: {{ block.settings.button2_theme_color }}; --button-primary-text: {{ block.settings.button2_text_color }}; --button-secondary-border: {{ block.settings.button2_theme_color }}; --button-secondary-text: {{ block.settings.button2_text_color }}; --button-tertiary-text: {{ block.settings.button2_text_color }};"
+                data-desktop-text="{{ block.settings.button2_text }}"
+                data-mobile-text="{{ block.settings.mobile_button2_text | default: block.settings.button2_text }}"
+              >
+                <span class="desktop-only">{{ block.settings.button2_text }}</span>
+                <span class="mobile-only">
+                  {{- block.settings.mobile_button2_text | default: block.settings.button2_text -}}
+                </span>
+              </a>
+            {%- endif -%}
+            {%- if block.settings.button3_text and block.settings.button3_link -%}
+              <a
+                href="{{ block.settings.button3_link }}"
+                class="carousel-button carousel-button--{{ block.settings.button3_type }}"
+                style="--button-primary-bg: {{ block.settings.button3_theme_color }}; --button-primary-text: {{ block.settings.button3_text_color }}; --button-secondary-border: {{ block.settings.button3_theme_color }}; --button-secondary-text: {{ block.settings.button3_text_color }}; --button-tertiary-text: {{ block.settings.button3_text_color }};"
+                data-desktop-text="{{ block.settings.button3_text }}"
+                data-mobile-text="{{ block.settings.mobile_button3_text | default: block.settings.button3_text }}"
+              >
+                <span class="desktop-only">{{ block.settings.button3_text }}</span>
+                <span class="mobile-only">
+                  {{- block.settings.mobile_button3_text | default: block.settings.button3_text -}}
+                </span>
+              </a>
+            {%- endif -%}
+            {%- if block.settings.button4_text and block.settings.button4_link -%}
+              <a
+                href="{{ block.settings.button4_link }}"
+                class="carousel-button carousel-button--{{ block.settings.button4_type }}"
+                style="--button-primary-bg: {{ block.settings.button4_theme_color }}; --button-primary-text: {{ block.settings.button4_text_color }}; --button-secondary-border: {{ block.settings.button4_theme_color }}; --button-secondary-text: {{ block.settings.button4_text_color }}; --button-tertiary-text: {{ block.settings.button4_text_color }};"
+                data-desktop-text="{{ block.settings.button4_text }}"
+                data-mobile-text="{{ block.settings.mobile_button4_text | default: block.settings.button4_text }}"
+              >
+                <span class="desktop-only">{{ block.settings.button4_text }}</span>
+                <span class="mobile-only">
+                  {{- block.settings.mobile_button4_text | default: block.settings.button4_text -}}
+                </span>
+              </a>
+            {%- endif -%}
           </div>
-        {%- endif -%}
+        </div>
         {%- if block.settings.slide_link -%}</a>{%- endif -%}
       </div>
     {%- endfor -%}
@@ -124,7 +484,7 @@
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span
       type="button"
-      class="slider-button slider-button--prev"
+      class="slider-button slider-button--prev slide-button"
       name="previous"
       aria-label="{{ 'general.slider.previous_slide' | t }}"
     >
@@ -146,3 +506,501 @@
 </div>
 
 <div class="slider-buttons"></div>
+
+{% schema %}
+{
+  "name": "Image Slider",
+  "settings": [
+    {
+      "type": "number",
+      "id": "slide_interval",
+      "label": "Slide Interval (milliseconds)",
+      "default": 5000,
+      "info": "Time between slide transitions. Set to 0 to disable auto-sliding."
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button Font Size (px)",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "default": 16
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "image_slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "url",
+          "id": "slide_link",
+          "label": "Slide Link"
+        },
+        {
+          "type": "select",
+          "id": "vertical_alignment",
+          "label": "Desktop Vertical Alignment",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "middle",
+              "label": "Middle"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            }
+          ],
+          "default": "middle"
+        },
+        {
+          "type": "select",
+          "id": "horizontal_alignment",
+          "label": "Desktop Horizontal Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "Desktop Content Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left",
+          "info": "Aligns content within the caption container"
+        },
+        {
+          "type": "header",
+          "content": "Mobile Alignment"
+        },
+        {
+          "type": "select",
+          "id": "mobile_vertical_alignment",
+          "label": "Mobile Vertical Alignment",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "middle",
+              "label": "Middle"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            }
+          ],
+          "default": "middle"
+        },
+        {
+          "type": "select",
+          "id": "mobile_horizontal_alignment",
+          "label": "Mobile Horizontal Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "mobile_content_alignment",
+          "label": "Mobile Content Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center",
+          "info": "Aligns content within the caption container on mobile"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Slide Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Slide Subtitle"
+        },
+        {
+          "type": "range",
+          "id": "subtitle_font_size",
+          "label": "Desktop Subtitle Font Size (px)",
+          "min": 12,
+          "max": 48,
+          "step": 1,
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "mobile_subtitle_font_size",
+          "label": "Mobile Subtitle Font Size (px)",
+          "min": 12,
+          "max": 36,
+          "step": 1,
+          "default": 16
+        },
+        {
+          "type": "checkbox",
+          "id": "subtitle_bold",
+          "label": "Bold Subtitle Text",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "title_font_size",
+          "label": "Desktop Title Font Size (px)",
+          "min": 16,
+          "max": 80,
+          "step": 1,
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "mobile_title_font_size",
+          "label": "Mobile Title Font Size (px)",
+          "min": 16,
+          "max": 60,
+          "step": 1,
+          "default": 32
+        },
+        {
+          "type": "checkbox",
+          "id": "title_bold",
+          "label": "Bold Title Text",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "subtitle_color",
+          "label": "Subtitle Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Button 1"
+        },
+        {
+          "type": "text",
+          "id": "button1_text",
+          "label": "Desktop Button 1 Text"
+        },
+        {
+          "type": "text",
+          "id": "mobile_button1_text",
+          "label": "Mobile Button 1 Text"
+        },
+        {
+          "type": "url",
+          "id": "button1_link",
+          "label": "Button 1 Link"
+        },
+        {
+          "type": "select",
+          "id": "button1_type",
+          "label": "Button 1 Type",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "tertiary",
+              "label": "Tertiary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "color",
+          "id": "button1_theme_color",
+          "label": "Button 1 Theme Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button1_text_color",
+          "label": "Button 1 Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "header",
+          "content": "Button 2"
+        },
+        {
+          "type": "text",
+          "id": "button2_text",
+          "label": "Desktop Button 2 Text"
+        },
+        {
+          "type": "text",
+          "id": "mobile_button2_text",
+          "label": "Mobile Button 2 Text"
+        },
+        {
+          "type": "url",
+          "id": "button2_link",
+          "label": "Button 2 Link"
+        },
+        {
+          "type": "select",
+          "id": "button2_type",
+          "label": "Button 2 Type",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "tertiary",
+              "label": "Tertiary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "color",
+          "id": "button2_theme_color",
+          "label": "Button 2 Theme Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button2_text_color",
+          "label": "Button 2 Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "header",
+          "content": "Button 3"
+        },
+        {
+          "type": "text",
+          "id": "button3_text",
+          "label": "Desktop Button 3 Text"
+        },
+        {
+          "type": "text",
+          "id": "mobile_button3_text",
+          "label": "Mobile Button 3 Text"
+        },
+        {
+          "type": "url",
+          "id": "button3_link",
+          "label": "Button 3 Link"
+        },
+        {
+          "type": "select",
+          "id": "button3_type",
+          "label": "Button 3 Type",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "tertiary",
+              "label": "Tertiary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "color",
+          "id": "button3_theme_color",
+          "label": "Button 3 Theme Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button3_text_color",
+          "label": "Button 3 Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "header",
+          "content": "Button 4"
+        },
+        {
+          "type": "text",
+          "id": "button4_text",
+          "label": "Desktop Button 4 Text"
+        },
+        {
+          "type": "text",
+          "id": "mobile_button4_text",
+          "label": "Mobile Button 4 Text"
+        },
+        {
+          "type": "url",
+          "id": "button4_link",
+          "label": "Button 4 Link"
+        },
+        {
+          "type": "select",
+          "id": "button4_type",
+          "label": "Button 4 Type",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "tertiary",
+              "label": "Tertiary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "color",
+          "id": "button4_theme_color",
+          "label": "Button 4 Theme Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button4_text_color",
+          "label": "Button 4 Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Image Overlay Opacity",
+          "default": 0
+        },
+        {
+          "type": "color",
+          "id": "overlay_color",
+          "label": "Overlay Color",
+          "default": "#000000"
+        },
+        {
+          "type": "header",
+          "content": "Button Settings"
+        },
+        {
+          "type": "range",
+          "id": "desktop_button_font_size",
+          "label": "Desktop Button Font Size (px)",
+          "min": 12,
+          "max": 32,
+          "step": 1,
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "mobile_button_font_size",
+          "label": "Mobile Button Font Size (px)",
+          "min": 12,
+          "max": 32,
+          "step": 1,
+          "default": 14
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Slider",
+      "blocks": [
+        {
+          "type": "image_slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
