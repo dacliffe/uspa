@@ -199,7 +199,8 @@ if (window.Ajaxinate) {
 const productGridObserver = new MutationObserver((mutations) => {
   const shouldReinitialize = mutations.some((mutation) =>
     Array.from(mutation.addedNodes).some(
-      (node) => node.classList?.contains('card-wrapper') || node.querySelector('.card-wrapper')
+      (node) =>
+        node instanceof Element && (node.classList?.contains('card-wrapper') || node.querySelector('.card-wrapper'))
     )
   );
 
