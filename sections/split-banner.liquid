@@ -1,0 +1,942 @@
+{{ 'section-banner.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .split-banner {
+    display: flex;
+    width: 100%;
+    gap: {{ section.settings.gap }}px;
+  }
+
+  .split-banner__half {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .split-banner__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .split-banner__half::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ section.settings.overlay_color }};
+    opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    z-index: 1;
+  }
+
+  .split-banner__half img,
+  .split-banner__half video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+  }
+
+  .split-banner__content {
+    position: absolute;
+    width: auto;
+    padding: 0 20px;
+    z-index: 2;
+  }
+
+  .split-banner__title {
+    color: {{ section.settings.text_color }};
+    margin-bottom: 10px;
+  }
+
+  .split-banner__subtitle {
+    color: {{ section.settings.text_color }};
+    margin-bottom: 20px;
+  }
+
+  .split-banner__text {
+    color: {{ section.settings.text_color }};
+    margin-bottom: 20px;
+  }
+
+  .split-banner__button {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .split-banner__button--primary {
+    background-color: {{ section.settings.button_bg_color }};
+    color: {{ section.settings.button_text_color }};
+    border: 2px solid {{ section.settings.button_bg_color }};
+  }
+
+  .split-banner__button--primary:hover {
+    background-color: transparent;
+    color: {{ section.settings.button_bg_color }};
+  }
+
+  .split-banner__button--secondary {
+    background-color: transparent;
+    color: {{ section.settings.button_bg_color }};
+    border: 2px solid {{ section.settings.button_bg_color }};
+  }
+
+  .split-banner__button--secondary:hover {
+    background-color: {{ section.settings.button_bg_color }};
+    color: {{ section.settings.button_text_color }};
+  }
+
+  .split-banner__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .split-banner__image--desktop {
+    display: block;
+  }
+
+  .split-banner__image--mobile {
+    display: none;
+  }
+
+  /* Desktop Styles */
+  @media screen and (min-width: 768px) {
+    .split-banner__content {
+      width: auto;
+    }
+
+    .split-banner__content[data-vertical='top'] {
+      top: 5%;
+      bottom: auto;
+    }
+
+    .split-banner__content[data-vertical='middle'] {
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+
+    .split-banner__content[data-vertical='bottom'] {
+      bottom: 5%;
+      top: auto;
+    }
+
+    .split-banner__content[data-horizontal='left'] {
+      left: 5%;
+      right: auto;
+      transform: none;
+    }
+
+    .split-banner__content[data-horizontal='center'] {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+    }
+
+    .split-banner__content[data-horizontal='right'] {
+      right: 5%;
+      left: auto;
+      transform: none;
+    }
+
+    .split-banner__content[data-content-align='left'] {
+      text-align: left;
+    }
+
+    .split-banner__content[data-content-align='center'] {
+      text-align: center;
+    }
+
+    .split-banner__content[data-content-align='right'] {
+      text-align: right;
+    }
+
+    .split-banner__content[data-vertical='middle'][data-horizontal='center'] {
+      top: 50%;
+      left: 50%;
+      right: auto;
+      bottom: auto;
+      transform: translate(-50%, -50%);
+    }
+
+    .split-banner__content[data-vertical='middle'][data-horizontal='left'] {
+      top: 50%;
+      left: 5%;
+      right: auto;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+
+    .split-banner__content[data-vertical='middle'][data-horizontal='right'] {
+      top: 50%;
+      right: 5%;
+      left: auto;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+  }
+
+  /* Mobile Styles */
+  @media screen and (max-width: 767px) {
+    .split-banner__content {
+      width: 90%;
+      max-width: 100%;
+      padding: 0 15px;
+      transform: none !important;
+    }
+
+    .split-banner__content[data-mobile-vertical='top'] {
+      top: 5%;
+      bottom: auto;
+      transform: none !important;
+    }
+
+    .split-banner__content[data-mobile-vertical='middle'] {
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%) !important;
+    }
+
+    .split-banner__content[data-mobile-vertical='bottom'] {
+      bottom: 5%;
+      top: auto;
+      transform: none !important;
+    }
+
+    .split-banner__content[data-mobile-horizontal='left'] {
+      left: 5%;
+      right: auto;
+      transform: none !important;
+    }
+
+    .split-banner__content[data-mobile-horizontal='center'] {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%) !important;
+    }
+
+    .split-banner__content[data-mobile-horizontal='right'] {
+      right: 5%;
+      left: auto;
+      transform: none !important;
+    }
+
+    .split-banner__content[data-mobile-content-align='left'] {
+      text-align: left;
+    }
+
+    .split-banner__content[data-mobile-content-align='center'] {
+      text-align: center;
+    }
+
+    .split-banner__content[data-mobile-content-align='right'] {
+      text-align: right;
+    }
+
+    .split-banner__content[data-mobile-vertical='middle'][data-mobile-horizontal='center'] {
+      top: 50%;
+      left: 50%;
+      right: auto;
+      bottom: auto;
+      transform: translate(-50%, -50%) !important;
+    }
+
+    .split-banner__content[data-mobile-vertical='middle'][data-mobile-horizontal='left'] {
+      top: 50%;
+      left: 5%;
+      right: auto;
+      bottom: auto;
+      transform: translateY(-50%) !important;
+    }
+
+    .split-banner__content[data-mobile-vertical='middle'][data-mobile-horizontal='right'] {
+      top: 50%;
+      right: 5%;
+      left: auto;
+      bottom: auto;
+      transform: translateY(-50%) !important;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .split-banner {
+      flex-direction: column;
+      gap: {{ section.settings.mobile_gap }}px;
+    }
+
+    .split-banner__half {
+      aspect-ratio: 4/5;
+      min-height: 250px;
+    }
+
+    .split-banner__half img,
+    .split-banner__half video {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .split-banner__image--desktop {
+      display: none;
+    }
+
+    .split-banner__image--mobile {
+      display: block;
+    }
+
+    .split-banner__title {
+      font-size: calc({{ block.settings.title_size }}px * 0.8) !important;
+    }
+
+    .split-banner__subtitle {
+      font-size: calc({{ block.settings.subtitle_size }}px * 0.8) !important;
+    }
+
+    .split-banner__buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .split-banner__button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .split-banner__button {
+      width: auto;
+    }
+    .split-banner__content[data-content-align='center'] {
+      width: 100%;
+    }
+    .split-banner__content[data-content-align='left'],
+    .split-banner__content[data-content-align='right'] {
+      width: auto;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .split-banner {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+  }
+</style>
+
+<div class="split-banner page-width section-{{ section.id }}-padding">
+  {%- for block in section.blocks -%}
+    <div class="split-banner__half" {{ block.shopify_attributes }}>
+      <a href="{{ block.settings.link }}">
+        {%- if block.settings.use_video -%}
+          <div class="split-banner__image-wrapper">
+            {{ block.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+          </div>
+        {%- else -%}
+          <div class="split-banner__image-wrapper">
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 2000
+                | image_tag:
+                  loading: 'lazy',
+                  width: block.settings.image.width,
+                  height: block.settings.image.height,
+                  class: 'split-banner__image--desktop'
+              }}
+            {%- endif -%}
+
+            {%- if block.settings.mobile_image != blank -%}
+              {{
+                block.settings.mobile_image
+                | image_url: width: 1000
+                | image_tag:
+                  loading: 'lazy',
+                  width: block.settings.mobile_image.width,
+                  height: block.settings.mobile_image.height,
+                  class: 'split-banner__image--mobile'
+              }}
+            {%- elsif block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 1000
+                | image_tag:
+                  loading: 'lazy',
+                  width: block.settings.image.width,
+                  height: block.settings.image.height,
+                  class: 'split-banner__image--mobile'
+              }}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        <div
+          class="split-banner__content"
+          data-vertical="{{ block.settings.vertical_alignment }}"
+          data-horizontal="{{ block.settings.horizontal_alignment }}"
+          data-content-align="{{ block.settings.content_alignment }}"
+          data-mobile-vertical="{{ block.settings.mobile_vertical_alignment }}"
+          data-mobile-horizontal="{{ block.settings.mobile_horizontal_alignment }}"
+          data-mobile-content-align="{{ block.settings.mobile_content_alignment }}"
+        >
+          {%- if block.settings.title != blank -%}
+            <h2
+              class="split-banner__title"
+              style="font-size: {{ block.settings.title_size }}px; font-weight: {{ block.settings.title_weight }};"
+            >
+              {{ block.settings.title }}
+            </h2>
+          {%- endif -%}
+
+          {%- if block.settings.subtitle != blank -%}
+            <div
+              class="split-banner__subtitle"
+              style="font-size: {{ block.settings.subtitle_size }}px; font-weight: {{ block.settings.subtitle_weight }};"
+            >
+              {{ block.settings.subtitle }}
+            </div>
+          {%- endif -%}
+
+          {%- if block.settings.text != blank -%}
+            <div class="split-banner__text">
+              {{ block.settings.text }}
+            </div>
+          {%- endif -%}
+
+          <div class="split-banner__buttons">
+            {%- for i in (1..4) -%}
+              {%- assign button_text = 'button_text_' | append: i -%}
+              {%- assign button_style = 'button_style_' | append: i -%}
+              {%- assign button_link = 'button_link_' | append: i -%}
+
+              {%- if block.settings[button_text] != blank -%}
+                <a
+                  href="{{ block.settings[button_link] }}"
+                  class="split-banner__button split-banner__button--{{ block.settings[button_style] }}"
+                  style="font-size: {{ section.settings.button_font_size }}px;"
+                >
+                  {{ block.settings[button_text] }}
+                </a>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </a>
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Split Banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap between images",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile gap between images",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Overlay Settings"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Button font size",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "header",
+          "content": "Mobile Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image (Optional)",
+          "info": "If not set, desktop image will be used"
+        },
+        {
+          "type": "header",
+          "content": "Video"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_video",
+          "label": "Use Video",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "range",
+          "id": "title_size",
+          "min": 16,
+          "max": 72,
+          "step": 2,
+          "unit": "px",
+          "label": "Title font size",
+          "default": 36
+        },
+        {
+          "type": "select",
+          "id": "title_weight",
+          "label": "Title font weight",
+          "options": [
+            {
+              "value": "400",
+              "label": "Regular"
+            },
+            {
+              "value": "500",
+              "label": "Medium"
+            },
+            {
+              "value": "600",
+              "label": "Semi Bold"
+            },
+            {
+              "value": "700",
+              "label": "Bold"
+            }
+          ],
+          "default": "700"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "range",
+          "id": "subtitle_size",
+          "min": 12,
+          "max": 48,
+          "step": 2,
+          "unit": "px",
+          "label": "Subtitle font size",
+          "default": 24
+        },
+        {
+          "type": "select",
+          "id": "subtitle_weight",
+          "label": "Subtitle font weight",
+          "options": [
+            {
+              "value": "400",
+              "label": "Regular"
+            },
+            {
+              "value": "500",
+              "label": "Medium"
+            },
+            {
+              "value": "600",
+              "label": "Semi Bold"
+            },
+            {
+              "value": "700",
+              "label": "Bold"
+            }
+          ],
+          "default": "400"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "header",
+          "content": "Button 1"
+        },
+        {
+          "type": "text",
+          "id": "button_text_1",
+          "label": "Button Text"
+        },
+        {
+          "type": "select",
+          "id": "button_style_1",
+          "label": "Button Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "Button Link"
+        },
+        {
+          "type": "header",
+          "content": "Button 2"
+        },
+        {
+          "type": "text",
+          "id": "button_text_2",
+          "label": "Button Text"
+        },
+        {
+          "type": "select",
+          "id": "button_style_2",
+          "label": "Button Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "Button Link"
+        },
+        {
+          "type": "header",
+          "content": "Button 3"
+        },
+        {
+          "type": "text",
+          "id": "button_text_3",
+          "label": "Button Text"
+        },
+        {
+          "type": "select",
+          "id": "button_style_3",
+          "label": "Button Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "url",
+          "id": "button_link_3",
+          "label": "Button Link"
+        },
+        {
+          "type": "header",
+          "content": "Button 4"
+        },
+        {
+          "type": "text",
+          "id": "button_text_4",
+          "label": "Button Text"
+        },
+        {
+          "type": "select",
+          "id": "button_style_4",
+          "label": "Button Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "url",
+          "id": "button_link_4",
+          "label": "Button Link"
+        },
+        {
+          "type": "select",
+          "id": "vertical_alignment",
+          "label": "Desktop Vertical Alignment",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "middle",
+              "label": "Middle"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            }
+          ],
+          "default": "middle"
+        },
+        {
+          "type": "select",
+          "id": "horizontal_alignment",
+          "label": "Desktop Horizontal Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "Desktop Content Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center",
+          "info": "Aligns content within the caption container"
+        },
+        {
+          "type": "header",
+          "content": "Mobile Alignment"
+        },
+        {
+          "type": "select",
+          "id": "mobile_vertical_alignment",
+          "label": "Mobile Vertical Alignment",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "middle",
+              "label": "Middle"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            }
+          ],
+          "default": "middle"
+        },
+        {
+          "type": "select",
+          "id": "mobile_horizontal_alignment",
+          "label": "Mobile Horizontal Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "mobile_content_alignment",
+          "label": "Mobile Content Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center",
+          "info": "Aligns content within the caption container on mobile"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Split Banner",
+      "blocks": [
+        {
+          "type": "banner"
+        },
+        {
+          "type": "banner"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
