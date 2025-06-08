@@ -376,16 +376,22 @@
                   <script>
                     (() => {
                       fetch(`{{ p.url }}.json`)
-                        .then((res) => {
-                          if (!res.ok) {
-                            throw new Error("Can't find product", { cause: response });
-                          } else {
-                            document
-                              .querySelectorAll('.card-swatch--{{ p.id }}')
-                              .forEach((swatch) => swatch.classList.add('is-available'));
-                          }
+                        .then((res) => res.json())
+                        .then((data) => {
+                          document.querySelectorAll('.card-swatch--{{ p.id }}').forEach((swatch) => {
+                            swatch.classList.add('is-available');
+
+                            const cardWrapper = swatch.closest('.card-wrapper');
+                            const priceElement = cardWrapper.querySelector('.price-item--sale.price-item--last');
+
+                            if (priceElement) {
+                              priceElement.textContent = `$${(data.product.variants[0].price / 100).toFixed(2)}`;
+                              console.log('Updated price element:', priceElement);
+                            }
+                          });
                         })
                         .catch((err) => {
+                          console.error('Error fetching product:', err);
                           document
                             .querySelectorAll('.card-swatch--{{ p.id }}')
                             .forEach((swatch) => swatch.classList.add('not-available'));
