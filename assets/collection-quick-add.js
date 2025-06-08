@@ -42,11 +42,18 @@ window.setupQuickAdd = function () {
             if (otherSubmitContainer) {
               otherSubmitContainer.classList.remove('visible');
             }
+            // Show the cart icon for other containers
+            const otherCartIcon = container.closest('.product-card-wrapper')?.querySelector('.mobile-cart-icon');
+            if (otherCartIcon) {
+              otherCartIcon.classList.remove('hidden');
+            }
           }
         });
 
         if (quickAddContainer.classList.contains('open')) {
           quickAddContainer.classList.remove('open');
+          // Show the cart icon when closing
+          mobileCartIcon.classList.remove('hidden');
           // Only hide fully if no variant selected
           if (selectedVariantId === null) {
             setTimeout(() => {
@@ -59,6 +66,8 @@ window.setupQuickAdd = function () {
           }
         } else {
           quickAddContainer.classList.remove('hidden');
+          // Hide the cart icon when opening
+          mobileCartIcon.classList.add('hidden');
           requestAnimationFrame(() => {
             quickAddContainer.classList.add('open');
             // Show the submit button container when quick add opens
@@ -70,7 +79,7 @@ window.setupQuickAdd = function () {
       });
     }
 
-    // Desktop hover behavior
+    // Desktop hover behavior - only apply on desktop
     if (window.innerWidth > 990) {
       wrapper.addEventListener('mouseover', function (e) {
         if (quickAddContainer) {
@@ -150,6 +159,7 @@ window.setupQuickAdd = function () {
 
         // Get the variant ID from the clicked button
         const variantId = button.dataset.variantId;
+        selectedVariantId = variantId;
 
         // Update the Add to Cart button with the selected variant ID
         const addToCartButton = wrapper.querySelector('.quick-add-submit-container button');
@@ -214,6 +224,22 @@ window.setupQuickAdd = function () {
         }
       });
     }
+
+    // Add click handler for the document to close quick add when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.quick-add-container') && !e.target.closest('.mobile-cart-icon')) {
+        if (quickAddContainer && quickAddContainer.classList.contains('open')) {
+          quickAddContainer.classList.remove('open');
+          quickAddContainer.classList.add('hidden');
+          if (submitContainer) {
+            submitContainer.classList.remove('visible');
+          }
+          // Show the cart icon when closing via outside click
+          mobileCartIcon.classList.remove('hidden');
+          selectedVariantId = null;
+        }
+      }
+    });
   });
 
   // Add global click handler with improved targeting
