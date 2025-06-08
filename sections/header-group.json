@@ -86,7 +86,7 @@
           "settings": {
             "menu_title": "NEW",
             "image_title": "Womens",
-            "image_link": "",
+            "image_link": "shopify://collections/womens-new-arrivals",
             "image": "shopify://shop_images/WUP0397-D53-MS_1.JPG",
             "image_order": 2
           }
@@ -96,7 +96,7 @@
           "settings": {
             "menu_title": "NEW",
             "image_title": "Kids",
-            "image_link": "",
+            "image_link": "shopify://collections/kids-new-arrivals",
             "image": "shopify://shop_images/USP2370-P90-MS_1.JPG",
             "image_order": 3
           }
@@ -106,7 +106,7 @@
           "settings": {
             "menu_title": "POLO SHIRTS",
             "image_title": "Mens",
-            "image_link": "",
+            "image_link": "shopify://collections/mens-polo-shirts",
             "image": "shopify://shop_images/MUP3312-L45-MS_1.JPG",
             "image_order": 1
           }
@@ -116,7 +116,7 @@
           "settings": {
             "menu_title": "POLO SHIRTS",
             "image_title": "Womens",
-            "image_link": "",
+            "image_link": "shopify://collections/womens-polo-shirts",
             "image": "shopify://shop_images/WUP1311-002-MS_1.jpg",
             "image_order": 2
           }
@@ -126,7 +126,7 @@
           "settings": {
             "menu_title": "POLO SHIRTS",
             "image_title": "Kids",
-            "image_link": "",
+            "image_link": "shopify://collections/kids-polo-shirts",
             "image": "shopify://shop_images/USP3095-L45-MS_1.JPG",
             "image_order": 2
           }
@@ -140,6 +140,66 @@
             "image": "shopify://shop_images/MBP07448GCsemi_1024x1024_ec40c01b-8598-4b44-a5f4-a71dbadb88ee.webp",
             "image_order": 1
           }
+        },
+        "mega_menu_image_ik7cRe": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "ESSENTIALS",
+            "image_title": "Mens",
+            "image_link": "shopify://collections/mens-essentials",
+            "image": "shopify://shop_images/MUP4396-J09-MS_1.JPG",
+            "image_order": 0
+          }
+        },
+        "mega_menu_image_6A9e9C": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "ESSENTIALS",
+            "image_title": "Womens",
+            "image_link": "shopify://collections/womens-essentials",
+            "image": "shopify://shop_images/WUP0398-D53-MS_1.JPG",
+            "image_order": 0
+          }
+        },
+        "mega_menu_image_PVE3Jr": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "ESSENTIALS",
+            "image_title": "Kids",
+            "image_link": "shopify://collections/kids-essentials",
+            "image": "shopify://shop_images/USP4412-L45-MS_1.jpg",
+            "image_order": 0
+          }
+        },
+        "mega_menu_image_fHV9A8": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "MENS",
+            "image_title": "Polo Shirts",
+            "image_link": "shopify://collections/mens-polo-shirts",
+            "image": "shopify://shop_images/MUP3780-H03-MS_1.JPG",
+            "image_order": 0
+          }
+        },
+        "mega_menu_image_exzE3b": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "MENS",
+            "image_title": "Jackets",
+            "image_link": "",
+            "image": "shopify://shop_images/MUP3260-L45-MS_1.JPG",
+            "image_order": 1
+          }
+        },
+        "mega_menu_image_XWVGcR": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "MENS",
+            "image_title": "Pants",
+            "image_link": "shopify://collections/mens-trousers-chinos",
+            "image": "shopify://shop_images/MUP4416-L45-MS_4.jpg",
+            "image_order": 2
+          }
         }
       },
       "block_order": [
@@ -151,7 +211,13 @@
         "mega_menu_image_cFfpBf",
         "mega_menu_image_M7fGWE",
         "mega_menu_image_cD6Prn",
-        "mega_menu_image_wFEU9d"
+        "mega_menu_image_wFEU9d",
+        "mega_menu_image_ik7cRe",
+        "mega_menu_image_6A9e9C",
+        "mega_menu_image_PVE3Jr",
+        "mega_menu_image_fHV9A8",
+        "mega_menu_image_exzE3b",
+        "mega_menu_image_XWVGcR"
       ],
       "settings": {
         "show_strip": true,
