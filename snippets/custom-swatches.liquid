@@ -63,17 +63,31 @@
       </a>
       <script>
         (() => {
+          console.log('Fetching product data for:', '{{ p.url }}');
           fetch(`{{ p.url }}.json`)
-            .then((res) => {
-              if (!res.ok) {
-                throw new Error("Can't find product", { cause: response });
-              } else {
-                document
-                  .querySelectorAll('.swatch--{{ p.id }}')
-                  .forEach((swatch) => swatch.classList.add('is-available'));
-              }
+            .then((res) => res.json())
+            .then((data) => {
+              console.log('Product data received:', data);
+              const swatches = document.querySelectorAll('.swatch--{{ p.id }}');
+              console.log('Found swatches:', swatches);
+
+              swatches.forEach((swatch) => {
+                swatch.classList.add('is-available');
+                const price = data.product.variants[0].price;
+                console.log('Raw price from data:', price);
+
+                const formattedPrice = new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                }).format(price / 100);
+                console.log('Formatted price:', formattedPrice);
+
+                swatch.setAttribute('data-price', formattedPrice);
+                console.log('Updated swatch element:', swatch);
+              });
             })
             .catch((err) => {
+              console.error('Error fetching product data:', err);
               document
                 .querySelectorAll('.swatch--{{ p.id }}')
                 .forEach((swatch) => swatch.classList.add('not-available'));
