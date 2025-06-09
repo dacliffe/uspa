@@ -36,19 +36,19 @@
             "subtitle_color": "#ffffff",
             "button1_text": "MENS",
             "mobile_button1_text": "",
-            "button1_link": "shopify://collections",
+            "button1_link": "shopify://collections/mens-new-arrivals",
             "button1_type": "primary",
             "button1_theme_color": "#ffffff",
             "button1_text_color": "#000000",
             "button2_text": "WOMENS",
             "mobile_button2_text": "",
-            "button2_link": "shopify://collections",
+            "button2_link": "shopify://collections/womens-new-arrivals",
             "button2_type": "primary",
             "button2_theme_color": "#ffffff",
             "button2_text_color": "#000000",
             "button3_text": "KIDS",
             "mobile_button3_text": "",
-            "button3_link": "shopify://collections",
+            "button3_link": "shopify://collections/kids-new-arrivals",
             "button3_type": "primary",
             "button3_theme_color": "#ffffff",
             "button3_text_color": "#121212",
@@ -88,19 +88,19 @@
             "subtitle_color": "#ffffff",
             "button1_text": "MENS",
             "mobile_button1_text": "",
-            "button1_link": "shopify://collections",
+            "button1_link": "shopify://collections/mens-polo-shirts",
             "button1_type": "secondary",
             "button1_theme_color": "#ffffff",
             "button1_text_color": "#ffffff",
             "button2_text": "WOMENS",
             "mobile_button2_text": "",
-            "button2_link": "shopify://collections",
+            "button2_link": "shopify://collections/womens-polo-shirts",
             "button2_type": "secondary",
             "button2_theme_color": "#ffffff",
             "button2_text_color": "#ffffff",
             "button3_text": "KIDS",
             "mobile_button3_text": "",
-            "button3_link": "shopify://collections/all-accessories",
+            "button3_link": "shopify://collections/kids-polo-shirts",
             "button3_type": "secondary",
             "button3_theme_color": "#ffffff",
             "button3_text_color": "#ffffff",
@@ -143,15 +143,15 @@
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
-            "button_text_1": "Polo's",
+            "button_text_1": "Polos",
             "button_style_1": "secondary",
-            "button_link_1": "",
+            "button_link_1": "shopify://collections/mens-knit-polo-shirts",
             "button_text_2": "Sweaters",
             "button_style_2": "secondary",
-            "button_link_2": "",
+            "button_link_2": "shopify://collections/mens-hoodies-sweatshirts",
             "button_text_3": "Outerwear",
             "button_style_3": "secondary",
-            "button_link_3": "",
+            "button_link_3": "shopify://collections/mens-coats-jackets",
             "button_text_4": "",
             "button_style_4": "secondary",
             "button_link_4": "",
@@ -176,15 +176,15 @@
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
-            "button_text_1": "Polo's",
+            "button_text_1": "Polos",
             "button_style_1": "secondary",
-            "button_link_1": "",
+            "button_link_1": "shopify://collections/womens-polo-shirts",
             "button_text_2": "Sweaters",
             "button_style_2": "secondary",
-            "button_link_2": "",
+            "button_link_2": "shopify://collections/womens-sweatshirts-hoodies",
             "button_text_3": "Outerwear",
             "button_style_3": "secondary",
-            "button_link_3": "",
+            "button_link_3": "shopify://collections/womens-coats-jackets",
             "button_text_4": "",
             "button_style_4": "primary",
             "button_link_4": "",
@@ -223,7 +223,7 @@
           "settings": {
             "title": "POLOS",
             "image": "shopify://shop_images/1.jpg",
-            "url": "",
+            "url": "shopify://collections/polo-shirts",
             "visibility": "both"
           }
         },
@@ -232,7 +232,7 @@
           "settings": {
             "title": "SWEATERS",
             "image": "shopify://shop_images/2.jpg",
-            "url": "",
+            "url": "shopify://collections/sweatshirts-hoodies",
             "visibility": "both"
           }
         },
@@ -241,16 +241,16 @@
           "settings": {
             "title": "COATS",
             "image": "shopify://shop_images/Untitled_design-15.jpg",
-            "url": "",
+            "url": "shopify://collections/coats-jackets",
             "visibility": "both"
           }
         },
         "column_3BC7C3": {
           "type": "column",
           "settings": {
-            "title": "COATS",
+            "title": "Shirts",
             "image": "shopify://shop_images/Untitled_design-7.jpg",
-            "url": "",
+            "url": "shopify://collections/shirts",
             "visibility": "mobile"
           }
         }
@@ -411,40 +411,6 @@
         "padding_bottom": 0
       }
     },
-    "newsletter_WfK7c7": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_VaWj6i": {
-          "type": "heading",
-          "settings": {
-            "heading": "Subscribe to our emails",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph_h8EiUX": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
-          }
-        },
-        "email_form_CweEFd": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_VaWj6i",
-        "paragraph_h8EiUX",
-        "email_form_CweEFd"
-      ],
-      "name": "t:sections.newsletter.presets.name",
-      "settings": {
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "image_with_text_9DXJmj": {
       "type": "image-with-text",
       "blocks": {
@@ -510,15 +476,15 @@
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
-            "button_text_1": "Essentials",
+            "button_text_1": "Mens",
             "button_style_1": "secondary",
-            "button_link_1": "",
-            "button_text_2": "Shirts",
+            "button_link_1": "shopify://collections/mens-essentials",
+            "button_text_2": "Womens",
             "button_style_2": "secondary",
-            "button_link_2": "",
-            "button_text_3": "Trousers",
+            "button_link_2": "shopify://collections/womens-essentials",
+            "button_text_3": "Kids",
             "button_style_3": "secondary",
-            "button_link_3": "",
+            "button_link_3": "shopify://collections/kids-essentials",
             "button_text_4": "",
             "button_style_4": "primary",
             "button_link_4": "",
@@ -557,7 +523,6 @@
     "hero_banner_yRrJ8B",
     "column_list_nEkN6E",
     "rich_text_E9UMxH",
-    "newsletter_WfK7c7",
     "image_with_text_9DXJmj",
     "split_banner_Q7R3qX"
   ]
