@@ -186,7 +186,7 @@
           "settings": {
             "menu_title": "MENS",
             "image_title": "Jackets",
-            "image_link": "",
+            "image_link": "shopify://collections/mens-coats-jackets",
             "image": "shopify://shop_images/MUP3260-L45-MS_1.JPG",
             "image_order": 1
           }
