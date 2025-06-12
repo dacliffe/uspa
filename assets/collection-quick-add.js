@@ -85,12 +85,13 @@ window.setupQuickAdd = function () {
         if (quickAddContainer) {
           clearTimeout(timeoutId);
           quickAddContainer.classList.remove('hidden');
-          quickAddContainer.classList.add('open');
-          // Show the submit button container when quick add opens
-          if (submitContainer) {
-            submitContainer.classList.add('visible');
-          }
-          e.stopPropagation(); // Prevent the global click handler from immediately closing it
+          requestAnimationFrame(() => {
+            quickAddContainer.classList.add('open');
+            // Show the submit button container when quick add opens
+            if (submitContainer) {
+              submitContainer.classList.add('visible');
+            }
+          });
         }
       });
 
