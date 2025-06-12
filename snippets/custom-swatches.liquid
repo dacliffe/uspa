@@ -64,7 +64,6 @@
         </a>
         <script>
           (() => {
-            console.log('Fetching product data for:', '{{ p.url }}');
             fetch(`{{ p.url }}.json`)
               .then((res) => res.json())
               .then((data) => {

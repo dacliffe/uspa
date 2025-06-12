@@ -1,7 +1,6 @@
 // Function to fetch product data by handle
 window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, variantId, label) {
   const url = `/products/${handle}.js`;
-  console.log('Fetching product data for:', handle);
 
   // Show loading spinner
   const mediaContainer = cardWrapper.querySelector('.card__media');
@@ -24,7 +23,6 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
   }
 
   const removeSpinner = () => {
-    console.log('Removing spinner');
     if (spinner && spinner.parentNode) {
       spinner.remove();
     }
@@ -36,14 +34,12 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
 
   fetch(url)
     .then((response) => {
-      console.log('Fetch response received');
       if (!response.ok) {
         throw new Error('Product not found');
       }
       return response.json();
     })
     .then((productData) => {
-      console.log('Product data received');
       let images = productData.images;
       let comparePrice = productData.variants[0].compare_at_price;
       let price = productData.variants[0].price;
