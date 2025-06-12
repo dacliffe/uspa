@@ -198,6 +198,14 @@
                   </div>
                 </button>
               </div>
+              {% if paginate.next %}
+                <div
+                  id="paginateNext"
+                  data-next-url="{{ paginate.next.url }}"
+                  data-products-per-page="{{ paginate.page_size }}"
+                  data-total-results="{{ paginate.items }}"
+                ></div>
+              {% endif %}
             {%- endif -%}
           </div>
         {%- endif -%}
