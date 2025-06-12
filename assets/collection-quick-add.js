@@ -1,4 +1,3 @@
-// Make setupQuickAdd globally available
 window.setupQuickAdd = function () {
   // Initialize CartManager first if it doesn't exist
   if (!window.cartManager) {
@@ -81,7 +80,7 @@ window.setupQuickAdd = function () {
 
     // Desktop hover behavior - only apply on desktop
     if (window.innerWidth > 990) {
-      wrapper.addEventListener('mouseover', function (e) {
+      wrapper.addEventListener('mouseenter', function (e) {
         if (quickAddContainer) {
           clearTimeout(timeoutId);
           quickAddContainer.classList.remove('hidden');
@@ -95,7 +94,7 @@ window.setupQuickAdd = function () {
         }
       });
 
-      wrapper.addEventListener('mouseout', function (e) {
+      wrapper.addEventListener('mouseleave', function (e) {
         const relatedTarget = e.relatedTarget || e.toElement;
         if (relatedTarget && (this.contains(relatedTarget) || relatedTarget.closest('.quick-add-container'))) {
           return;
@@ -118,12 +117,11 @@ window.setupQuickAdd = function () {
 
       // Prevent quick add container from closing when hovering over it
       if (quickAddContainer) {
-        quickAddContainer.addEventListener('mouseover', function (e) {
+        quickAddContainer.addEventListener('mouseenter', function (e) {
           clearTimeout(timeoutId);
-          e.stopPropagation();
         });
 
-        quickAddContainer.addEventListener('mouseout', function (e) {
+        quickAddContainer.addEventListener('mouseleave', function (e) {
           const relatedTarget = e.relatedTarget || e.toElement;
           if (relatedTarget && this.contains(relatedTarget)) {
             return;
