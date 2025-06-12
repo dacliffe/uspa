@@ -420,6 +420,7 @@
   .footer-block-image.center,
   .footer-block-image.right {
     justify-content: center;
+    margin-top: 50px;
   }
 }
 

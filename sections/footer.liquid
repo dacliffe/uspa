@@ -37,6 +37,17 @@
     z-index: 1;
   }
 
+  .footer-block__image-wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .footer-block__image-wrapper img {
+      max-width: 100px;
+    }
+  }
+
   @media screen and (min-width: 750px) {
     .footer {
       margin-top: {{ section.settings.margin_top }}px;
