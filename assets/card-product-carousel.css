@@ -2,6 +2,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .card__media-carousel-track {
@@ -9,26 +10,33 @@
     width: 100%;
     height: 100%;
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
 }
 
 .card__media-slide {
-    position: relative;
-    flex: 0 0 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    scroll-snap-align: start;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     pointer-events: none;
+    visibility: hidden;
 }
 
 .card__media-slide.active {
     opacity: 1;
     pointer-events: auto;
+    visibility: visible;
+    z-index: 1;
+}
+
+.card__media-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .card__media-nav {
@@ -85,10 +93,6 @@
 }
 
 @media screen and (max-width: 749px) {
-    .card__media-carousel-track {
-        scroll-padding-left: 1.5rem;
-    }
-
     .card__media-nav {
         display: flex;
     }

@@ -320,6 +320,14 @@ function initCarousel(carouselTrack) {
   let startX = 0;
   let isDragging = false;
 
+  // Preload all images
+  slides.forEach((slide) => {
+    const img = slide.querySelector('img');
+    if (img) {
+      img.loading = 'eager';
+    }
+  });
+
   // Handle navigation buttons
   navButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
@@ -362,14 +370,26 @@ function initCarousel(carouselTrack) {
   });
 
   function updateSlides() {
-    slides.forEach((slide, index) => {
-      if (index === currentIndex) {
-        slide.classList.add('active');
-      } else {
-        slide.classList.remove('active');
-      }
+    // Remove active class from all slides
+    slides.forEach((slide) => {
+      slide.classList.remove('active');
     });
+
+    // Add active class to current slide
+    const currentSlide = slides[currentIndex];
+    if (currentSlide) {
+      currentSlide.classList.add('active');
+
+      // Ensure the image is loaded
+      const img = currentSlide.querySelector('img');
+      if (img && !img.complete) {
+        img.loading = 'eager';
+      }
+    }
   }
+
+  // Initialize first slide
+  updateSlides();
 }
 
 // Initialize all carousels on the page
