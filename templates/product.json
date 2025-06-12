@@ -55,6 +55,32 @@
           "type": "price",
           "settings": {}
         },
+        "afterpay_on_site_messaging_payments_messaging_wdNnGT": {
+          "type": "shopify://apps/afterpay-on-site-messaging/blocks/payments-messaging/f45a5524-d177-4475-bf59-281efd2215a8",
+          "settings": {
+            "text_align": "inherit",
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "color": "",
+            "size": "xs",
+            "intro_text": "or",
+            "show_interest_free": true,
+            "payment_amount_is_bold": true,
+            "show_with": true,
+            "logo_type": "compact-badge",
+            "logo_theme": "black-on-mint",
+            "modal_link_style": "circled-info-icon",
+            "modal_theme": "mint",
+            "breakpoint": 749,
+            "text_align_mobile": "inherit",
+            "margin_top_mobile": 0,
+            "margin_bottom_mobile": -2,
+            "show_lower_limit": true,
+            "show_upper_limit": true,
+            "show_if_outside_limits": true,
+            "product": "{{product}}"
+          }
+        },
         "vendor": {
           "type": "text",
           "settings": {
@@ -96,32 +122,6 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
-          }
-        },
-        "afterpay_on_site_messaging_payments_messaging_jaXxLT": {
-          "type": "shopify://apps/afterpay-on-site-messaging/blocks/payments-messaging/f45a5524-d177-4475-bf59-281efd2215a8",
-          "settings": {
-            "text_align": "inherit",
-            "margin_top": 16,
-            "margin_bottom": 16,
-            "color": "",
-            "size": "xs",
-            "intro_text": "or",
-            "show_interest_free": true,
-            "payment_amount_is_bold": true,
-            "show_with": true,
-            "logo_type": "compact-badge",
-            "logo_theme": "black-on-mint",
-            "modal_link_style": "circled-info-icon",
-            "modal_theme": "mint",
-            "breakpoint": 749,
-            "text_align_mobile": "inherit",
-            "margin_top_mobile": 16,
-            "margin_bottom_mobile": 16,
-            "show_lower_limit": true,
-            "show_upper_limit": true,
-            "show_if_outside_limits": true,
-            "product": "{{product}}"
           }
         },
         "description": {
@@ -185,13 +185,13 @@
         "title",
         "caption",
         "price",
+        "afterpay_on_site_messaging_payments_messaging_wdNnGT",
         "vendor",
         "divider_zfhBeB",
         "swatches_TdCRXL",
         "divider_NTebYy",
         "variant_picker",
         "buy_buttons",
-        "afterpay_on_site_messaging_payments_messaging_jaXxLT",
         "description",
         "collapsible-row-1",
         "collapsible-row-2",
