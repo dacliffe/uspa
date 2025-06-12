@@ -359,7 +359,13 @@
     {% if template contains 'collection' %}
       <script src="{{ 'collection-load-more.js' | asset_url }}" defer="defer"></script>
     {% endif %}
-  </head>
+  <script type="text/javascript">if(typeof window.hulkappsWishlist === 'undefined') {
+                            window.hulkappsWishlist = {};
+                        }
+                        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
+                        window.hulkappsWishlist.hasAppBlockSupport = '1';
+                        </script>
+</head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -435,7 +441,8 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  </body>
+  {% render 'hulkappsWishlistPopup' %}
+</body>
 </html>
 
 <!-- Begin Shopify-Afterpay JavaScript Snippet (v1.2.1) -->
