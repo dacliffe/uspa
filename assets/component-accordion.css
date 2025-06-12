@@ -55,6 +55,7 @@
   padding: 0 0.6rem;
   display: block !important;
   visibility: visible !important;
+  font-size: 1.2rem;
 }
 
 .accordion__content img {
