@@ -4,96 +4,98 @@
 -%}
 
 {%- if style_group_products.size > 0 -%}
-  <style>
-    .swatches {
-      --swatch-color-text: rgba(var(--color-foreground), 1);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      margin-block-end: 3rem;
-    }
-    .swatch {
-      width: 56px;
-      height: 70px;
-      border-radius: 10%;
-      transition: transform 0.2s ease;
-      padding: 2px;
-      box-sizing: border-box;
-      border: 2px solid #ddd;
-      overflow: hidden;
-    }
-    .swatch--current {
-      pointer-events: none;
-      border: 2px solid rgba(var(--color-foreground), 0.7);
-    }
-    .swatch-inner {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-    .swatch:hover {
-      border-color: #000;
-    }
-  </style>
-  <p class="form__label">COLOURS</p>
-  <div class="swatches">
-    {% for p in style_group_products %}
-      {%- assign swatch = p.metafields.custom.colour_swatch.value -%}
-      {%- assign swatch_image = p.metafields.general.swatch_image -%}
-      {%- if swatch_image != blank -%}
-        {%- assign product_image = swatch_image -%}
-      {%- else -%}
-        {%- assign product_image = p.featured_image -%}
-      {%- endif -%}
-      <a
-        href="{{ p.url }}"
-        class="swatch swatch--{{ p.id }} {% if p.handle == product.handle %}swatch--current{% endif %}"
-        title="{{ p.title | escape }}"
-      >
-        <img
-          src="{{ product_image | img_url: '220x275', crop: 'center', scale: 2 }}"
-          alt="{{ p.title }}"
-          class="swatch-inner"
-          width="56"
-          height="70"
-          loading="lazy"
+  <div class="main-product-swatches">
+    <style>
+      .main-product-swatches .swatches {
+        --swatch-color-text: rgba(var(--color-foreground), 1);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        margin-block-end: 3rem;
+      }
+      .main-product-swatches .swatch {
+        width: 56px;
+        height: 70px;
+        border-radius: 10%;
+        transition: transform 0.2s ease;
+        padding: 2px;
+        box-sizing: border-box;
+        border: 2px solid #ddd;
+        overflow: hidden;
+      }
+      .main-product-swatches .swatch--current {
+        pointer-events: none;
+        border: 2px solid rgba(var(--color-foreground), 0.7);
+      }
+      .main-product-swatches .swatch-inner {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+      .main-product-swatches .swatch:hover {
+        border-color: #000;
+      }
+    </style>
+    <p class="form__label">COLOURS</p>
+    <div class="swatches">
+      {% for p in style_group_products %}
+        {%- assign swatch = p.metafields.custom.colour_swatch.value -%}
+        {%- assign swatch_image = p.metafields.general.swatch_image -%}
+        {%- if swatch_image != blank -%}
+          {%- assign product_image = swatch_image -%}
+        {%- else -%}
+          {%- assign product_image = p.featured_image -%}
+        {%- endif -%}
+        <a
+          href="{{ p.url }}"
+          class="swatch card-swatch swatch--{{ p.id }} {% if p.handle == product.handle %}card-swatch--current{% endif %}"
+          title="{{ p.title | escape }}"
         >
-        <span class="visually-hidden">{{ p.title }}</span>
-      </a>
-      <script>
-        (() => {
-          console.log('Fetching product data for:', '{{ p.url }}');
-          fetch(`{{ p.url }}.json`)
-            .then((res) => res.json())
-            .then((data) => {
-              console.log('Product data received:', data);
-              const swatches = document.querySelectorAll('.swatch--{{ p.id }}');
-              console.log('Found swatches:', swatches);
+          <img
+            src="{{ product_image | img_url: '220x275', crop: 'center', scale: 2 }}"
+            alt="{{ p.title }}"
+            class="swatch-inner"
+            width="56"
+            height="70"
+            loading="lazy"
+          >
+          <span class="visually-hidden">{{ p.title }}</span>
+        </a>
+        <script>
+          (() => {
+            console.log('Fetching product data for:', '{{ p.url }}');
+            fetch(`{{ p.url }}.json`)
+              .then((res) => res.json())
+              .then((data) => {
+                console.log('Product data received:', data);
+                const swatches = document.querySelectorAll('.swatch--{{ p.id }}');
+                console.log('Found swatches:', swatches);
 
-              swatches.forEach((swatch) => {
-                swatch.classList.add('is-available');
-                const price = data.product.variants[0].price;
-                console.log('Raw price from data:', price);
+                swatches.forEach((swatch) => {
+                  swatch.classList.add('is-available');
+                  const price = data.product.variants[0].price;
+                  console.log('Raw price from data:', price);
 
-                const formattedPrice = new Intl.NumberFormat('en-US', {
-                  style: 'currency',
-                  currency: 'USD',
-                }).format(price / 100);
-                console.log('Formatted price:', formattedPrice);
+                  const formattedPrice = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                  }).format(price / 100);
+                  console.log('Formatted price:', formattedPrice);
 
-                swatch.setAttribute('data-price', formattedPrice);
-                console.log('Updated swatch element:', swatch);
+                  swatch.setAttribute('data-price', formattedPrice);
+                  console.log('Updated swatch element:', swatch);
+                });
+              })
+              .catch((err) => {
+                console.error('Error fetching product data:', err);
+                document
+                  .querySelectorAll('.swatch--{{ p.id }}')
+                  .forEach((swatch) => swatch.classList.add('not-available'));
               });
-            })
-            .catch((err) => {
-              console.error('Error fetching product data:', err);
-              document
-                .querySelectorAll('.swatch--{{ p.id }}')
-                .forEach((swatch) => swatch.classList.add('not-available'));
-            });
-        })();
-      </script>
-    {% endfor %}
+          })();
+        </script>
+      {% endfor %}
+    </div>
   </div>
 {%- endif -%}
