@@ -2,6 +2,8 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-search.css' | asset_url | stylesheet_tag }}
+{{ 'card-product-carousel.css' | asset_url | stylesheet_tag }}
+{{ 'component-load-more.css' | asset_url | stylesheet_tag }}
 
 {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
   {{ 'component-facets.css' | asset_url | stylesheet_tag }}
@@ -13,6 +15,10 @@
 {%- endif -%}
 
 <script src="{{ 'main-search.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'card-product-carousel.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'swap-swatch.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'collection-load-more.js' | asset_url }}" defer="defer"></script>
+<script defer src="{{ 'collection-quick-add.js' | asset_url }}"></script>
 
 <style>
   .template-search__header {
@@ -363,7 +369,7 @@
           "label": "t:sections.main-search.settings.columns_mobile.options__2.label"
         }
       ]
-    },    
+    },
     {
       "type": "header",
       "content": "t:sections.main-search.settings.header__1.content"
