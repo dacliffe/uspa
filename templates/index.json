@@ -513,6 +513,54 @@
         "text_color": "#ffffff",
         "button_font_size": 14
       }
+    },
+    "image_with_text_T4mbjc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_bH7gqW": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sports Meets Fashion",
+            "heading_size": "h1"
+          }
+        },
+        "text_XtTDYe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>When you purchase a U.S.Polo Assn products, you can own a piece of the polo sport. We are the official clothing brand of the United States Polo Association (USPA)--one of the oldest sports in the United States. This is a proud distinction that links our illusions past to a bright future that you are an important part of.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_Vm8Kzm": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/about-us",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_bH7gqW",
+        "text_XtTDYe",
+        "button_Vm8Kzm"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/SMF-0425-AUS.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -524,6 +572,7 @@
     "column_list_nEkN6E",
     "rich_text_E9UMxH",
     "image_with_text_9DXJmj",
-    "split_banner_Q7R3qX"
+    "split_banner_Q7R3qX",
+    "image_with_text_T4mbjc"
   ]
 }

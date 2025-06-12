@@ -155,6 +155,24 @@
             "page": ""
           }
         },
+        "collapsible_tab_rVtVir": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping",
+            "icon": "none",
+            "content": "<p><strong>AUSTRALIA STANDARD DELIVERY</strong></p><p>Orders are dispatched via Australia Post (standard service).</p><p><strong>Delivery Time:</strong></p><p>Deliveries are made on business days only (excluding weekends and public holidays).</p><p>Estimated Delivery Time:</p><p>NSW, VIC, QLD, ACT, SA, TAS: 3 - 5 Business Days</p><p>WA, NT: 7 - 10 Business Days</p><p><strong>Delivery Costs:</strong></p><ul><li>Orders $150 and over – <strong>Free delivery</strong></li><li>Orders under $150 – <strong>Flat rate of $10</strong></li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_QwFFUe": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Refunds & Returns",
+            "icon": "none",
+            "content": "<p>We understand that sometimes a purchase may not meet your expectations, and we want to make the returns process as simple as possible. If you need to return an item, please contact us <a href=\"https://uspoloassn.com.au/pages/contact\"><strong>here</strong></a>, where you will be guided through the process.</p><p>Our goodwill return policy allows you to request a refund for items purchased online at uspoloassn.com.au within <strong>28 days</strong> (excluding sale items), provided you have a valid receipt or parcel summary documentation.</p><p>For <strong>sale items</strong>, the return period is <strong>14 days</strong> from the date of receiving the goods. If your return meets our policy criteria, we will refund the purchase price of the product to your original payment method.</p><p>The refund process is typically completed within 10 working days of receiving the returned goods. However, during sale or peak times, this may take up to 14 working days. Refund processing times may also vary depending on your bank. If you receive a faulty item, we will replace it free of charge.</p><p>Please note that underwear items are non-returnable due to hygiene reasons, except in cases of faulty goods.</p><p><strong>IMPORTANT NOTES</strong></p><p><strong>Return Costs:</strong><br/>The cost of returning an item to our warehouse will be incurred by you, the customer, and is <strong>non-refundable</strong>. We recommend using our selected courier service to ensure your return reaches us safely.</p><p><strong>Refund Conditions:</strong><br/>Returned items must be in their original condition—unworn, unwashed, in original packaging, with all attached labels.</p><p><strong>EXCHANGES</strong></p><p>At this time, we do not accept exchanges. We encourage you to carefully review your order before completing your purchase.</p><p>If you have any questions, our <a href=\"https://uspoloassn.com.au/pages/contact\">customer support team</a> is available to assist you.</p>",
+            "page": ""
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -178,6 +196,8 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
+        "collapsible_tab_rVtVir",
+        "collapsible_tab_QwFFUe",
         "share"
       ],
       "settings": {
@@ -205,7 +225,7 @@
         "columns_desktop": 4,
         "columns_mobile": "2",
         "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
