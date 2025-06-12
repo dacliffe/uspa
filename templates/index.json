@@ -39,19 +39,19 @@
             "button1_link": "shopify://collections/mens-new-arrivals",
             "button1_type": "primary",
             "button1_theme_color": "#ffffff",
-            "button1_text_color": "#000000",
+            "button1_text_color": "#13294c",
             "button2_text": "WOMENS",
             "mobile_button2_text": "",
             "button2_link": "shopify://collections/womens-new-arrivals",
             "button2_type": "primary",
             "button2_theme_color": "#ffffff",
-            "button2_text_color": "#000000",
+            "button2_text_color": "#13294c",
             "button3_text": "KIDS",
             "mobile_button3_text": "",
             "button3_link": "shopify://collections/kids-new-arrivals",
             "button3_type": "primary",
             "button3_theme_color": "#ffffff",
-            "button3_text_color": "#121212",
+            "button3_text_color": "#13294c",
             "button4_text": "",
             "mobile_button4_text": "",
             "button4_link": "",
@@ -143,7 +143,7 @@
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
-            "button_text_1": "Polos",
+            "button_text_1": "Polo Shirts",
             "button_style_1": "secondary",
             "button_link_1": "shopify://collections/mens-knit-polo-shirts",
             "button_text_2": "Sweaters",
@@ -176,7 +176,7 @@
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
-            "button_text_1": "Polos",
+            "button_text_1": "Polo Shirts",
             "button_style_1": "secondary",
             "button_link_1": "shopify://collections/womens-polo-shirts",
             "button_text_2": "Sweaters",
@@ -221,7 +221,7 @@
         "column_7TQKQx": {
           "type": "column",
           "settings": {
-            "title": "POLOS",
+            "title": "POLO SHIRTS",
             "image": "shopify://shop_images/1.jpg",
             "url": "shopify://collections/polo-shirts",
             "visibility": "both"
@@ -248,7 +248,7 @@
         "column_3BC7C3": {
           "type": "column",
           "settings": {
-            "title": "Shirts",
+            "title": "SHIRTS",
             "image": "shopify://shop_images/Untitled_design-7.jpg",
             "url": "shopify://collections/shirts",
             "visibility": "mobile"
