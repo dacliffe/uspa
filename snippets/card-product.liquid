@@ -330,6 +330,7 @@
                   height: 100%;
                   border-radius: 100%;
                   display: block;
+                  border: 1px solid #b9b9b9;
                 }
                 .card-swatch--{{ p.id }} .card-swatch-inner {
                   opacity: 0;
@@ -342,26 +343,7 @@
                   {%- assign swatch = p.metafields.custom.colour_swatch.value -%}
                   {%- assign hex = swatch.colour -%}
                   {%- assign src = swatch.image.src -%}
-                  <style>
-                    .card-swatch--{{ p.id }} .card-swatch-inner {
-                      opacity: 0;
-                      transition: opacity 0.3s ease-in-out;
-                    {% if src != blank %}
-                      background: center center url('{{ src | image_url: width: 40, height: 40, crop: 'center' }}');
-                      background-size: 20px 20px;
-                    {% else %}
-                      background: {{ hex }};
-                    {% endif %}
-                    }
-                    .card-swatch--{{ p.id }}.is-available .card-swatch-inner {
-                      opacity: 1;
-                    }
-                    .card-swatch--{{ p.id }}.not-available {
-                      display: none;
-                    }
-                  </style>
-                  <a
-                    href="{{ p.url }}"
+                  <span
                     class="card-swatch card-swatch--{{ p.id }} {% if p.handle == card_product.handle %}card-swatch--current{% endif %}"
                     title="{{ p.title | escape }}"
                     data-url="{{ p.url }}"
@@ -372,32 +354,26 @@
                   >
                     <span class="card-swatch-inner"></span>
                     <span class="visually-hidden">{{ p.title }}</span>
-                  </a>
-                  <script>
-                    (() => {
-                      fetch(`{{ p.url }}.json`)
-                        .then((res) => res.json())
-                        .then((data) => {
-                          document.querySelectorAll('.card-swatch--{{ p.id }}').forEach((swatch) => {
-                            swatch.classList.add('is-available');
-
-                            const cardWrapper = swatch.closest('.card-wrapper');
-                            const priceElement = cardWrapper.querySelector('.price-item--sale.price-item--last');
-
-                            if (priceElement) {
-                              priceElement.textContent = `$${(data.product.variants[0].price / 100).toFixed(2)}`;
-                              console.log('Updated price element:', priceElement);
-                            }
-                          });
-                        })
-                        .catch((err) => {
-                          console.error('Error fetching product:', err);
-                          document
-                            .querySelectorAll('.card-swatch--{{ p.id }}')
-                            .forEach((swatch) => swatch.classList.add('not-available'));
-                        });
-                    })();
-                  </script>
+                  </span>
+                  <style>
+                    .card-swatch--{{ p.id }} .card-swatch-inner {
+                      opacity: 1;
+                      transition: opacity 0.3s ease-in-out;
+                      {% if src != blank %}
+                        background: center center url('{{ src | image_url: width: 40, height: 40, crop: 'center' }}');
+                        background-size: 20px 20px;
+                      {% else %}
+                        background: {{ hex }};
+                      {% endif %}
+                    }
+                    .card-swatch--{{ p.id }}.not-available .card-swatch-inner {
+                      opacity: 0.3;
+                      filter: grayscale(1);
+                    }
+                    .card-swatch--{{ p.id }}.not-available {
+                      display: none;
+                    }
+                  </style>
                 {% endfor %}
               </div>
             {%- endif -%}

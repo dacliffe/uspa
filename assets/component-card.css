@@ -115,6 +115,7 @@
   padding: 1rem;
   width: 100%;
   flex-grow: 1;
+  position: relative;
 }
 
 .card__content--auto-margins {
@@ -540,4 +541,37 @@
   .grid__item:nth-child(8n) .product-card-wrapper:hover .shape--blob {
     clip-path: polygon(var(--shape--blob-5));
   }
+}
+
+.card__content-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  position: static;
+  z-index: auto;
+}
+
+.card__content-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ensure buttons and interactive elements remain clickable */
+.card__content-link button,
+.card__content-link a:not(.card__content-link),
+.card__content-link .quick-add,
+.card__content-link .card__media-nav,
+.card__content-link .card-swatches {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.quick-add,
+.card__media-nav,
+.card-swatches {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
 }
