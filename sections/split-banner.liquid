@@ -284,41 +284,44 @@
     .split-banner {
       flex-direction: column;
       gap: {{ section.settings.mobile_gap }}px;
+      padding-right: 0 !important;
+      padding-left: 0 !important;
     }
 
     .split-banner__half {
-      aspect-ratio: 4/5;
+      position: relative;
+      width: 100%;
       min-height: 250px;
     }
-
-    .split-banner__half img,
-    .split-banner__half video {
+    .split-banner__half::before {
+      content: "";
+      display: block;
+      padding-top: 125%; /* 4/5 aspect ratio = 80% (use 125% for 4/5, tweak as needed) */
+    }
+    .split-banner__image-wrapper,
+    .split-banner__content {
       position: absolute;
       top: 0;
       left: 0;
+      right: 0;
+      bottom: 0;
     }
-
     .split-banner__image--desktop {
       display: none;
     }
-
     .split-banner__image--mobile {
       display: block;
     }
-
     .split-banner__title {
       font-size: calc({{ block.settings.title_size }}px * 0.8) !important;
     }
-
     .split-banner__subtitle {
       font-size: calc({{ block.settings.subtitle_size }}px * 0.8) !important;
     }
-
     .split-banner__buttons {
       flex-direction: column;
       align-items: center;
     }
-
     .split-banner__button {
       width: 100%;
       text-align: center;
