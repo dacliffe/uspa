@@ -33,7 +33,10 @@
           <fieldset class="js product-form__input product-form__input--swatch">
             <legend class="form__label">
               {%- if option.name == 'Size' -%}
-                SELECT YOUR SIZE:
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span>SELECT YOUR SIZE:</span>
+                  <div class="Clean_Size_Chart"></div>
+                </div>
               {%- else -%}
                 {{ option.name }}:
               {%- endif -%}
@@ -52,7 +55,10 @@
           <fieldset class="js product-form__input product-form__input--pill">
             <legend class="form__label">
               {%- if option.name == 'Size' -%}
-                SELECT YOUR SIZE
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span>SELECT YOUR SIZE</span>
+                  <div class="Clean_Size_Chart"></div>
+                </div>
               {%- else -%}
                 {{ option.name }}
               {%- endif -%}
@@ -68,7 +74,10 @@
           <div class="product-form__input product-form__input--dropdown">
             <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
               {%- if option.name == 'Size' -%}
-                SELECT YOUR SIZE
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span>SELECT YOUR SIZE</span>
+                  <div class="Clean_Size_Chart"></div>
+                </div>
               {%- else -%}
                 {{ option.name }}
               {%- endif -%}
