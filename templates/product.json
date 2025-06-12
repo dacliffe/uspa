@@ -89,6 +89,12 @@
             "swatch_shape": "circle"
           }
         },
+        "custom_liquid_RE6qNB": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -162,6 +168,7 @@
         "swatches_TdCRXL",
         "divider_NTebYy",
         "variant_picker",
+        "custom_liquid_RE6qNB",
         "buy_buttons",
         "description",
         "collapsible-row-1",
