@@ -171,15 +171,20 @@ if (!window.ProductLoadMore) {
         this.state.currentPage++;
 
         const nextUrlElement = nextPageDoc.getElementById('paginateNext');
+        console.log('Next paginate element:', nextUrlElement);
+        console.log('Next URL:', nextUrlElement?.dataset.nextUrl);
         this.state.hasMoreProducts = nextUrlElement && !!nextUrlElement.dataset.nextUrl;
 
         this.updateButtonVisibility();
 
-        document.dispatchEvent(
-          new CustomEvent('products:added', {
-            detail: { productsAdded: newProducts.length },
-          })
-        );
+        // Dispatch event after DOM is updated
+        requestAnimationFrame(() => {
+          document.dispatchEvent(
+            new CustomEvent('products:added', {
+              detail: { productsAdded: newProducts.length },
+            })
+          );
+        });
       } catch (error) {
         console.error('Error loading more products:', error);
         this.state.hasMoreProducts = false;
