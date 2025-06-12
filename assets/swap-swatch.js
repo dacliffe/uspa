@@ -30,6 +30,10 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
     }
   };
 
+  // Create a temporary container for new content
+  const tempContainer = document.createElement('div');
+  tempContainer.style.display = 'none';
+
   fetch(url)
     .then((response) => {
       console.log('Fetch response received');
@@ -54,22 +58,27 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
         price = selectedVariant.price;
       }
 
-      // Update carousel images
-      const carouselTrack = cardWrapper.querySelector('.card__media-carousel-track');
-      if (carouselTrack) {
-        carouselTrack.innerHTML = '';
-        images.slice(0, 4).forEach((image, index) => {
-          const slide = document.createElement('div');
-          slide.className = `card__media-slide${index === 0 ? ' active' : ''}`;
-          slide.setAttribute('data-index', index);
-          slide.innerHTML = `
+      // Create new carousel content in temporary container
+      const carouselTrack = document.createElement('div');
+      carouselTrack.className = 'card__media-carousel-track';
+      tempContainer.appendChild(carouselTrack);
+
+      // Create image loading promises
+      const imageLoadPromises = images.slice(0, 4).map((image, index) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.onload = () => {
+            const slide = document.createElement('div');
+            slide.className = `card__media-slide${index === 0 ? ' active' : ''}`;
+            slide.setAttribute('data-index', index);
+            slide.innerHTML = `
               <a href="${productUrl}" class="media media--transparent media--hover-effect">
                 <img
                   srcset="${image} 165w, ${image} 360w, ${image} 533w, ${image} 720w"
                   src="${image}"
                   sizes="(min-width: ${window.settings?.page_width || 1440}px) ${
-            window.settings?.page_width - 130 || 1310
-          }/4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+              window.settings?.page_width - 130 || 1310
+            }/4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                   alt="${title}"
                   class="motion-reduce"
                   ${index !== 0 ? 'loading="lazy"' : ''}
@@ -78,8 +87,20 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
                 >
               </a>
             `;
-          carouselTrack.appendChild(slide);
+            carouselTrack.appendChild(slide);
+            resolve();
+          };
+          img.src = image;
         });
+      });
+
+      // Wait for all images to load before updating the DOM
+      Promise.all(imageLoadPromises).then(() => {
+        // Update carousel
+        const existingCarouselTrack = cardWrapper.querySelector('.card__media-carousel-track');
+        if (existingCarouselTrack) {
+          existingCarouselTrack.replaceWith(carouselTrack);
+        }
 
         // Reinitialize carousel
         const carousel = carouselTrack.closest('.card__media-carousel');
@@ -87,20 +108,15 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
           carousel.classList.remove('initialized');
           new ProductCardCarousel(carousel);
         }
-      }
 
-      const variantList = cardWrapper.querySelector('#variant-list');
-      if (variantList) {
-        variantList.innerHTML = '';
-        // Iterate over each variant and create a list item
-        productData.variants.forEach((variant) => {
-          // Extract just the size from the variant title (assuming format is "Size / Color")
-          const sizeOnly = variant.title.split('/')[0].trim();
-          console.log('Variant title:', variant.title);
-          console.log('Extracted size:', sizeOnly);
-
-          const listItem = document.createElement('li');
-          listItem.innerHTML = `
+        // Update variant list
+        const variantList = cardWrapper.querySelector('#variant-list');
+        if (variantList) {
+          variantList.innerHTML = '';
+          productData.variants.forEach((variant) => {
+            const sizeOnly = variant.title.split('/')[0].trim();
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
               <input type="radio" 
                      data-variant-id="${variant.id}" 
                      class="visually-hidden">
@@ -109,135 +125,85 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
                   ${sizeOnly}
               </label>
             `;
-          variantList.appendChild(listItem);
-        });
-      }
-
-      // Update price elements
-      const priceContainer = cardWrapper.querySelector('.price__container');
-      const regularPriceElement = cardWrapper.querySelector('.price__regular .price-item--regular');
-      const salePriceElement = cardWrapper.querySelector('.price__sale .price-item--regular');
-      const finalPriceElement = cardWrapper.querySelector('.price__sale .price-item--sale.price-item--last');
-
-      console.log('Price elements found:', {
-        priceContainer,
-        regularPriceElement,
-        salePriceElement,
-        finalPriceElement,
-      });
-      console.log('Price data:', {
-        comparePrice,
-        price,
-      });
-
-      // Update prices
-      if (comparePrice != null && comparePrice > 0) {
-        // Show compare price and update both prices
-        if (regularPriceElement) {
-          regularPriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
-          console.log('Updated regular price:', regularPriceElement.textContent);
+            variantList.appendChild(listItem);
+          });
         }
-        if (salePriceElement) {
-          salePriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
-          console.log('Updated sale price:', salePriceElement.textContent);
-        }
-        if (finalPriceElement) {
-          finalPriceElement.textContent = `$${(price / 100).toFixed(2)}`;
-          console.log('Updated final price:', finalPriceElement.textContent);
-        }
-      } else {
-        // No compare price - just show the regular price
-        if (regularPriceElement) {
-          regularPriceElement.textContent = `$${(price / 100).toFixed(2)} AUD`;
-          console.log('Updated regular price:', regularPriceElement.textContent);
-        }
-        if (salePriceElement) {
-          salePriceElement.textContent = '';
-          console.log('Cleared sale price');
-        }
-        if (finalPriceElement) {
-          finalPriceElement.textContent = '';
-          console.log('Cleared final price');
-        }
-      }
 
-      // Update the product title and URL
-      const headingElement = cardWrapper.querySelector('[id^="CardLink-"]');
-      console.log('Title element found:', headingElement);
-      console.log('New title:', title);
-      console.log('New URL:', productUrl);
+        // Update price elements
+        const priceContainer = cardWrapper.querySelector('.price__container');
+        const regularPriceElement = cardWrapper.querySelector('.price__regular .price-item--regular');
+        const salePriceElement = cardWrapper.querySelector('.price__sale .price-item--regular');
+        const finalPriceElement = cardWrapper.querySelector('.price__sale .price-item--sale.price-item--last');
 
-      if (headingElement) {
-        headingElement.textContent = title;
-        headingElement.href = productUrl;
-        console.log('Updated title element:', headingElement);
-        console.log('Current title content:', headingElement.textContent);
-      } else {
-        console.log('No title element found in card wrapper');
-      }
-
-      const mediaLink = cardWrapper.querySelector('.media-link');
-      if (mediaLink) {
-        mediaLink.href = productUrl;
-      }
-
-      // Update the badge content if the element and badge value exist
-      const badgeElement = cardWrapper.querySelector('.card__badge span');
-      if (badgeElement) {
-        badgeElement.textContent = badgeValue;
-        if (badgeValue === '') {
-          badgeElement.classList.add('hidden');
+        if (comparePrice != null && comparePrice > 0) {
+          if (regularPriceElement) regularPriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
+          if (salePriceElement) salePriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
+          if (finalPriceElement) finalPriceElement.textContent = `$${(price / 100).toFixed(2)}`;
         } else {
-          badgeElement.classList.remove('hidden');
+          if (regularPriceElement) regularPriceElement.textContent = `$${(price / 100).toFixed(2)} AUD`;
+          if (salePriceElement) salePriceElement.textContent = '';
+          if (finalPriceElement) finalPriceElement.textContent = '';
         }
-      }
 
-      // Update the label content if the element and label value exist
-      const labelElement = cardWrapper.querySelector('.bottom-label-text');
-      if (labelElement) {
-        labelElement.textContent = label;
-        if (label === '') {
-          labelElement.classList.add('hidden');
-        } else {
-          labelElement.classList.remove('hidden');
+        // Update the product title and URL
+        const headingElement = cardWrapper.querySelector('[id^="CardLink-"]');
+        if (headingElement) {
+          headingElement.textContent = title;
+          headingElement.href = productUrl;
         }
-      }
 
-      // Update the Add to Wishlist button
-      const addToWishlistButton = cardWrapper.querySelector('.swym-button.swym-add-to-wishlist-view-product');
-      if (addToWishlistButton) {
-        addToWishlistButton.setAttribute('data-product-id', productId);
-        addToWishlistButton.setAttribute('data-variant-id', variantId);
-
-        const wishlistUrl = `/products/${handle}?variant=${variantId}`;
-        addToWishlistButton.setAttribute('href', wishlistUrl);
-
-        const currentClass = [...addToWishlistButton.classList].find((className) => className.startsWith('product_'));
-        if (currentClass) {
-          addToWishlistButton.classList.remove(currentClass);
+        const mediaLink = cardWrapper.querySelector('.media-link');
+        if (mediaLink) {
+          mediaLink.href = productUrl;
         }
-        addToWishlistButton.classList.add(`product_${productId}`);
-      }
 
-      // Reset quick-add initialization state
-      cardWrapper.classList.remove('quick-add-initialized');
+        // Update badge
+        const badgeElement = cardWrapper.querySelector('.card__badge span');
+        if (badgeElement) {
+          badgeElement.textContent = badgeValue;
+          badgeElement.classList.toggle('hidden', badgeValue === '');
+        }
 
-      // Reinitialize quick-add functionality
-      if (typeof window.setupQuickAdd === 'function') {
-        window.setupQuickAdd();
-      }
+        // Update label
+        const labelElement = cardWrapper.querySelector('.bottom-label-text');
+        if (labelElement) {
+          labelElement.textContent = label;
+          labelElement.classList.toggle('hidden', label === '');
+        }
 
-      // Reinitialize cart manager if it exists
-      if (window.cartManager && typeof window.cartManager.initialize === 'function') {
-        window.cartManager.initialize();
-      }
+        // Update wishlist button
+        const addToWishlistButton = cardWrapper.querySelector('.swym-button.swym-add-to-wishlist-view-product');
+        if (addToWishlistButton) {
+          addToWishlistButton.setAttribute('data-product-id', productId);
+          addToWishlistButton.setAttribute('data-variant-id', variantId);
+          addToWishlistButton.setAttribute('href', `/products/${handle}?variant=${variantId}`);
 
-      // Remove loading spinner
-      removeSpinner();
+          const currentClass = [...addToWishlistButton.classList].find((className) => className.startsWith('product_'));
+          if (currentClass) {
+            addToWishlistButton.classList.remove(currentClass);
+          }
+          addToWishlistButton.classList.add(`product_${productId}`);
+        }
+
+        // Reset quick-add initialization state
+        cardWrapper.classList.remove('quick-add-initialized');
+
+        // Reinitialize quick-add functionality
+        if (typeof window.setupQuickAdd === 'function') {
+          window.setupQuickAdd();
+        }
+
+        // Reinitialize cart manager if it exists
+        if (window.cartManager && typeof window.cartManager.initialize === 'function') {
+          window.cartManager.initialize();
+        }
+
+        // Remove loading spinner
+        removeSpinner();
+      });
     })
     .catch((error) => {
       console.error('Error fetching product data:', error);
-      // Remove loading spinner on error
       removeSpinner();
     });
 };
