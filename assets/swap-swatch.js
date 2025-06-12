@@ -102,7 +102,7 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
         const carousel = carouselTrack.closest('.card__media-carousel');
         if (carousel) {
           carousel.classList.remove('initialized');
-          new ProductCardCarousel(carousel);
+          initCarousel(carouselTrack);
         }
 
         // Update variant list
@@ -311,3 +311,71 @@ window.initializeCardSwatches = function () {
       });
   });
 };
+
+// Initialize carousel functionality
+function initCarousel(carouselTrack) {
+  const slides = carouselTrack.querySelectorAll('.card__media-slide');
+  const navButtons = carouselTrack.closest('.card__media-carousel').querySelectorAll('.card__media-nav-button');
+  let currentIndex = 0;
+  let startX = 0;
+  let isDragging = false;
+
+  // Handle navigation buttons
+  navButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const direction = button.getAttribute('data-direction');
+      if (direction === 'next') {
+        currentIndex = (currentIndex + 1) % slides.length;
+      } else {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      }
+      updateSlides();
+    });
+  });
+
+  // Handle touch events
+  carouselTrack.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  carouselTrack.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diff = startX - currentX;
+
+    if (Math.abs(diff) > 50) {
+      // Threshold for swipe
+      if (diff > 0) {
+        currentIndex = (currentIndex + 1) % slides.length;
+      } else {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      }
+      updateSlides();
+      isDragging = false;
+    }
+  });
+
+  carouselTrack.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+
+  function updateSlides() {
+    slides.forEach((slide, index) => {
+      if (index === currentIndex) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+  }
+}
+
+// Initialize all carousels on the page
+document.addEventListener('DOMContentLoaded', () => {
+  const carousels = document.querySelectorAll('.card__media-carousel-track');
+  carousels.forEach((carousel) => {
+    initCarousel(carousel);
+  });
+});
