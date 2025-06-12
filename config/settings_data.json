@@ -125,7 +125,7 @@
     "cart_pre_goal_message": "You're only <strong> [remainingForGoalFormatted] </strong>away from <strong>FREE SHIPPING</strong>",
     "cart_post_goal_message": "YOU'RE ELEGIBLE FOR FREE SHIPPING <strong>FREE SHIPPING</strong>",
     "cart_progress_bar_color": "#a41d35",
-    "cart_progress_bar_full_color": "#242833",
+    "cart_progress_bar_full_color": "#a41d35",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -142,6 +142,16 @@
     },
     "content_for_index": [],
     "blocks": {
+      "4499299782520642052": {
+        "type": "shopify://apps/clean-size-charts/blocks/core/feed2801-552f-4e8f-ba1f-32ba9fe8a8f0",
+        "disabled": false,
+        "settings": {}
+      },
+      "1744347199190486471": {
+        "type": "shopify://apps/advanced-wishlist/blocks/app/330d9272-08ea-4193-b3e0-475a69fa65fa",
+        "disabled": false,
+        "settings": {}
+      },
       "384495262013941155": {
         "type": "shopify://apps/advanced-wishlist/blocks/collection-btn/330d9272-08ea-4193-b3e0-475a69fa65fa",
         "disabled": true,
@@ -163,16 +173,6 @@
           "collection_count_background_color": "#5c6ac4",
           "collection_count_color": "#ffffff"
         }
-      },
-      "4499299782520642052": {
-        "type": "shopify://apps/clean-size-charts/blocks/core/feed2801-552f-4e8f-ba1f-32ba9fe8a8f0",
-        "disabled": false,
-        "settings": {}
-      },
-      "1744347199190486471": {
-        "type": "shopify://apps/advanced-wishlist/blocks/app/330d9272-08ea-4193-b3e0-475a69fa65fa",
-        "disabled": false,
-        "settings": {}
       }
     },
     "color_schemes": {
