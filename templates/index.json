@@ -121,7 +121,6 @@
         "image_slide_zdNam3",
         "image_slide_txnJ6Y"
       ],
-      "name": "Image Slider",
       "settings": {
         "slide_interval": 5000,
         "button_font_size": 14
@@ -201,7 +200,6 @@
         "banner_Q8CfbK",
         "banner_hNy8aw"
       ],
-      "name": "Split Banner",
       "settings": {
         "gap": 12,
         "mobile_gap": 10,
@@ -261,7 +259,6 @@
         "column_xkMD7V",
         "column_3BC7C3"
       ],
-      "name": "Column List",
       "settings": {
         "title": "",
         "heading_size": "h2",
@@ -285,7 +282,7 @@
         "description": "<p><strong>New Season Essentials Just Landed</strong></p>",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 4,
+        "columns_desktop": 6,
         "enable_desktop_slider": false,
         "full_width": true,
         "show_view_all": false,
@@ -306,7 +303,6 @@
     "hero_banner_yRrJ8B": {
       "type": "hero-banner",
       "disabled": true,
-      "name": "Banner",
       "settings": {
         "video_banner_image_desktop": "shopify://files/videos/55436_USPA%20-%20FW24%20-%20FALL%20DENIM%20-%20MASTER-2.mp4",
         "video_banner_image_select_desktop": true,
@@ -365,7 +361,6 @@
         "column_tbQnn6"
       ],
       "disabled": true,
-      "name": "Column List",
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -401,7 +396,6 @@
         "text_qrUbY6"
       ],
       "disabled": true,
-      "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -443,7 +437,6 @@
         "button_CEzGjF"
       ],
       "disabled": true,
-      "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/SMF-0425-AUS.jpg",
         "height": "adapt",
@@ -500,7 +493,6 @@
       "block_order": [
         "banner_MmJ7xy"
       ],
-      "name": "Split Banner",
       "settings": {
         "gap": 12,
         "mobile_gap": 10,
@@ -545,7 +537,6 @@
         "text_XtTDYe",
         "button_Vm8Kzm"
       ],
-      "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/SMF-0425-AUS.jpg",
         "height": "adapt",
