@@ -101,8 +101,15 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
         // Reinitialize carousel
         const carousel = carouselTrack.closest('.card__media-carousel');
         if (carousel) {
+          // Remove initialized class to allow reinitialization
           carousel.classList.remove('initialized');
-          initCarousel(carouselTrack);
+          // Destroy existing carousel instance if it exists
+          if (carousel._carouselInstance) {
+            carousel._carouselInstance.destroy();
+          }
+          // Initialize new carousel instance
+          carousel._carouselInstance = new ProductCardCarousel(carousel);
+          carousel.classList.add('initialized');
         }
 
         // Update variant list
