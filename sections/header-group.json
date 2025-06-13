@@ -77,7 +77,7 @@
             "menu_title": "NEW",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-new-arrivals",
-            "image": "shopify://shop_images/MUP4129-J09-MS_1.JPG",
+            "image": "shopify://shop_images/25.jpg",
             "image_order": 1
           }
         },
@@ -87,7 +87,7 @@
             "menu_title": "NEW",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-new-arrivals",
-            "image": "shopify://shop_images/WUP0397-D53-MS_1.JPG",
+            "image": "shopify://shop_images/23_21974739-3609-4e1e-a8b0-4a474dc0a9d6.jpg",
             "image_order": 2
           }
         },
@@ -97,7 +97,7 @@
             "menu_title": "NEW",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-new-arrivals",
-            "image": "shopify://shop_images/USP2370-P90-MS_1.JPG",
+            "image": "shopify://shop_images/26.jpg",
             "image_order": 3
           }
         },
@@ -167,7 +167,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-essentials",
-            "image": "shopify://shop_images/13.jpg",
+            "image": "shopify://shop_images/23.jpg",
             "image_order": 0
           }
         },
@@ -177,7 +177,7 @@
             "menu_title": "MENS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/MUP3780-H03-MS_1.JPG",
+            "image": "shopify://shop_images/NAV_IMAGES.jpg",
             "image_order": 0
           }
         },
@@ -187,7 +187,7 @@
             "menu_title": "MENS",
             "image_title": "Jackets",
             "image_link": "shopify://collections/mens-coats-jackets",
-            "image": "shopify://shop_images/MUP3260-L45-MS_1.JPG",
+            "image": "shopify://shop_images/13_0ba4f038-eb46-461c-9b31-dd36a9cd16c8.jpg",
             "image_order": 1
           }
         },
@@ -197,7 +197,7 @@
             "menu_title": "MENS",
             "image_title": "Pants",
             "image_link": "shopify://collections/mens-trousers-chinos",
-            "image": "shopify://shop_images/MUP4416-L45-MS_4.jpg",
+            "image": "shopify://shop_images/12.jpg",
             "image_order": 2
           }
         },
@@ -237,7 +237,7 @@
             "menu_title": "KIDS",
             "image_title": "T-shirts",
             "image_link": "shopify://collections/kids-t-shirts",
-            "image": "shopify://shop_images/USP2374-209-MS_2.jpg",
+            "image": "shopify://shop_images/NAV_IMAGES_3.jpg",
             "image_order": 0
           }
         },
@@ -247,7 +247,7 @@
             "menu_title": "KIDS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/10.jpg",
+            "image": "shopify://shop_images/NAV_IMAGES_1.jpg",
             "image_order": 0
           }
         }
