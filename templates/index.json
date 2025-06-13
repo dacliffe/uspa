@@ -282,7 +282,7 @@
         "description": "<p><strong>New Season Essentials Just Landed</strong></p>",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 6,
+        "columns_desktop": 4,
         "enable_desktop_slider": false,
         "full_width": true,
         "show_view_all": false,
