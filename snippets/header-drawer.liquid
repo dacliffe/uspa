@@ -30,7 +30,7 @@
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
                       >
                         {{ link.title | escape }}
-                        {% render 'icon-caret', class: 'header-drawer__icon-caret' %}
+                        {% render 'icon-caret', class: 'header-drawer__icon-caret header-drawer-main__icon-caret' %}
                       </summary>
                       <div
                         id="link-{{ link.handle | escape }}"
@@ -59,7 +59,6 @@
                                     <span class="childlink">
                                       {{ childlink.title | escape }}
                                     </span>
-                                    {% render 'icon-caret', class: 'header-drawer__icon-caret' %}
                                   </a>
                                 {%- else -%}
                                   <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
@@ -69,7 +68,9 @@
                                     >
                                       <span class="childlink">
                                         {{ childlink.title | escape }}
-                                        {% render 'icon-caret', class: 'header-drawer__icon-caret' %}
+                                        {% render 'icon-caret',
+                                          class: 'header-drawer__icon-caret header-drawer-main__icon-caret'
+                                        %}
                                       </span>
                                     </summary>
                                     <div
