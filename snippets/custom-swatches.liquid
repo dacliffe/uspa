@@ -13,7 +13,7 @@
         gap: 1.2rem;
         margin-block-end: 3rem;
       }
-      .main-product-swatches .swatch {
+      .main-product-swatches .main-product-swatch {
         width: 56px;
         height: 70px;
         border-radius: 10%;
@@ -23,7 +23,7 @@
         border: 2px solid #ddd;
         overflow: hidden;
       }
-      .main-product-swatches .swatch--current {
+      .main-product-swatches .main-product-swatch--current {
         pointer-events: none;
         border: 2px solid rgba(var(--color-foreground), 0.7);
       }
@@ -33,7 +33,7 @@
         display: block;
         object-fit: cover;
       }
-      .main-product-swatches .swatch:hover {
+      .main-product-swatches .main-product-swatch:hover {
         border-color: #000;
       }
     </style>
@@ -49,7 +49,7 @@
         {%- endif -%}
         <a
           href="{{ p.url }}"
-          class="swatch card-swatch swatch--{{ p.id }} {% if p.handle == product.handle %}card-swatch--current{% endif %}"
+          class="swatch main-product-swatch swatch--{{ p.id }} {% if p.handle == product.handle %}main-product-swatch--current{% endif %}"
           title="{{ p.title | escape }}"
         >
           <img
