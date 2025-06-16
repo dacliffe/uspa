@@ -3670,3 +3670,8 @@ details-disclosure>details {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
+
+.cart-button:hover {
+  text-decoration: none !important;
+  color: #fff !important;
+}
