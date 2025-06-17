@@ -160,6 +160,12 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
           mediaLink.href = productUrl;
         }
 
+        // Update all anchor tags within the card that link to a product
+        const productLinks = cardWrapper.querySelectorAll('a[href*="/products/"]');
+        productLinks.forEach((link) => {
+          link.href = productUrl;
+        });
+
         // Update badge
         const badgeElement = cardWrapper.querySelector('.card__badge span');
         if (badgeElement) {
