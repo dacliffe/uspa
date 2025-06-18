@@ -107,9 +107,21 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
           if (carousel._carouselInstance) {
             carousel._carouselInstance.destroy();
           }
-          // Initialize new carousel instance
-          carousel._carouselInstance = new ProductCardCarousel(carousel);
-          carousel.classList.add('initialized');
+          // Initialize new carousel instance with error handling
+          try {
+            if (typeof window.ProductCardCarousel === 'function') {
+              carousel._carouselInstance = new window.ProductCardCarousel(carousel);
+              carousel.classList.add('initialized');
+            } else {
+              console.warn('ProductCardCarousel not available, using fallback carousel initialization');
+              // Fallback: use the existing initCarousel function
+              initCarousel(carouselTrack);
+            }
+          } catch (error) {
+            console.error('Error reinitializing carousel:', error);
+            // Fallback: use the existing initCarousel function
+            initCarousel(carouselTrack);
+          }
         }
 
         // Update variant list
@@ -221,12 +233,17 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
 function initializeSwatches() {
   const swatches = document.querySelectorAll('.card-swatch:not(.initialized)');
 
-  swatches.forEach((swatch) => {
+  swatches.forEach((swatch, index) => {
     swatch.classList.add('initialized');
     swatch.addEventListener('click', function (event) {
       event.preventDefault();
 
       const cardWrapper = swatch.closest('.product-card-wrapper');
+      if (!cardWrapper) {
+        console.error('Could not find product-card-wrapper for swatch');
+        return;
+      }
+
       // Remove active state from all swatches in this card
       const allSwatches = cardWrapper.querySelectorAll('.card-swatch');
       allSwatches.forEach((sw) => sw.classList.remove('card-swatch--current'));
@@ -234,11 +251,18 @@ function initializeSwatches() {
       swatch.classList.add('card-swatch--current');
 
       const productUrl = swatch.getAttribute('data-url');
-      const handle = productUrl.split('/products/')[1];
+      // Extract handle and remove any query parameters
+      const handle = productUrl.split('/products/')[1]?.split('?')[0];
       const productId = swatch.getAttribute('data-id');
       const variantId = swatch.getAttribute('data-variant-id');
       const badgeValue = swatch.getAttribute('data-badge');
       const label = swatch.getAttribute('data-label');
+
+
+      // Validate that we have a clean handle
+      if (!handle) {
+        return;
+      }
 
       window.fetchProductData(handle, cardWrapper, badgeValue, productId, variantId, label);
     });
@@ -252,7 +276,10 @@ document.addEventListener('DOMContentLoaded', initializeSwatches);
 document.addEventListener('products:added', () => {
   // Use requestAnimationFrame to ensure DOM is updated
   requestAnimationFrame(() => {
-    initializeSwatches();
+    // Add a small delay to ensure DOM is fully ready
+    setTimeout(() => {
+      initializeSwatches();
+    }, 50);
   });
 });
 
@@ -300,16 +327,31 @@ document.head.appendChild(style);
 
 // Function to initialize card swatches on product cards
 document.addEventListener('DOMContentLoaded', initializeCardSwatches);
-document.addEventListener('products:added', initializeCardSwatches);
+document.addEventListener('products:added', () => {
+  // Use requestAnimationFrame to ensure DOM is updated
+  requestAnimationFrame(() => {
+    // Add a small delay to ensure DOM is fully ready
+    setTimeout(() => {
+      initializeCardSwatches();
+    }, 50);
+  });
+});
 
 window.initializeCardSwatches = function () {
-  document.querySelectorAll('.card-swatch:not(.swatch-initialized)').forEach((swatch) => {
+  const swatches = document.querySelectorAll('.card-swatch:not(.swatch-initialized)');
+
+  swatches.forEach((swatch, index) => {
     swatch.classList.add('swatch-initialized');
     const productUrl = swatch.getAttribute('data-url');
     const productId = swatch.getAttribute('data-id');
-    if (!productUrl || !productId) return;
+    if (!productUrl || !productId) {
+      return;
+    }
 
-    fetch(`${productUrl}.json`)
+    // Clean the URL to remove query parameters
+    const cleanProductUrl = productUrl.split('?')[0];
+
+    fetch(`${cleanProductUrl}.json`)
       .then((res) => res.json())
       .then((data) => {
         swatch.classList.add('is-available');
@@ -319,7 +361,7 @@ window.initializeCardSwatches = function () {
           priceElement.textContent = `$${(data.product.variants[0].price / 100).toFixed(2)}`;
         }
       })
-      .catch(() => {
+      .catch((error) => {
         swatch.classList.add('not-available');
       });
   });

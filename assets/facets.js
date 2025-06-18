@@ -68,6 +68,17 @@ class FacetFiltersForm extends HTMLElement {
         FacetFiltersForm.renderProductGridContainer(html);
         FacetFiltersForm.renderProductCount(html);
         if (typeof initializeScrollAnimationTrigger === 'function') initializeScrollAnimationTrigger(html.innerHTML);
+
+        // Dispatch events to reinitialize functionality after product grid update
+        requestAnimationFrame(() => {
+          document.dispatchEvent(new CustomEvent('collection:updated', { bubbles: true }));
+          document.dispatchEvent(
+            new CustomEvent('products:added', {
+              detail: { productsAdded: document.querySelectorAll('#product-grid .grid__item').length },
+              bubbles: true,
+            })
+          );
+        });
       });
   }
 
@@ -77,6 +88,17 @@ class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.renderProductGridContainer(html);
     FacetFiltersForm.renderProductCount(html);
     if (typeof initializeScrollAnimationTrigger === 'function') initializeScrollAnimationTrigger(html.innerHTML);
+
+    // Dispatch events to reinitialize functionality after product grid update
+    requestAnimationFrame(() => {
+      document.dispatchEvent(new CustomEvent('collection:updated', { bubbles: true }));
+      document.dispatchEvent(
+        new CustomEvent('products:added', {
+          detail: { productsAdded: document.querySelectorAll('#product-grid .grid__item').length },
+          bubbles: true,
+        })
+      );
+    });
   }
 
   static renderProductGridContainer(html) {

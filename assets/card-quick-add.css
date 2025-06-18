@@ -227,3 +227,34 @@
     position: relative;
     z-index: 2;
 }
+
+@media screen and (max-width: 749px) {
+    .card__media-nav--mobile-center {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem;
+        z-index: 10;
+        pointer-events: none;
+        overflow: visible;
+    }
+
+    .card__media-nav--mobile-center .card__media-nav-button {
+        pointer-events: auto;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .card__media,
+    .card__media-carousel,
+    .card__media-carousel-track {
+        overflow: visible !important;
+    }
+}

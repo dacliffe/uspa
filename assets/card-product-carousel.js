@@ -142,6 +142,9 @@ class ProductCardCarousel {
   }
 }
 
+// Make ProductCardCarousel globally available
+window.ProductCardCarousel = ProductCardCarousel;
+
 // Initialize carousels
 function initializeCarousels() {
   // Clean up existing carousels
