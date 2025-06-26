@@ -15,8 +15,8 @@
         "image_slide_zdNam3": {
           "type": "image_slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Untitled_design-9.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design-8.jpg",
+            "desktop_image": "shopify://shop_images/Untitled_design-20.jpg",
+            "mobile_image": "shopify://shop_images/Untitled_design-21.jpg",
             "slide_link": "",
             "vertical_alignment": "middle",
             "horizontal_alignment": "center",
@@ -24,8 +24,8 @@
             "mobile_vertical_alignment": "bottom",
             "mobile_horizontal_alignment": "center",
             "mobile_content_alignment": "center",
-            "title": "AUTUMN WINTER 25 COLLECTION",
-            "subtitle": "WINTER LAYERED RIGHT. ESSENTIAL FOR THE SEASON",
+            "title": "WIOSNA LATO 25",
+            "subtitle": "Nowy sezon, ponadczasowy styl",
             "subtitle_font_size": 24,
             "mobile_subtitle_font_size": 16,
             "subtitle_bold": true,
@@ -34,19 +34,19 @@
             "title_bold": true,
             "title_color": "#ffffff",
             "subtitle_color": "#ffffff",
-            "button1_text": "MENS",
+            "button1_text": "MĘSKIE",
             "mobile_button1_text": "",
             "button1_link": "shopify://collections/mens-new-arrivals",
             "button1_type": "primary",
             "button1_theme_color": "#ffffff",
             "button1_text_color": "#13294c",
-            "button2_text": "WOMENS",
+            "button2_text": "DAMSKI",
             "mobile_button2_text": "",
             "button2_link": "shopify://collections/womens-new-arrivals",
             "button2_type": "primary",
             "button2_theme_color": "#ffffff",
             "button2_text_color": "#13294c",
-            "button3_text": "KIDS",
+            "button3_text": "DZIECI",
             "mobile_button3_text": "",
             "button3_link": "shopify://collections/kids-new-arrivals",
             "button3_type": "primary",
@@ -58,7 +58,7 @@
             "button4_type": "primary",
             "button4_theme_color": "#ffffff",
             "button4_text_color": "#000000",
-            "overlay_opacity": 5,
+            "overlay_opacity": 10,
             "overlay_color": "#000000",
             "desktop_button_font_size": 16,
             "mobile_button_font_size": 14
@@ -67,8 +67,8 @@
         "image_slide_txnJ6Y": {
           "type": "image_slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Untitled_design-6.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design-10.jpg",
+            "desktop_image": "shopify://shop_images/Untitled_design.png",
+            "mobile_image": "shopify://shop_images/2_54cde712-751c-45d4-9516-46ebd54af089.jpg",
             "slide_link": "",
             "vertical_alignment": "top",
             "horizontal_alignment": "left",
@@ -76,41 +76,41 @@
             "mobile_vertical_alignment": "bottom",
             "mobile_horizontal_alignment": "center",
             "mobile_content_alignment": "center",
-            "title": "BORN TO PLAY",
-            "subtitle": "OFFICIAL BRAND OF THE US POLO ASSOCIATION",
+            "title": "URODZENI DO GRY",
+            "subtitle": "OFICJALNA MARKA U.S. POLO ASSOCIATION",
             "subtitle_font_size": 20,
             "mobile_subtitle_font_size": 16,
-            "subtitle_bold": false,
+            "subtitle_bold": true,
             "title_font_size": 40,
             "mobile_title_font_size": 32,
             "title_bold": true,
             "title_color": "#ffffff",
             "subtitle_color": "#ffffff",
-            "button1_text": "MENS",
+            "button1_text": "MĘSKIE",
             "mobile_button1_text": "",
             "button1_link": "shopify://collections/mens-polo-shirts",
-            "button1_type": "secondary",
-            "button1_theme_color": "#ffffff",
+            "button1_type": "primary",
+            "button1_theme_color": "#13294c",
             "button1_text_color": "#ffffff",
-            "button2_text": "WOMENS",
+            "button2_text": "DAMSKI",
             "mobile_button2_text": "",
-            "button2_link": "shopify://collections/womens-polo-shirts",
-            "button2_type": "secondary",
-            "button2_theme_color": "#ffffff",
+            "button2_link": "shopify://collections/womens-polo-shirts-1",
+            "button2_type": "primary",
+            "button2_theme_color": "#13294c",
             "button2_text_color": "#ffffff",
-            "button3_text": "KIDS",
+            "button3_text": "DZIECI",
             "mobile_button3_text": "",
             "button3_link": "shopify://collections/kids-polo-shirts",
-            "button3_type": "secondary",
-            "button3_theme_color": "#ffffff",
+            "button3_type": "primary",
+            "button3_theme_color": "#13294c",
             "button3_text_color": "#ffffff",
             "button4_text": "",
             "mobile_button4_text": "",
             "button4_link": "",
             "button4_type": "primary",
-            "button4_theme_color": "#ffffff",
-            "button4_text_color": "#000000",
-            "overlay_opacity": 5,
+            "button4_theme_color": "#13294c",
+            "button4_text_color": "#ffffff",
+            "overlay_opacity": 15,
             "overlay_color": "#000000",
             "desktop_button_font_size": 16,
             "mobile_button_font_size": 14
@@ -132,25 +132,24 @@
         "banner_Q8CfbK": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/56659_20240416_FW24_Utah_S10_0720.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design-11.jpg",
+            "image": "shopify://shop_images/Untitled_design-24.jpg",
             "use_video": false,
-            "title": "MEN",
+            "title": "MĘSKIE",
             "title_size": 32,
             "title_weight": "500",
-            "subtitle": "SHOP THE LATEST",
+            "subtitle": "Zobacz nowości",
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
-            "button_text_1": "Polo Shirts",
+            "button_text_1": "Koszulki Polo",
             "button_style_1": "secondary",
-            "button_link_1": "shopify://collections/mens-knit-polo-shirts",
-            "button_text_2": "Sweaters",
+            "button_link_1": "shopify://collections/mens-polo-shirts",
+            "button_text_2": "Koszule",
             "button_style_2": "secondary",
-            "button_link_2": "shopify://collections/mens-hoodies-sweatshirts",
-            "button_text_3": "Outerwear",
+            "button_link_2": "shopify://collections/mens-shirts",
+            "button_text_3": "Koszulki",
             "button_style_3": "secondary",
-            "button_link_3": "shopify://collections/mens-coats-jackets",
+            "button_link_3": "shopify://collections/mens-t-shirts",
             "button_text_4": "",
             "button_style_4": "secondary",
             "button_link_4": "",
@@ -165,25 +164,24 @@
         "banner_hNy8aw": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/56587_20240415_FW24_Utah_S02_0258.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design-12_f8703ac9-565c-421f-9752-e665da8ddd33.jpg",
+            "image": "shopify://shop_images/Untitled_design-23.jpg",
             "use_video": false,
-            "title": "WOMEN",
+            "title": "DAMSKI",
             "title_size": 36,
             "title_weight": "500",
-            "subtitle": "SHOP THE LATEST",
+            "subtitle": "Zobacz nowości",
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
-            "button_text_1": "Polo Shirts",
+            "button_text_1": "Koszule",
             "button_style_1": "secondary",
-            "button_link_1": "shopify://collections/womens-polo-shirts",
-            "button_text_2": "Sweaters",
+            "button_link_1": "shopify://collections/womens-polo-shirts-1",
+            "button_text_2": "Koszule",
             "button_style_2": "secondary",
-            "button_link_2": "shopify://collections/womens-sweatshirts-hoodies",
-            "button_text_3": "Outerwear",
+            "button_link_2": "shopify://collections/womens-shirts",
+            "button_text_3": "Koszulki",
             "button_style_3": "secondary",
-            "button_link_3": "shopify://collections/womens-coats-jackets",
+            "button_link_3": "shopify://collections/womens-t-shirts-tops",
             "button_text_4": "",
             "button_style_4": "primary",
             "button_link_4": "",
@@ -219,36 +217,36 @@
         "column_7TQKQx": {
           "type": "column",
           "settings": {
-            "title": "POLO SHIRTS",
-            "image": "shopify://shop_images/1.jpg",
-            "url": "shopify://collections/polo-shirts",
+            "title": "SHIRTS",
+            "image": "shopify://shop_images/1_370a1d48-4d14-4e93-a54b-c93f5daad545.jpg",
+            "url": "shopify://collections/womens-shirts",
             "visibility": "both"
           }
         },
         "column_TefaYi": {
           "type": "column",
           "settings": {
-            "title": "SWEATERS",
-            "image": "shopify://shop_images/2.jpg",
-            "url": "shopify://collections/sweatshirts-hoodies",
+            "title": "POLO SHIRTS",
+            "image": "shopify://shop_images/2_1401e480-ba9d-4f72-b75c-212a02dd4b4c.jpg",
+            "url": "shopify://collections/polo-shirts",
             "visibility": "both"
           }
         },
         "column_xkMD7V": {
           "type": "column",
           "settings": {
-            "title": "COATS",
-            "image": "shopify://shop_images/Untitled_design-15.jpg",
-            "url": "shopify://collections/coats-jackets",
+            "title": "Kids",
+            "image": "shopify://shop_images/3_63cc58b3-a9f2-4536-97b3-727630546b0e.jpg",
+            "url": "shopify://collections/kids-clothing",
             "visibility": "both"
           }
         },
         "column_3BC7C3": {
           "type": "column",
           "settings": {
-            "title": "SHIRTS",
-            "image": "shopify://shop_images/Untitled_design-7.jpg",
-            "url": "shopify://collections/shirts",
+            "title": "T-Shirts",
+            "image": "shopify://shop_images/4.jpg",
+            "url": "shopify://collections/mens-t-shirts",
             "visibility": "mobile"
           }
         }
@@ -275,11 +273,11 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "new-arrivals-clothing-accessories",
+        "collection": "new-arrivals",
         "products_to_show": 6,
-        "title": "AUTUMN WINTER 25",
+        "title": "WIOSNA LATO 25",
         "heading_size": "h2",
-        "description": "<p><strong>New Season Essentials Just Landed</strong></p>",
+        "description": "<p>Nowe niezbędne produkty sezonu właśnie dotarły</p>",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 6,
@@ -300,20 +298,6 @@
         "padding_bottom": 0
       }
     },
-    "hero_banner_yRrJ8B": {
-      "type": "hero-banner",
-      "disabled": true,
-      "settings": {
-        "video_banner_image_desktop": "shopify://files/videos/55436_USPA%20-%20FW24%20-%20FALL%20DENIM%20-%20MASTER-2.mp4",
-        "video_banner_image_select_desktop": true,
-        "video_banner_image_mobile": "shopify://files/videos/55436_USPA%20-%20FW24%20-%20FALL%20DENIM%20-%20MASTER-2.mp4",
-        "video_banner_image_select_mobile": true,
-        "banner_text": "",
-        "banner_link": "/",
-        "padding_top": 0,
-        "padding_bottom": 36
-      }
-    },
     "column_list_nEkN6E": {
       "type": "column-list",
       "blocks": {
@@ -321,7 +305,6 @@
           "type": "column",
           "settings": {
             "title": "",
-            "image": "shopify://shop_images/SUB-everyday.png",
             "url": "",
             "visibility": "both"
           }
@@ -330,7 +313,6 @@
           "type": "column",
           "settings": {
             "title": "",
-            "image": "shopify://shop_images/SUB-polos.png",
             "url": "",
             "visibility": "both"
           }
@@ -339,7 +321,6 @@
           "type": "column",
           "settings": {
             "title": "",
-            "image": "shopify://shop_images/LOOPBACK_COLLECTION.jpg",
             "url": "",
             "visibility": "both"
           }
@@ -348,7 +329,6 @@
           "type": "column",
           "settings": {
             "title": "",
-            "image": "shopify://shop_images/NEW-ARRIVALS_SUB1.jpg",
             "url": "",
             "visibility": "both"
           }
@@ -438,7 +418,6 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/SMF-0425-AUS.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -459,23 +438,22 @@
         "banner_MmJ7xy": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/Untitled_design-18.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design-17.jpg",
+            "image": "shopify://shop_images/Untitled_design-19.jpg",
             "use_video": false,
-            "title": "SHOP ESSENTIALS",
+            "title": "ZOBACZ NIEZBĘDNIKI",
             "title_size": 32,
             "title_weight": "500",
             "subtitle": "",
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
-            "button_text_1": "Mens",
+            "button_text_1": "MĘSKIE",
             "button_style_1": "secondary",
             "button_link_1": "shopify://collections/mens-essentials",
-            "button_text_2": "Womens",
+            "button_text_2": "DAMSKI",
             "button_style_2": "secondary",
             "button_link_2": "shopify://collections/womens-essentials",
-            "button_text_3": "Kids",
+            "button_text_3": "DZIECI",
             "button_style_3": "secondary",
             "button_link_3": "shopify://collections/kids-essentials",
             "button_text_4": "",
@@ -499,7 +477,7 @@
         "padding_top": 16,
         "padding_bottom": 16,
         "overlay_color": "#000000",
-        "overlay_opacity": 10,
+        "overlay_opacity": 15,
         "button_bg_color": "#ffffff",
         "button_text_color": "#000000",
         "text_color": "#ffffff",
@@ -512,21 +490,21 @@
         "heading_bH7gqW": {
           "type": "heading",
           "settings": {
-            "heading": "Sports Meets Fashion",
+            "heading": "Sport spotyka się z modą",
             "heading_size": "h1"
           }
         },
         "text_XtTDYe": {
           "type": "text",
           "settings": {
-            "text": "<p>When you purchase a U.S.Polo Assn products, you can own a piece of the polo sport. We are the official clothing brand of the United States Polo Association (USPA)--one of the oldest sports in the United States. This is a proud distinction that links our illusions past to a bright future that you are an important part of.</p>",
+            "text": "<p>U.S. Polo Assn. to coś więcej niż tylko marka - to doświadczenie. Kiedy kupujesz U.S. Produkty Polo Assn., posiadasz część sport polo.<br/><strong>Jesteśmy oficjalną marką odzieżową United States Polo Association (USPA) – jednego z najstarszych sportów w Stanach Zjednoczonych.</strong>To wyróżnienie jest dla nas powodem do dumy i łączy naszą wspaniałą przeszłość ze świetlaną przyszłością, której jesteście ważną częścią.</p>",
             "text_style": "body"
           }
         },
         "button_Vm8Kzm": {
           "type": "button",
           "settings": {
-            "button_label": "Learn More",
+            "button_label": "Dowiedz się więcej",
             "button_link": "shopify://pages/about-us",
             "button_style_secondary": false
           }
@@ -559,7 +537,6 @@
     "split_banner_dWe33F",
     "column_list_rLCjzP",
     "featured_collection",
-    "hero_banner_yRrJ8B",
     "column_list_nEkN6E",
     "rich_text_E9UMxH",
     "image_with_text_9DXJmj",

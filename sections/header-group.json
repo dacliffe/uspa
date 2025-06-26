@@ -77,7 +77,7 @@
             "menu_title": "NEW",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-new-arrivals",
-            "image": "shopify://shop_images/25.jpg",
+            "image": "shopify://shop_images/MUP3991-M88-MS_1.jpg",
             "image_order": 1
           }
         },
@@ -87,7 +87,7 @@
             "menu_title": "NEW",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-new-arrivals",
-            "image": "shopify://shop_images/23_21974739-3609-4e1e-a8b0-4a474dc0a9d6.jpg",
+            "image": "shopify://shop_images/WUP1658-879-MS_1.JPG",
             "image_order": 2
           }
         },
@@ -97,38 +97,8 @@
             "menu_title": "NEW",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-new-arrivals",
-            "image": "shopify://shop_images/26.jpg",
+            "image": "shopify://shop_images/USP2675-J09-MS_1.jpg",
             "image_order": 3
-          }
-        },
-        "mega_menu_image_cFfpBf": {
-          "type": "mega_menu_image",
-          "settings": {
-            "menu_title": "POLO SHIRTS",
-            "image_title": "Mens",
-            "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/4_fc2a1177-8966-4259-acb1-b275a5e77930.jpg",
-            "image_order": 1
-          }
-        },
-        "mega_menu_image_M7fGWE": {
-          "type": "mega_menu_image",
-          "settings": {
-            "menu_title": "POLO SHIRTS",
-            "image_title": "Womens",
-            "image_link": "shopify://collections/womens-polo-shirts",
-            "image": "shopify://shop_images/7.jpg",
-            "image_order": 2
-          }
-        },
-        "mega_menu_image_cD6Prn": {
-          "type": "mega_menu_image",
-          "settings": {
-            "menu_title": "POLO SHIRTS",
-            "image_title": "Kids",
-            "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/6.jpg",
-            "image_order": 2
           }
         },
         "mega_menu_image_wFEU9d": {
@@ -147,7 +117,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-essentials",
-            "image": "shopify://shop_images/5.jpg",
+            "image": "shopify://shop_images/MUP3312-P90-MS_1.JPG",
             "image_order": 0
           }
         },
@@ -157,7 +127,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-essentials",
-            "image": "shopify://shop_images/can_you_add_the_man_into_a_nostalgic_landscape_scene_with_a_lake_and_forest_in_late_afternoon_light.jpg",
+            "image": "shopify://shop_images/WUP1311-002-MS_1.jpg",
             "image_order": 0
           }
         },
@@ -167,7 +137,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-essentials",
-            "image": "shopify://shop_images/23.jpg",
+            "image": "shopify://shop_images/USP2419-C40-MS_1.jpg",
             "image_order": 0
           }
         },
@@ -177,7 +147,7 @@
             "menu_title": "MENS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/NAV_IMAGES.jpg",
+            "image": "shopify://shop_images/MUP3709-Q36-MS_1.JPG",
             "image_order": 0
           }
         },
@@ -185,9 +155,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MENS",
-            "image_title": "Jackets",
-            "image_link": "shopify://collections/mens-coats-jackets",
-            "image": "shopify://shop_images/13_0ba4f038-eb46-461c-9b31-dd36a9cd16c8.jpg",
+            "image_title": "T-shirts",
+            "image_link": "shopify://collections/mens-t-shirts",
+            "image": "shopify://shop_images/MUP3310-M83-MS_1.jpg",
             "image_order": 1
           }
         },
@@ -197,7 +167,7 @@
             "menu_title": "MENS",
             "image_title": "Pants",
             "image_link": "shopify://collections/mens-trousers-chinos",
-            "image": "shopify://shop_images/12.jpg",
+            "image": "shopify://shop_images/MUP4045-H03-MS_1.JPG",
             "image_order": 2
           }
         },
@@ -205,9 +175,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "WOMENS",
-            "image_title": "Shirts",
-            "image_link": "shopify://collections/womens-t-shirts",
-            "image": "shopify://shop_images/can_you_add_the_man_into_a_nostalgic_landscape_scene_with_a_lake_and_forest_in_late_afternoon_light_1.jpg",
+            "image_title": "T-Shirts",
+            "image_link": "shopify://collections/womens-t-shirts-tops",
+            "image": "shopify://shop_images/WUP0634-002-MS_1.JPG",
             "image_order": 0
           }
         },
@@ -215,9 +185,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "WOMENS",
-            "image_title": "Pants",
-            "image_link": "shopify://collections/womens-trousers",
-            "image": "shopify://shop_images/14.jpg",
+            "image_title": "Shirts",
+            "image_link": "shopify://collections/womens-polo-shirts-1",
+            "image": "shopify://shop_images/WUP1122-L68-MS_1.JPG",
             "image_order": 0
           }
         },
@@ -226,8 +196,8 @@
           "settings": {
             "menu_title": "WOMENS",
             "image_title": "Knitwear",
-            "image_link": "shopify://collections/womens-knitwear-jumpers",
-            "image": "shopify://shop_images/11.jpg",
+            "image_link": "shopify://collections/womens-knitwear",
+            "image": "shopify://shop_images/WUP1658-879-MS_1.JPG",
             "image_order": 0
           }
         },
@@ -236,8 +206,8 @@
           "settings": {
             "menu_title": "KIDS",
             "image_title": "T-shirts",
-            "image_link": "shopify://collections/kids-t-shirts",
-            "image": "shopify://shop_images/NAV_IMAGES_3.jpg",
+            "image_link": "shopify://collections/kids-polo-shirts",
+            "image": "shopify://shop_images/USP2462-J09-MS_1.jpg",
             "image_order": 0
           }
         },
@@ -245,9 +215,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "KIDS",
-            "image_title": "Polo Shirts",
-            "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/NAV_IMAGES_1.jpg",
+            "image_title": "Shirts",
+            "image_link": "shopify://collections/boys-shirts",
+            "image": "shopify://shop_images/USP2383-J45F-MS_1.JPG",
             "image_order": 0
           }
         }
@@ -258,9 +228,6 @@
         "mega_menu_image_BCVmWY",
         "mega_menu_image_C3KY4m",
         "mega_menu_image_CAxBMb",
-        "mega_menu_image_cFfpBf",
-        "mega_menu_image_M7fGWE",
-        "mega_menu_image_cD6Prn",
         "mega_menu_image_wFEU9d",
         "mega_menu_image_ik7cRe",
         "mega_menu_image_6A9e9C",
@@ -276,13 +243,13 @@
       ],
       "settings": {
         "show_strip": true,
-        "strip_image": "shopify://shop_images/uspoloassn-stripe-2000x30.png",
+        "strip_image": "shopify://shop_images/uspoloassn-stripe-2000x30_1.png",
         "show_strip_color": true,
         "strip_color": "#000000",
         "strip_height": 19,
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
-        "menu": "header-menu",
+        "menu": "main-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "hide_menu_items_desktop": "none",
