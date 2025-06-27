@@ -205,7 +205,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "KIDS",
-            "image_title": "T-shirts",
+            "image_title": "Polo Shirts",
             "image_link": "shopify://collections/kids-polo-shirts",
             "image": "shopify://shop_images/10.jpg",
             "image_order": 0
@@ -215,8 +215,8 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "KIDS",
-            "image_title": "Shirts",
-            "image_link": "shopify://collections/boys-shirts",
+            "image_title": "T-Shirts",
+            "image_link": "shopify://collections/boys-t-shirts",
             "image": "shopify://shop_images/41.jpg",
             "image_order": 0
           }
