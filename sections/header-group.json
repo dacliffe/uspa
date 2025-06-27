@@ -77,7 +77,7 @@
             "menu_title": "NEW",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-new-arrivals",
-            "image": "shopify://shop_images/MUP3991-M88-MS_1.jpg",
+            "image": "shopify://shop_images/44.jpg",
             "image_order": 1
           }
         },
@@ -87,7 +87,7 @@
             "menu_title": "NEW",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-new-arrivals",
-            "image": "shopify://shop_images/WUP1658-879-MS_1.JPG",
+            "image": "shopify://shop_images/13.jpg",
             "image_order": 2
           }
         },
@@ -97,7 +97,7 @@
             "menu_title": "NEW",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-new-arrivals",
-            "image": "shopify://shop_images/USP2675-J09-MS_1.jpg",
+            "image": "shopify://shop_images/40.jpg",
             "image_order": 3
           }
         },
@@ -117,7 +117,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-essentials",
-            "image": "shopify://shop_images/MUP3312-P90-MS_1.JPG",
+            "image": "shopify://shop_images/12.jpg",
             "image_order": 0
           }
         },
@@ -127,7 +127,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-essentials",
-            "image": "shopify://shop_images/WUP1311-002-MS_1.jpg",
+            "image": "shopify://shop_images/NAV_IMAGES_11.jpg",
             "image_order": 0
           }
         },
@@ -137,7 +137,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-essentials",
-            "image": "shopify://shop_images/USP2419-C40-MS_1.jpg",
+            "image": "shopify://shop_images/NAV_IMAGES_12.jpg",
             "image_order": 0
           }
         },
@@ -147,7 +147,7 @@
             "menu_title": "MENS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/MUP3709-Q36-MS_1.JPG",
+            "image": "shopify://shop_images/38.jpg",
             "image_order": 0
           }
         },
@@ -157,7 +157,7 @@
             "menu_title": "MENS",
             "image_title": "T-shirts",
             "image_link": "shopify://collections/mens-t-shirts",
-            "image": "shopify://shop_images/MUP3310-M83-MS_1.jpg",
+            "image": "shopify://shop_images/45.jpg",
             "image_order": 1
           }
         },
@@ -166,8 +166,8 @@
           "settings": {
             "menu_title": "MENS",
             "image_title": "Pants",
-            "image_link": "shopify://collections/mens-trousers-chinos",
-            "image": "shopify://shop_images/MUP4045-H03-MS_1.JPG",
+            "image_link": "shopify://collections/mens-shorts-swimwear",
+            "image": "shopify://shop_images/39.jpg",
             "image_order": 2
           }
         },
@@ -177,7 +177,7 @@
             "menu_title": "WOMENS",
             "image_title": "T-Shirts",
             "image_link": "shopify://collections/womens-t-shirts-tops",
-            "image": "shopify://shop_images/WUP0634-002-MS_1.JPG",
+            "image": "shopify://shop_images/NAV_IMAGES_13.jpg",
             "image_order": 0
           }
         },
@@ -187,7 +187,7 @@
             "menu_title": "WOMENS",
             "image_title": "Shirts",
             "image_link": "shopify://collections/womens-polo-shirts-1",
-            "image": "shopify://shop_images/WUP1122-L68-MS_1.JPG",
+            "image": "shopify://shop_images/11.jpg",
             "image_order": 0
           }
         },
@@ -207,7 +207,7 @@
             "menu_title": "KIDS",
             "image_title": "T-shirts",
             "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/USP2462-J09-MS_1.jpg",
+            "image": "shopify://shop_images/10.jpg",
             "image_order": 0
           }
         },
@@ -217,7 +217,7 @@
             "menu_title": "KIDS",
             "image_title": "Shirts",
             "image_link": "shopify://collections/boys-shirts",
-            "image": "shopify://shop_images/USP2383-J45F-MS_1.JPG",
+            "image": "shopify://shop_images/41.jpg",
             "image_order": 0
           }
         }
