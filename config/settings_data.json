@@ -179,6 +179,11 @@
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {}
+      },
+      "1537173939754162885": {
+        "type": "shopify://apps/accesspro/blocks/accesspro-widget/d1a2aee8-6737-4a3e-a6aa-13d82b562c31",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
