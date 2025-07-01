@@ -258,7 +258,6 @@ function initializeSwatches() {
       const badgeValue = swatch.getAttribute('data-badge');
       const label = swatch.getAttribute('data-label');
 
-
       // Validate that we have a clean handle
       if (!handle) {
         return;
@@ -326,17 +325,6 @@ style.textContent = `
 document.head.appendChild(style);
 
 // Function to initialize card swatches on product cards
-document.addEventListener('DOMContentLoaded', initializeCardSwatches);
-document.addEventListener('products:added', () => {
-  // Use requestAnimationFrame to ensure DOM is updated
-  requestAnimationFrame(() => {
-    // Add a small delay to ensure DOM is fully ready
-    setTimeout(() => {
-      initializeCardSwatches();
-    }, 50);
-  });
-});
-
 window.initializeCardSwatches = function () {
   const swatches = document.querySelectorAll('.card-swatch:not(.swatch-initialized)');
 
@@ -366,6 +354,20 @@ window.initializeCardSwatches = function () {
       });
   });
 };
+
+// Initialize card swatches on page load
+// Use window.initializeCardSwatches in event listeners
+
+document.addEventListener('DOMContentLoaded', window.initializeCardSwatches);
+document.addEventListener('products:added', () => {
+  // Use requestAnimationFrame to ensure DOM is updated
+  requestAnimationFrame(() => {
+    // Add a small delay to ensure DOM is fully ready
+    setTimeout(() => {
+      window.initializeCardSwatches();
+    }, 50);
+  });
+});
 
 // Initialize carousel functionality
 function initCarousel(carouselTrack) {
