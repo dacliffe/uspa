@@ -3675,3 +3675,9 @@ details-disclosure>details {
   text-decoration: none !important;
   color: #fff !important;
 }
+
+/* Fix for all buttons to maintain proper text color on hover */
+.button:hover,
+a.button:hover {
+  color: rgb(var(--color-button-text)) !important;
+}
