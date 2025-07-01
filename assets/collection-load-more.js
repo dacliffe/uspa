@@ -51,6 +51,17 @@ if (!window.ProductLoadMore) {
       this.updateButtonVisibility();
     }
 
+    resetState() {
+      // Reset state when collection is updated (filters/sorting applied)
+      this.state = {
+        isLoading: false,
+        hasMoreProducts: true,
+        currentPage: 1,
+        loadedProducts: 0,
+        totalResults: 0,
+      };
+    }
+
     updateButtonVisibility() {
       const shouldHide =
         !this.state.hasMoreProducts ||
@@ -217,12 +228,28 @@ if (!window.ProductLoadMore) {
     initializeLoadMore();
   }
 
+  // Listen for products:loaded event (existing functionality)
   document.addEventListener('products:loaded', () => {
     requestAnimationFrame(() => {
       if (loadMoreInstance) {
         loadMoreInstance.destroy();
       }
       loadMoreInstance = new ProductLoadMore();
+    });
+  });
+
+  // Listen for collection:updated event (new functionality for filters/sorting)
+  document.addEventListener('collection:updated', () => {
+    requestAnimationFrame(() => {
+      if (loadMoreInstance) {
+        loadMoreInstance.destroy();
+      }
+      loadMoreInstance = new ProductLoadMore();
+      // Reset state when collection is updated due to filters/sorting
+      if (loadMoreInstance) {
+        loadMoreInstance.resetState();
+        loadMoreInstance.initialize();
+      }
     });
   });
 }
