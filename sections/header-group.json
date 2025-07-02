@@ -87,7 +87,7 @@
             "menu_title": "NEW",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-new-arrivals",
-            "image": "shopify://shop_images/13.jpg",
+            "image": "shopify://shop_images/NAV_IMAGES_11.jpg",
             "image_order": 2
           }
         },
@@ -127,7 +127,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-essentials",
-            "image": "shopify://shop_images/NAV_IMAGES_11.jpg",
+            "image": "shopify://shop_images/13.jpg",
             "image_order": 0
           }
         },
