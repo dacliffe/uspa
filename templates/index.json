@@ -217,7 +217,7 @@
         "column_7TQKQx": {
           "type": "column",
           "settings": {
-            "title": "SHORTS",
+            "title": "SZORTY",
             "image": "shopify://shop_images/Untitled_design_20.jpg",
             "url": "shopify://collections/mens-shorts-swimwear",
             "visibility": "both"
@@ -226,7 +226,7 @@
         "column_TefaYi": {
           "type": "column",
           "settings": {
-            "title": "POLO SHIRTS",
+            "title": "KOSZULKI POLO",
             "image": "shopify://shop_images/2_1401e480-ba9d-4f72-b75c-212a02dd4b4c.jpg",
             "url": "shopify://collections/polo-shirts",
             "visibility": "both"
@@ -235,7 +235,7 @@
         "column_xkMD7V": {
           "type": "column",
           "settings": {
-            "title": "KIDS",
+            "title": "NOWOŚCI DZIECIĘCE",
             "image": "shopify://shop_images/3_63cc58b3-a9f2-4536-97b3-727630546b0e.jpg",
             "url": "shopify://collections/kids-clothing",
             "visibility": "both"
