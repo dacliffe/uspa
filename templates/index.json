@@ -67,7 +67,7 @@
         "image_slide_txnJ6Y": {
           "type": "image_slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Untitled_design.png",
+            "desktop_image": "shopify://shop_images/Untitled_design_19.jpg",
             "mobile_image": "shopify://shop_images/2_54cde712-751c-45d4-9516-46ebd54af089.jpg",
             "slide_link": "",
             "vertical_alignment": "top",
@@ -217,9 +217,9 @@
         "column_7TQKQx": {
           "type": "column",
           "settings": {
-            "title": "SHIRTS",
-            "image": "shopify://shop_images/1_370a1d48-4d14-4e93-a54b-c93f5daad545.jpg",
-            "url": "shopify://collections/womens-shirts",
+            "title": "SHORTS",
+            "image": "shopify://shop_images/Untitled_design_18.jpg",
+            "url": "shopify://collections/mens-shorts-swimwear",
             "visibility": "both"
           }
         },
@@ -235,7 +235,7 @@
         "column_xkMD7V": {
           "type": "column",
           "settings": {
-            "title": "Kids",
+            "title": "KIDS",
             "image": "shopify://shop_images/3_63cc58b3-a9f2-4536-97b3-727630546b0e.jpg",
             "url": "shopify://collections/kids-clothing",
             "visibility": "both"
