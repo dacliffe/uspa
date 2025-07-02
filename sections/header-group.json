@@ -74,7 +74,7 @@
         "mega_menu_image_BCVmWY": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "NEW",
+            "menu_title": "NOWY",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-new-arrivals",
             "image": "shopify://shop_images/44.jpg",
@@ -84,7 +84,7 @@
         "mega_menu_image_C3KY4m": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "NEW",
+            "menu_title": "NOWY",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-new-arrivals",
             "image": "shopify://shop_images/NAV_IMAGES_11.jpg",
@@ -94,7 +94,7 @@
         "mega_menu_image_CAxBMb": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "NEW",
+            "menu_title": "NOWY",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-new-arrivals",
             "image": "shopify://shop_images/40.jpg",
@@ -104,7 +104,7 @@
         "mega_menu_image_wFEU9d": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "ABOUT US",
+            "menu_title": "NAS",
             "image_title": "",
             "image_link": "",
             "image": "shopify://shop_images/MBP07448GCsemi_1024x1024_ec40c01b-8598-4b44-a5f4-a71dbadb88ee.webp",
@@ -114,7 +114,7 @@
         "mega_menu_image_ik7cRe": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "ESSENTIALS",
+            "menu_title": "KOLEKCJA PODSTAWOWA",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-essentials",
             "image": "shopify://shop_images/12.jpg",
@@ -124,7 +124,7 @@
         "mega_menu_image_6A9e9C": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "ESSENTIALS",
+            "menu_title": "KOLEKCJA PODSTAWOWA",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-essentials",
             "image": "shopify://shop_images/13.jpg",
@@ -134,7 +134,7 @@
         "mega_menu_image_PVE3Jr": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "ESSENTIALS",
+            "menu_title": "KOLEKCJA PODSTAWOWA",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-essentials",
             "image": "shopify://shop_images/NAV_IMAGES_12.jpg",
@@ -144,7 +144,7 @@
         "mega_menu_image_fHV9A8": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "MENS",
+            "menu_title": "MĘSKIE",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/mens-polo-shirts",
             "image": "shopify://shop_images/38.jpg",
@@ -154,7 +154,7 @@
         "mega_menu_image_exzE3b": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "MENS",
+            "menu_title": "MĘSKIE",
             "image_title": "T-shirts",
             "image_link": "shopify://collections/mens-t-shirts",
             "image": "shopify://shop_images/45.jpg",
@@ -164,7 +164,7 @@
         "mega_menu_image_XWVGcR": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "MENS",
+            "menu_title": "MĘSKIE",
             "image_title": "Shorts",
             "image_link": "shopify://collections/mens-shorts-swimwear",
             "image": "shopify://shop_images/39.jpg",
@@ -174,7 +174,7 @@
         "mega_menu_image_cb7xpa": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "WOMENS",
+            "menu_title": "DAMSKIE",
             "image_title": "T-Shirts",
             "image_link": "shopify://collections/womens-t-shirts-tops",
             "image": "shopify://shop_images/NAV_IMAGES_13.jpg",
@@ -184,7 +184,7 @@
         "mega_menu_image_RYYkJj": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "WOMENS",
+            "menu_title": "DAMSKIE",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/womens-polo-shirts-1",
             "image": "shopify://shop_images/11.jpg",
@@ -194,7 +194,7 @@
         "mega_menu_image_CqdQJG": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "WOMENS",
+            "menu_title": "DAMSKIE",
             "image_title": "Knitwear",
             "image_link": "shopify://collections/womens-knitwear",
             "image": "shopify://shop_images/WUP1658-879-MS_1.JPG",
@@ -204,7 +204,7 @@
         "mega_menu_image_FgUDeF": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "KIDS",
+            "menu_title": "DZIECI",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/kids-polo-shirts",
             "image": "shopify://shop_images/10.jpg",
@@ -214,7 +214,7 @@
         "mega_menu_image_znBAPi": {
           "type": "mega_menu_image",
           "settings": {
-            "menu_title": "KIDS",
+            "menu_title": "DZIECI",
             "image_title": "T-Shirts",
             "image_link": "shopify://collections/boys-t-shirts",
             "image": "shopify://shop_images/41.jpg",
