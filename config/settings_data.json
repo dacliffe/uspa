@@ -501,5 +501,12 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "#lipscore-review-list {padding-bottom: 30px;}",
+      ".lipscore-rating-review-link {font-size: 14px;}",
+      ".lipscore-review-vote-thumb {display: inline-block !important;}"
+    ]
   }
 }
