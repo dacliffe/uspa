@@ -75,7 +75,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "NOWY",
-            "image_title": "Mens",
+            "image_title": "Mężczyźni",
             "image_link": "shopify://collections/mens-new-arrivals",
             "image": "shopify://shop_images/44.jpg",
             "image_order": 1
@@ -85,7 +85,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "NOWY",
-            "image_title": "Womens",
+            "image_title": "Kobiety",
             "image_link": "shopify://collections/womens-new-arrivals",
             "image": "shopify://shop_images/NAV_IMAGES_11.jpg",
             "image_order": 2
@@ -95,7 +95,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "NOWY",
-            "image_title": "Kids",
+            "image_title": "Dzieci",
             "image_link": "shopify://collections/kids-new-arrivals",
             "image": "shopify://shop_images/40.jpg",
             "image_order": 3
@@ -115,7 +115,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "KOLEKCJA PODSTAWOWA",
-            "image_title": "Mens",
+            "image_title": "Mężczyźni",
             "image_link": "shopify://collections/mens-essentials",
             "image": "shopify://shop_images/12.jpg",
             "image_order": 0
@@ -125,7 +125,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "KOLEKCJA PODSTAWOWA",
-            "image_title": "Womens",
+            "image_title": "Kobiety",
             "image_link": "shopify://collections/womens-essentials",
             "image": "shopify://shop_images/13.jpg",
             "image_order": 0
@@ -135,7 +135,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "KOLEKCJA PODSTAWOWA",
-            "image_title": "Kids",
+            "image_title": "Dzieci",
             "image_link": "shopify://collections/kids-essentials",
             "image": "shopify://shop_images/NAV_IMAGES_12.jpg",
             "image_order": 0
