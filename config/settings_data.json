@@ -486,7 +486,7 @@
     "custom_css": [
       ".lipscore-rating-review-link {font-size: 14px;}",
       "#lipscore-review-list {padding-bottom: 30px;}",
-      ".lipscore-review-vote-thum {display: inline-block;}"
+      ".lipscore-review-vote-thumb {display: inline-block !important;}"
     ]
   }
 }
