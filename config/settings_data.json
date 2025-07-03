@@ -204,6 +204,14 @@
         "type": "shopify://apps/nova-gdpr-cookie-consent/blocks/app-embed/6667ecbd-70cf-4527-84a9-e6037e6ca706",
         "disabled": false,
         "settings": {}
+      },
+      "9215962420185474525": {
+        "type": "shopify://apps/lipscore-reviews/blocks/lipscore-init/e89bfb0c-cc26-450f-9297-cec873403986",
+        "disabled": false,
+        "settings": {
+          "init_repeat": true,
+          "init_repeat_delay": 0.3
+        }
       }
     },
     "color_schemes": {
