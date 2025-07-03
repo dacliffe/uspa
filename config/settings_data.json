@@ -481,5 +481,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".lipscore-rating-review-link {font-size: 12px;}"
+    ]
   }
 }

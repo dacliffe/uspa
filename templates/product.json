@@ -23,6 +23,13 @@
             "text_style": "subtitle"
           }
         },
+        "lipscore_reviews_lipscore_product_rating_KeMjAF": {
+          "type": "shopify://apps/lipscore-reviews/blocks/lipscore-product-rating/e89bfb0c-cc26-450f-9297-cec873403986",
+          "settings": {
+            "use_variant_values": false,
+            "use_all_variant_skus": false
+          }
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -74,6 +81,13 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
+          }
+        },
+        "lipscore_reviews_lipscore_product_testimonial_6GW6RB": {
+          "type": "shopify://apps/lipscore-reviews/blocks/lipscore-product-testimonial/e89bfb0c-cc26-450f-9297-cec873403986",
+          "settings": {
+            "use_variant_values": false,
+            "use_all_variant_skus": false
           }
         },
         "description": {
@@ -135,6 +149,7 @@
       "block_order": [
         "title",
         "caption",
+        "lipscore_reviews_lipscore_product_rating_KeMjAF",
         "price",
         "vendor",
         "divider_zfhBeB",
@@ -143,6 +158,7 @@
         "variant_picker",
         "custom_liquid_RE6qNB",
         "buy_buttons",
+        "lipscore_reviews_lipscore_product_testimonial_6GW6RB",
         "description",
         "collapsible-row-1",
         "collapsible-row-2",
@@ -184,10 +200,30 @@
         "padding_top": 0,
         "padding_bottom": 28
       }
+    },
+    "17515367418436fe28": {
+      "type": "apps",
+      "blocks": {
+        "lipscore_reviews_lipscore_product_reviewlist_T86x8B": {
+          "type": "shopify://apps/lipscore-reviews/blocks/lipscore-product-reviewlist/e89bfb0c-cc26-450f-9297-cec873403986",
+          "settings": {
+            "use_variant_values": false,
+            "use_all_variant_skus": false,
+            "reviews_per_page": 5
+          }
+        }
+      },
+      "block_order": [
+        "lipscore_reviews_lipscore_product_reviewlist_T86x8B"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "17515367418436fe28"
   ]
 }
