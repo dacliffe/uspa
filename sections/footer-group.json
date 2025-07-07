@@ -18,21 +18,21 @@
           "type": "link_list",
           "settings": {
             "heading": "ABOUT",
-            "menu": "about-footer"
+            "menu": "footer"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
             "heading": "CUSTOMER CARE",
-            "menu": "customer-care"
+            "menu": "footer-1"
           }
         },
         "link_list_E8CLGr": {
           "type": "link_list",
           "settings": {
             "heading": "TERMS & POLICIES",
-            "menu": "terms-policies"
+            "menu": "policies-legal"
           }
         },
         "uspa_logo_dGnxjq": {
@@ -74,7 +74,7 @@
         "padding_bottom": 36,
         "show_strip": true,
         "strip_height": 30,
-        "strip_image": "shopify://shop_images/uspoloassn-stripe-2000x30.png",
+        "strip_image": "shopify://shop_images/uspoloassn-stripe-2000x30_1.png",
         "show_strip_color": false,
         "strip_color": "#000000"
       }

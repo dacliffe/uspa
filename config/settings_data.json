@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/g340.png",
+    "logo": "shopify://shop_images/g340_1_8f295318-430a-4bad-a696-7b84a3286b99.png",
     "logo_width": 190,
     "favicon": "shopify://shop_images/USPA_FAV-0525_v2_2.5x.png",
     "type_header_font": "montserrat_n4",
@@ -103,7 +103,7 @@
     "drawer_shadow_blur": 5,
     "badge_position": "top right",
     "badge_corner_radius": 40,
-    "sale_badge_color_scheme": "scheme-5",
+    "sale_badge_color_scheme": "scheme-1",
     "sold_out_badge_color_scheme": "scheme-1478faab-3045-495b-92e1-6345b1a48a30",
     "social_facebook_link": "https://www.facebook.com/p/US-Polo-Assn-Australia-100063774407016/?paipv=0&eav=AfYugqH10-qznIgJ829j95hdHDr8mejHK4JKEj3tgrvAVvBR9DuynsniW6Q9peMkrU8&_rdr",
     "social_instagram_link": "https://www.instagram.com/uspoloassnau/",
@@ -148,40 +148,8 @@
         "disabled": false,
         "settings": {}
       },
-      "1744347199190486471": {
-        "type": "shopify://apps/advanced-wishlist/blocks/app/330d9272-08ea-4193-b3e0-475a69fa65fa",
-        "disabled": false,
-        "settings": {}
-      },
-      "384495262013941155": {
-        "type": "shopify://apps/advanced-wishlist/blocks/collection-btn/330d9272-08ea-4193-b3e0-475a69fa65fa",
-        "disabled": true,
-        "settings": {
-          "is_added_selector": false,
-          "collection_icon_selector": ".card__heading",
-          "collection_icon_type": "outline",
-          "collection_icon_background_type": "icon_no_background",
-          "collection_icon_size": 16,
-          "collection_icon_background_color": "#ffffff",
-          "collection_icon_fill_color": "#5c6ac4",
-          "collection_icon_border_color": "#5c6ac4",
-          "collection_icon_hover_color": "#f5f5f5",
-          "collection_selected_icon_fill_color": "#5c6ac4",
-          "collection_selected_icon_border_color": "#5c6ac4",
-          "custom_wishlist_icon": false,
-          "custom_wishlist_icon_right": "true",
-          "collection_count_layout": "top_count",
-          "collection_count_background_color": "#5c6ac4",
-          "collection_count_color": "#ffffff"
-        }
-      },
       "855628211100114053": {
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      },
-      "1537173939754162885": {
-        "type": "shopify://apps/accesspro/blocks/accesspro-widget/d1a2aee8-6737-4a3e-a6aa-13d82b562c31",
         "disabled": false,
         "settings": {}
       },
