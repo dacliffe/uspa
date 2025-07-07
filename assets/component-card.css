@@ -248,6 +248,16 @@
   justify-self: flex-start;
 }
 
+.product_badge {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
 .card__badge.top {
   align-self: flex-start;
   grid-row-start: 1;
