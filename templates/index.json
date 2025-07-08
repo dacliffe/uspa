@@ -64,6 +64,59 @@
             "mobile_button_font_size": 14
           }
         },
+        "image_slide_jg8RmQ": {
+          "type": "image_slide",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/Untitled_design_18.jpg",
+            "mobile_image": "shopify://shop_images/Untitled_design-21.jpg",
+            "slide_link": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
+            "mobile_vertical_alignment": "bottom",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center",
+            "title": "UP TO 40% OFF*",
+            "subtitle": "SUMMER SALE",
+            "subtitle_font_size": 48,
+            "mobile_subtitle_font_size": 36,
+            "subtitle_bold": true,
+            "title_font_size": 80,
+            "mobile_title_font_size": 60,
+            "title_bold": true,
+            "title_color": "#a41d35",
+            "subtitle_color": "#a41d35",
+            "button1_text": "MENS",
+            "mobile_button1_text": "",
+            "button1_link": "shopify://collections/mens-new-arrivals",
+            "button1_type": "primary",
+            "button1_theme_color": "#a41d35",
+            "button1_text_color": "#ffffff",
+            "button2_text": "WOMENS",
+            "mobile_button2_text": "",
+            "button2_link": "shopify://collections/womens-new-arrivals",
+            "button2_type": "primary",
+            "button2_theme_color": "#a41d35",
+            "button2_text_color": "#ffffff",
+            "button3_text": "KIDS",
+            "mobile_button3_text": "",
+            "button3_link": "shopify://collections/kids-new-arrivals",
+            "button3_type": "primary",
+            "button3_theme_color": "#a41d35",
+            "button3_text_color": "#ffffff",
+            "button4_text": "",
+            "mobile_button4_text": "",
+            "button4_link": "",
+            "button4_type": "primary",
+            "button4_theme_color": "#ffffff",
+            "button4_text_color": "#000000",
+            "overlay_opacity": 5,
+            "overlay_color": "#000000",
+            "desktop_button_font_size": 21,
+            "mobile_button_font_size": 19
+          }
+        },
         "image_slide_txnJ6Y": {
           "type": "image_slide",
           "settings": {
@@ -119,8 +172,74 @@
       },
       "block_order": [
         "image_slide_zdNam3",
+        "image_slide_jg8RmQ",
         "image_slide_txnJ6Y"
       ],
+      "settings": {
+        "slide_interval": 5000,
+        "button_font_size": 14
+      }
+    },
+    "image_slider_AWUHxk": {
+      "type": "image-slider",
+      "blocks": {
+        "image_slide_JRyGJB": {
+          "type": "image_slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Add_a_heading.png",
+            "mobile_image": "shopify://shop_images/Untitled_design_18.jpg",
+            "slide_link": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
+            "mobile_vertical_alignment": "bottom",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center",
+            "title": "UP TO 40% OFF*",
+            "subtitle": "SUMMER SALE",
+            "subtitle_font_size": 48,
+            "mobile_subtitle_font_size": 36,
+            "subtitle_bold": true,
+            "title_font_size": 80,
+            "mobile_title_font_size": 60,
+            "title_bold": true,
+            "title_color": "#a41d35",
+            "subtitle_color": "#a41d35",
+            "button1_text": "MENS",
+            "mobile_button1_text": "",
+            "button1_link": "shopify://collections/mens-new-arrivals",
+            "button1_type": "primary",
+            "button1_theme_color": "#a41d35",
+            "button1_text_color": "#ffffff",
+            "button2_text": "WOMENS",
+            "mobile_button2_text": "",
+            "button2_link": "shopify://collections/womens-new-arrivals",
+            "button2_type": "primary",
+            "button2_theme_color": "#a41d35",
+            "button2_text_color": "#ffffff",
+            "button3_text": "KIDS",
+            "mobile_button3_text": "",
+            "button3_link": "shopify://collections/kids-new-arrivals",
+            "button3_type": "primary",
+            "button3_theme_color": "#a41d35",
+            "button3_text_color": "#ffffff",
+            "button4_text": "",
+            "mobile_button4_text": "",
+            "button4_link": "",
+            "button4_type": "primary",
+            "button4_theme_color": "#ffffff",
+            "button4_text_color": "#000000",
+            "overlay_opacity": 5,
+            "overlay_color": "#000000",
+            "desktop_button_font_size": 21,
+            "mobile_button_font_size": 19
+          }
+        }
+      },
+      "block_order": [
+        "image_slide_JRyGJB"
+      ],
+      "disabled": true,
       "settings": {
         "slide_interval": 5000,
         "button_font_size": 14
@@ -565,6 +684,7 @@
   },
   "order": [
     "image_slider_wRargf",
+    "image_slider_AWUHxk",
     "split_banner_dWe33F",
     "column_list_rLCjzP",
     "featured_collection",
