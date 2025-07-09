@@ -299,6 +299,13 @@
               {%- endif -%}
 
               {% render 'lipscore-rating-small', product: card_product %}
+              <div class="product-message-container">
+                <div class="product-message">
+                  <span class="bottom-label-text">
+                    {{- card_product.metafields.custom.bottom_label | upcase -}}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </a>
@@ -312,6 +319,14 @@
                 flex-wrap: wrap;
                 gap: 0.6rem;
                 margin: 0.8rem 0;
+              }
+
+              .bottom-label-text {
+                color: #a41e35;
+                font-weight: 800;
+                font-size: 1.2rem;
+                line-height: 1.2;
+                text-transform: uppercase;
               }
               .card-swatch {
                 width: 25px;
