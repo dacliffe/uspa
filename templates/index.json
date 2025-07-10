@@ -17,7 +17,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design-9.jpg",
             "mobile_image": "shopify://shop_images/Untitled_design-8.jpg",
-            "slide_link": "",
+            "slide_link": "shopify://collections/new-arrivals-clothing-accessories",
             "vertical_alignment": "middle",
             "horizontal_alignment": "center",
             "content_alignment": "center",
@@ -69,7 +69,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design-6.jpg",
             "mobile_image": "shopify://shop_images/Untitled_design-10.jpg",
-            "slide_link": "",
+            "slide_link": "shopify://collections/essentials",
             "vertical_alignment": "top",
             "horizontal_alignment": "left",
             "content_alignment": "left",
