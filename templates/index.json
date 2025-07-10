@@ -17,7 +17,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design-20.jpg",
             "mobile_image": "shopify://shop_images/Untitled_design-21.jpg",
-            "slide_link": "",
+            "slide_link": "shopify://collections/new-arrivals",
             "vertical_alignment": "middle",
             "horizontal_alignment": "center",
             "content_alignment": "center",
@@ -69,7 +69,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design_19.jpg",
             "mobile_image": "shopify://shop_images/2_54cde712-751c-45d4-9516-46ebd54af089.jpg",
-            "slide_link": "",
+            "slide_link": "shopify://collections/essentials",
             "vertical_alignment": "top",
             "horizontal_alignment": "left",
             "content_alignment": "left",
