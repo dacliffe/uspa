@@ -531,11 +531,11 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "new-arrivals",
+        "collection": "all-clothing",
         "products_to_show": 6,
-        "title": "SPRING SUMMER 25",
+        "title": "BEST SELLERS",
         "heading_size": "h2",
-        "description": "<p><strong>New Season Essentials Just Landed</strong></p>",
+        "description": "<p><strong>New Seasons Most-Wanted</strong></p>",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 6,
