@@ -370,6 +370,92 @@
         "banner_Q8CfbK",
         "banner_hNy8aw"
       ],
+      "disabled": true,
+      "settings": {
+        "gap": 12,
+        "mobile_gap": 10,
+        "padding_top": 16,
+        "padding_bottom": 0,
+        "overlay_color": "#000000",
+        "overlay_opacity": 15,
+        "button_bg_color": "#ffffff",
+        "button_text_color": "#000000",
+        "text_color": "#ffffff",
+        "button_font_size": 14
+      }
+    },
+    "split_banner_mtEnji": {
+      "type": "split-banner",
+      "blocks": {
+        "banner_NpeXi3": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design-24.jpg",
+            "use_video": false,
+            "title": "MEN SALE",
+            "title_size": 32,
+            "title_weight": "500",
+            "subtitle": "UP TO 40% OFF*",
+            "subtitle_size": 14,
+            "subtitle_weight": "500",
+            "text": "",
+            "button_text_1": "Polo Shirts",
+            "button_style_1": "secondary",
+            "button_link_1": "https://www.uspoloassn.co.uk/collections/mens-summer-sale?filter.p.m.custom.product_category=Polo+Shirts&filter.v.price.gte=&filter.v.price.lte=",
+            "button_text_2": "Sweatshirts",
+            "button_style_2": "secondary",
+            "button_link_2": "https://www.uspoloassn.co.uk/collections/mens-summer-sale?filter.p.m.custom.product_category=Sweatshirts&filter.v.price.gte=&filter.v.price.lte=",
+            "button_text_3": "T-Shirts",
+            "button_style_3": "secondary",
+            "button_link_3": "https://www.uspoloassn.co.uk/collections/mens-summer-sale?filter.p.m.custom.product_category=T-Shirts&filter.v.price.gte=&filter.v.price.lte=",
+            "button_text_4": "",
+            "button_style_4": "secondary",
+            "button_link_4": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
+            "mobile_vertical_alignment": "middle",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "banner_UEmx48": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design-23.jpg",
+            "use_video": false,
+            "title": "WOMENS SALE",
+            "title_size": 36,
+            "title_weight": "500",
+            "subtitle": "UP TO 40% OFF*",
+            "subtitle_size": 14,
+            "subtitle_weight": "500",
+            "text": "",
+            "button_text_1": "T-Shirts",
+            "button_style_1": "secondary",
+            "button_link_1": "https://www.uspoloassn.co.uk/collections/womens-summer-sale?filter.p.m.custom.product_category=T-Shirts&filter.v.price.gte=&filter.v.price.lte=",
+            "button_text_2": "Knitwear",
+            "button_style_2": "secondary",
+            "button_link_2": "https://www.uspoloassn.co.uk/collections/womens-summer-sale?filter.p.m.custom.product_category=Knitwear",
+            "button_text_3": "All",
+            "button_style_3": "secondary",
+            "button_link_3": "shopify://collections/womens-summer-sale",
+            "button_text_4": "",
+            "button_style_4": "primary",
+            "button_link_4": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
+            "mobile_vertical_alignment": "middle",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "banner_NpeXi3",
+        "banner_UEmx48"
+      ],
       "settings": {
         "gap": 12,
         "mobile_gap": 10,
@@ -739,6 +825,7 @@
     "image_slider_wRargf",
     "image_slider_AWUHxk",
     "split_banner_dWe33F",
+    "split_banner_mtEnji",
     "column_list_rLCjzP",
     "featured_collection",
     "column_list_nEkN6E",
