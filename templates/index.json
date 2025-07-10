@@ -815,7 +815,7 @@
         "video_banner_image_mobile": "shopify://files/videos/60742_USPA - SS25 - SUMMER STAPLES - PORTRAIT  - MOB_CROPED+DS (1).mp4",
         "video_banner_image_select_mobile": true,
         "banner_text": "",
-        "banner_link": "/",
+        "banner_link": "shopify://collections/new-arrivals",
         "padding_top": 36,
         "padding_bottom": 36
       }
