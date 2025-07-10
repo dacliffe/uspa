@@ -728,6 +728,7 @@
       "block_order": [
         "banner_MmJ7xy"
       ],
+      "disabled": true,
       "settings": {
         "gap": 12,
         "mobile_gap": 10,
