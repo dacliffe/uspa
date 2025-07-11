@@ -179,6 +179,39 @@
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {}
+      },
+      "3847134708050210359": {
+        "type": "shopify://apps/transcy/blocks/switcher_embed_block/bce4f1c0-c18c-43b0-b0b2-a1aefaa44573",
+        "disabled": false,
+        "settings": {}
+      },
+      "10864971697205422121": {
+        "type": "shopify://apps/gorgias-live-chat-helpdesk/blocks/gorgias/a66db725-7b96-4e3f-916e-6c8e6f87aaaa",
+        "disabled": false,
+        "settings": {}
+      },
+      "11349500561483629931": {
+        "type": "shopify://apps/notify-me/blocks/app-embed/b399b727-6c85-44fc-9e21-63114bd72054",
+        "disabled": false,
+        "settings": {}
+      },
+      "1537173939754162885": {
+        "type": "shopify://apps/accesspro/blocks/accesspro-widget/d1a2aee8-6737-4a3e-a6aa-13d82b562c31",
+        "disabled": false,
+        "settings": {}
+      },
+      "12198985164985445843": {
+        "type": "shopify://apps/nova-gdpr-cookie-consent/blocks/app-embed/6667ecbd-70cf-4527-84a9-e6037e6ca706",
+        "disabled": false,
+        "settings": {}
+      },
+      "9215962420185474525": {
+        "type": "shopify://apps/lipscore-reviews/blocks/lipscore-init/e89bfb0c-cc26-450f-9297-cec873403986",
+        "disabled": false,
+        "settings": {
+          "init_repeat": true,
+          "init_repeat_delay": 0.3
+        }
       }
     },
     "color_schemes": {
@@ -468,5 +501,12 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "#lipscore-review-list {padding-bottom: 30px;}",
+      ".lipscore-rating-review-link {font-size: 14px;}",
+      ".lipscore-review-vote-thumb {display: inline-block !important;}"
+    ]
   }
 }

@@ -17,7 +17,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design-20.jpg",
             "mobile_image": "shopify://shop_images/Untitled_design-21.jpg",
-            "slide_link": "",
+            "slide_link": "shopify://collections/new-arrivals",
             "vertical_alignment": "middle",
             "horizontal_alignment": "center",
             "content_alignment": "center",
@@ -67,9 +67,9 @@
         "image_slide_txnJ6Y": {
           "type": "image_slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Untitled_design.png",
+            "desktop_image": "shopify://shop_images/Untitled_design_19.jpg",
             "mobile_image": "shopify://shop_images/2_54cde712-751c-45d4-9516-46ebd54af089.jpg",
-            "slide_link": "",
+            "slide_link": "shopify://collections/essentials",
             "vertical_alignment": "top",
             "horizontal_alignment": "left",
             "content_alignment": "left",
@@ -173,12 +173,12 @@
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
-            "button_text_1": "Koszule",
+            "button_text_1": "Koszulki polo",
             "button_style_1": "secondary",
             "button_link_1": "shopify://collections/womens-polo-shirts-1",
-            "button_text_2": "Koszule",
+            "button_text_2": "Sukienki",
             "button_style_2": "secondary",
-            "button_link_2": "shopify://collections/womens-shirts",
+            "button_link_2": "shopify://collections/womens-dresses",
             "button_text_3": "Koszulki",
             "button_style_3": "secondary",
             "button_link_3": "shopify://collections/womens-t-shirts-tops",
@@ -217,16 +217,16 @@
         "column_7TQKQx": {
           "type": "column",
           "settings": {
-            "title": "SHIRTS",
-            "image": "shopify://shop_images/1_370a1d48-4d14-4e93-a54b-c93f5daad545.jpg",
-            "url": "shopify://collections/womens-shirts",
+            "title": "SZORTY",
+            "image": "shopify://shop_images/Untitled_design_20.jpg",
+            "url": "shopify://collections/mens-shorts-swimwear",
             "visibility": "both"
           }
         },
         "column_TefaYi": {
           "type": "column",
           "settings": {
-            "title": "POLO SHIRTS",
+            "title": "KOSZULKI POLO",
             "image": "shopify://shop_images/2_1401e480-ba9d-4f72-b75c-212a02dd4b4c.jpg",
             "url": "shopify://collections/polo-shirts",
             "visibility": "both"
@@ -235,7 +235,7 @@
         "column_xkMD7V": {
           "type": "column",
           "settings": {
-            "title": "Kids",
+            "title": "NOWOŚCI DZIECIĘCE",
             "image": "shopify://shop_images/3_63cc58b3-a9f2-4536-97b3-727630546b0e.jpg",
             "url": "shopify://collections/kids-clothing",
             "visibility": "both"
