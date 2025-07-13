@@ -2,32 +2,32 @@
 {% comment %} {% assign upsell_product_item = null %} {% endcomment %}
 
 {% if first_cart_item %}
-  <tr id="Upsell-Product" class="cart-item" role="row" style="display: none;">
-    <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
-      <a href="" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
-      <img
-        class="cart-item__image"
-        src=""
-        alt=""
-        loading="lazy"
-        width="150"
-        height="150"
-      >
-    </td>
-
-    <td class="cart-item__details" role="cell" headers="CartDrawer-ColumnProduct">
-      <a href="" class="cart-item__name h4 break"></a>
-      <div class="cart-item__price">
-        <strong class="cart-item__final-price product-option"></strong>
+  <tr id="Upsell-Product" role="row" style="display: none;">
+    <td class="cart-item__media upsell-product__media" colspan="3" role="cell" headers="CartDrawer-ColumnProductImage">
+      <div class="upsell-carousel__container">
+        <div class="upsell-carousel__header">
+          <h5>YOU MAY ALSO LIKE</h5>
+          <div class="upsell-carousel__nav">
+            <button
+              type="button"
+              class="upsell-carousel__btn upsell-carousel__btn--prev"
+              aria-label="Previous products"
+            >
+              ←
+            </button>
+            <button type="button" class="upsell-carousel__btn upsell-carousel__btn--next" aria-label="Next products">
+              →
+            </button>
+          </div>
+        </div>
+        <div class="upsell-carousel__wrapper">
+          <div class="upsell-carousel__track">
+            <div class="upsell-carousel__slides" id="upsell-carousel-slides">
+              <!-- Products will be dynamically inserted here -->
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="upsell-product__variants"></div>
-    </td>
-
-    <td>
-      <button class="upsell-product__button" data-product-handle="">
-        <span class="add-to-cart">ADD</span>
-        {%- render 'loading-spinner', class: 'cart-spinner loading__spinner hidden' -%}
-      </button>
     </td>
   </tr>
 
@@ -65,81 +65,120 @@
     .cart-item.loading {
       transition: opacity 0.3s ease;
     }
-    .upsell-product {
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      border-top: 1px solid #e1e1e1;
+
+    #Upsell-Product {
+      border-top: 1px solid rgba(var(--color-foreground), 0.2) !important;
     }
 
-    .upsell-product__image img {
-      max-width: 80px;
-      margin-right: 10px;
+    #Upsell-Product td {
+      border-top: 1px solid rgba(var(--color-foreground), 0.2) !important;
     }
 
-    .upsell-product__details {
-      flex-grow: 1;
+    .upsell-product__media {
+      padding: 20px 10px;
+      width: 50% !important;
     }
 
-    .upsell-product__title {
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .upsell-product__price {
-      font-size: 14px;
-      color: #777;
-    }
-
-    .upsell-product__button {
-      background-color: #13294c;
-      color: #fff;
-      padding: 5px 10px;
-      border: none;
-      cursor: pointer;
+    .upsell-carousel__container {
       width: 100%;
+      margin-top: 10px;
     }
 
-    .upsell-variants {
+    .upsell-carousel__header {
       display: flex;
-    }
-
-    .upsell-header {
-      margin: 15px 0;
-      display: grid !important;
-      border-top: 1px solid rgba(var(--color-foreground), 0.1);
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
       padding-top: 10px;
     }
 
-    .upsell-variant-radio {
-      display: none;
+    .upsell-carousel__header h4 {
+      margin: 0;
+      font-size: 16px;
+      color: rgba(var(--color-foreground), 0.8);
     }
 
-    .upsell-variant-label {
-      padding: 8px 12px;
-      margin-right: 10px;
-      border: 1px solid #d9d9d9;
-      border-radius: 4px;
+    .upsell-carousel__nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    .upsell-carousel__wrapper {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .upsell-carousel__btn {
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      display: inline-block;
-      font-size: 14px;
-      text-align: center;
+      font-size: 16px;
+      color: rgba(var(--color-foreground), 0.7);
+      flex-shrink: 0;
+      transition: color 0.2s ease;
     }
 
-    .upsell-variant-label:hover {
-      border-color: #a0a0a0;
+    .upsell-carousel__btn:hover {
+      color: rgba(var(--color-foreground), 1);
     }
 
-    .upsell-variant-radio:checked + .upsell-variant-label {
-      background-color: #f0f0f0;
-      border-color: #f0f0f0;
-      font-weight: bold;
-      color: white;
-    }
-
-    .upsell-variant-label.disabled {
-      opacity: 0.5;
+    .upsell-carousel__btn:disabled {
+      opacity: 0.3;
       cursor: not-allowed;
+    }
+
+    .upsell-carousel__track {
+      overflow: hidden;
+      width: 350px; /* 2 items × (120px width + 12px gap) */
+      margin: 0;
+    }
+
+    .upsell-carousel__slides {
+      display: flex;
+      transition: transform 0.3s ease;
+      gap: 12px;
+    }
+
+    .upsell-product__item {
+      flex: 0 0 auto;
+      width: 120px;
+      text-align: center;
+      padding: 8px;
+      border: 1px solid rgba(var(--color-foreground), 0.1);
+      border-radius: 8px;
+      background-color: rgba(var(--color-background), 1);
+    }
+
+    .upsell-product__image {
+      width: 104px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      background-color: rgba(var(--color-foreground), 0.05);
+    }
+
+    .upsell-product__title {
+      font-size: 1rem;
+      line-height: 1.2;
+      margin-bottom: 4px;
+      color: rgba(var(--color-foreground), 0.9);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .upsell-product__price {
+      font-size: 11px;
+      color: rgba(var(--color-foreground), 0.7);
+      font-weight: 500;
     }
   </style>
 
@@ -158,95 +197,152 @@
       ];
     }
 
-    // Function to update the product card with related product
-    function updateProductCard(relatedProduct) {
+    // Carousel state
+    let currentSlide = 0;
+    let productsPerView = 2; // Number of products visible at once
+    let totalProducts = 0;
+
+    // Function to create product HTML
+    function createProductHTML(product) {
+      const imageUrl = product.images && product.images.length > 0 ? 'https:' + product.images[0] : '';
+      const price = product.variants && product.variants.length > 0 ? 
+        (product.variants[0].price / 100).toLocaleString('en-US', {
+          style: 'currency',
+          currency: 'USD'
+        }) : '';
+
+      return `
+        <div class="upsell-product__item">
+          <a href="/products/${product.handle}">
+            <img class="upsell-product__image" src="${imageUrl}" alt="${product.title}" loading="lazy">
+            <div class="upsell-product__title">${product.title}</div>
+            <div class="upsell-product__price">${price}</div>
+          </a>
+        </div>
+      `;
+    }
+
+    // Function to update carousel with multiple products
+    function updateProductCarousel(relatedProducts) {
       const productCard = document.querySelector('#Upsell-Product');
-      if (productCard) {
-        productCard.style.display = ''; // Show the product card first
-        const image = productCard.querySelector('.cart-item__image');
-        if (image && relatedProduct.images && relatedProduct.images.length > 0) {
-          image.src = 'https:' + relatedProduct.images[0];
-          image.alt = relatedProduct.title;
-        }
+      const slidesContainer = document.querySelector('#upsell-carousel-slides');
+      
+      if (productCard && slidesContainer && relatedProducts.length > 0) {
+        productCard.style.display = ''; // Show the product card
 
-        const title = productCard.querySelector('.cart-item__name');
-        if (title) {
-          title.textContent = relatedProduct.title;
-          title.href = '/products/' + relatedProduct.handle;
-        }
+        // Create HTML for all products
+        const productsHTML = relatedProducts.map(product => createProductHTML(product)).join('');
+        slidesContainer.innerHTML = productsHTML;
 
-        // Handle variants
-        const variantsContainer = productCard.querySelector('.upsell-product__variants');
-        if (variantsContainer && relatedProduct.variants && relatedProduct.variants.length > 0) {
-          if (relatedProduct.variants.length > 1) {
-            let variantsHtml = `
-              <fieldset class="js product-form__input product-form__input--pill">
-                <legend class="form__label">Size</legend>
-                <div class="upsell-variants">
-            `;
-            
-            relatedProduct.variants.forEach((variant, index) => {
-              const isAvailable = variant.available;
-              variantsHtml += `
-                <input
-                  type="radio"
-                  id="variant-${variant.id}"
-                  name="upsell-variant"
-                  value="${variant.id}"
-                  data-price="${(variant.price / 100).toLocaleString('en-US', {
-                    style: 'currency',
-                    currency: 'USD'
-                  })}"
-                  ${index === 0 ? 'checked' : ''}
-                  ${!isAvailable ? 'class="disabled" disabled' : ''}
-                  class="upsell-variant-radio"
-                >
-                <label for="variant-${variant.id}"
-                  class="upsell-variant-label"
-                  ${!isAvailable ? 'class="disabled"' : ''}
-                >
-                  ${variant.title.split(' / ')[0]}
-                </label><br>
-              `;
-            });
-            
-            variantsHtml += `
-                </div>
-              </fieldset>
-            `;
-            variantsContainer.innerHTML = variantsHtml;
-          } else {
-            // Single variant - hidden input
-            variantsContainer.innerHTML = `
-              <input
-                type="radio"
-                id="variant-${relatedProduct.variants[0].id}"
-                name="upsell-variant"
-                value="${relatedProduct.variants[0].id}"
-                data-price="${(relatedProduct.variants[0].price / 100).toLocaleString('en-US', {
-                  style: 'currency',
-                  currency: 'USD'
-                })}"
-                checked
-                style="display: none;"
-              >
-            `;
+        totalProducts = relatedProducts.length;
+        currentSlide = 0;
+        updateCarouselButtons();
+        updateCarouselPosition();
+
+        // Aggressive scroll to bottom with multiple attempts
+        const attemptScroll = () => {
+          console.log('Attempting to scroll to upsell...');
+          
+                  // Force cart drawer to be scrollable with aggressive CSS
+        const cartDrawer = document.querySelector('cart-drawer');
+        if (cartDrawer) {
+          cartDrawer.style.setProperty('max-height', '100vh', 'important');
+          cartDrawer.style.setProperty('overflow-y', 'auto', 'important');
+          cartDrawer.style.setProperty('height', '100vh', 'important');
+        }
+        
+        const drawerInner = document.querySelector('.drawer__inner');
+        if (drawerInner) {
+          drawerInner.style.setProperty('max-height', '100vh', 'important');
+          drawerInner.style.setProperty('overflow-y', 'auto', 'important');
+          drawerInner.style.setProperty('height', '100vh', 'important');
+        }
+          
+          // Try multiple scroll methods
+          const methods = [
+            () => {
+              if (productCard) {
+                productCard.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                console.log('Method 1: scrollIntoView');
+                return true;
+              }
+              return false;
+            },
+            () => {
+              const container = document.querySelector('.drawer__inner, cart-drawer, #CartDrawer');
+              if (container) {
+                container.scrollTop = container.scrollHeight;
+                console.log('Method 2: scrollTop to', container.scrollHeight);
+                return true;
+              }
+              return false;
+            },
+            () => {
+              window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+              console.log('Method 3: window scroll');
+              return true;
+            },
+            () => {
+              // Force scroll by temporarily making content taller
+              if (productCard) {
+                const spacer = document.createElement('div');
+                spacer.style.height = '200px';
+                spacer.id = 'temp-spacer';
+                productCard.parentNode.appendChild(spacer);
+                
+                setTimeout(() => {
+                  productCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  setTimeout(() => {
+                    const tempSpacer = document.getElementById('temp-spacer');
+                    if (tempSpacer) tempSpacer.remove();
+                  }, 1000);
+                }, 100);
+                
+                console.log('Method 4: forced height with spacer');
+                return true;
+              }
+              return false;
+            }
+          ];
+          
+          // Try each method
+          for (let i = 0; i < methods.length; i++) {
+            try {
+              if (methods[i]()) {
+                console.log(`Scroll method ${i + 1} executed`);
+                break;
+              }
+            } catch (error) {
+              console.log(`Scroll method ${i + 1} failed:`, error);
+            }
           }
-        }
+        };
+        
+        // Multiple timed attempts
+        setTimeout(attemptScroll, 500);
+        setTimeout(attemptScroll, 1000);
+        setTimeout(attemptScroll, 1500);
+      }
+    }
 
-        const button = productCard.querySelector('.upsell-product__button');
-        if (button) {
-          button.dataset.productHandle = relatedProduct.handle;
-        }
+    // Function to update carousel position
+    function updateCarouselPosition() {
+      const slidesContainer = document.querySelector('#upsell-carousel-slides');
+      if (slidesContainer) {
+        const slideWidth = 132; // 120px item width + 12px gap
+        const offset = currentSlide * slideWidth;
+        slidesContainer.style.transform = `translateX(-${offset}px)`;
+      }
+    }
 
-        // Update price if available
-        const price = productCard.querySelector('.cart-item__final-price');
-        if (price && relatedProduct.variants && relatedProduct.variants.length > 0) {
-          price.textContent = (relatedProduct.variants[0].price / 100).toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD'
-          });
-        }
+    // Function to update button states
+    function updateCarouselButtons() {
+      const prevBtn = document.querySelector('.upsell-carousel__btn--prev');
+      const nextBtn = document.querySelector('.upsell-carousel__btn--next');
+      
+      if (prevBtn && nextBtn) {
+        prevBtn.disabled = currentSlide <= 0;
+        nextBtn.disabled = currentSlide >= totalProducts - productsPerView;
       }
     }
 
@@ -265,17 +361,11 @@
           return resolve();
         }
 
-        const relatedProductUrl = `/recommendations/products.json?product_id=${firstCartItem.id}&limit=4&intent=related`;
+        const relatedProductUrl = `/recommendations/products.json?product_id=${firstCartItem.id}&limit=12&intent=related`;
         
         // Show loading state
         const productCard = document.querySelector('#Upsell-Product');
         if (productCard) {
-          const loadingSpinner = productCard.querySelector('.loading__spinner');
-          const addButton = productCard.querySelector('.add-to-cart');
-          if (loadingSpinner && addButton) {
-            addButton.style.display = 'none';
-            loadingSpinner.classList.remove('hidden');
-          }
           productCard.classList.add('loading');
           productCard.style.opacity = '0.5';
         }
@@ -284,13 +374,13 @@
           .then(response => response.json())
           .then(data => {
 
-            // Find first related product not in cart
-            const relatedProduct = data.products.find(product =>
-              !cartProducts.some(cartItem => cartItem.id === product.id)
-            );
+            // Filter out products already in cart and limit to 10
+            const relatedProducts = data.products
+              .filter(product => !cartProducts.some(cartItem => cartItem.id === product.id))
+              .slice(0, 10);
 
-            if (relatedProduct) {
-              updateProductCard(relatedProduct);
+            if (relatedProducts.length > 0) {
+              updateProductCarousel(relatedProducts);
             } else {
               // Hide the upsell section if no eligible related products
               const upsellSection = document.querySelector('#Upsell-Product');
@@ -306,12 +396,6 @@
           .finally(() => {
             // Hide loading state
             if (productCard) {
-              const loadingSpinner = productCard.querySelector('.loading__spinner');
-              const addButton = productCard.querySelector('.add-to-cart');
-              if (loadingSpinner && addButton) {
-                addButton.style.display = '';
-                loadingSpinner.classList.add('hidden');
-              }
               productCard.classList.remove('loading');
               productCard.style.opacity = '';
             }
@@ -321,6 +405,8 @@
 
     // Initial fetch of related products
     fetchAndUpdateRelatedProducts();
+
+
 
     // Debounce function to limit update frequency
     function debounce(func, wait) {
@@ -388,105 +474,24 @@
       });
     }
 
-    // Rest of the HTML remains the same until the handleUpsellAddToCart function
-
-    function handleUpsellAddToCart(event) {
-      const upsellButton = event.target.closest('.upsell-product__button');
-      if (!upsellButton) return;
-
-      const loadingSpinner = upsellButton.querySelector('.loading__spinner');
-      const addToCartSpan = upsellButton.querySelector('.add-to-cart');
-      const selectedVariant = document.querySelector('input[name="upsell-variant"]:checked');
-      const productCard = document.querySelector('#Upsell-Product');
-
-      if (!selectedVariant) {
-        return;
-      }
-
-      const variantId = selectedVariant.value;
-
-      // Show loading state
-      addToCartSpan.style.display = 'none';
-      loadingSpinner.classList.remove('hidden');
-      if (productCard) {
-        productCard.classList.add('loading');
-        productCard.style.opacity = '0.5';
-      }
-
-      const formData = {
-        items: [
-          {
-            id: variantId,
-            quantity: 1,
-          },
-        ],
-      };
-
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          fetch('/cart')
-            .then((response) => response.text())
-            .then((html) => {
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
-              
-              // Store the current upsell product element
-              const currentUpsell = document.querySelector('#Upsell-Product');
-              const currentUpsellParent = currentUpsell ? currentUpsell.parentNode : null;
-              
-              // Update cart drawer
-              document.querySelector('#CartDrawer').innerHTML = doc.querySelector('#CartDrawer').innerHTML;
-              
-              // If we had an upsell product, restore it to its parent
-              if (currentUpsell && currentUpsellParent) {
-                currentUpsellParent.appendChild(currentUpsell);
-              }
-              
-              
-              // Fetch and update related products after successful cart update
-              fetchAndUpdateRelatedProducts();
-            })
-            .catch(error => {
-              console.error('Error updating cart drawer:', error);
-            })
-            .finally(() => {
-              // Reset loading states
-              if (productCard) {
-                productCard.classList.remove('loading');
-                productCard.style.opacity = '';
-              }
-              addToCartSpan.style.display = '';
-              loadingSpinner.classList.add('hidden');
-            });
-        })
-        .catch((error) => {
-          console.error('Error adding upsell product to cart:', error);
-          // Reset loading states on error
-          if (productCard) {
-            productCard.classList.remove('loading');
-            productCard.style.opacity = '';
-          }
-          addToCartSpan.style.display = '';
-          loadingSpinner.classList.add('hidden');
-        });
-    }
-
-    document.body.addEventListener('click', function (event) {
-      if (event.target.closest('.upsell-product__button')) {
-        handleUpsellAddToCart(event);
+    // Carousel navigation event listeners
+    document.addEventListener('click', function(event) {
+      if (event.target.closest('.upsell-carousel__btn--prev')) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateCarouselPosition();
+          updateCarouselButtons();
+        }
+      } else if (event.target.closest('.upsell-carousel__btn--next')) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (currentSlide < totalProducts - productsPerView) {
+          currentSlide++;
+          updateCarouselPosition();
+          updateCarouselButtons();
+        }
       }
     });
   </script>

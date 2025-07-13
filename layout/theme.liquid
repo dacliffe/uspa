@@ -359,13 +359,14 @@
     {% if template contains 'collection' %}
       <script src="{{ 'collection-load-more.js' | asset_url }}" defer="defer"></script>
     {% endif %}
-  <script type="text/javascript">if(typeof window.hulkappsWishlist === 'undefined') {
-                            window.hulkappsWishlist = {};
-                        }
-                        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
-                        window.hulkappsWishlist.hasAppBlockSupport = '1';
-                        </script>
-</head>
+    <script type="text/javascript">
+      if (typeof window.hulkappsWishlist === 'undefined') {
+        window.hulkappsWishlist = {};
+      }
+      window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
+      window.hulkappsWishlist.hasAppBlockSupport = '1';
+    </script>
+  </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -441,8 +442,8 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  {% render 'hulkappsWishlistPopup' %}
-</body>
+    {% render 'hulkappsWishlistPopup' %}
+  </body>
 </html>
 
 <!-- Begin Shopify-Afterpay JavaScript Snippet (v1.2.1) -->
@@ -463,7 +464,7 @@
     // var afterpay_variable_price_fallback_selector = '';
     // var afterpay_variable_price_fallback_method = 'mutation';  // Can be 'mutation' or 'interval'.
 
-    // var afterpay_cart_integration_enabled = true;
+       var afterpay_cart_integration_enabled = false;
     // var afterpay_cart_static_selector = '#cart-subtotal-selector';
     // var afterpay_variable_subtotal_fallback = false;
     // var afterpay_variable_subtotal_fallback_selector = '';
