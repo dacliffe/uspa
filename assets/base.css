@@ -2959,9 +2959,10 @@ details-disclosure>details {
   /* border: 1px solid transparent; */
   border-radius: var(--badge-corner-radius);
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1rem !important;
   letter-spacing: 0.1rem;
   line-height: 1;
+  font-weight: 400 !important;
   /* padding: 0.5rem 1.3rem 0.6rem 1.3rem; */
   text-align: center;
   background-color: none !important;
