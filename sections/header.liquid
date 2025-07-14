@@ -29,6 +29,13 @@
     overflow: hidden;
   }
 
+  .header-strip__container {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+  }
+
   .header-strip__image {
     width: 100%;
     height: 100%;
@@ -367,21 +374,26 @@
     </div>
   </header>
   {%- if section.settings.show_strip -%}
-    <div class="header-strip" style="height: {{ section.settings.strip_height }}px;">
-      {%- if section.settings.strip_image != blank -%}
-        {{
-          section.settings.strip_image
-          | image_url: width: 2000
-          | image_tag:
-            loading: 'eager',
-            width: section.settings.strip_image.width,
-            height: section.settings.strip_image.height,
-            class: 'header-strip__image'
-        }}
-      {%- endif -%}
-      {%- if section.settings.show_strip_color -%}
-        <div class="header-strip__color" style="background-color: {{ section.settings.strip_color }};"></div>
-      {%- endif -%}
+    <div
+      class="header-strip"
+      style="height: {{ section.settings.strip_height }}px;"
+    >
+      <div class="header-strip__container">
+        {%- if section.settings.strip_image != blank -%}
+          {{
+            section.settings.strip_image
+            | image_url: width: 2000
+            | image_tag:
+              loading: 'eager',
+              width: section.settings.strip_image.width,
+              height: section.settings.strip_image.height,
+              class: 'header-strip__image'
+          }}
+        {%- endif -%}
+        {%- if section.settings.show_strip_color -%}
+          <div class="header-strip__color" style="background-color: {{ section.settings.strip_color }};"></div>
+        {%- endif -%}
+      </div>
     </div>
   {%- endif -%}
 </{{ header_tag }}>
