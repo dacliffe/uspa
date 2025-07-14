@@ -148,6 +148,21 @@
       padding-top: 0.5rem;
     }
   }
+
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'menu_link_color' and block.settings.menu_link_handle != blank and block.settings.link_color != blank -%}
+      #HeaderMenu-{{ block.settings.menu_link_handle }}-{{ block.settings.menu_link_handle }},
+      #HeaderMenu-{{ block.settings.menu_link_handle }},
+      #HeaderDrawer-{{ block.settings.menu_link_handle }} {
+        color: {{ block.settings.link_color }} !important;
+      }
+      #HeaderMenu-{{ block.settings.menu_link_handle }}-{{ block.settings.menu_link_handle }} span,
+      #HeaderMenu-{{ block.settings.menu_link_handle }} span,
+      #HeaderDrawer-{{ block.settings.menu_link_handle }} span {
+        color: {{ block.settings.link_color }} !important;
+      }
+    {%- endif -%}
+  {%- endfor -%}
 </style>
 
 {%- style -%}
@@ -845,6 +860,24 @@
             }
           ],
           "default": "h3"
+        }
+      ]
+    },
+    {
+      "type": "menu_link_color",
+      "name": "Menu Link Color",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_link_handle",
+          "label": "Menu Link Handle",
+          "info": "Enter the handle of the menu link (e.g., 'clothing', 'accessories', 'sale')"
+        },
+        {
+          "type": "color",
+          "id": "link_color",
+          "label": "Link Text Color",
+          "default": "#000000"
         }
       ]
     },
