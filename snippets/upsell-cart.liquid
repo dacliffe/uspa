@@ -241,9 +241,7 @@
 
         // Aggressive scroll to bottom with multiple attempts
         const attemptScroll = () => {
-          console.log('Attempting to scroll to upsell...');
-          
-                  // Force cart drawer to be scrollable with aggressive CSS
+          // Force cart drawer to be scrollable with aggressive CSS
         const cartDrawer = document.querySelector('cart-drawer');
         if (cartDrawer) {
           cartDrawer.style.setProperty('max-height', '100vh', 'important');
@@ -263,7 +261,6 @@
             () => {
               if (productCard) {
                 productCard.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                console.log('Method 1: scrollIntoView');
                 return true;
               }
               return false;
@@ -272,14 +269,12 @@
               const container = document.querySelector('.drawer__inner, cart-drawer, #CartDrawer');
               if (container) {
                 container.scrollTop = container.scrollHeight;
-                console.log('Method 2: scrollTop to', container.scrollHeight);
                 return true;
               }
               return false;
             },
             () => {
               window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-              console.log('Method 3: window scroll');
               return true;
             },
             () => {
@@ -298,7 +293,6 @@
                   }, 1000);
                 }, 100);
                 
-                console.log('Method 4: forced height with spacer');
                 return true;
               }
               return false;
@@ -309,11 +303,10 @@
           for (let i = 0; i < methods.length; i++) {
             try {
               if (methods[i]()) {
-                console.log(`Scroll method ${i + 1} executed`);
                 break;
               }
             } catch (error) {
-              console.log(`Scroll method ${i + 1} failed:`, error);
+              // Silent error handling
             }
           }
         };
