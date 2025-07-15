@@ -34,6 +34,11 @@
           "type": "price",
           "settings": {}
         },
+        "bottom_label_fCNX7a": {
+          "type": "bottom_label",
+          "disabled": true,
+          "settings": {}
+        },
         "vendor": {
           "type": "text",
           "settings": {
@@ -151,6 +156,7 @@
         "caption",
         "lipscore_reviews_lipscore_product_rating_KeMjAF",
         "price",
+        "bottom_label_fCNX7a",
         "vendor",
         "divider_zfhBeB",
         "swatches_TdCRXL",
