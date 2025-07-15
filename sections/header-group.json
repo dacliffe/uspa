@@ -284,8 +284,8 @@
           "settings": {
             "menu_title": "SALE",
             "image_title": "Mens",
-            "image_link": "shopify://collections/mens-clothing-sale",
-            "image": "shopify://shop_images/2_a2afb8f1-686f-424a-927b-0a585bb21886.jpg",
+            "image_link": "shopify://collections/mens-summer-sale",
+            "image": "shopify://shop_images/63.jpg",
             "image_order": 0
           }
         },
@@ -294,8 +294,8 @@
           "settings": {
             "menu_title": "SALE",
             "image_title": "Womens",
-            "image_link": "shopify://collections/womens-sale",
-            "image": "shopify://shop_images/1_7817f649-84f7-4283-a538-c0df32dca288.jpg",
+            "image_link": "shopify://collections/womens-summer-sale",
+            "image": "shopify://shop_images/62.jpg",
             "image_order": 1
           }
         },
@@ -304,8 +304,8 @@
           "settings": {
             "menu_title": "SALE",
             "image_title": "Kids",
-            "image_link": "shopify://collections/kids-sale",
-            "image": "shopify://shop_images/3_a62a33e1-cacb-43f3-9d2e-d6cf03ef89f3.jpg",
+            "image_link": "shopify://collections/kids-summer-sale",
+            "image": "shopify://shop_images/61.jpg",
             "image_order": 2
           }
         }
