@@ -26,10 +26,10 @@
             "mobile_content_alignment": "center",
             "title": "AUTUMN WINTER 25 COLLECTION",
             "subtitle": "WINTER LAYERED RIGHT. ESSENTIAL FOR THE SEASON",
-            "subtitle_font_size": 24,
+            "subtitle_font_size": 16,
             "mobile_subtitle_font_size": 16,
             "subtitle_bold": true,
-            "title_font_size": 50,
+            "title_font_size": 28,
             "mobile_title_font_size": 32,
             "title_bold": true,
             "title_color": "#ffffff",
@@ -123,7 +123,7 @@
       ],
       "settings": {
         "slide_interval": 5000,
-        "button_font_size": 14
+        "button_font_size": 17
       }
     },
     "split_banner_dWe33F": {
