@@ -239,82 +239,28 @@
         updateCarouselButtons();
         updateCarouselPosition();
 
-        // Aggressive scroll to bottom with multiple attempts
+        // Gentle scroll to show upsell products without forcing viewport constraints
         const attemptScroll = () => {
-          // Force cart drawer to be scrollable with aggressive CSS
-        const cartDrawer = document.querySelector('cart-drawer');
-        if (cartDrawer) {
-          cartDrawer.style.setProperty('max-height', '100vh', 'important');
-          cartDrawer.style.setProperty('overflow-y', 'auto', 'important');
-          cartDrawer.style.setProperty('height', '100vh', 'important');
-        }
-        
-        const drawerInner = document.querySelector('.drawer__inner');
-        if (drawerInner) {
-          drawerInner.style.setProperty('max-height', '100vh', 'important');
-          drawerInner.style.setProperty('overflow-y', 'auto', 'important');
-          drawerInner.style.setProperty('height', '100vh', 'important');
-        }
-          
-          // Try multiple scroll methods
-          const methods = [
-            () => {
-              if (productCard) {
-                productCard.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                return true;
-              }
-              return false;
-            },
-            () => {
-              const container = document.querySelector('.drawer__inner, cart-drawer, #CartDrawer');
-              if (container) {
-                container.scrollTop = container.scrollHeight;
-                return true;
-              }
-              return false;
-            },
-            () => {
-              window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-              return true;
-            },
-            () => {
-              // Force scroll by temporarily making content taller
-              if (productCard) {
-                const spacer = document.createElement('div');
-                spacer.style.height = '200px';
-                spacer.id = 'temp-spacer';
-                productCard.parentNode.appendChild(spacer);
-                
-                setTimeout(() => {
-                  productCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                  setTimeout(() => {
-                    const tempSpacer = document.getElementById('temp-spacer');
-                    if (tempSpacer) tempSpacer.remove();
-                  }, 1000);
-                }, 100);
-                
-                return true;
-              }
-              return false;
-            }
-          ];
-          
-          // Try each method
-          for (let i = 0; i < methods.length; i++) {
-            try {
-              if (methods[i]()) {
-                break;
-              }
-            } catch (error) {
-              // Silent error handling
+          // Only scroll if the upsell section is not visible
+          if (productCard) {
+            const rect = productCard.getBoundingClientRect();
+            const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+            
+            if (!isVisible) {
+              // Use a gentle scroll that works better on mobile Safari
+              setTimeout(() => {
+                productCard.scrollIntoView({ 
+                  behavior: 'smooth', 
+                  block: 'nearest',
+                  inline: 'nearest'
+                });
+              }, 300);
             }
           }
         };
         
-        // Multiple timed attempts
-        setTimeout(attemptScroll, 500);
-        setTimeout(attemptScroll, 1000);
-        setTimeout(attemptScroll, 1500);
+        // Single gentle scroll attempt
+        setTimeout(attemptScroll, 800);
       }
     }
 
