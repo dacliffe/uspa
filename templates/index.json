@@ -46,7 +46,7 @@
             "button2_type": "primary",
             "button2_theme_color": "#a41d35",
             "button2_text_color": "#ffffff",
-            "button3_text": "KIDSWEAR",
+            "button3_text": "KIDS",
             "mobile_button3_text": "",
             "button3_link": "shopify://collections/kids-summer-sale",
             "button3_type": "primary",
@@ -60,8 +60,8 @@
             "button4_text_color": "#ffffff",
             "overlay_opacity": 0,
             "overlay_color": "#000000",
-            "desktop_button_font_size": 21,
-            "mobile_button_font_size": 19
+            "desktop_button_font_size": 22,
+            "mobile_button_font_size": 24
           }
         },
         "image_slide_zdNam3": {
@@ -78,11 +78,11 @@
             "mobile_content_alignment": "center",
             "title": "SPRING SUMMER '25 COLLECTION",
             "subtitle": "ESSENTIALS FOR THE SEASON",
-            "subtitle_font_size": 24,
-            "mobile_subtitle_font_size": 16,
+            "subtitle_font_size": 16,
+            "mobile_subtitle_font_size": 15,
             "subtitle_bold": true,
-            "title_font_size": 50,
-            "mobile_title_font_size": 32,
+            "title_font_size": 28,
+            "mobile_title_font_size": 24,
             "title_bold": true,
             "title_color": "#ffffff",
             "subtitle_color": "#ffffff",
