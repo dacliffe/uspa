@@ -124,7 +124,7 @@
 
 .card__information {
   grid-row-start: 2;
-  padding: 1.3rem 1rem;
+  padding: 1.3rem 0 0 0;
 }
 
 .card:not(.ratio)>.card__content {
@@ -246,16 +246,6 @@
   align-self: flex-end;
   grid-row-start: 3;
   justify-self: flex-start;
-}
-
-.product_badge {
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
 }
 
 .card__badge.top {

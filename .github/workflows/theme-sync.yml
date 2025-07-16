@@ -1,0 +1,107 @@
+name: Sync Theme Changes
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "**.json" # Don't trigger on JSON file changes
+      - "**/theme.liquid" # Don't trigger on theme.liquid changes
+
+jobs:
+  sync-theme:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        branch: [live/uk]
+      fail-fast: false # Continue with other branches if one fails
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Sync changes to store branch
+        run: |
+          # Debug information
+          echo "Current branch:"
+          git branch --show-current
+          echo "Available branches:"
+          git branch -a
+
+          # Fetch all branches
+          echo "Fetching all branches..."
+          git fetch --all
+
+          # Check if target branch exists on remote
+          if git ls-remote --heads origin ${{ matrix.branch }} | grep -q ${{ matrix.branch }}; then
+            echo "Branch ${{ matrix.branch }} exists on remote"
+            git checkout -B ${{ matrix.branch }} origin/${{ matrix.branch }}
+          else
+            echo "Branch ${{ matrix.branch }} does not exist on remote, creating from main"
+            git checkout -b ${{ matrix.branch }} origin/main
+            git push -u origin ${{ matrix.branch }}
+          fi
+
+          # Create a temporary branch for the merge
+          echo "Creating temporary merge branch..."
+          git checkout -B temp-merge-${{ matrix.branch }}
+
+          # Backup theme.liquid and store current branch JSON files
+          echo "Backing up theme.liquid and JSON files..."
+          theme_liquid_files=$(find . -name "theme.liquid" -type f)
+          json_files=$(find . -name "*.json" -type f)
+
+          for file in $theme_liquid_files $json_files; do
+            if [ -f "$file" ]; then
+              mkdir -p "/tmp/backup/$(dirname "$file")"
+              cp "$file" "/tmp/backup/$file"
+              echo "Backed up: $file"
+            fi
+          done
+
+          # Get files from main branch (excluding JSON files)
+          echo "Getting non-JSON files from main..."
+          git checkout origin/main -- $(git ls-tree -r --name-only origin/main | grep -v ".json$")
+
+          # Restore theme.liquid and JSON files from backup
+          echo "Restoring theme.liquid and JSON files..."
+          for file in $theme_liquid_files $json_files; do
+            if [ -f "/tmp/backup/$file" ]; then
+              mkdir -p "$(dirname "$file")"
+              cp "/tmp/backup/$file" "$file"
+              echo "Restored: $file"
+            fi
+          done
+
+          # Show status before commit
+          echo "Git status:"
+          git status
+
+          # Stage all changes
+          git add -A
+
+          # Commit the changes if there are any
+          if ! git diff --cached --quiet; then
+            echo "Committing changes..."
+            git commit -m "Sync: Update non-JSON files from main while preserving store-specific files"
+          else
+            echo "No changes to commit"
+          fi
+
+          # Push changes to the store branch
+          echo "Pushing changes..."
+          git push -f origin HEAD:${{ matrix.branch }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

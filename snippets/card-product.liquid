@@ -140,8 +140,22 @@
                 </a>
               </h3>
             </div>
-            <div class="card__badge product_badge {{ settings.badge_position }}">
-              {%- if card_product.available == false -%}
+            <div class="card__badge {{ settings.badge_position }}">
+              {%- if card_product.tags contains 'New' -%}
+                <span
+                  id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                  class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+                >
+                  NEW
+                </span>
+              {%- elsif card_product.tags contains 'best-seller' -%}
+                <span
+                  id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                  class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+                >
+                  BEST SELLER
+                </span>
+              {%- elsif card_product.available == false -%}
                 <span
                   id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                   class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
@@ -149,11 +163,17 @@
                   {{- 'products.product.sold_out' | t -}}
                 </span>
               {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+                {%- assign discount_percentage = card_product.compare_at_price
+                  | minus: card_product.price
+                  | times: 100
+                  | divided_by: card_product.compare_at_price
+                  | round
+                -%}
                 <span
                   id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                   class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
                 >
-                  {{- 'products.product.on_sale' | t -}}
+                  {{- discount_percentage }}% OFF
                 </span>
               {%- endif -%}
             </div>
@@ -299,6 +319,13 @@
               {%- endif -%}
 
               {% render 'lipscore-rating-small', product: card_product %}
+              <div class="product-message-container">
+                <div class="product-message">
+                  <span class="bottom-label-text">
+                    {{- card_product.metafields.custom.bottom_label | upcase -}}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </a>
@@ -312,6 +339,14 @@
                 flex-wrap: wrap;
                 gap: 0.6rem;
                 margin: 0.8rem 0;
+              }
+
+              .bottom-label-text {
+                color: #a41e35;
+                font-weight: 800;
+                font-size: 1.2rem;
+                line-height: 1.2;
+                text-transform: uppercase;
               }
               .card-swatch {
                 width: 25px;
@@ -378,8 +413,22 @@
             </div>
           {%- endif -%}
         {%- endif -%}
-        <div class="card__badge product_badge {{ settings.badge_position }}">
-          {%- if card_product.available == false -%}
+        <div class="card__badge {{ settings.badge_position }}">
+          {%- if card_product.tags contains 'New' -%}
+            <span
+              id="Badge-{{ section_id }}-{{ card_product.id }}"
+              class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+            >
+              NEW
+            </span>
+          {%- elsif card_product.tags contains 'best-seller' -%}
+            <span
+              id="Badge-{{ section_id }}-{{ card_product.id }}"
+              class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+            >
+              BEST SELLER
+            </span>
+          {%- elsif card_product.available == false -%}
             <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
               class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
@@ -387,11 +436,17 @@
               {{- 'products.product.sold_out' | t -}}
             </span>
           {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+            {%- assign discount_percentage = card_product.compare_at_price
+              | minus: card_product.price
+              | times: 100
+              | divided_by: card_product.compare_at_price
+              | round
+            -%}
             <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
               class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
             >
-              {{- 'products.product.on_sale' | t -}}
+              {{- discount_percentage }}% OFF
             </span>
           {%- endif -%}
         </div>

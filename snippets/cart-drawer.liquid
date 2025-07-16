@@ -444,6 +444,9 @@
                         </td>
                       </tr>
                     {%- endfor -%}
+
+                    {%- comment -%} Add upsell product row {%- endcomment -%}
+                    {%- render 'upsell-cart' -%}
                   </tbody>
                 </table>
               </div>
@@ -456,25 +459,6 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
-      {%- if cart != empty -%}
-        <div>
-          <table>
-            <thead class="upsell-header">
-              <th
-                id="CartDrawer-ColumnProduct"
-                class="caption-with-letter-spacing"
-                scope="col"
-                role="columnheader"
-              >
-                You may also like
-              </th>
-            </thead>
-            <tbody>
-              {%- render 'upsell-cart' -%}
-            </tbody>
-          </table>
-        </div>
-      {% endif %}
       <div class="drawer__footer">
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">

@@ -205,6 +205,28 @@
                 </p>
               {%- when 'swatches' -%}
                 {% render 'custom-swatches' %}
+              {%- when 'bottom_label' -%}
+                {%- if product.metafields.custom.bottom_label != blank -%}
+                  <div class="product-message-container" {{ block.shopify_attributes }}>
+                    <div class="product-message">
+                      <span class="bottom-label-text">
+                        {{- product.metafields.custom.bottom_label | upcase -}}
+                      </span>
+                    </div>
+                  </div>
+                  <style>
+                    .product-message-container {
+                      margin: 1rem 0;
+                    }
+                    .bottom-label-text {
+                      color: #a41e35;
+                      font-weight: 800;
+                      font-size: 1.2rem;
+                      line-height: 1.2;
+                      text-transform: uppercase;
+                    }
+                  </style>
+                {%- endif -%}
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
@@ -830,6 +852,17 @@
       "type": "swatches",
       "name": "Color Swatches",
       "limit": 1
+    },
+    {
+      "type": "bottom_label",
+      "name": "Bottom Label",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "This block displays the product's custom bottom label metafield. The label appears in red text and is automatically converted to uppercase. Configure the metafield at: Settings > Metafields > Products > custom.bottom_label"
+        }
+      ]
     },
     {
       "type": "title",

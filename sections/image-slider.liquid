@@ -181,7 +181,7 @@
     }
   }
 
-  .carousel-caption h2 {
+  .carousel.slide .carousel-caption h2 {
     margin-bottom: 1rem;
     color: var(--title-color, #fff);
   }
@@ -205,11 +205,11 @@
   }
 
   @media screen and (max-width: 767px) {
-    .carousel-caption h2 {
-      font-size: {{ block.settings.mobile_title_font_size }}px;
+    .carousel.slide .carousel-caption h2 {
+      font-size: var(--mobile-title-size, {{ block.settings.mobile_title_font_size }}px) !important;
     }
-    .carousel-caption p {
-      font-size: {{ block.settings.mobile_subtitle_font_size }}px;
+    .carousel.slide .carousel-caption p {
+      font-size: var(--mobile-subtitle-size, {{ block.settings.mobile_subtitle_font_size }}px) !important;
     }
     .carousel-button {
       font-size: {{ block.settings.mobile_button_font_size }}px;
@@ -217,14 +217,35 @@
   }
 
   @media screen and (min-width: 768px) {
-    .carousel-caption h2 {
-      font-size: {{ block.settings.title_font_size }}px;
+    .carousel.slide .carousel-caption h2 {
+      font-size: var(--desktop-title-size, {{ block.settings.title_font_size }}px) !important;
     }
-    .carousel-caption p {
-      font-size: {{ block.settings.subtitle_font_size }}px;
+    .carousel.slide .carousel-caption p {
+      font-size: var(--desktop-subtitle-size, {{ block.settings.subtitle_font_size }}px) !important;
     }
     .carousel-button {
       font-size: {{ block.settings.desktop_button_font_size }}px;
+    }
+  }
+
+
+
+    /* Ultra-specific selector to override everything */
+  .carousel.slide .carousel-inner .carousel-item .carousel-caption h2 {
+    font-size: var(--desktop-title-size, {{ block.settings.title_font_size }}px) !important;
+  }
+
+  .carousel.slide .carousel-inner .carousel-item .carousel-caption p {
+    font-size: var(--desktop-subtitle-size, {{ block.settings.subtitle_font_size }}px) !important;
+  }
+
+  @media screen and (max-width: 767px) {
+    .carousel.slide .carousel-inner .carousel-item .carousel-caption h2 {
+      font-size: var(--mobile-title-size, {{ block.settings.mobile_title_font_size }}px) !important;
+    }
+
+    .carousel.slide .carousel-inner .carousel-item .carousel-caption p {
+      font-size: var(--mobile-subtitle-size, {{ block.settings.mobile_subtitle_font_size }}px) !important;
     }
   }
 
@@ -405,14 +426,14 @@
         >
           {%- if block.settings.title -%}
             <h2
-              style="font-weight: {% if block.settings.title_bold %}bold{% else %}normal{% endif %}; --title-color: {{ block.settings.title_color }};"
+              style="font-weight: {% if block.settings.title_bold %}bold{% else %}normal{% endif %}; --title-color: {{ block.settings.title_color }}; --desktop-title-size: {{ block.settings.title_font_size }}px; --mobile-title-size: {{ block.settings.mobile_title_font_size }}px;"
             >
               {{ block.settings.title }}
             </h2>
           {%- endif -%}
           {%- if block.settings.subtitle -%}
             <p
-              style="font-weight: {% if block.settings.subtitle_bold %}bold{% else %}normal{% endif %}; --subtitle-color: {{ block.settings.subtitle_color }};"
+              style="font-weight: {% if block.settings.subtitle_bold %}bold{% else %}normal{% endif %}; --subtitle-color: {{ block.settings.subtitle_color }}; --desktop-subtitle-size: {{ block.settings.subtitle_font_size }}px; --mobile-subtitle-size: {{ block.settings.mobile_subtitle_font_size }}px;"
             >
               {{ block.settings.subtitle }}
             </p>
