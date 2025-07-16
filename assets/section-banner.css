@@ -1,10 +1,5 @@
 .custom-banner {
-    max-width: 2000px;
     max-height: 850px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    padding: 0
 }
 
 .custom-banner img {
