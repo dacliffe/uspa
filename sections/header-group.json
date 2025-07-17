@@ -54,6 +54,13 @@
     "header": {
       "type": "header",
       "blocks": {
+        "menu_link_color_LdPHcF": {
+          "type": "menu_link_color",
+          "settings": {
+            "menu_link_handle": "sale",
+            "link_color": "#a41d35"
+          }
+        },
         "mega_menu_announcement_HtEmxk": {
           "type": "mega_menu_announcement",
           "settings": {
@@ -311,6 +318,7 @@
         }
       },
       "block_order": [
+        "menu_link_color_LdPHcF",
         "mega_menu_announcement_HtEmxk",
         "menu_title_LzDcr7",
         "mega_menu_image_BCVmWY",

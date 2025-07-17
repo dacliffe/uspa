@@ -15,21 +15,21 @@
         "image_slide_jg8RmQ": {
           "type": "image_slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Untitled_design_45.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design_46.jpg",
+            "desktop_image": "shopify://shop_images/SHOP_NOW_17.jpg",
+            "mobile_image": "shopify://shop_images/Untitled_design_49.jpg",
             "slide_link": "shopify://collections/up-to-40-off-summer-sale",
-            "vertical_alignment": "bottom",
+            "vertical_alignment": "middle",
             "horizontal_alignment": "center",
             "content_alignment": "center",
-            "mobile_vertical_alignment": "bottom",
+            "mobile_vertical_alignment": "middle",
             "mobile_horizontal_alignment": "center",
             "mobile_content_alignment": "center",
-            "title": "",
+            "title": "UP TO 50% OFF*",
             "subtitle": "*T&Cs apply",
-            "subtitle_font_size": 21,
-            "mobile_subtitle_font_size": 26,
+            "subtitle_font_size": 14,
+            "mobile_subtitle_font_size": 13,
             "subtitle_bold": true,
-            "title_font_size": 72,
+            "title_font_size": 60,
             "mobile_title_font_size": 37,
             "title_bold": true,
             "title_color": "#a41d35",
@@ -52,16 +52,16 @@
             "button3_type": "primary",
             "button3_theme_color": "#a41d35",
             "button3_text_color": "#ffffff",
-            "button4_text": "",
+            "button4_text": "ALL",
             "mobile_button4_text": "",
-            "button4_link": "",
+            "button4_link": "shopify://collections/up-to-40-off-summer-sale",
             "button4_type": "primary",
-            "button4_theme_color": "#ffffff",
-            "button4_text_color": "#000000",
+            "button4_theme_color": "#a41d35",
+            "button4_text_color": "#ffffff",
             "overlay_opacity": 0,
             "overlay_color": "#000000",
-            "desktop_button_font_size": 21,
-            "mobile_button_font_size": 19
+            "desktop_button_font_size": 22,
+            "mobile_button_font_size": 24
           }
         },
         "image_slide_zdNam3": {
@@ -78,11 +78,11 @@
             "mobile_content_alignment": "center",
             "title": "SPRING SUMMER '25 COLLECTION",
             "subtitle": "ESSENTIALS FOR THE SEASON",
-            "subtitle_font_size": 24,
-            "mobile_subtitle_font_size": 16,
+            "subtitle_font_size": 16,
+            "mobile_subtitle_font_size": 15,
             "subtitle_bold": true,
-            "title_font_size": 50,
-            "mobile_title_font_size": 32,
+            "title_font_size": 28,
+            "mobile_title_font_size": 24,
             "title_bold": true,
             "title_color": "#ffffff",
             "subtitle_color": "#ffffff",
@@ -230,7 +230,7 @@
       ],
       "settings": {
         "slide_interval": 5000,
-        "button_font_size": 14
+        "button_font_size": 19
       }
     },
     "image_slider_AWUHxk": {
