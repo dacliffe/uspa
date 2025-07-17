@@ -7,12 +7,13 @@ permissions:
 on:
   push:
     branches:
-      - main # ONLY triggers on main branch pushes - ensures one-way sync FROM main TO live/uk
+      - main
     paths-ignore:
       - "**.json" # Don't trigger on JSON file changes
       - "**/theme.liquid" # Don't trigger on theme.liquid changes
       - "snippets/custom-swatches.liquid" # Don't trigger on custom-swatches.liquid changes
       - "snippets/card-product.liquid" # Don't trigger on card-product.liquid changes
+      - ""
 
 jobs:
   sync-theme:
