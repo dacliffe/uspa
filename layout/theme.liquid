@@ -328,7 +328,7 @@
         t.src = 'https://www.clarity.ms/tag/' + i;
         y = l.getElementsByTagName(r)[0];
         y.parentNode.insertBefore(t, y);
-      })(window, document, 'clarity', 'script', 'k7ulm3j957');
+      })(window, document, 'clarity', 'script', 'ffmyu1vh6s');
     </script>
 
     <script>
@@ -359,13 +359,14 @@
     {% if template contains 'collection' %}
       <script src="{{ 'collection-load-more.js' | asset_url }}" defer="defer"></script>
     {% endif %}
-  <script type="text/javascript">if(typeof window.hulkappsWishlist === 'undefined') {
-                            window.hulkappsWishlist = {};
-                        }
-                        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
-                        window.hulkappsWishlist.hasAppBlockSupport = '1';
-                        </script>
-</head>
+    <script type="text/javascript">
+      if (typeof window.hulkappsWishlist === 'undefined') {
+        window.hulkappsWishlist = {};
+      }
+      window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
+      window.hulkappsWishlist.hasAppBlockSupport = '1';
+    </script>
+  </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -441,8 +442,8 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  {% render 'hulkappsWishlistPopup' %}
-</body>
+    {% render 'hulkappsWishlistPopup' %}
+  </body>
 </html>
 
 <!-- Begin Shopify-Afterpay JavaScript Snippet (v1.2.1) -->
@@ -497,6 +498,58 @@
     var afterpay_js_snippet_version = '1.2.1';
   </script>
   <script type="text/javascript" src="https://static.afterpay.com/shopify-afterpay-javascript.js"></script>
+
+  {% if product %}
+    <script>
+      window.addEventListener('load', function () {
+        var _learnq = window._learnq || [];
+        function addedToCart() {
+          fetch(`${window.location.origin}/cart.js`).then((res) =>
+            res
+              .clone()
+              .json()
+              .then((data) => {
+                var cart = {
+                  total_price: data.total_price / 100,
+                  $value: data.total_price / 100,
+                  total_discount: data.total_discount,
+                  original_total_price: data.original_total_price / 100,
+                  items: data.items,
+                };
+                if (item !== 'undefined') {
+                  cart = Object.assign(cart, item);
+                }
+                if (klAjax) {
+                  _learnq.push(['track', 'Added to Cart', cart]);
+                  klAjax = false;
+                }
+              })
+          );
+        }
+        (function (ns, fetch) {
+          ns.fetch = function () {
+            const response = fetch.apply(this, arguments);
+            response.then((res) => {
+              if (`${window.location.origin}/cart/add.js`.includes(res.url)) {
+                addedToCart();
+              }
+            });
+            return response;
+          };
+        })(window, window.fetch);
+        var klAjax = true;
+        var atcButtons = document.querySelectorAll("form[action*='/cart/add'] button[type='submit']");
+        for (var i = 0; i < atcButtons.length; i++) {
+          atcButtons[i].addEventListener('click', function () {
+            if (klAjax) {
+              _learnq.push(['track', 'Added to Cart', item]);
+              klAjax = false;
+            }
+          });
+        }
+      });
+    </script>
+  {% endif %}
 {% else %}
   <!-- Afterpay disabled: {{ cart.currency.iso_code }} != {{ shop.currency }} -->
 {% endif %}
