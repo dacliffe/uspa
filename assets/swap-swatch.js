@@ -1,3 +1,44 @@
+// Helper function to format currency matching Shopify's format
+function formatCurrency(price, options = {}) {
+  // Get currency from global variables (preferring cart currency over shop currency)
+  const currency = window.afterpay_cart_currency || window.afterpay_shop_currency || 'USD';
+  const priceValue = price / 100;
+
+  try {
+    // Check if currency_code_enabled is true (from settings)
+    // If true, format like Shopify's money_with_currency: "$140.00 AUD"
+    // If false, format like Shopify's money: "$140.00"
+    const formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: currency,
+      currencyDisplay: 'symbol',
+      ...options,
+    });
+
+    const formatted = formatter.format(priceValue);
+
+    // If currency_code_enabled is true, append currency code like Shopify does
+    // Based on settings_data.json: "currency_code_enabled": true
+    const showCurrencyCode = true;
+
+    if (showCurrencyCode && currency !== 'USD' && currency !== 'GBP') {
+      // Remove currency symbol and add currency code at the end like Shopify
+      const numericPart = formatted.replace(/[^\d.,]/g, '');
+      return `$${numericPart} ${currency}`;
+    }
+
+    return formatted;
+  } catch (error) {
+    // Fallback if currency is not supported
+    console.warn('Currency formatting failed, using fallback:', error);
+    const showCurrencyCode = true;
+    const fallbackFormatted = `$${priceValue.toFixed(2)}`;
+    return showCurrencyCode && currency !== 'USD' && currency !== 'GBP'
+      ? `${fallbackFormatted} ${currency}`
+      : fallbackFormatted;
+  }
+}
+
 // Function to fetch product data by handle
 window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, variantId, label) {
   const url = `/products/${handle}.js`;
@@ -146,18 +187,39 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
 
         // Update price elements
         const priceContainer = cardWrapper.querySelector('.price__container');
+        const regularPriceContainer = cardWrapper.querySelector('.price__regular');
+        const salePriceContainer = cardWrapper.querySelector('.price__sale');
         const regularPriceElement = cardWrapper.querySelector('.price__regular .price-item--regular');
         const salePriceElement = cardWrapper.querySelector('.price__sale .price-item--regular');
         const finalPriceElement = cardWrapper.querySelector('.price__sale .price-item--sale.price-item--last');
 
         if (comparePrice != null && comparePrice > 0) {
-          if (regularPriceElement) regularPriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
-          if (salePriceElement) salePriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
-          if (finalPriceElement) finalPriceElement.textContent = `$${(price / 100).toFixed(2)}`;
+          // Product is on sale - show sale price container, hide regular price container
+          if (regularPriceContainer) regularPriceContainer.style.display = 'none';
+          if (salePriceContainer) salePriceContainer.style.display = '';
+
+          // Update main price container classes for sale state
+          const mainPriceElement = cardWrapper.querySelector('.price');
+          if (mainPriceElement) {
+            mainPriceElement.classList.add('price--on-sale');
+            mainPriceElement.classList.remove('price--sold-out');
+          }
+
+          if (salePriceElement) salePriceElement.textContent = formatCurrency(comparePrice);
+          if (finalPriceElement) finalPriceElement.textContent = formatCurrency(price);
         } else {
-          if (regularPriceElement) regularPriceElement.textContent = `$${(price / 100).toFixed(2)} AUD`;
-          if (salePriceElement) salePriceElement.textContent = '';
-          if (finalPriceElement) finalPriceElement.textContent = '';
+          // Product is not on sale - show regular price container, hide sale price container
+          if (regularPriceContainer) regularPriceContainer.style.display = '';
+          if (salePriceContainer) salePriceContainer.style.display = 'none';
+
+          // Update main price container classes for regular state
+          const mainPriceElement = cardWrapper.querySelector('.price');
+          if (mainPriceElement) {
+            mainPriceElement.classList.remove('price--on-sale');
+            mainPriceElement.classList.remove('price--sold-out');
+          }
+
+          if (regularPriceElement) regularPriceElement.textContent = formatCurrency(price);
         }
 
         // Update the product title and URL
@@ -258,7 +320,6 @@ function initializeSwatches() {
       const badgeValue = swatch.getAttribute('data-badge');
       const label = swatch.getAttribute('data-label');
 
-
       // Validate that we have a clean handle
       if (!handle) {
         return;
@@ -358,7 +419,7 @@ window.initializeCardSwatches = function () {
         const cardWrapper = swatch.closest('.card-wrapper');
         const priceElement = cardWrapper?.querySelector('.price-item--sale.price-item--last');
         if (priceElement) {
-          priceElement.textContent = `$${(data.product.variants[0].price / 100).toFixed(2)}`;
+          priceElement.textContent = formatCurrency(data.product.variants[0].price);
         }
       })
       .catch((error) => {
