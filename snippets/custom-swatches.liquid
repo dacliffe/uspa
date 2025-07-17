@@ -1,9 +1,9 @@
 {%- liquid
   assign style_group = product.metafields.custom.style_group.value
-  assign style_group_products = style_group.products.value | reverse | reverse
+  assign style_group_product = style_group.product.value | reverse | reverse
 -%}
 
-{%- if style_group_products.size > 0 -%}
+{%- if style_group_product.size > 0 -%}
   <div class="main-product-swatches">
     <style>
       .main-product-swatches .swatches {
@@ -39,7 +39,7 @@
     </style>
     <p class="form__label">COLOURS</p>
     <div class="swatches">
-      {% for p in style_group_products %}
+      {% for p in style_group_product %}
         {%- assign swatch = p.metafields.custom.colour_swatch.value -%}
         {%- assign swatch_image = p.metafields.general.swatch_image -%}
         {%- if swatch_image != blank -%}

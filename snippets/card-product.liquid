@@ -331,15 +331,14 @@
         </a>
         {%- assign style_group = card_product.metafields.custom.style_group.value -%}
         {%- if style_group != blank -%}
-          {%- assign style_group_products = style_group.products.value | reverse | reverse -%}
-          {%- if style_group_products.size > 0 -%}
+          {%- assign style_group_product = style_group.product.value | reverse | reverse -%}
+          {%- if style_group_product.size > 0 -%}
             <style>
               .card-swatches {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0.6rem;
                 margin: 0.8rem 0;
-                align-content: flex-start
               }
 
               .bottom-label-text {
@@ -375,10 +374,12 @@
               }
             </style>
             <div class="card-swatches">
-              {% for p in style_group_products %}
+              {% for p in style_group_product %}
                 {%- assign swatch = p.metafields.custom.colour_swatch.value -%}
-                {%- assign hex = swatch.colour -%}
+                {%- assign hex_raw = swatch.color | remove: '["' | remove: '"]' -%}
+                {%- assign hex = hex_raw -%}
                 {%- assign src = swatch.image.src -%}
+
                 <span
                   class="card-swatch card-swatch--{{ p.id }} {% if p.handle == card_product.handle %}card-swatch--current{% endif %}"
                   title="{{ p.title | escape }}"
