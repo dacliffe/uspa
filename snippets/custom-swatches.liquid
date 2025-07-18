@@ -76,28 +76,10 @@
                   const price = data.product.variants[0].price;
                   console.log('Raw price from data:', price);
 
-                  // Get currency from global variables or fallback to shop currency
-                  const currency =
-                    window.afterpay_cart_currency ||
-                    window.afterpay_shop_currency ||
-                    '{{ cart.currency.iso_code | default: shop.currency }}';
-
-                  // Match Shopify's money_with_currency format: "$140.00 AUD"
-                  const formatter = new Intl.NumberFormat('en-US', {
+                  const formattedPrice = new Intl.NumberFormat('en-US', {
                     style: 'currency',
-                    currency: currency,
-                    currencyDisplay: 'symbol',
-                  });
-                  const formatted = formatter.format(price / 100);
-
-                  const showCurrencyCode = true; // Based on theme settings
-                  let formattedPrice;
-                  if (showCurrencyCode && currency !== 'USD' && currency !== 'GBP') {
-                    const numericPart = formatted.replace(/[^\d.,]/g, '');
-                    formattedPrice = `$${numericPart} ${currency}`;
-                  } else {
-                    formattedPrice = formatted;
-                  }
+                    currency: 'USD',
+                  }).format(price / 100);
                   console.log('Formatted price:', formattedPrice);
 
                   swatch.setAttribute('data-price', formattedPrice);
