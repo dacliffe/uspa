@@ -11,6 +11,9 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__description {text-align: center;}"
+      ],
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
