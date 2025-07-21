@@ -394,29 +394,11 @@ class CartItems extends HTMLElement {
       // Function to create product HTML
       function createProductHTML(product) {
         const imageUrl = product.images && product.images.length > 0 ? 'https:' + product.images[0] : '';
-        
-        // Get currency from global variables (preferring cart currency over shop currency)
-        const currency = window.afterpay_cart_currency || window.afterpay_shop_currency || 'USD';
-        
-        let price = '';
-        if (product.variants && product.variants.length > 0) {
-          const priceValue = product.variants[0].price / 100;
-          const formatter = new Intl.NumberFormat('en-US', {
+        const price = product.variants && product.variants.length > 0 ? 
+          (product.variants[0].price / 100).toLocaleString('en-US', {
             style: 'currency',
-            currency: currency,
-            currencyDisplay: 'symbol'
-          });
-          const formatted = formatter.format(priceValue);
-          
-          // Match Shopify's money_with_currency format: "$140.00 AUD"
-          const showCurrencyCode = true; // Based on theme settings
-          if (showCurrencyCode && currency !== 'USD' && currency !== 'GBP') {
-            const numericPart = formatted.replace(/[^\d.,]/g, '');
-            price = \`$\${numericPart} \${currency}\`;
-          } else {
-            price = formatted;
-          }
-        }
+            currency: 'USD'
+          }) : '';
 
         return \`
           <div class="upsell-product__item">
