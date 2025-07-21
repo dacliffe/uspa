@@ -412,21 +412,21 @@ class CartItems extends HTMLElement {
           const showCurrencyCode = true; // Based on theme settings
           if (showCurrencyCode && currency !== 'USD' && currency !== 'GBP') {
             const numericPart = formatted.replace(/[^\d.,]/g, '');
-            price = `$${numericPart} ${currency}`;
+            price = \`$\${numericPart} \${currency}\`;
           } else {
             price = formatted;
           }
         }
 
-        return `
+        return \`
           <div class="upsell-product__item">
-            <a href="/products/${product.handle}">
-              <img class="upsell-product__image" src="${imageUrl}" alt="${product.title}" loading="lazy">
-              <div class="upsell-product__title">${product.title}</div>
-              <div class="upsell-product__price">${price}</div>
+            <a href="/products/\${product.handle}">
+              <img class="upsell-product__image" src="\${imageUrl}" alt="\${product.title}" loading="lazy">
+              <div class="upsell-product__title">\${product.title}</div>
+              <div class="upsell-product__price">\${price}</div>
             </a>
           </div>
-        `;
+        \`;
       }
 
       // Function to update carousel with multiple products
