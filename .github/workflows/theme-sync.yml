@@ -13,7 +13,7 @@ on:
       - "**/theme.liquid" # Don't trigger on theme.liquid changes
       - "snippets/custom-swatches.liquid" # Don't trigger on custom-swatches.liquid changes
       - "snippets/card-product.liquid" # Don't trigger on card-product.liquid changes
-      - ""
+      - "snippets/cart-drawer.liquid" # Don't trigger on cart-drawer.liquid changes
 
 jobs:
   sync-theme:
@@ -61,12 +61,14 @@ jobs:
           echo "Creating temporary merge branch..."
           git checkout -B temp-merge-${{ matrix.branch }}
 
-          # Backup theme.liquid and store current branch JSON files
-          echo "Backing up theme.liquid and JSON files..."
+          # Backup theme.liquid, JSON files, and store-specific liquid files
+          echo "Backing up theme.liquid, JSON files, and store-specific liquid files..."
           theme_liquid_files=$(find . -name "theme.liquid" -type f)
           json_files=$(find . -name "*.json" -type f)
+          # Store-specific liquid files that should be preserved
+          store_specific_files="snippets/custom-swatches.liquid snippets/card-product.liquid snippets/cart-drawer.liquid"
 
-          for file in $theme_liquid_files $json_files; do
+          for file in $theme_liquid_files $json_files $store_specific_files; do
             if [ -f "$file" ]; then
               mkdir -p "/tmp/backup/$(dirname "$file")"
               cp "$file" "/tmp/backup/$file"
@@ -74,13 +76,13 @@ jobs:
             fi
           done
 
-          # Get files from main branch (excluding JSON files)
-          echo "Getting non-JSON files from main..."
-          git checkout origin/main -- $(git ls-tree -r --name-only origin/main | grep -v ".json$")
+          # Get files from main branch (excluding JSON files and store-specific liquid files)
+          echo "Getting files from main (excluding JSON files and store-specific liquid files)..."
+          git checkout origin/main -- $(git ls-tree -r --name-only origin/main | grep -v ".json$" | grep -v "snippets/custom-swatches.liquid" | grep -v "snippets/card-product.liquid" | grep -v "snippets/cart-drawer.liquid")
 
-          # Restore theme.liquid and JSON files from backup
-          echo "Restoring theme.liquid and JSON files..."
-          for file in $theme_liquid_files $json_files; do
+          # Restore theme.liquid, JSON files, and store-specific liquid files from backup
+          echo "Restoring theme.liquid, JSON files, and store-specific liquid files..."
+          for file in $theme_liquid_files $json_files $store_specific_files; do
             if [ -f "/tmp/backup/$file" ]; then
               mkdir -p "$(dirname "$file")"
               cp "/tmp/backup/$file" "$file"
