@@ -164,6 +164,23 @@
                                 {{ item.final_price | money }}
                               </strong>
                             </div>
+                          {%- elsif item.variant.compare_at_price
+                            and item.variant.compare_at_price > item.original_price
+                          -%}
+                            <div class="cart-item__discounted-prices">
+                              <span class="visually-hidden">
+                                {{ 'products.product.price.regular_price' | t }}
+                              </span>
+                              <s class="cart-item__old-price product-option">
+                                {{- item.variant.compare_at_price | money -}}
+                              </s>
+                              <span class="visually-hidden">
+                                {{ 'products.product.price.sale_price' | t }}
+                              </span>
+                              <strong class="cart-item__final-price product-option">
+                                {{ item.original_price | money }}
+                              </strong>
+                            </div>
                           {%- else -%}
                             <div class="product-option">
                               {{ item.original_price | money }}
@@ -244,6 +261,23 @@
                                 </span>
                                 <span class="price price--end">
                                   {{ item.final_line_price | money }}
+                                </span>
+                              </div>
+                            {%- elsif item.variant.compare_at_price
+                              and item.variant.compare_at_price > item.original_price
+                            -%}
+                              <div class="cart-item__discounted-prices">
+                                <span class="visually-hidden">
+                                  {{ 'products.product.price.regular_price' | t }}
+                                </span>
+                                <s class="cart-item__old-price price price--end">
+                                  {{ item.variant.compare_at_price | times: item.quantity | money }}
+                                </s>
+                                <span class="visually-hidden">
+                                  {{ 'products.product.price.sale_price' | t }}
+                                </span>
+                                <span class="price price--end">
+                                  {{ item.original_line_price | money }}
                                 </span>
                               </div>
                             {%- else -%}
