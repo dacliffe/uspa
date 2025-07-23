@@ -144,6 +144,31 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
           });
         }
 
+        // Format price using existing page currency format
+        const formatPrice = (priceValue) => {
+          // Try to find an existing price element to copy its format
+          const existingPriceElement =
+            cardWrapper.querySelector('.price-item--regular, .price-item--sale') ||
+            document.querySelector('.price-item--regular, .price-item--sale');
+
+          if (existingPriceElement && existingPriceElement.textContent) {
+            const existingText = existingPriceElement.textContent.trim();
+
+            // Extract the price number to understand the format structure
+            const priceMatch = existingText.match(/[\d,]+\.?\d*/);
+            if (priceMatch) {
+              const existingNumber = priceMatch[0];
+              const newNumber = (priceValue / 100).toFixed(2);
+
+              // Replace the existing number with the new one, preserving currency and format
+              return existingText.replace(existingNumber, newNumber);
+            }
+          }
+
+          // Fallback to simple format if we can't determine the existing format
+          return `$${(priceValue / 100).toFixed(2)}`;
+        };
+
         // Update price elements
         const priceContainer = cardWrapper.querySelector('.price__container');
         const regularPriceElement = cardWrapper.querySelector('.price__regular .price-item--regular');
@@ -151,20 +176,37 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
         const finalPriceElement = cardWrapper.querySelector('.price__sale .price-item--sale.price-item--last');
 
         if (comparePrice != null && comparePrice > 0) {
-          if (regularPriceElement) regularPriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
-          if (salePriceElement) salePriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
-          if (finalPriceElement) finalPriceElement.textContent = `$${(price / 100).toFixed(2)}`;
+          if (regularPriceElement) regularPriceElement.textContent = formatPrice(comparePrice);
+          if (salePriceElement) salePriceElement.textContent = formatPrice(comparePrice);
+          if (finalPriceElement) finalPriceElement.textContent = formatPrice(price);
         } else {
-          if (regularPriceElement) regularPriceElement.textContent = `$${(price / 100).toFixed(2)} AUD`;
+          if (regularPriceElement) regularPriceElement.textContent = formatPrice(price);
           if (salePriceElement) salePriceElement.textContent = '';
           if (finalPriceElement) finalPriceElement.textContent = '';
         }
 
-        // Update the product title and URL
-        const headingElement = cardWrapper.querySelector('[id^="CardLink-"]');
+        // Update the product title - handle both structures
+        // Try to find the h3 with title directly, then fallback to h3 with anchor
+        let headingElement =
+          cardWrapper.querySelector('h3.card__heading.h5') ||
+          cardWrapper.querySelector('h3.card__heading:not(:has(a))') ||
+          cardWrapper.querySelector('.card__heading.h5') ||
+          cardWrapper.querySelector('.card__heading');
+
         if (headingElement) {
-          headingElement.textContent = title;
-          headingElement.href = productUrl;
+          // Check if the title is inside an anchor tag or directly in the h3
+          const anchorInHeading = headingElement.querySelector('a');
+          if (anchorInHeading) {
+            anchorInHeading.textContent = title;
+          } else {
+            headingElement.textContent = title;
+          }
+        }
+
+        // Update the CardLink anchor if it exists
+        const cardLinkElement = cardWrapper.querySelector('[id^="CardLink-"]');
+        if (cardLinkElement) {
+          cardLinkElement.href = productUrl;
         }
 
         const mediaLink = cardWrapper.querySelector('.media-link');
@@ -257,7 +299,6 @@ function initializeSwatches() {
       const variantId = swatch.getAttribute('data-variant-id');
       const badgeValue = swatch.getAttribute('data-badge');
       const label = swatch.getAttribute('data-label');
-
 
       // Validate that we have a clean handle
       if (!handle) {
@@ -358,7 +399,25 @@ window.initializeCardSwatches = function () {
         const cardWrapper = swatch.closest('.card-wrapper');
         const priceElement = cardWrapper?.querySelector('.price-item--sale.price-item--last');
         if (priceElement) {
-          priceElement.textContent = `$${(data.product.variants[0].price / 100).toFixed(2)}`;
+          // Use dynamic currency formatting
+          const formatPrice = (priceValue) => {
+            const existingPriceElement =
+              cardWrapper?.querySelector('.price-item--regular, .price-item--sale') ||
+              document.querySelector('.price-item--regular, .price-item--sale');
+
+            if (existingPriceElement && existingPriceElement.textContent) {
+              const existingText = existingPriceElement.textContent.trim();
+              const priceMatch = existingText.match(/[\d,]+\.?\d*/);
+              if (priceMatch) {
+                const existingNumber = priceMatch[0];
+                const newNumber = (priceValue / 100).toFixed(2);
+                return existingText.replace(existingNumber, newNumber);
+              }
+            }
+            return `$${(priceValue / 100).toFixed(2)}`;
+          };
+
+          priceElement.textContent = formatPrice(data.product.variants[0].price);
         }
       })
       .catch((error) => {
