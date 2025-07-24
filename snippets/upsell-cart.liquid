@@ -183,6 +183,9 @@
   </style>
 
   <script>
+    // Get currency information from Liquid
+    const CART_CURRENCY = {{ cart.currency.iso_code | json }};
+    const CART_CURRENCY_SYMBOL = {{ cart.currency.symbol | json }};
 
     // Function to get current cart products
     function getCartProducts() {
@@ -206,9 +209,9 @@
     function createProductHTML(product) {
       const imageUrl = product.images && product.images.length > 0 ? 'https:' + product.images[0] : '';
       const price = product.variants && product.variants.length > 0 ? 
-        (product.variants[0].price / 100).toLocaleString('en-US', {
+        (product.variants[0].price / 100).toLocaleString(undefined, {
           style: 'currency',
-          currency: 'USD'
+          currency: CART_CURRENCY
         }) : '';
 
       return `
