@@ -14,7 +14,11 @@
   {% if remainingForGoal < 0 %}
     {% assign remainingForGoal = 0 %}
   {% endif %}
-  {% assign remainingForGoalFormatted = remainingForGoal | money %}
+  {% if settings.currency_code_enabled %}
+    {% assign remainingForGoalFormatted = remainingForGoal | money_with_currency %}
+  {% else %}
+    {% assign remainingForGoalFormatted = remainingForGoal | money %}
+  {% endif %}
   {% assign dynamicPreGoalMessage = preGoalMessageTemplate
     | replace: '[remainingForGoalFormatted]', remainingForGoalFormatted
   %}
