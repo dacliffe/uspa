@@ -313,19 +313,18 @@
         "announcement_P4R7im": {
           "type": "announcement",
           "settings": {
-            "text": "25% OFF POLO SHIRTS",
-            "link": "shopify://collections/polo-shirts"
+            "text": "2 POLO SHIRTS FOR $150*",
+            "link": "shopify://collections/2-for-149-polo-shirts"
           }
         }
       },
       "block_order": [
         "announcement_P4R7im"
       ],
-      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-055eabee-0096-4320-8a98-d4178b3ba047",
         "show_line_separator": true,
         "show_social": false,
         "enable_country_selector": false,
