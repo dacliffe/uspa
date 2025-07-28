@@ -71,6 +71,15 @@
             "title_style": "h4"
           }
         },
+        "mega_menu_announcement_3WmCEd": {
+          "type": "mega_menu_announcement",
+          "settings": {
+            "menu_title": "POLO SHIRTS",
+            "announcement_text": "2 POLO SHIRTS FOR $150*",
+            "announcement_link": "",
+            "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
+          }
+        },
         "mega_menu_image_BCVmWY": {
           "type": "mega_menu_image",
           "settings": {
@@ -255,6 +264,7 @@
       "block_order": [
         "mega_menu_announcement_HtEmxk",
         "menu_title_LzDcr7",
+        "mega_menu_announcement_3WmCEd",
         "mega_menu_image_BCVmWY",
         "mega_menu_image_C3KY4m",
         "mega_menu_image_CAxBMb",
