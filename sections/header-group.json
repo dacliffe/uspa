@@ -321,6 +321,7 @@
       "block_order": [
         "announcement_P4R7im"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
