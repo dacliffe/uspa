@@ -80,6 +80,7 @@ class ProductCardCarousel {
   handlePrevClick(e) {
     e.preventDefault();
     e.stopPropagation();
+    e.stopImmediatePropagation();
     if (!this.isNavigating) {
       this.navigate('prev');
     }
@@ -88,6 +89,7 @@ class ProductCardCarousel {
   handleNextClick(e) {
     e.preventDefault();
     e.stopPropagation();
+    e.stopImmediatePropagation();
     if (!this.isNavigating) {
       this.navigate('next');
     }

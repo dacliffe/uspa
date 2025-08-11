@@ -38,6 +38,11 @@ window.setupQuickAdd = function () {
       // Add multiple event types for better compatibility
       ['click', 'touchstart'].forEach((eventType) => {
         mobileCartIcon.addEventListener(eventType, function (e) {
+          // Ignore clicks that originate from carousel navigation buttons
+          if (e.target.closest('.product-card__nav-btn')) {
+            return;
+          }
+
           e.preventDefault();
           e.stopPropagation();
 
@@ -245,7 +250,11 @@ window.setupQuickAdd = function () {
 
     // Add click handler for the document to close quick add when clicking outside
     document.addEventListener('click', function (e) {
-      if (!e.target.closest('.quick-add-container') && !e.target.closest('.mobile-cart-icon')) {
+      if (
+        !e.target.closest('.quick-add-container') &&
+        !e.target.closest('.mobile-cart-icon') &&
+        !e.target.closest('.product-card__nav-btn')
+      ) {
         if (quickAddContainer && quickAddContainer.classList.contains('open')) {
           quickAddContainer.classList.remove('open');
           quickAddContainer.classList.add('hidden');
@@ -265,7 +274,11 @@ window.setupQuickAdd = function () {
 };
 
 function handleGlobalClick(e) {
-  if (!e.target.closest('.mobile-cart-icon') && !e.target.closest('.quick-add-container')) {
+  if (
+    !e.target.closest('.mobile-cart-icon') &&
+    !e.target.closest('.quick-add-container') &&
+    !e.target.closest('.product-card__nav-btn')
+  ) {
     document.querySelectorAll('.quick-add-container.open').forEach((container) => {
       container.classList.remove('open');
       setTimeout(() => {
