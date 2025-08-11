@@ -73,6 +73,7 @@
         },
         "mega_menu_announcement_3WmCEd": {
           "type": "mega_menu_announcement",
+          "disabled": true,
           "settings": {
             "menu_title": "POLO SHIRTS",
             "announcement_text": "2 POLO SHIRTS FOR $150*",
