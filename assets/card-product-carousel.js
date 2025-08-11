@@ -1,10 +1,10 @@
 class ProductCardCarousel {
   constructor(container) {
     this.container = container;
-    this.track = container.querySelector('.card__media-carousel-track');
-    this.slides = Array.from(container.querySelectorAll('.card__media-slide'));
-    this.prevButton = container.closest('.card-wrapper').querySelector('.card__media-nav-prev');
-    this.nextButton = container.closest('.card-wrapper').querySelector('.card__media-nav-next');
+    this.track = container.querySelector('.product-card__carousel-track');
+    this.slides = Array.from(container.querySelectorAll('.product-card__slide'));
+    this.prevButton = container.closest('.product-card').querySelector('.product-card__nav-prev');
+    this.nextButton = container.closest('.product-card').querySelector('.product-card__nav-next');
     this.currentIndex = 0;
     this.touchStartX = 0;
     this.touchEndX = 0;
@@ -148,7 +148,7 @@ window.ProductCardCarousel = ProductCardCarousel;
 // Initialize carousels
 function initializeCarousels() {
   // Clean up existing carousels
-  document.querySelectorAll('.card__media-carousel.initialized').forEach((carousel) => {
+  document.querySelectorAll('.product-card__carousel.initialized').forEach((carousel) => {
     const instance = carousel._carouselInstance;
     if (instance) {
       instance.destroy();
@@ -157,8 +157,8 @@ function initializeCarousels() {
   });
 
   // Initialize new carousels
-  document.querySelectorAll('.card__media-carousel:not(.initialized)').forEach((carousel) => {
-    if (carousel.querySelector('.card__media-slide')) {
+  document.querySelectorAll('.product-card__carousel:not(.initialized)').forEach((carousel) => {
+    if (carousel.querySelector('.product-card__slide')) {
       carousel.classList.add('initialized');
       carousel._carouselInstance = new ProductCardCarousel(carousel);
     }
@@ -203,7 +203,7 @@ const productGridObserver = new MutationObserver((mutations) => {
   const shouldReinitialize = mutations.some((mutation) =>
     Array.from(mutation.addedNodes).some(
       (node) =>
-        node instanceof Element && (node.classList?.contains('card-wrapper') || node.querySelector('.card-wrapper'))
+        node instanceof Element && (node.classList?.contains('product-card') || node.querySelector('.product-card'))
     )
   );
 
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', startObservingGrid);
 
 // Handle lazy loading
 document.addEventListener('lazyloaded', (e) => {
-  if (e.target.closest('.card-wrapper')) {
+  if (e.target.closest('.product-card')) {
     reinitializeAllFunctionality();
   }
 });

@@ -7,17 +7,26 @@ window.setupQuickAdd = function () {
   // Remove existing global click handler
   document.removeEventListener('click', handleGlobalClick);
 
-  document.querySelectorAll('.product-card-wrapper:not(.quick-add-initialized)').forEach((wrapper, index) => {
+  document.querySelectorAll('.product-card:not(.quick-add-initialized)').forEach((wrapper, index) => {
     wrapper.classList.add('quick-add-initialized');
     let timeoutId;
     let selectedVariantId = null;
     let isAddingToCart = false;
 
     const quickAddContainer = wrapper.querySelector('.quick-add-container');
+    const quickAddParent = wrapper.querySelector('.product-card__quick-add');
     const variantButtons = wrapper.querySelectorAll('.add-to-cart-button');
     const submitContainer = wrapper.querySelector('.quick-add-submit-container');
     const submitButton = wrapper.querySelector('.quick-add-submit');
     const mobileCartIcon = wrapper.querySelector('.mobile-cart-icon');
+
+    // Ensure initial state is properly set
+    if (quickAddContainer) {
+      quickAddContainer.classList.add('hidden');
+    }
+    if (submitContainer) {
+      submitContainer.classList.remove('visible');
+    }
 
     // Initially ensure submit button is disabled
     if (submitButton) {
@@ -26,55 +35,60 @@ window.setupQuickAdd = function () {
 
     // Mobile behavior (toggle on icon click)
     if (mobileCartIcon) {
-      mobileCartIcon.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+      // Add multiple event types for better compatibility
+      ['click', 'touchstart'].forEach((eventType) => {
+        mobileCartIcon.addEventListener(eventType, function (e) {
+          e.preventDefault();
+          e.stopPropagation();
 
-        if (!quickAddContainer) return;
-
-        // Close other quick add containers
-        document.querySelectorAll('.quick-add-container.open').forEach((container) => {
-          if (container !== quickAddContainer) {
-            container.classList.remove('open');
-            // Hide the submit button container for other closing quick adds
-            const otherSubmitContainer = container.querySelector('.quick-add-submit-container');
-            if (otherSubmitContainer) {
-              otherSubmitContainer.classList.remove('visible');
-            }
-            // Show the cart icon for other containers
-            const otherCartIcon = container.closest('.product-card-wrapper')?.querySelector('.mobile-cart-icon');
-            if (otherCartIcon) {
-              otherCartIcon.classList.remove('hidden');
-            }
+          if (!quickAddContainer) {
+            return;
           }
-        });
 
-        if (quickAddContainer.classList.contains('open')) {
-          quickAddContainer.classList.remove('open');
-          // Show the cart icon when closing
-          mobileCartIcon.classList.remove('hidden');
-          // Only hide fully if no variant selected
-          if (selectedVariantId === null) {
-            setTimeout(() => {
-              quickAddContainer.classList.add('hidden');
-              // Hide the submit button container if quick add closes and no variant is selected
-              if (submitContainer) {
-                submitContainer.classList.remove('visible');
+          // Close other quick add containers
+          document.querySelectorAll('.quick-add-container.open').forEach((container) => {
+            if (container !== quickAddContainer) {
+              container.classList.remove('open');
+              // Hide the submit button container for other closing quick adds
+              const otherSubmitContainer = container.querySelector('.quick-add-submit-container');
+              if (otherSubmitContainer) {
+                otherSubmitContainer.classList.remove('visible');
               }
-            }, 100);
-          }
-        } else {
-          quickAddContainer.classList.remove('hidden');
-          // Hide the cart icon when opening
-          mobileCartIcon.classList.add('hidden');
-          requestAnimationFrame(() => {
-            quickAddContainer.classList.add('open');
-            // Show the submit button container when quick add opens
-            if (submitContainer) {
-              submitContainer.classList.add('visible');
+              // Show the cart icon for other containers
+              const otherCartIcon = container.closest('.product-card')?.querySelector('.mobile-cart-icon');
+              if (otherCartIcon) {
+                otherCartIcon.classList.remove('hidden');
+              }
             }
           });
-        }
+
+          if (quickAddContainer.classList.contains('open')) {
+            quickAddContainer.classList.remove('open');
+            // Show the cart icon when closing
+            mobileCartIcon.classList.remove('hidden');
+            // Only hide fully if no variant selected
+            if (selectedVariantId === null) {
+              setTimeout(() => {
+                quickAddContainer.classList.add('hidden');
+                // Hide the submit button container if quick add closes and no variant is selected
+                if (submitContainer) {
+                  submitContainer.classList.remove('visible');
+                }
+              }, 100);
+            }
+          } else {
+            quickAddContainer.classList.remove('hidden');
+            // Hide the cart icon when opening
+            mobileCartIcon.classList.add('hidden');
+            requestAnimationFrame(() => {
+              quickAddContainer.classList.add('open');
+              // Show the submit button container when quick add opens
+              if (submitContainer) {
+                submitContainer.classList.add('visible');
+              }
+            });
+          }
+        });
       });
     }
 
@@ -86,10 +100,16 @@ window.setupQuickAdd = function () {
           quickAddContainer.classList.remove('hidden');
           requestAnimationFrame(() => {
             quickAddContainer.classList.add('open');
+
             // Show the submit button container when quick add opens
             if (submitContainer) {
               submitContainer.classList.add('visible');
             }
+
+            // Check again after a delay
+            setTimeout(() => {
+              // Animation complete
+            }, 1000);
           });
         }
       });
@@ -212,7 +232,6 @@ window.setupQuickAdd = function () {
             delete addToCartButton.dataset.clicked;
           }
         } catch (error) {
-          console.error('Error in add to cart:', error);
           window.cartManager.showErrorMessage(error.message || 'Failed to add item to cart');
           if (addToCartButton) {
             addToCartButton.disabled = false;
@@ -289,7 +308,6 @@ class CartManager {
 
       return response.json();
     } catch (error) {
-      console.error('Update Error:', error);
       throw new Error('Failed to update cart item');
     }
   }
@@ -397,7 +415,7 @@ class CartManager {
         });
       }
     } catch (error) {
-      console.error('Error updating cart drawer:', error);
+      // Cart drawer update failed silently
     }
   }
 
@@ -430,12 +448,32 @@ class CartManager {
         visually?.click();
       }, 1000);
     } catch (error) {
-      console.error('Error updating cart count:', error);
+      // Cart count update failed silently
     }
   }
 
   showErrorMessage(message) {
-    alert(message);
+    // Create a more user-friendly error notification instead of alert
+    const notification = document.createElement('div');
+    notification.className = 'error-notification';
+    notification.textContent = message;
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #d32f2f;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 4px;
+      z-index: 10000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    `;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+      notification.remove();
+    }, 5000);
   }
 }
 
@@ -479,10 +517,7 @@ const quickAddObserver = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
     if (mutation.addedNodes.length > 0) {
       mutation.addedNodes.forEach((node) => {
-        if (
-          node.classList &&
-          (node.classList.contains('product-card-wrapper') || node.querySelector('.product-card-wrapper'))
-        ) {
+        if (node.classList && (node.classList.contains('product-card') || node.querySelector('.product-card'))) {
           shouldReinitialize = true;
         }
       });

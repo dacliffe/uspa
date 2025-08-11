@@ -1,11 +1,12 @@
-.card__media-carousel {
+/* Product Card Carousel - Modern Implementation */
+.product-card__carousel {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-.card__media-carousel-track {
+.product-card__carousel-track {
     position: relative;
     width: 100%;
     height: 100%;
@@ -13,7 +14,7 @@
     overflow: hidden;
 }
 
-.card__media-slide {
+.product-card__slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -21,84 +22,37 @@
     height: 100%;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
     visibility: hidden;
 }
 
-.card__media-slide.active {
+.product-card__slide.active {
     opacity: 1;
-    pointer-events: auto;
     visibility: visible;
     z-index: 1;
 }
 
-.card__media-slide img {
+.product-card__slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.card__media-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-    pointer-events: none;
-    z-index: 2;
-}
+/* Navigation styling is now in component-card.css */
 
-.card__media-nav-button {
-    position: relative;
-    background: rgba(var(--color-foreground), 0.04);
-    border: none;
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    pointer-events: auto;
-    transition: background-color 0.2s ease;
-}
-
-.card__media-nav-button::after {
-    content: '';
-    position: absolute;
-    top: -2rem;
-    left: -1rem;
-    right: -1rem;
-    bottom: -2rem;
-    z-index: -1;
-}
-
-.card__media-nav-button:hover {
-    background: rgba(var(--color-foreground), 0.08);
-}
-
-.card__media-nav-button .icon {
-    width: 1rem;
-    height: 1rem;
-    transform: rotate(90deg);
-}
-
-.card__media-nav-prev .icon {
-    transform: rotate(-90deg);
-}
-
+/* Keep support for mobile adjustments */
 @media screen and (max-width: 749px) {
-    .card__media-nav {
+    .product-card__nav {
         display: flex;
     }
 
-    .card__media-nav-button {
-        width: 2rem;
-        height: 2rem;
+    .product-card__nav-btn {
+        width: 18px;
+        height: 18px;
+    }
+
+    .product-card__nav-btn .icon {
+        width: 10px;
+        height: 10px;
     }
 }

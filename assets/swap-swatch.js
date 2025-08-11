@@ -3,7 +3,7 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
   const url = `/products/${handle}.js`;
 
   // Show loading spinner
-  const mediaContainer = cardWrapper.querySelector('.card__media');
+  const mediaContainer = cardWrapper.querySelector('.product-card__media');
   let spinner;
   if (mediaContainer) {
     // Remove any existing spinner first
@@ -56,82 +56,96 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
 
       // Create new carousel content in temporary container
       const carouselTrack = document.createElement('div');
-      carouselTrack.className = 'card__media-carousel-track';
+      carouselTrack.className = 'product-card__carousel-track';
       tempContainer.appendChild(carouselTrack);
 
       // Create image loading promises
       const imageLoadPromises = images.slice(0, 4).map((image, index) => {
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
           const img = new Image();
           img.onload = () => {
             const slide = document.createElement('div');
-            slide.className = `card__media-slide${index === 0 ? ' active' : ''}`;
+            slide.className = `product-card__slide${index === 0 ? ' active' : ''}`;
             slide.setAttribute('data-index', index);
             slide.innerHTML = `
-              <a href="${productUrl}" class="media media--transparent media--hover-effect">
-                <img
-                  srcset="${image} 165w, ${image} 360w, ${image} 533w, ${image} 720w"
-                  src="${image}"
-                  sizes="(min-width: ${window.settings?.page_width || 1440}px) ${
+              <img
+                srcset="${image} 165w, ${image} 360w, ${image} 533w, ${image} 720w"
+                src="${image}"
+                sizes="(min-width: ${window.settings?.page_width || 1440}px) ${
               window.settings?.page_width - 130 || 1310
             }/4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                  alt="${title}"
-                  class="motion-reduce"
-                  ${index !== 0 ? 'loading="lazy"' : ''}
-                  width="533"
-                  height="533"
-                >
-              </a>
+                alt="${title}"
+                ${index !== 0 ? 'loading="lazy"' : ''}
+                width="533"
+                height="533"
+              >
             `;
             carouselTrack.appendChild(slide);
             resolve();
+          };
+          img.onerror = () => {
+            reject(new Error(`Failed to load image: ${image}`));
           };
           img.src = image;
         });
       });
 
       // Wait for all images to load before updating the DOM
-      Promise.all(imageLoadPromises).then(() => {
-        // Update carousel
-        const existingCarouselTrack = cardWrapper.querySelector('.card__media-carousel-track');
-        if (existingCarouselTrack) {
-          existingCarouselTrack.replaceWith(carouselTrack);
-        }
+      Promise.all(imageLoadPromises)
+        .then(() => {
+          // Update carousel
+          const existingCarouselTrack = cardWrapper.querySelector('.product-card__carousel-track');
+          const existingCarousel = cardWrapper.querySelector('.product-card__carousel');
 
-        // Reinitialize carousel
-        const carousel = carouselTrack.closest('.card__media-carousel');
-        if (carousel) {
-          // Remove initialized class to allow reinitialization
-          carousel.classList.remove('initialized');
-          // Destroy existing carousel instance if it exists
-          if (carousel._carouselInstance) {
-            carousel._carouselInstance.destroy();
+          if (existingCarouselTrack && existingCarousel) {
+            existingCarouselTrack.replaceWith(carouselTrack);
+          } else {
+            // If no existing carousel structure, find the media link and update its content
+            const mediaLink = cardWrapper.querySelector('.product-card__media-link');
+            if (mediaLink) {
+              // Create new carousel container
+              const newCarousel = document.createElement('div');
+              newCarousel.className = 'product-card__carousel';
+              newCarousel.appendChild(carouselTrack);
+
+              // Clear existing content and add new carousel
+              mediaLink.innerHTML = '';
+              mediaLink.appendChild(newCarousel);
+            }
           }
-          // Initialize new carousel instance with error handling
-          try {
-            if (typeof window.ProductCardCarousel === 'function') {
-              carousel._carouselInstance = new window.ProductCardCarousel(carousel);
-              carousel.classList.add('initialized');
-            } else {
-              console.warn('ProductCardCarousel not available, using fallback carousel initialization');
+
+          // Reinitialize carousel
+          const carousel = cardWrapper.querySelector('.product-card__carousel');
+          if (carousel) {
+            // Remove initialized class to allow reinitialization
+            carousel.classList.remove('initialized');
+            // Destroy existing carousel instance if it exists
+            if (carousel._carouselInstance) {
+              carousel._carouselInstance.destroy();
+            }
+            // Initialize new carousel instance with error handling
+            try {
+              if (typeof window.ProductCardCarousel === 'function') {
+                carousel._carouselInstance = new window.ProductCardCarousel(carousel);
+                carousel.classList.add('initialized');
+              } else {
+                // Fallback: use the existing initCarousel function
+                initCarousel(carouselTrack);
+              }
+            } catch (error) {
               // Fallback: use the existing initCarousel function
               initCarousel(carouselTrack);
             }
-          } catch (error) {
-            console.error('Error reinitializing carousel:', error);
-            // Fallback: use the existing initCarousel function
-            initCarousel(carouselTrack);
           }
-        }
 
-        // Update variant list
-        const variantList = cardWrapper.querySelector('#variant-list');
-        if (variantList) {
-          variantList.innerHTML = '';
-          productData.variants.forEach((variant) => {
-            const sizeOnly = variant.title.split('/')[0].trim();
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `
+          // Update variant list (Note: may not exist in new card structure)
+          const variantList = cardWrapper.querySelector('#variant-list');
+          if (variantList) {
+            variantList.innerHTML = '';
+            productData.variants.forEach((variant) => {
+              const sizeOnly = variant.title.split('/')[0].trim();
+              const listItem = document.createElement('li');
+              listItem.innerHTML = `
               <input type="radio" 
                      data-variant-id="${variant.id}" 
                      class="visually-hidden">
@@ -140,115 +154,122 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
                   ${sizeOnly}
               </label>
             `;
-            variantList.appendChild(listItem);
-          });
-        }
-
-        // Update price elements
-        const priceContainer = cardWrapper.querySelector('.price__container');
-        const regularPriceElement = cardWrapper.querySelector('.price__regular .price-item--regular');
-        const salePriceElement = cardWrapper.querySelector('.price__sale .price-item--regular');
-        const finalPriceElement = cardWrapper.querySelector('.price__sale .price-item--sale.price-item--last');
-
-        if (comparePrice != null && comparePrice > 0) {
-          if (regularPriceElement) regularPriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
-          if (salePriceElement) salePriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
-          if (finalPriceElement) finalPriceElement.textContent = `$${(price / 100).toFixed(2)}`;
-        } else {
-          if (regularPriceElement) regularPriceElement.textContent = `$${(price / 100).toFixed(2)} AUD`;
-          if (salePriceElement) salePriceElement.textContent = '';
-          if (finalPriceElement) finalPriceElement.textContent = '';
-        }
-
-        // Update the product title and URL
-        const headingElement = cardWrapper.querySelector('[id^="CardLink-"]');
-        if (headingElement) {
-          headingElement.textContent = title;
-          headingElement.href = productUrl;
-        }
-
-        const mediaLink = cardWrapper.querySelector('.media-link');
-        if (mediaLink) {
-          mediaLink.href = productUrl;
-        }
-
-        // Update all anchor tags within the card that link to a product
-        const productLinks = cardWrapper.querySelectorAll('a[href*="/products/"]');
-        productLinks.forEach((link) => {
-          link.href = productUrl;
-        });
-
-        // Update badge
-        const badgeElement = cardWrapper.querySelector('.card__badge span');
-        if (badgeElement) {
-          badgeElement.textContent = badgeValue;
-          badgeElement.classList.toggle('hidden', badgeValue === '');
-        }
-
-        // Update label
-        const labelElement = cardWrapper.querySelector('.bottom-label-text');
-        if (labelElement) {
-          labelElement.textContent = label;
-          labelElement.classList.toggle('hidden', label === '');
-        }
-
-        // Update wishlist button
-        const addToWishlistButton = cardWrapper.querySelector('.swym-button.swym-add-to-wishlist-view-product');
-        if (addToWishlistButton) {
-          addToWishlistButton.setAttribute('data-product-id', productId);
-          addToWishlistButton.setAttribute('data-variant-id', variantId);
-          addToWishlistButton.setAttribute('href', `/products/${handle}?variant=${variantId}`);
-
-          const currentClass = [...addToWishlistButton.classList].find((className) => className.startsWith('product_'));
-          if (currentClass) {
-            addToWishlistButton.classList.remove(currentClass);
+              variantList.appendChild(listItem);
+            });
           }
-          addToWishlistButton.classList.add(`product_${productId}`);
-        }
 
-        // Reset quick-add initialization state
-        cardWrapper.classList.remove('quick-add-initialized');
+          // Update price elements
+          const priceContainer = cardWrapper.querySelector('.price__container');
+          const regularPriceElement = cardWrapper.querySelector('.price__regular .price-item--regular');
+          const salePriceElement = cardWrapper.querySelector('.price__sale .price-item--regular');
+          const finalPriceElement = cardWrapper.querySelector('.price__sale .price-item--sale.price-item--last');
 
-        // Reinitialize quick-add functionality
-        if (typeof window.setupQuickAdd === 'function') {
-          window.setupQuickAdd();
-        }
+          if (comparePrice != null && comparePrice > 0) {
+            if (regularPriceElement) regularPriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
+            if (salePriceElement) salePriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
+            if (finalPriceElement) finalPriceElement.textContent = `$${(price / 100).toFixed(2)}`;
+          } else {
+            if (regularPriceElement) regularPriceElement.textContent = `$${(price / 100).toFixed(2)} AUD`;
+            if (salePriceElement) salePriceElement.textContent = '';
+            if (finalPriceElement) finalPriceElement.textContent = '';
+          }
 
-        // Reinitialize cart manager if it exists
-        if (window.cartManager && typeof window.cartManager.initialize === 'function') {
-          window.cartManager.initialize();
-        }
+          // Update the product title and URL
+          const headingElement = cardWrapper.querySelector('.card__heading');
+          if (headingElement) {
+            headingElement.textContent = title;
+          }
 
-        // Remove loading spinner
-        removeSpinner();
-      });
+          const mediaLink = cardWrapper.querySelector('.product-card__media-link');
+          if (mediaLink) {
+            mediaLink.href = productUrl;
+          }
+
+          const contentLink = cardWrapper.querySelector('.product-card__content-link');
+          if (contentLink) {
+            contentLink.href = productUrl;
+          }
+
+          // Update all anchor tags within the card that link to a product
+          const productLinks = cardWrapper.querySelectorAll('a[href*="/products/"]');
+          productLinks.forEach((link) => {
+            link.href = productUrl;
+          });
+
+          // Update badge
+          const badgeElement = cardWrapper.querySelector('.product-card__badge .badge');
+          if (badgeElement) {
+            badgeElement.textContent = badgeValue;
+            badgeElement.classList.toggle('hidden', badgeValue === '');
+          }
+
+          // Update label
+          const labelElement = cardWrapper.querySelector('.product-card__bottom-label');
+          if (labelElement) {
+            labelElement.textContent = label;
+            labelElement.classList.toggle('hidden', label === '');
+          }
+
+          // Update wishlist button
+          const addToWishlistButton = cardWrapper.querySelector('.swym-button.swym-add-to-wishlist-view-product');
+          if (addToWishlistButton) {
+            addToWishlistButton.setAttribute('data-product-id', productId);
+            addToWishlistButton.setAttribute('data-variant-id', variantId);
+            addToWishlistButton.setAttribute('href', `/products/${handle}?variant=${variantId}`);
+
+            const currentClass = [...addToWishlistButton.classList].find((className) =>
+              className.startsWith('product_')
+            );
+            if (currentClass) {
+              addToWishlistButton.classList.remove(currentClass);
+            }
+            addToWishlistButton.classList.add(`product_${productId}`);
+          }
+
+          // Reset quick-add initialization state
+          cardWrapper.classList.remove('quick-add-initialized');
+
+          // Reinitialize quick-add functionality
+          if (typeof window.setupQuickAdd === 'function') {
+            window.setupQuickAdd();
+          }
+
+          // Reinitialize cart manager if it exists
+          if (window.cartManager && typeof window.cartManager.initialize === 'function') {
+            window.cartManager.initialize();
+          }
+
+          // Remove loading spinner
+          removeSpinner();
+        })
+        .catch((error) => {
+          removeSpinner();
+        });
     })
     .catch((error) => {
-      console.error('Error fetching product data:', error);
       removeSpinner();
     });
 };
 
 // Function to initialize swatches
 function initializeSwatches() {
-  const swatches = document.querySelectorAll('.card-swatch:not(.initialized)');
+  const swatches = document.querySelectorAll('.product-card__swatch:not(.initialized)');
 
   swatches.forEach((swatch, index) => {
     swatch.classList.add('initialized');
     swatch.addEventListener('click', function (event) {
       event.preventDefault();
 
-      const cardWrapper = swatch.closest('.product-card-wrapper');
+      const cardWrapper = swatch.closest('.product-card');
       if (!cardWrapper) {
-        console.error('Could not find product-card-wrapper for swatch');
         return;
       }
 
       // Remove active state from all swatches in this card
-      const allSwatches = cardWrapper.querySelectorAll('.card-swatch');
-      allSwatches.forEach((sw) => sw.classList.remove('card-swatch--current'));
+      const allSwatches = cardWrapper.querySelectorAll('.product-card__swatch');
+      allSwatches.forEach((sw) => sw.classList.remove('active'));
       // Add active state to clicked swatch
-      swatch.classList.add('card-swatch--current');
+      swatch.classList.add('active');
 
       const productUrl = swatch.getAttribute('data-url');
       // Extract handle and remove any query parameters
@@ -257,7 +278,6 @@ function initializeSwatches() {
       const variantId = swatch.getAttribute('data-variant-id');
       const badgeValue = swatch.getAttribute('data-badge');
       const label = swatch.getAttribute('data-label');
-
 
       // Validate that we have a clean handle
       if (!handle) {
@@ -338,7 +358,7 @@ document.addEventListener('products:added', () => {
 });
 
 window.initializeCardSwatches = function () {
-  const swatches = document.querySelectorAll('.card-swatch:not(.swatch-initialized)');
+  const swatches = document.querySelectorAll('.product-card__swatch:not(.swatch-initialized)');
 
   swatches.forEach((swatch, index) => {
     swatch.classList.add('swatch-initialized');
@@ -355,7 +375,7 @@ window.initializeCardSwatches = function () {
       .then((res) => res.json())
       .then((data) => {
         swatch.classList.add('is-available');
-        const cardWrapper = swatch.closest('.card-wrapper');
+        const cardWrapper = swatch.closest('.product-card');
         const priceElement = cardWrapper?.querySelector('.price-item--sale.price-item--last');
         if (priceElement) {
           priceElement.textContent = `$${(data.product.variants[0].price / 100).toFixed(2)}`;
@@ -369,8 +389,8 @@ window.initializeCardSwatches = function () {
 
 // Initialize carousel functionality
 function initCarousel(carouselTrack) {
-  const slides = carouselTrack.querySelectorAll('.card__media-slide');
-  const navButtons = carouselTrack.closest('.card__media-carousel').querySelectorAll('.card__media-nav-button');
+  const slides = carouselTrack.querySelectorAll('.product-card__slide');
+  const navButtons = carouselTrack.closest('.product-card__carousel').querySelectorAll('.product-card__nav-btn');
   let currentIndex = 0;
   let startX = 0;
   let isDragging = false;
@@ -449,7 +469,7 @@ function initCarousel(carouselTrack) {
 
 // Initialize all carousels on the page
 document.addEventListener('DOMContentLoaded', () => {
-  const carousels = document.querySelectorAll('.card__media-carousel-track');
+  const carousels = document.querySelectorAll('.product-card__carousel-track');
   carousels.forEach((carousel) => {
     initCarousel(carousel);
   });
