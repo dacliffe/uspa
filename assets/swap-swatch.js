@@ -226,6 +226,23 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
             addToWishlistButton.classList.add(`product_${productId}`);
           }
 
+          // Preserve quick-add container state before reinitialization
+          const quickAddContainer = cardWrapper.querySelector('.quick-add-container');
+          const submitContainer = cardWrapper.querySelector('.quick-add-submit-container');
+          const mobileCartIcon = cardWrapper.querySelector('.mobile-cart-icon');
+
+          const wasQuickAddOpen = quickAddContainer?.classList.contains('open');
+          const wasSubmitVisible = submitContainer?.classList.contains('visible');
+          const wasMobileCartHidden = mobileCartIcon?.classList.contains('hidden');
+
+          // Store hover state - check if user is still hovering over the card
+          const isCurrentlyHovering = cardWrapper.matches(':hover');
+
+          // Set a flag on the card wrapper to preserve state during reinitialization
+          if (wasQuickAddOpen || isCurrentlyHovering) {
+            cardWrapper.dataset.preserveQuickAddState = 'true';
+          }
+
           // Reset quick-add initialization state
           cardWrapper.classList.remove('quick-add-initialized');
 
@@ -233,6 +250,42 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
           if (typeof window.setupQuickAdd === 'function') {
             window.setupQuickAdd();
           }
+
+          // Restore quick-add container state after reinitialization
+          requestAnimationFrame(() => {
+            setTimeout(() => {
+              const updatedQuickAddContainer = cardWrapper.querySelector('.quick-add-container');
+              const updatedSubmitContainer = cardWrapper.querySelector('.quick-add-submit-container');
+              const updatedMobileCartIcon = cardWrapper.querySelector('.mobile-cart-icon');
+
+              // Restore state if it was open OR if user is still hovering
+              if ((wasQuickAddOpen || isCurrentlyHovering) && updatedQuickAddContainer) {
+                updatedQuickAddContainer.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                  updatedQuickAddContainer.classList.add('open');
+
+                  // Force CSS hover state to be applied if user is hovering
+                  if (isCurrentlyHovering) {
+                    const quickAddParent = cardWrapper.querySelector('.product-card__quick-add');
+                    if (quickAddParent) {
+                      quickAddParent.style.opacity = '1';
+                      quickAddParent.style.transform = 'translateY(0)';
+                      quickAddParent.style.pointerEvents = 'auto';
+                    }
+                  }
+                });
+              }
+              if ((wasSubmitVisible || isCurrentlyHovering) && updatedSubmitContainer) {
+                updatedSubmitContainer.classList.add('visible');
+              }
+              if (wasMobileCartHidden && updatedMobileCartIcon) {
+                updatedMobileCartIcon.classList.add('hidden');
+              }
+
+              // Clean up the preservation flag
+              delete cardWrapper.dataset.preserveQuickAddState;
+            }, 100);
+          });
 
           // Reinitialize cart manager if it exists
           if (window.cartManager && typeof window.cartManager.initialize === 'function') {

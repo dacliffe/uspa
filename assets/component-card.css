@@ -195,7 +195,14 @@
   max-height: 50%;
 }
 
-.product-card__media:hover .product-card__quick-add {
+.product-card:hover .product-card__quick-add {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Ensure quick add shows when hovering over any part of the card */
+.product-card:hover .product-card__media .product-card__quick-add {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
@@ -445,6 +452,7 @@
   color: rgb(var(--color-foreground));
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -552,17 +560,80 @@
   border: 0 !important;
 }
 
-/* Legacy cleanup - Remove old card styles that might conflict */
-.card-wrapper,
-.card,
-.card__inner,
-.card__media,
-.card__content,
-.card__information,
-.card__heading,
-.card__badge,
-.card-information {
-  /* Reset any conflicting styles */
+/* Standard card component styles for collections, columns, etc. */
+.card {
+  position: relative;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.card--standard {
+  background: rgb(var(--color-base-background-1));
+}
+
+.card__inner {
+  position: relative;
+  width: 100%;
+  padding: var(--image-padding);
+  text-decoration: none;
+  color: inherit;
+}
+
+.card__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(var(--border-radius) - var(--border-width) - var(--image-padding));
+}
+
+.card__inner.ratio {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__inner.ratio::before {
+  content: '';
+  width: 100%;
+  height: 0;
+  padding-bottom: var(--ratio-percent);
+  display: block;
+}
+
+.card__inner.ratio>* {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card__media .media {
+  height: 100%;
+  width: 100%;
+}
+
+.card__media .media img {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.card__heading {
+  margin: 0;
+}
+
+/* Legacy cleanup - Remove old product card styles that might conflict */
+.product-card-wrapper .card-wrapper,
+.contains-card--product .card,
+.contains-card--product .card__inner,
+.contains-card--product .card__media,
+.contains-card--product .card__content,
+.contains-card--product .card__information,
+.contains-card--product .card__heading,
+.contains-card--product .card__badge,
+.contains-card--product .card-information {
+  /* Reset any conflicting styles for product cards only */
+  all: unset;
 }
 
 /* Ensure buttons and interactive elements remain clickable */

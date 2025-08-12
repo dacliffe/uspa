@@ -207,7 +207,10 @@
               </span>
             {% endfor %}
           </div>
-          <p class="product-card__colours-available">{{ style_group_products.size }} COLOURS AVAILABLE</p>
+          <p class="product-card__colours-available">
+            {{ style_group_products.size }}
+            {% if style_group_products.size == 1 %}COLOUR{% else %}COLOURS{% endif %} AVAILABLE
+          </p>
         {%- endif -%}
       {%- endif -%}
     </div>

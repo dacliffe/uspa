@@ -20,11 +20,12 @@ window.setupQuickAdd = function () {
     const submitButton = wrapper.querySelector('.quick-add-submit');
     const mobileCartIcon = wrapper.querySelector('.mobile-cart-icon');
 
-    // Ensure initial state is properly set
-    if (quickAddContainer) {
+    // Ensure initial state is properly set (unless we're preserving state)
+    const shouldPreserveState = wrapper.dataset.preserveQuickAddState === 'true';
+    if (quickAddContainer && !shouldPreserveState) {
       quickAddContainer.classList.add('hidden');
     }
-    if (submitContainer) {
+    if (submitContainer && !shouldPreserveState) {
       submitContainer.classList.remove('visible');
     }
 
@@ -100,6 +101,11 @@ window.setupQuickAdd = function () {
     // Desktop hover behavior - only apply on desktop
     if (window.innerWidth > 990) {
       wrapper.addEventListener('mouseenter', function (e) {
+        // Ignore hover events that originate from carousel navigation buttons
+        if (e.target.closest('.product-card__nav-btn')) {
+          return;
+        }
+
         if (quickAddContainer) {
           clearTimeout(timeoutId);
           quickAddContainer.classList.remove('hidden');
@@ -121,22 +127,41 @@ window.setupQuickAdd = function () {
 
       wrapper.addEventListener('mouseleave', function (e) {
         const relatedTarget = e.relatedTarget || e.toElement;
-        if (relatedTarget && (this.contains(relatedTarget) || relatedTarget.closest('.quick-add-container'))) {
+
+        // If there's no related target, we're likely leaving the browser window
+        if (!relatedTarget) {
+          if (quickAddContainer && !isAddingToCart) {
+            timeoutId = setTimeout(() => {
+              quickAddContainer.classList.remove('open');
+              if (selectedVariantId === null) {
+                quickAddContainer.classList.add('hidden');
+                if (submitContainer) {
+                  submitContainer.classList.remove('visible');
+                }
+              }
+            }, 100);
+          }
           return;
         }
 
-        if (quickAddContainer && !isAddingToCart) {
-          timeoutId = setTimeout(() => {
-            quickAddContainer.classList.remove('open');
-            // Only hide fully if no variant is selected
-            if (selectedVariantId === null) {
-              quickAddContainer.classList.add('hidden');
-              // Hide the submit button container if quick add closes and no variant is selected
-              if (submitContainer) {
-                submitContainer.classList.remove('visible');
+        // Check if we're moving to another part of the same product card
+        const isStillInThisCard = this.contains(relatedTarget);
+        const isMovingToQuickAdd = relatedTarget.closest('.quick-add-container');
+        const targetProductCard = relatedTarget.closest('.product-card');
+
+        // Only hide if we're truly leaving this card (not moving to another part of it)
+        if (!isStillInThisCard && !isMovingToQuickAdd && targetProductCard !== this) {
+          if (quickAddContainer && !isAddingToCart) {
+            timeoutId = setTimeout(() => {
+              quickAddContainer.classList.remove('open');
+              if (selectedVariantId === null) {
+                quickAddContainer.classList.add('hidden');
+                if (submitContainer) {
+                  submitContainer.classList.remove('visible');
+                }
               }
-            }
-          }, 100);
+            }, 100);
+          }
         }
       });
 
@@ -148,7 +173,14 @@ window.setupQuickAdd = function () {
 
         quickAddContainer.addEventListener('mouseleave', function (e) {
           const relatedTarget = e.relatedTarget || e.toElement;
+
+          // Don't hide if we're moving within the quick-add container
           if (relatedTarget && this.contains(relatedTarget)) {
+            return;
+          }
+
+          // Don't hide if we're moving back to the product card
+          if (relatedTarget && wrapper.contains(relatedTarget)) {
             return;
           }
 
