@@ -14,7 +14,6 @@
       "blocks": {
         "image_slide_8HJNbU": {
           "type": "image_slide",
-          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design_65.jpg",
             "mobile_image": "shopify://shop_images/Untitled_design_64.jpg",
@@ -224,6 +223,7 @@
         },
         "image_slide_zdNam3": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design-9.jpg",
             "mobile_image": "shopify://shop_images/Untitled_design-8.jpg",
