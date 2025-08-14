@@ -141,20 +141,20 @@
               </h3>
             </div>
             <div class="card__badge {{ settings.badge_position }}">
-            {%- if card_product.compare_at_price > card_product.price and card_product.available -%}
-              {%- assign discount_percentage = card_product.compare_at_price
-                | minus: card_product.price
-                | times: 100
-                | divided_by: card_product.compare_at_price
-                | round
-              -%}
-              <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
-              >
-                {{- discount_percentage }}% OFF
-              </span>
-            {%- elsif card_product.tags contains 'New' -%}
+              {%- if card_product.compare_at_price > card_product.price and card_product.available -%}
+                {%- assign discount_percentage = card_product.compare_at_price
+                  | minus: card_product.price
+                  | times: 100
+                  | divided_by: card_product.compare_at_price
+                  | round
+                -%}
+                <span
+                  id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                  class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+                >
+                  {{- discount_percentage }}% OFF
+                </span>
+              {%- elsif card_product.tags contains 'New' -%}
                 <span
                   id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                   class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
@@ -328,6 +328,12 @@
               </div>
             </div>
           </div>
+          <!-- Bottom Label -->
+          {%- if card_product.metafields.custom.bottom_label != blank -%}
+            <div class="product-card__bottom-label h5">
+              {{ card_product.metafields.custom.bottom_label | upcase }}
+            </div>
+          {%- endif -%}
         </a>
         {%- assign style_group = card_product.metafields.custom.style_group.value -%}
         {%- if style_group != blank -%}
