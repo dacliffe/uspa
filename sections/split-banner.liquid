@@ -352,101 +352,99 @@
 <div class="split-banner page-width section-{{ section.id }}-padding">
   {%- for block in section.blocks -%}
     <div class="split-banner__half" {{ block.shopify_attributes }}>
-      <a href="{{ block.settings.link }}">
-        {%- if block.settings.use_video -%}
-          <div class="split-banner__image-wrapper">
-            {{ block.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
-          </div>
-        {%- else -%}
-          <div class="split-banner__image-wrapper">
-            {%- if block.settings.image != blank -%}
-              {{
-                block.settings.image
-                | image_url: width: 2000
-                | image_tag:
-                  loading: 'lazy',
-                  width: block.settings.image.width,
-                  height: block.settings.image.height,
-                  class: 'split-banner__image--desktop'
-              }}
-            {%- endif -%}
+      {%- if block.settings.use_video -%}
+        <div class="split-banner__image-wrapper">
+          {{ block.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+        </div>
+      {%- else -%}
+        <div class="split-banner__image-wrapper">
+          {%- if block.settings.image != blank -%}
+            {{
+              block.settings.image
+              | image_url: width: 2000
+              | image_tag:
+                loading: 'lazy',
+                width: block.settings.image.width,
+                height: block.settings.image.height,
+                class: 'split-banner__image--desktop'
+            }}
+          {%- endif -%}
 
-            {%- if block.settings.mobile_image != blank -%}
-              {{
-                block.settings.mobile_image
-                | image_url: width: 1000
-                | image_tag:
-                  loading: 'lazy',
-                  width: block.settings.mobile_image.width,
-                  height: block.settings.mobile_image.height,
-                  class: 'split-banner__image--mobile'
-              }}
-            {%- elsif block.settings.image != blank -%}
-              {{
-                block.settings.image
-                | image_url: width: 1000
-                | image_tag:
-                  loading: 'lazy',
-                  width: block.settings.image.width,
-                  height: block.settings.image.height,
-                  class: 'split-banner__image--mobile'
-              }}
-            {%- endif -%}
+          {%- if block.settings.mobile_image != blank -%}
+            {{
+              block.settings.mobile_image
+              | image_url: width: 1000
+              | image_tag:
+                loading: 'lazy',
+                width: block.settings.mobile_image.width,
+                height: block.settings.mobile_image.height,
+                class: 'split-banner__image--mobile'
+            }}
+          {%- elsif block.settings.image != blank -%}
+            {{
+              block.settings.image
+              | image_url: width: 1000
+              | image_tag:
+                loading: 'lazy',
+                width: block.settings.image.width,
+                height: block.settings.image.height,
+                class: 'split-banner__image--mobile'
+            }}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div
+        class="split-banner__content"
+        data-vertical="{{ block.settings.vertical_alignment }}"
+        data-horizontal="{{ block.settings.horizontal_alignment }}"
+        data-content-align="{{ block.settings.content_alignment }}"
+        data-mobile-vertical="{{ block.settings.mobile_vertical_alignment }}"
+        data-mobile-horizontal="{{ block.settings.mobile_horizontal_alignment }}"
+        data-mobile-content-align="{{ block.settings.mobile_content_alignment }}"
+      >
+        {%- if block.settings.title != blank -%}
+          <h2
+            class="split-banner__title"
+            style="font-size: {{ block.settings.title_size }}px; font-weight: {{ block.settings.title_weight }};"
+          >
+            {{ block.settings.title }}
+          </h2>
+        {%- endif -%}
+
+        {%- if block.settings.subtitle != blank -%}
+          <div
+            class="split-banner__subtitle"
+            style="font-size: {{ block.settings.subtitle_size }}px; font-weight: {{ block.settings.subtitle_weight }};"
+          >
+            {{ block.settings.subtitle }}
           </div>
         {%- endif -%}
 
-        <div
-          class="split-banner__content"
-          data-vertical="{{ block.settings.vertical_alignment }}"
-          data-horizontal="{{ block.settings.horizontal_alignment }}"
-          data-content-align="{{ block.settings.content_alignment }}"
-          data-mobile-vertical="{{ block.settings.mobile_vertical_alignment }}"
-          data-mobile-horizontal="{{ block.settings.mobile_horizontal_alignment }}"
-          data-mobile-content-align="{{ block.settings.mobile_content_alignment }}"
-        >
-          {%- if block.settings.title != blank -%}
-            <h2
-              class="split-banner__title"
-              style="font-size: {{ block.settings.title_size }}px; font-weight: {{ block.settings.title_weight }};"
-            >
-              {{ block.settings.title }}
-            </h2>
-          {%- endif -%}
-
-          {%- if block.settings.subtitle != blank -%}
-            <div
-              class="split-banner__subtitle"
-              style="font-size: {{ block.settings.subtitle_size }}px; font-weight: {{ block.settings.subtitle_weight }};"
-            >
-              {{ block.settings.subtitle }}
-            </div>
-          {%- endif -%}
-
-          {%- if block.settings.text != blank -%}
-            <div class="split-banner__text">
-              {{ block.settings.text }}
-            </div>
-          {%- endif -%}
-
-          <div class="split-banner__buttons">
-            {%- for i in (1..4) -%}
-              {%- assign button_text = 'button_text_' | append: i -%}
-              {%- assign button_style = 'button_style_' | append: i -%}
-              {%- assign button_link = 'button_link_' | append: i -%}
-
-              {%- if block.settings[button_text] != blank -%}
-                <a
-                  href="{{ block.settings[button_link] }}"
-                  class="split-banner__button split-banner__button--{{ block.settings[button_style] }}"
-                  style="font-size: {{ section.settings.button_font_size }}px;"
-                >
-                  {{ block.settings[button_text] }}
-                </a>
-              {%- endif -%}
-            {%- endfor -%}
+        {%- if block.settings.text != blank -%}
+          <div class="split-banner__text">
+            {{ block.settings.text }}
           </div>
+        {%- endif -%}
+
+        <div class="split-banner__buttons">
+          {%- for i in (1..4) -%}
+            {%- assign button_text = 'button_text_' | append: i -%}
+            {%- assign button_style = 'button_style_' | append: i -%}
+            {%- assign button_link = 'button_link_' | append: i -%}
+
+            {%- if block.settings[button_text] != blank -%}
+              <a
+                href="{{ block.settings[button_link] }}"
+                class="split-banner__button split-banner__button--{{ block.settings[button_style] }}"
+                style="font-size: {{ section.settings.button_font_size }}px;"
+              >
+                {{ block.settings[button_text] }}
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
         </div>
-      </a>
+      </div>
     </div>
   {%- endfor -%}
 </div>
