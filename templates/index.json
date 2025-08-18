@@ -70,7 +70,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Spend_150_get_50_Off_Spend_300_get_100_Off_Spend_600_get_200_Off_3.jpg",
             "mobile_image": "shopify://shop_images/WUP0634-D48_2.jpg",
-            "slide_link": "shopify://collections/best-seller",
+            "slide_link": "https://uspoloassn.com.au/pages/newsletter-sign-up",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
             "content_alignment": "center",
@@ -89,7 +89,7 @@
             "subtitle_color": "#ffffff",
             "button1_text": "BECOME A MEMBER",
             "mobile_button1_text": "",
-            "button1_link": "https://manage.kmail-lists.com/subscriptions/subscribe?a=UmmeNB&g=UtaZeH",
+            "button1_link": "https://uspoloassn.com.au/pages/newsletter-sign-up",
             "button1_type": "primary",
             "button1_theme_color": "#ffffff",
             "button1_text_color": "#13294c",
