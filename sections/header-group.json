@@ -132,7 +132,7 @@
             "menu_title": "NEW",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-new-arrivals",
-            "image": "shopify://shop_images/25.jpg",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_3.jpg",
             "image_order": 1
           }
         },
@@ -142,7 +142,7 @@
             "menu_title": "NEW",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-new-arrivals",
-            "image": "shopify://shop_images/23_21974739-3609-4e1e-a8b0-4a474dc0a9d6.jpg",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_4.jpg",
             "image_order": 2
           }
         },
@@ -152,7 +152,7 @@
             "menu_title": "NEW",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-new-arrivals",
-            "image": "shopify://shop_images/26.jpg",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_5.jpg",
             "image_order": 3
           }
         },
@@ -182,7 +182,7 @@
             "menu_title": "POLO SHIRTS",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/6.jpg",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_7.jpg",
             "image_order": 2
           }
         },
@@ -222,17 +222,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-essentials",
-            "image": "shopify://shop_images/23.jpg",
-            "image_order": 0
-          }
-        },
-        "mega_menu_image_fHV9A8": {
-          "type": "mega_menu_image",
-          "settings": {
-            "menu_title": "MENS",
-            "image_title": "Polo Shirts",
-            "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/NAV_IMAGES.jpg",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_6.jpg",
             "image_order": 0
           }
         },
@@ -243,6 +233,16 @@
             "image_title": "Father's Day Gifts",
             "image_link": "shopify://collections/fathers-day",
             "image": "shopify://shop_images/Copy_of_NAV_IMAGES_2.jpg",
+            "image_order": 0
+          }
+        },
+        "mega_menu_image_fHV9A8": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "MENS",
+            "image_title": "Polo Shirts",
+            "image_link": "shopify://collections/mens-polo-shirts",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_8.jpg",
             "image_order": 1
           }
         },
@@ -250,9 +250,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MENS",
-            "image_title": "Pants",
-            "image_link": "shopify://collections/mens-trousers-chinos",
-            "image": "shopify://shop_images/12.jpg",
+            "image_title": "Pants & Shorts",
+            "image_link": "shopify://collections/mens-pants-joggers-sweatpants-jeans-denim-chinos-trousers",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_9.jpg",
             "image_order": 2
           }
         },
@@ -262,7 +262,7 @@
             "menu_title": "WOMENS",
             "image_title": "Shirts",
             "image_link": "shopify://collections/womens-t-shirts",
-            "image": "shopify://shop_images/can_you_add_the_man_into_a_nostalgic_landscape_scene_with_a_lake_and_forest_in_late_afternoon_light_1.jpg",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_10.jpg",
             "image_order": 0
           }
         },
@@ -272,7 +272,7 @@
             "menu_title": "WOMENS",
             "image_title": "Pants",
             "image_link": "shopify://collections/womens-trousers",
-            "image": "shopify://shop_images/14.jpg",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_11.jpg",
             "image_order": 0
           }
         },
@@ -282,7 +282,7 @@
             "menu_title": "WOMENS",
             "image_title": "Knitwear",
             "image_link": "shopify://collections/womens-knitwear-jumpers",
-            "image": "shopify://shop_images/11.jpg",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_13.jpg",
             "image_order": 0
           }
         },
@@ -292,7 +292,7 @@
             "menu_title": "KIDS",
             "image_title": "T-shirts",
             "image_link": "shopify://collections/kids-t-shirts",
-            "image": "shopify://shop_images/NAV_IMAGES_3.jpg",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_12.jpg",
             "image_order": 0
           }
         },
@@ -300,9 +300,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "KIDS",
-            "image_title": "Polo Shirts",
-            "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/NAV_IMAGES_1.jpg",
+            "image_title": "Shirts",
+            "image_link": "shopify://collections/kids-shirts-overshirts",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_14.jpg",
             "image_order": 0
           }
         }
@@ -326,8 +326,8 @@
         "mega_menu_image_ik7cRe",
         "mega_menu_image_6A9e9C",
         "mega_menu_image_PVE3Jr",
-        "mega_menu_image_fHV9A8",
         "mega_menu_image_exzE3b",
+        "mega_menu_image_fHV9A8",
         "mega_menu_image_XWVGcR",
         "mega_menu_image_cb7xpa",
         "mega_menu_image_RYYkJj",

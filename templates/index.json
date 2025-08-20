@@ -65,12 +65,65 @@
             "mobile_button_font_size": 14
           }
         },
+        "image_slide_RnWrHQ": {
+          "type": "image_slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Untitled_design_67.jpg",
+            "mobile_image": "shopify://shop_images/Untitled_design_66.jpg",
+            "slide_link": "shopify://collections/new-arrivals-clothing-accessories",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "left",
+            "content_alignment": "left",
+            "mobile_vertical_alignment": "bottom",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center",
+            "title": "SPRING STARTS HERE",
+            "subtitle": "LIGHT LAYERS, FRESH COLOURS, AND NEW CLASSICS FOR THE SEASON AHEAD.",
+            "subtitle_font_size": 16,
+            "mobile_subtitle_font_size": 16,
+            "subtitle_bold": true,
+            "title_font_size": 28,
+            "mobile_title_font_size": 32,
+            "title_bold": true,
+            "title_color": "#ffffff",
+            "subtitle_color": "#ffffff",
+            "button1_text": "MENS",
+            "mobile_button1_text": "",
+            "button1_link": "shopify://collections/mens-new-arrivals",
+            "button1_type": "primary",
+            "button1_theme_color": "#ffffff",
+            "button1_text_color": "#13294c",
+            "button2_text": "WOMENS",
+            "mobile_button2_text": "",
+            "button2_link": "shopify://collections/womens-new-arrivals",
+            "button2_type": "primary",
+            "button2_theme_color": "#ffffff",
+            "button2_text_color": "#13294c",
+            "button3_text": "KIDS",
+            "mobile_button3_text": "",
+            "button3_link": "shopify://collections/kids-new-arrivals",
+            "button3_type": "primary",
+            "button3_theme_color": "#ffffff",
+            "button3_text_color": "#13294c",
+            "button4_text": "",
+            "mobile_button4_text": "",
+            "button4_link": "",
+            "button4_type": "primary",
+            "button4_theme_color": "#ffffff",
+            "button4_text_color": "#000000",
+            "overlay_opacity": 5,
+            "overlay_color": "#000000",
+            "desktop_button_font_size": 16,
+            "mobile_button_font_size": 14
+          }
+        },
         "image_slide_BkWEYx": {
           "type": "image_slide",
+          "name": "SPEND AND SAVE",
           "settings": {
             "desktop_image": "shopify://shop_images/Spend_150_get_50_Off_Spend_300_get_100_Off_Spend_600_get_200_Off_5.jpg",
             "mobile_image": "shopify://shop_images/WUP0634-D48_6.jpg",
-            "slide_link": "https://manage.kmail-lists.com/subscriptions/subscribe?a=UmmeNB&g=UtaZeH",
+            "slide_link": "shopify://collections/spend-save",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "left",
             "content_alignment": "center",
@@ -169,59 +222,6 @@
             "mobile_button_font_size": 14
           }
         },
-        "image_slide_RnWrHQ": {
-          "type": "image_slide",
-          "disabled": true,
-          "settings": {
-            "desktop_image": "shopify://shop_images/Untitled_design_67.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design_66.jpg",
-            "slide_link": "shopify://collections/new-arrivals-clothing-accessories",
-            "vertical_alignment": "middle",
-            "horizontal_alignment": "left",
-            "content_alignment": "left",
-            "mobile_vertical_alignment": "bottom",
-            "mobile_horizontal_alignment": "center",
-            "mobile_content_alignment": "center",
-            "title": "STEP INTO SRPING",
-            "subtitle": "LAYERED RIGHT. ESSENTIAL FOR THE SEASON",
-            "subtitle_font_size": 16,
-            "mobile_subtitle_font_size": 16,
-            "subtitle_bold": true,
-            "title_font_size": 28,
-            "mobile_title_font_size": 32,
-            "title_bold": true,
-            "title_color": "#ffffff",
-            "subtitle_color": "#ffffff",
-            "button1_text": "MENS",
-            "mobile_button1_text": "",
-            "button1_link": "shopify://collections/mens-new-arrivals",
-            "button1_type": "primary",
-            "button1_theme_color": "#ffffff",
-            "button1_text_color": "#13294c",
-            "button2_text": "WOMENS",
-            "mobile_button2_text": "",
-            "button2_link": "shopify://collections/womens-new-arrivals",
-            "button2_type": "primary",
-            "button2_theme_color": "#ffffff",
-            "button2_text_color": "#13294c",
-            "button3_text": "KIDS",
-            "mobile_button3_text": "",
-            "button3_link": "shopify://collections/kids-new-arrivals",
-            "button3_type": "primary",
-            "button3_theme_color": "#ffffff",
-            "button3_text_color": "#13294c",
-            "button4_text": "",
-            "mobile_button4_text": "",
-            "button4_link": "",
-            "button4_type": "primary",
-            "button4_theme_color": "#ffffff",
-            "button4_text_color": "#000000",
-            "overlay_opacity": 5,
-            "overlay_color": "#000000",
-            "desktop_button_font_size": 16,
-            "mobile_button_font_size": 14
-          }
-        },
         "image_slide_txnJ6Y": {
           "type": "image_slide",
           "settings": {
@@ -277,9 +277,9 @@
       },
       "block_order": [
         "image_slide_8HJNbU",
+        "image_slide_RnWrHQ",
         "image_slide_BkWEYx",
         "image_slide_ktK8Mg",
-        "image_slide_RnWrHQ",
         "image_slide_txnJ6Y"
       ],
       "settings": {
@@ -293,8 +293,8 @@
         "banner_Q8CfbK": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/56659_20240416_FW24_Utah_S10_0720.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design-11.jpg",
+            "image": "shopify://shop_images/Untitled_design_90.jpg",
+            "mobile_image": "shopify://shop_images/Untitled_design_91.jpg",
             "use_video": false,
             "title": "MENS",
             "title_size": 32,
@@ -306,12 +306,12 @@
             "button_text_1": "Polo Shirts",
             "button_style_1": "secondary",
             "button_link_1": "shopify://collections/mens-polo-shirts",
-            "button_text_2": "Sweaters",
+            "button_text_2": "T-Shirts",
             "button_style_2": "secondary",
-            "button_link_2": "shopify://collections/mens-hoodies-sweatshirts",
-            "button_text_3": "Outerwear",
+            "button_link_2": "shopify://collections/mens-t-shirts",
+            "button_text_3": "Shorts",
             "button_style_3": "secondary",
-            "button_link_3": "shopify://collections/mens-coats-jackets",
+            "button_link_3": "shopify://collections/mens-shorts-swimwear",
             "button_text_4": "",
             "button_style_4": "secondary",
             "button_link_4": "",
@@ -326,8 +326,8 @@
         "banner_hNy8aw": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/56587_20240415_FW24_Utah_S02_0258.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design-12_f8703ac9-565c-421f-9752-e665da8ddd33.jpg",
+            "image": "shopify://shop_images/Untitled_design_89.jpg",
+            "mobile_image": "shopify://shop_images/Untitled_design_92.jpg",
             "use_video": false,
             "title": "WOMENS",
             "title_size": 36,
@@ -339,12 +339,12 @@
             "button_text_1": "Polo Shirts",
             "button_style_1": "secondary",
             "button_link_1": "shopify://collections/womens-polo-shirts",
-            "button_text_2": "Sweaters",
+            "button_text_2": "Dresses",
             "button_style_2": "secondary",
-            "button_link_2": "shopify://collections/womens-sweatshirts-hoodies",
-            "button_text_3": "Outerwear",
+            "button_link_2": "shopify://collections/womens-dresses",
+            "button_text_3": "Knitwear",
             "button_style_3": "secondary",
-            "button_link_3": "shopify://collections/womens-coats-jackets",
+            "button_link_3": "shopify://collections/womens-knitwear-jumpers",
             "button_text_4": "",
             "button_style_4": "primary",
             "button_link_4": "",
@@ -381,16 +381,25 @@
           "type": "column",
           "settings": {
             "title": "POLO SHIRTS",
-            "image": "shopify://shop_images/1.jpg",
+            "image": "shopify://shop_images/Untitled_design_86.jpg",
             "url": "shopify://collections/polo-shirts",
+            "visibility": "both"
+          }
+        },
+        "column_3BC7C3": {
+          "type": "column",
+          "settings": {
+            "title": "SHORTS",
+            "image": "shopify://shop_images/3_174085c2-6cf4-406f-a01a-9e3fba515208.jpg",
+            "url": "shopify://collections/shorts-swimwear",
             "visibility": "both"
           }
         },
         "column_TefaYi": {
           "type": "column",
           "settings": {
-            "title": "SWEATERS",
-            "image": "shopify://shop_images/2.jpg",
+            "title": "SWEATSHIRTS",
+            "image": "shopify://shop_images/2_018b3011-4b0e-42a8-aae2-d6c3e3cdaa53.jpg",
             "url": "shopify://collections/sweatshirts-hoodies",
             "visibility": "both"
           }
@@ -398,27 +407,18 @@
         "column_xkMD7V": {
           "type": "column",
           "settings": {
-            "title": "COATS",
-            "image": "shopify://shop_images/Untitled_design-15.jpg",
+            "title": "T-SHIRTS",
+            "image": "shopify://shop_images/4_548c12fb-b80f-4ff5-bf6c-a91722ce4a0f.jpg",
             "url": "shopify://collections/coats-jackets",
-            "visibility": "both"
-          }
-        },
-        "column_3BC7C3": {
-          "type": "column",
-          "settings": {
-            "title": "SHIRTS",
-            "image": "shopify://shop_images/Untitled_design-7.jpg",
-            "url": "shopify://collections/shirts",
             "visibility": "mobile"
           }
         }
       },
       "block_order": [
         "column_7TQKQx",
+        "column_3BC7C3",
         "column_TefaYi",
-        "column_xkMD7V",
-        "column_3BC7C3"
+        "column_xkMD7V"
       ],
       "settings": {
         "title": "",
