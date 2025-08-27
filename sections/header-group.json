@@ -59,7 +59,7 @@
           "settings": {
             "menu_title": "NEW",
             "announcement_text": "SPRING 25 NOW AVAILABLE",
-            "announcement_link": "",
+            "announcement_link": "shopify://collections/new-arrivals-clothing-accessories",
             "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
           }
         },
@@ -67,8 +67,8 @@
           "type": "mega_menu_announcement",
           "settings": {
             "menu_title": "POLO SHIRTS",
-            "announcement_text": "SPEND & SAVE UP TO $200",
-            "announcement_link": "",
+            "announcement_text": "MEMBERS SPEND & SAVE UP TO $200*",
+            "announcement_link": "shopify://collections/spend-save",
             "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
           }
         },
@@ -76,8 +76,8 @@
           "type": "mega_menu_announcement",
           "settings": {
             "menu_title": "ESSENTIALS",
-            "announcement_text": "SPEND & SAVE UP TO $200",
-            "announcement_link": "",
+            "announcement_text": "MEMBERS SPEND & SAVE UP TO $200*",
+            "announcement_link": "shopify://collections/spend-save",
             "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
           }
         },
@@ -85,8 +85,8 @@
           "type": "mega_menu_announcement",
           "settings": {
             "menu_title": "MENS",
-            "announcement_text": "SPEND & SAVE UP TO $200",
-            "announcement_link": "",
+            "announcement_text": "MEMBERS SPEND & SAVE UP TO $200*",
+            "announcement_link": "shopify://collections/spend-save",
             "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
           }
         },
@@ -94,8 +94,8 @@
           "type": "mega_menu_announcement",
           "settings": {
             "menu_title": "WOMENS",
-            "announcement_text": "SPEND & SAVE UP TO $200",
-            "announcement_link": "",
+            "announcement_text": "MEMBERS SPEND & SAVE UP TO $200*",
+            "announcement_link": "shopify://collections/spend-save",
             "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
           }
         },
@@ -103,8 +103,8 @@
           "type": "mega_menu_announcement",
           "settings": {
             "menu_title": "KIDS",
-            "announcement_text": "SPEND & SAVE UP TO $200",
-            "announcement_link": "",
+            "announcement_text": "MEMBERS SPEND & SAVE UP TO $200*",
+            "announcement_link": "shopify://collections/spend-save",
             "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
           }
         },
