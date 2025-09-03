@@ -1,0 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_ztwWEx": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{%- assign labels = 'S,M,L,XL,XXL,All' | split: ',' -%}\n{%- assign links  = '/collections/size-s,/collections/size-m,/collections/size-l,/collections/size-xl,/collections/size-xxl,/collections/last-chance-to-buy' | split: ',' -%}\n \n<section id=\"shop-by-size\">\n<div class=\"inner\">\n<h2 class=\"heading\">Shop by Size</h2>\n<div class=\"grid\">\n      {%- for label in labels -%}\n        {%- assign i = forloop.index0 -%}\n<a class=\"btn\" href=\"{{ links[i] }}\">{{ label }}</a>\n      {%- endfor -%}\n</div>\n</div>\n \n  <style>\n    #shop-by-size { --bg:#8c2635; --bgH:#8e033c; --fg:#fff; --r:6px; }\n    #shop-by-size .inner { max-width:1200px; margin:0 auto; padding:16px 20px; }\n    #shop-by-size .heading { margin:0 0 12px; text-align:center; font-size:clamp(18px, 2.4vw, 28px); letter-spacing:.02em; }\n    #shop-by-size .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }\n    @media (min-width:768px){ #shop-by-size .grid{ grid-template-columns:repeat(3,1fr);} }\n    #shop-by-size .btn{ display:flex; align-items:center; justify-content:center; width:100%; padding:14px 18px; background:var(--bg); color:var(--fg); text-decoration:none; text-transform:uppercase; letter-spacing:.06em; font-weight:600; border-radius:var(--r); transition:background .16s ease; }\n    #shop-by-size .btn:hover, #shop-by-size .btn:focus-visible{ background:var(--bgH); }\n</style>\n</section>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-banner {text-align: center !important;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "related_links_7cTrMM": {
+      "type": "related-links",
+      "settings": {
+        "image_size": 100,
+        "border_color": "#f4f4f4",
+        "border_width": 2
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_ztwWEx",
+    "banner",
+    "related_links_7cTrMM",
+    "product-grid"
+  ]
+}
