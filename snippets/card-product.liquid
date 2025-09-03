@@ -186,13 +186,28 @@
       <!-- Custom Swatches -->
       {%- assign style_group = card_product.metafields.custom.style_group.value -%}
       {%- if style_group != blank -%}
+        {%- comment -%} Handle both AU and UK structures {%- endcomment -%}
         {%- assign style_group_products = style_group.products.value | reverse | reverse -%}
+        {%- if style_group_products.size == 0 -%}
+          {%- assign style_group_products = style_group.product.value | reverse | reverse -%}
+        {%- endif -%}
         {%- if style_group_products.size > 0 -%}
           <div class="product-card__swatches">
             {% for p in style_group_products %}
               {%- assign swatch = p.metafields.custom.colour_swatch.value -%}
-              {%- assign hex = swatch.colour -%}
-              {%- assign src = swatch.image.src -%}
+              {%- comment -%} Handle AU vs UK color field names {%- endcomment -%}
+              {%- assign hex = blank -%}
+              {%- assign src = blank -%}
+              {%- if swatch.colour -%}
+                {%- comment -%} AU structure {%- endcomment -%}
+                {%- assign hex = swatch.colour -%}
+                {%- assign src = swatch.image.src -%}
+              {%- elsif swatch.color -%}
+                {%- comment -%} UK structure - extract from array using string manipulation {%- endcomment -%}
+                {%- assign color_string = swatch.color | join: '' -%}
+                {%- assign hex = color_string | remove: '[' | remove: ']' | remove: '"' -%}
+                {%- assign src = swatch.colourimage.src -%}
+              {%- endif -%}
               <span
                 class="product-card__swatch {% if p.handle == card_product.handle %}active{% endif %}"
                 title="{{ p.title | escape }}"
