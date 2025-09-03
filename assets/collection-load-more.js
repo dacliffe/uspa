@@ -28,7 +28,6 @@ if (!window.ProductLoadMore) {
 
     validateElements() {
       if (!this.productGrid || !this.loadMoreButton || !this.buttonText || !this.loadingSpinner) {
-        console.error('LoadMore: Required elements not found');
         return false;
       }
       return true;
@@ -120,7 +119,6 @@ if (!window.ProductLoadMore) {
 
         return html;
       } catch (error) {
-        console.error('Error fetching next page:', error);
         throw error;
       }
     }
@@ -139,7 +137,6 @@ if (!window.ProductLoadMore) {
           const clone = product.cloneNode(true);
           fragment.appendChild(clone);
         } catch (error) {
-          console.error('Error cloning product:', error);
           // Continue with other products if one fails
         }
       });
@@ -152,12 +149,9 @@ if (!window.ProductLoadMore) {
         this.state.hasMoreProducts = this.state.loadedProducts < this.state.totalResults;
 
         if (products.length > MAX_PRODUCTS_PER_BATCH) {
-          console.warn(
-            `Product batch size limited to ${MAX_PRODUCTS_PER_BATCH}. Remaining products will be loaded in next batch.`
-          );
+          // Product batch size limited, remaining products will be loaded in next batch
         }
       } catch (error) {
-        console.error('Error appending products:', error);
         this.state.hasMoreProducts = false;
       }
     }
@@ -182,8 +176,6 @@ if (!window.ProductLoadMore) {
         this.state.currentPage++;
 
         const nextUrlElement = nextPageDoc.getElementById('paginateNext');
-        console.log('Next paginate element:', nextUrlElement);
-        console.log('Next URL:', nextUrlElement?.dataset.nextUrl);
         this.state.hasMoreProducts = nextUrlElement && !!nextUrlElement.dataset.nextUrl;
 
         this.updateButtonVisibility();
@@ -197,7 +189,6 @@ if (!window.ProductLoadMore) {
           );
         });
       } catch (error) {
-        console.error('Error loading more products:', error);
         this.state.hasMoreProducts = false;
         this.updateButtonVisibility();
       } finally {
