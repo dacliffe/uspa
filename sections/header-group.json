@@ -374,6 +374,7 @@
       "blocks": {
         "announcement_P4R7im": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "30% OFF ESSENTIALS - *DISCOUNT APPLIED AT CHECKOUT",
             "link": "shopify://collections/new-arrivals"
