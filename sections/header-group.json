@@ -230,9 +230,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MENS",
-            "image_title": "Father's Day Gifts",
-            "image_link": "shopify://collections/fathers-day",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_2.jpg",
+            "image_title": "T-Shirts",
+            "image_link": "shopify://collections/mens-t-shirts",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_16.jpg",
             "image_order": 0
           }
         },

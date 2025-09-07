@@ -172,6 +172,7 @@
         },
         "image_slide_ktK8Mg": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design_52.jpg",
             "mobile_image": "shopify://shop_images/Untitled_design_53.jpg",
