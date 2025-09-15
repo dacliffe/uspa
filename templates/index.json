@@ -121,8 +121,8 @@
           "type": "image_slide",
           "name": "SPEND AND SAVE",
           "settings": {
-            "desktop_image": "shopify://shop_images/Spend_150_get_50_Off_Spend_300_get_100_Off_Spend_600_get_200_Off_5.jpg",
-            "mobile_image": "shopify://shop_images/WUP0634-D48_6.jpg",
+            "desktop_image": "shopify://shop_images/WEB-HP-1800x547_3.jpg",
+            "mobile_image": "shopify://shop_images/MOB-HP-360x240_3.jpg",
             "slide_link": "shopify://collections/spend-save",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "left",
