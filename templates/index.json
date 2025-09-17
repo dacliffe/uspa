@@ -120,6 +120,7 @@
         "image_slide_BkWEYx": {
           "type": "image_slide",
           "name": "SPEND AND SAVE",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/WEB-HP-1800x547_3.jpg",
             "mobile_image": "shopify://shop_images/MOB-HP-360x240_3.jpg",

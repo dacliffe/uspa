@@ -67,44 +67,8 @@
           "type": "mega_menu_announcement",
           "settings": {
             "menu_title": "POLO SHIRTS",
-            "announcement_text": "MEMBERS SPEND & SAVE UP TO $200*",
-            "announcement_link": "shopify://collections/spend-save",
-            "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
-          }
-        },
-        "mega_menu_announcement_n4LKqd": {
-          "type": "mega_menu_announcement",
-          "settings": {
-            "menu_title": "ESSENTIALS",
-            "announcement_text": "MEMBERS SPEND & SAVE UP TO $200*",
-            "announcement_link": "shopify://collections/spend-save",
-            "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
-          }
-        },
-        "mega_menu_announcement_aqk3Tk": {
-          "type": "mega_menu_announcement",
-          "settings": {
-            "menu_title": "MENS",
-            "announcement_text": "MEMBERS SPEND & SAVE UP TO $200*",
-            "announcement_link": "shopify://collections/spend-save",
-            "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
-          }
-        },
-        "mega_menu_announcement_GCyB7L": {
-          "type": "mega_menu_announcement",
-          "settings": {
-            "menu_title": "WOMENS",
-            "announcement_text": "MEMBERS SPEND & SAVE UP TO $200*",
-            "announcement_link": "shopify://collections/spend-save",
-            "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
-          }
-        },
-        "mega_menu_announcement_VifymF": {
-          "type": "mega_menu_announcement",
-          "settings": {
-            "menu_title": "KIDS",
-            "announcement_text": "MEMBERS SPEND & SAVE UP TO $200*",
-            "announcement_link": "shopify://collections/spend-save",
+            "announcement_text": "2 FOR $150* SELECTED POLO SHIRTS",
+            "announcement_link": "shopify://collections/2-for-149-polo-shirts",
             "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
           }
         },
@@ -310,10 +274,6 @@
       "block_order": [
         "mega_menu_announcement_HtEmxk",
         "mega_menu_announcement_XVx8Uh",
-        "mega_menu_announcement_n4LKqd",
-        "mega_menu_announcement_aqk3Tk",
-        "mega_menu_announcement_GCyB7L",
-        "mega_menu_announcement_VifymF",
         "menu_title_LzDcr7",
         "mega_menu_announcement_3WmCEd",
         "mega_menu_image_BCVmWY",
