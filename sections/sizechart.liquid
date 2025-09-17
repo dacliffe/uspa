@@ -1,0 +1,122 @@
+{{ 'sizechart-page.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'sizechart-page.js' | asset_url }}" defer="defer"></script>
+
+<style>
+  .size-chart-body td {
+    padding: 0 1em !important;
+  }
+
+  .size-chart-body tr {
+    height: 50px;
+  }
+
+  tr.size-chart-table-head {
+    height: 50px;
+  }
+</style>
+
+<div id="size-chart-popup" class="">
+  <!-- Women's Clothing Size Chart -->
+  <div id="size-chart-content">
+    <h1>Size Guides</h1>
+    <div class="size-chart-details">
+      <p class="h4">
+        For sizing details specific to your desired piece, please refer to it’s product page for a more accurate sizing
+        description.
+      </p>
+      {% comment %}
+        <div class="size-chart-diagram">
+            <img src="https://cdn.shopify.com/s/files/1/0641/3829/files/Sizeguide-model.jpg?v=1696252840" width="300px" height="300px">
+        </div>
+      {% endcomment %}
+    </div>
+    <div class="size-chart-topbar">
+      <div class="size-chart-title">
+        <h3 class="h2">Women's Clothing</h3>
+      </div>
+      <div class="switch-container">
+        <h6>CM</h6>
+        <div class="size-switch-container">
+          <input type="checkbox" id="switch-womens-clothing" class="toggle-input hidden">
+          <label for="switch-womens-clothing" class="toggle-label"></label>
+        </div>
+        <h6>INCHES</h6>
+      </div>
+    </div>
+    <div id="size-chart-data">
+      {% render 'sizechart-womens-clothing' %}
+    </div>
+  </div>
+
+  <!-- Women's Shoes Size Chart -->
+  <div id="size-chart-content">
+    <div class="size-chart-topbar">
+      <div class="size-chart-title">
+        <h3 class="h2">Women's Shoes</h3>
+      </div>
+      <div class="switch-container">
+        <h6>CM</h6>
+        <div class="size-switch-container">
+          <input type="checkbox" id="switch-womens-shoes" class="toggle-input hidden">
+          <label for="switch-womens-shoes" class="toggle-label"></label>
+        </div>
+        <h6>INCHES</h6>
+      </div>
+    </div>
+    <div id="size-chart-data">
+      {% render 'sizechart-womens-shoes' %}
+    </div>
+  </div>
+
+  <!-- Girls Clothing Size Chart -->
+  <div id="size-chart-content">
+    <div class="size-chart-topbar">
+      <div class="size-chart-title">
+        <h3 class="h2">Girls Clothing</h3>
+      </div>
+      <div class="switch-container">
+        <h6>CM</h6>
+        <div class="size-switch-container">
+          <input type="checkbox" id="switch-girls-clothing" class="toggle-input hidden">
+          <label for="switch-girls-clothing" class="toggle-label"></label>
+        </div>
+        <h6>INCHES</h6>
+      </div>
+    </div>
+    <div id="size-chart-data">
+      {% render 'sizechart-girls-clothing' %}
+    </div>
+  </div>
+
+  <!-- Girls Shoes Size Chart -->
+  <div id="size-chart-content">
+    <div class="size-chart-topbar">
+      <div class="size-chart-title">
+        <h3 class="h2">Girls Shoes</h3>
+      </div>
+      <div class="switch-container">
+        <h6>CM</h6>
+        <div class="size-switch-container">
+          <input type="checkbox" id="switch-girls-shoes" class="toggle-input hidden">
+          <label for="switch-girls-shoes" class="toggle-label"></label>
+        </div>
+        <h6>INCHES</h6>
+      </div>
+    </div>
+    <div id="size-chart-data">
+      {% render 'sizechart-girls-shoes' %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Size Chart",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Size Chart"
+    }
+  ]
+}
+{% endschema %}

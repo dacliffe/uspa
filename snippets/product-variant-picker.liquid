@@ -33,9 +33,23 @@
           <fieldset class="js product-form__input product-form__input--swatch">
             <legend class="form__label">
               {%- if option.name == 'Size' -%}
+                <!-- DEBUG: Found Size option! Size chart metafield: "{{ product.metafields.general.size_chart }}" -->
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                   <span>SELECT YOUR SIZE:</span>
-                  <div class="Clean_Size_Chart"></div>
+                  <div class="Clean_Size_Chart">
+                    {%- if product.metafields.custom.size_chart or option.name == 'Size' -%}
+                      <button
+                        type="button"
+                        class="size-chart-trigger"
+                        onclick="document.getElementById('size-chart-popup').classList.remove('hidden')"
+                        aria-label="Open size chart"
+                        style="display: flex; align-items: center; gap: 5px;"
+                      >
+                        {% render 'icon-ruler' %}
+                        SIZE CHART
+                      </button>
+                    {%- endif -%}
+                  </div>
                 </div>
               {%- else -%}
                 {{ option.name }}:
@@ -55,9 +69,23 @@
           <fieldset class="js product-form__input product-form__input--pill">
             <legend class="form__label">
               {%- if option.name == 'Size' -%}
+                <!-- DEBUG: Found Size option! Size chart metafield: "{{ product.metafields.general.size_chart }}" -->
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                   <span>SELECT YOUR SIZE</span>
-                  <div class="Clean_Size_Chart"></div>
+                  <div class="Clean_Size_Chart">
+                    {%- if product.metafields.custom.size_chart or option.name == 'Size' -%}
+                      <button
+                        type="button"
+                        class="size-chart-trigger"
+                        onclick="document.getElementById('size-chart-popup').classList.remove('hidden')"
+                        aria-label="Open size chart"
+                        style="display: flex; align-items: center; gap: 5px;"
+                      >
+                        {% render 'icon-ruler' %}
+                        <span class="form__label">SIZE CHART</span>
+                      </button>
+                    {%- endif -%}
+                  </div>
                 </div>
               {%- else -%}
                 {{ option.name }}
@@ -74,9 +102,23 @@
           <div class="product-form__input product-form__input--dropdown">
             <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
               {%- if option.name == 'Size' -%}
+                <!-- DEBUG: Found Size option! Size chart metafield: "{{ product.metafields.general.size_chart }}" -->
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                   <span>SELECT YOUR SIZE</span>
-                  <div class="Clean_Size_Chart"></div>
+                  <div class="Clean_Size_Chart">
+                    {%- if product.metafields.custom.size_chart or option.name == 'Size' -%}
+                      <button
+                        type="button"
+                        class="size-chart-trigger"
+                        onclick="document.getElementById('size-chart-popup').classList.remove('hidden')"
+                        aria-label="Open size chart"
+                        style="display: flex; align-items: center; gap: 5px; font-size: 10px;"
+                      >
+                        {% render 'icon-ruler' %}
+                        <span class="form__label">SIZE CHART</span>
+                      </button>
+                    {%- endif -%}
+                  </div>
                 </div>
               {%- else -%}
                 {{ option.name }}

@@ -1,0 +1,250 @@
+.toggle-input {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.toggle-label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 50px;
+    height: 27.5px;
+    background: #13294c;
+    display: block;
+    border-radius: 25px;
+    position: relative;
+}
+
+.toggle-label:after {
+    content: '';
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    width: 22.5px;
+    height: 22.5px;
+    background: #fff;
+    border-radius: 22.5px;
+    transition: 0.3s;
+}
+
+label.toggle-label input#switch {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.toggle-input:checked+.toggle-label {
+    background: #a41e35;
+}
+
+.toggle-input:checked+.toggle-label:after {
+    left: calc(100% - 1.25px);
+    transform: translateX(-100%);
+}
+
+.toggle-label:active:after {
+    width: 32.5px;
+}
+
+/* centering */
+.size-switch-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.size-chart-title {
+    text-align: center;
+}
+
+.switch-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.size-chart-body {
+    text-align: center;
+}
+
+.size-chart-table-head {
+    background-color: #13294c;
+    color: #fff;
+}
+
+table:not([class]) td,
+table:not([class]) th {
+    padding: 1em 0;
+}
+
+.size-chart-topbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 10px 0;
+}
+
+/* #size-chart-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+} */
+
+#size-chart-content {
+    background: #fff;
+    padding: 20px;
+    width: 100%;
+    border-radius: 5px;
+    max-width: 750px;
+    max-height: 100%;
+    position: relative;
+}
+
+.size-chart-diagram {
+    display: grid;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 750px) {
+    #size-chart-content {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+table {
+    table-layout: auto;
+    width: 100%;
+}
+
+size-chart-date td {
+    text-align: center;
+}
+
+.size-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.size-chart-header {
+    margin: 0 4px 0 0;
+    cursor: pointer;
+}
+
+#size-chart-popup {
+    display: grid;
+    justify-content: center;
+}
+
+/* Mobile responsive table scrolling */
+@media screen and (max-width: 768px) {
+    #size-chart-content {
+        padding: 15px;
+        max-width: 95vw;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .size-chart-sections {
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .size-chart-section table {
+        min-width: 600px;
+        /* Ensure table doesn't shrink too much */
+    }
+
+    .size-chart-section {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 20px;
+    }
+
+    /* Table wrapper for horizontal scroll */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -15px;
+        /* Negative margin to extend to edges */
+        padding: 0 15px;
+    }
+
+    /* Mobile header layout with switch in top left and close in top right */
+    .size-chart-topbar {
+        position: relative;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        margin: 35px 0 15px 0;
+        /* Add top margin to account for absolutely positioned elements */
+    }
+
+    .size-chart-title h3 {
+        margin: 0;
+        font-size: 1.2em;
+    }
+
+    .switch-container {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        justify-content: flex-start;
+        gap: 5px;
+        font-size: 0.8em;
+        z-index: 1002;
+    }
+
+    .switch-container h6 {
+        margin: 0;
+        font-size: 0.75em;
+        line-height: 1;
+    }
+
+    /* Adjust toggle switch size for mobile */
+    .switch-container .toggle-label {
+        width: 35px;
+        height: 20px;
+    }
+
+    .switch-container .toggle-label:after {
+        width: 16px;
+        height: 16px;
+        top: 2px;
+        left: 2px;
+    }
+
+    .switch-container .toggle-input:checked+.toggle-label:after {
+        left: calc(100% - 2px);
+        transform: translateX(-100%);
+    }
+}
+
+/* Size chart button styling */
+.size-chart-trigger {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: calc(1 + 0.5 / var(--font-body-scale));
+    letter-spacing: 0.04rem;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.size-chart-trigger:hover,
+.size-chart-trigger:focus {
+    color: inherit;
+    text-decoration: none;
+}

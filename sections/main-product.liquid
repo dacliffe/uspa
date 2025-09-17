@@ -88,6 +88,8 @@
           id="ProductInfo-{{ section.id }}"
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
         >
+          {% render 'sizechart' %}
+
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
           {%- for block in section.blocks -%}
@@ -712,6 +714,192 @@
     </div>
 
     {% render 'product-media-modal', variant_images: variant_images %}
+
+    {% comment %} Size Chart Modal - Full Page {% endcomment %}
+    {{ 'sizechart-page.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'sizechart-page.js' | asset_url }}" defer="defer"></script>
+
+    {% assign sizechart_raw = product.metafields.custom.size_chart %}
+    {% comment %} Handle both array and string formats {% endcomment %}
+    {% if sizechart_raw %}
+      {% assign sizechart_string = sizechart_raw | join: '' %}
+      {% if sizechart_string contains 'Kids' %}
+        {% assign sizechart = 'Kids' %}
+      {% elsif sizechart_string contains 'Women' and sizechart_string contains 'Shoes' %}
+        {% assign sizechart = "Women's Shoes" %}
+      {% elsif sizechart_string contains 'Women' and sizechart_string contains 'Clothing' %}
+        {% assign sizechart = "Women's Clothing" %}
+      {% elsif sizechart_string contains 'Girls' and sizechart_string contains 'Clothing' %}
+        {% assign sizechart = 'Girls Clothing' %}
+      {% elsif sizechart_string contains 'Girls' and sizechart_string contains 'Shoes' %}
+        {% assign sizechart = 'Girls Shoes' %}
+      {% elsif sizechart_string contains 'womens-jackets' %}
+        {% assign sizechart = 'Womens Jackets' %}
+      {% elsif sizechart_string contains 'womens-dresses' %}
+        {% assign sizechart = 'Womens Dresses' %}
+      {% elsif sizechart_string contains 'womens-bottoms' %}
+        {% assign sizechart = 'Womens Bottoms' %}
+      {% elsif sizechart_string contains 'womens-tops' %}
+        {% assign sizechart = 'Womens Tops Casual' %}
+      {% elsif sizechart_string contains 'mens-jackets' %}
+        {% assign sizechart = 'Mens Jackets' %}
+      {% elsif sizechart_string contains 'mens-loungewear' %}
+        {% assign sizechart = 'Mens Loungewear' %}
+      {% elsif sizechart_string contains 'mens-swimwear' %}
+        {% assign sizechart = 'Mens Swimwear' %}
+      {% elsif sizechart_string contains 'socks' %}
+        {% assign sizechart = 'Socks' %}
+      {% elsif sizechart_string contains 'mens-boxers' %}
+        {% assign sizechart = 'Mens Boxers' %}
+      {% elsif sizechart_string contains 'mens-shorts' %}
+        {% assign sizechart = 'Mens Shorts' %}
+      {% elsif sizechart_string contains 'mens-tops' %}
+        {% assign sizechart = 'Mens Tops' %}
+      {% else %}
+        {% assign sizechart = sizechart_raw.first | default: sizechart_raw %}
+      {% endif %}
+    {% else %}
+      {% assign sizechart = null %}
+    {% endif %}
+
+    {% assign has_size_option = false %}
+    {% for option in product.options %}
+      {% if option.name == 'Size' %}
+        {% assign has_size_option = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% if sizechart or has_size_option %}
+      <div id="size-chart-popup" class="hidden">
+        <div id="size-chart-content">
+          <span id="size-chart-close" onclick="document.getElementById('size-chart-popup').classList.add('hidden')"
+            >&times;</span
+          >
+          <div class="size-chart-topbar">
+            <div class="size-chart-title">
+              <h3 class="h2">
+                {% if sizechart %}
+                  {{ sizechart }}
+                {% else %}
+                  Size Guide
+                {% endif %}
+              </h3>
+            </div>
+            {% if sizechart %}
+              <div class="switch-container">
+                <h5>CM</h5>
+                <div class="size-switch-container">
+                  <input type="checkbox" id="switch" class="toggle-input hidden">
+                  <label for="switch" class="toggle-label"></label>
+                </div>
+                <h5>INCHES</h5>
+              </div>
+            {% endif %}
+          </div>
+          <div id="size-chart-data">
+            {% if sizechart %}
+              {% case sizechart %}
+                {% when "Women's Clothing" %}
+                  {% comment %} TODO: Create sizechart-womens-clothing snippet {% endcomment %}
+                  <p>Women's Clothing size chart coming soon...</p>
+                {% when "Women's Shoes" %}
+                  {% render 'sizechart-womens-shoes' %}
+                {% when 'Girls Clothing' %}
+                  {% comment %} TODO: Create sizechart-girls-clothing snippet {% endcomment %}
+                  <p>Girls Clothing size chart coming soon...</p>
+                {% when 'Girls Shoes' %}
+                  {% comment %} TODO: Create sizechart-girls-shoes snippet {% endcomment %}
+                  <p>Girls Shoes size chart coming soon...</p>
+                {% when 'Kids' %}
+                  {% render 'sizechart-kids' %}
+                {% when 'Mens Jackets' %}
+                  {% render 'sizechart-mens-jackets' %}
+                {% when 'Mens Loungewear' %}
+                  {% render 'sizechart-mens-loungewear' %}
+                {% when 'Womens Jackets' %}
+                  {% render 'sizechart-womens-tops' %}
+                {% when 'Womens Dresses' %}
+                  {% render 'sizechart-womens-dresses' %}
+                {% when 'Womens Bottoms' %}
+                  {% render 'sizechart-womens-bottoms' %}
+                {% when 'Womens Tops Casual' %}
+                  {% render 'sizechart-womens-tops-casual' %}
+                {% when 'Mens Swimwear' %}
+                  {% render 'sizechart-mens-swimwear' %}
+                {% when 'Socks' %}
+                  {% render 'sizechart-socks' %}
+                {% when 'Mens Boxers' %}
+                  {% render 'sizechart-mens-boxers' %}
+                {% when 'Mens Shorts' %}
+                  {% render 'sizechart-mens-shorts' %}
+                {% when 'Mens Tops' %}
+                  {% render 'sizechart-mens-tops' %}
+                {% else %}
+                  <p>Size chart for "{{ sizechart }}" is not available.</p>
+              {% endcase %}
+            {% else %}
+              {% comment %} Fallback content when no specific size chart metafield is set {% endcomment %}
+              <div style="text-align: center; padding: 20px;">
+                <p><strong>Size Guide</strong></p>
+                <p>
+                  For detailed sizing information, please contact our customer service team or refer to the product
+                  description.
+                </p>
+                <p>We recommend checking the product measurements and sizing details on this page.</p>
+                <br>
+                <p><em>Specific size charts will be available soon for different product categories.</em></p>
+              </div>
+            {% endif %}
+          </div>
+          <div class="size-chart-diagram">
+            <!-- HOW TO MEASURE Section -->
+            <div class="size-chart-section measuring-guide">
+              <h4>HOW TO MEASURE</h4>
+              <div class="measuring-instructions">
+                <p><strong>HEIGHT:</strong> Measure from the top of your head to the bottom of your heel.</p>
+                <p>
+                  <strong>CHEST:</strong> Measure around the widest part of your chest, just below the armpit and over
+                  the shoulder blades.
+                </p>
+                <p>
+                  <strong>WAIST:</strong> Measure around your natural waistline where your trouser waistband would
+                  comfortably sit. Not too snug, not too loose.
+                </p>
+                <p>
+                  <strong>HIP:</strong> Measure around the fullest part of your hips, make sure you keep the measuring
+                  tape as horizontal as possible.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Close modal when clicking outside of it
+          const sizeChartPopup = document.getElementById('size-chart-popup');
+          if (sizeChartPopup) {
+            sizeChartPopup.addEventListener('click', function (e) {
+              if (e.target === this) {
+                this.classList.add('hidden');
+              }
+            });
+          }
+
+          // Close modal with escape key
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+              const popup = document.getElementById('size-chart-popup');
+              if (popup) {
+                popup.classList.add('hidden');
+              }
+            }
+          });
+        });
+      </script>
+    {% endif %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}
     {%- for block in popups -%}
