@@ -269,6 +269,46 @@
             "image": "shopify://shop_images/Copy_of_NAV_IMAGES_14.jpg",
             "image_order": 0
           }
+        },
+        "mega_menu_image_nLXCrJ": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "OFFERS",
+            "image_title": "Shop T-Shirts",
+            "image_link": "shopify://collections/2-t-shirts-for-80",
+            "image": "shopify://shop_images/NAV_1.jpg",
+            "image_order": 0
+          }
+        },
+        "mega_menu_image_DKj7bQ": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "OFFERS",
+            "image_title": "Shop Chinos",
+            "image_link": "shopify://collections/2-chinos-for-200",
+            "image": "shopify://shop_images/NAV_2.jpg",
+            "image_order": 0
+          }
+        },
+        "mega_menu_image_Rt8Bef": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "OFFERS",
+            "image_title": "Shop Polo Shirts",
+            "image_link": "shopify://collections/2-polo-shirts-for-150",
+            "image": "shopify://shop_images/NAV_3.jpg",
+            "image_order": 0
+          }
+        },
+        "mega_menu_image_GF7xPX": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "OFFERS",
+            "image_title": "Shop Shorts",
+            "image_link": "shopify://collections/2-shorts-for-150",
+            "image": "shopify://shop_images/NAV_4.jpg",
+            "image_order": 0
+          }
         }
       },
       "block_order": [
@@ -293,7 +333,11 @@
         "mega_menu_image_RYYkJj",
         "mega_menu_image_CqdQJG",
         "mega_menu_image_FgUDeF",
-        "mega_menu_image_znBAPi"
+        "mega_menu_image_znBAPi",
+        "mega_menu_image_nLXCrJ",
+        "mega_menu_image_DKj7bQ",
+        "mega_menu_image_Rt8Bef",
+        "mega_menu_image_GF7xPX"
       ],
       "settings": {
         "show_strip": true,
