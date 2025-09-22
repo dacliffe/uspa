@@ -450,6 +450,17 @@
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
         countrySelectorSearchCount: `{{ 'localization.country_results_count' | t: count: '[count]' }}`,
       };
+
+      window.theme = {
+        currency: {
+          code: {{ cart.currency.iso_code | json }},
+          symbol: {{ cart.currency.symbol | json }},
+          format: {{ shop.money_format | json }}
+        },
+        settings: {
+          currencyCodeEnabled: {{ settings.currency_code_enabled | json }}
+        }
+      };
     </script>
 
     {%- if settings.predictive_search_enabled -%}

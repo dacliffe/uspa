@@ -158,18 +158,58 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
             });
           }
 
-          // Update price elements
+          // Update price elements with proper currency formatting
           const priceContainer = cardWrapper.querySelector('.price__container');
           const regularPriceElement = cardWrapper.querySelector('.price__regular .price-item--regular');
           const salePriceElement = cardWrapper.querySelector('.price__sale .price-item--regular');
           const finalPriceElement = cardWrapper.querySelector('.price__sale .price-item--sale.price-item--last');
 
+          // Function to format price with proper currency
+          const formatPrice = (priceValue) => {
+            // Use global theme currency info if available
+            if (window.theme && window.theme.currency) {
+              const priceInDollars = (priceValue / 100).toFixed(2);
+
+              // Use Shopify's money format if available
+              if (window.theme.currency.format) {
+                return window.theme.currency.format.replace('{{amount}}', priceInDollars);
+              }
+
+              // Use currency symbol with code if enabled
+              if (window.theme.settings.currencyCodeEnabled) {
+                return `${window.theme.currency.symbol}${priceInDollars} ${window.theme.currency.code}`;
+              }
+
+              // Just use currency symbol
+              return `${window.theme.currency.symbol}${priceInDollars}`;
+            }
+
+            // Fallback: Try to get currency info from existing elements
+            const existingPriceElement =
+              cardWrapper?.querySelector('.price-item--regular, .price-item--sale') ||
+              document.querySelector('.price-item--regular, .price-item--sale');
+
+            if (existingPriceElement && existingPriceElement.textContent) {
+              const existingText = existingPriceElement.textContent.trim();
+              // Extract currency symbol and format from existing text
+              const currencyMatch = existingText.match(/^([^\d]*)/);
+              const suffixMatch = existingText.match(/([^\d]*)$/);
+              const currencyPrefix = currencyMatch ? currencyMatch[1] : '$';
+              const currencySuffix = suffixMatch && suffixMatch[1] !== currencyPrefix ? suffixMatch[1] : '';
+
+              return `${currencyPrefix}${(priceValue / 100).toFixed(2)}${currencySuffix}`;
+            }
+
+            // Final fallback: use basic dollar format
+            return `$${(priceValue / 100).toFixed(2)}`;
+          };
+
           if (comparePrice != null && comparePrice > 0) {
-            if (regularPriceElement) regularPriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
-            if (salePriceElement) salePriceElement.textContent = `$${(comparePrice / 100).toFixed(2)} AUD`;
-            if (finalPriceElement) finalPriceElement.textContent = `$${(price / 100).toFixed(2)}`;
+            if (regularPriceElement) regularPriceElement.textContent = formatPrice(comparePrice);
+            if (salePriceElement) salePriceElement.textContent = formatPrice(comparePrice);
+            if (finalPriceElement) finalPriceElement.textContent = formatPrice(price);
           } else {
-            if (regularPriceElement) regularPriceElement.textContent = `$${(price / 100).toFixed(2)} AUD`;
+            if (regularPriceElement) regularPriceElement.textContent = formatPrice(price);
             if (salePriceElement) salePriceElement.textContent = '';
             if (finalPriceElement) finalPriceElement.textContent = '';
           }
@@ -433,6 +473,25 @@ window.initializeCardSwatches = function () {
         if (priceElement) {
           // Use dynamic currency formatting
           const formatPrice = (priceValue) => {
+            // Use global theme currency info if available
+            if (window.theme && window.theme.currency) {
+              const priceInDollars = (priceValue / 100).toFixed(2);
+
+              // Use Shopify's money format if available
+              if (window.theme.currency.format) {
+                return window.theme.currency.format.replace('{{amount}}', priceInDollars);
+              }
+
+              // Use currency symbol with code if enabled
+              if (window.theme.settings.currencyCodeEnabled) {
+                return `${window.theme.currency.symbol}${priceInDollars} ${window.theme.currency.code}`;
+              }
+
+              // Just use currency symbol
+              return `${window.theme.currency.symbol}${priceInDollars}`;
+            }
+
+            // Fallback: Try to extract format from existing elements
             const existingPriceElement =
               cardWrapper?.querySelector('.price-item--regular, .price-item--sale') ||
               document.querySelector('.price-item--regular, .price-item--sale');
@@ -446,6 +505,7 @@ window.initializeCardSwatches = function () {
                 return existingText.replace(existingNumber, newNumber);
               }
             }
+            // Final fallback: use basic dollar format
             return `$${(priceValue / 100).toFixed(2)}`;
           };
 
