@@ -84,7 +84,7 @@
             "menu_title": "NEW",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-new-arrivals",
-            "image": "shopify://shop_images/44.jpg",
+            "image": "shopify://shop_images/NEW_-_MENS.jpg",
             "image_order": 1
           }
         },
@@ -94,7 +94,7 @@
             "menu_title": "NEW",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-new-arrivals",
-            "image": "shopify://shop_images/NAV_IMAGES_11.jpg",
+            "image": "shopify://shop_images/NEW_-_WOMENS.jpg",
             "image_order": 2
           }
         },
@@ -104,7 +104,7 @@
             "menu_title": "NEW",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-new-arrivals",
-            "image": "shopify://shop_images/40.jpg",
+            "image": "shopify://shop_images/NEW_-_KIDS.jpg",
             "image_order": 3
           }
         },
@@ -144,7 +144,7 @@
             "menu_title": "POLO SHIRTS",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/38.jpg",
+            "image": "shopify://shop_images/MENS_-_POLO.jpg",
             "image_order": 1
           }
         },
@@ -154,6 +154,7 @@
             "menu_title": "POLO SHIRTS",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-polo-shirts",
+            "image": "shopify://shop_images/WOMENS_POLOS.jpg",
             "image_order": 2
           }
         },
@@ -182,7 +183,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-wardrobe-essentials",
-            "image": "shopify://shop_images/12.jpg",
+            "image": "shopify://shop_images/MENS_ESSENTIALS.jpg",
             "image_order": 0
           }
         },
@@ -192,7 +193,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-wardrobe-essentials",
-            "image": "shopify://shop_images/13.jpg",
+            "image": "shopify://shop_images/WOMENS_ESSENTIALS.jpg",
             "image_order": 0
           }
         },
@@ -202,7 +203,7 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-essentials",
-            "image": "shopify://shop_images/NAV_IMAGES_12.jpg",
+            "image": "shopify://shop_images/KIDS_-_ESSENTIALS.jpg",
             "image_order": 0
           }
         },
@@ -212,7 +213,7 @@
             "menu_title": "MENS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/38.jpg",
+            "image": "shopify://shop_images/MENS_-_POLO_46e1e0e7-0e9f-4f22-a7da-2506ee871cd5.jpg",
             "image_order": 0
           }
         },
@@ -220,9 +221,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MENS",
-            "image_title": "T-Shirts",
-            "image_link": "shopify://collections/mens-t-shirts",
-            "image": "shopify://shop_images/45.jpg",
+            "image_title": "Coats & Jackets",
+            "image_link": "shopify://collections/mens-jackets-and-coats",
+            "image": "shopify://shop_images/MENS_-_OUTERWEAR.jpg",
             "image_order": 1
           }
         },
@@ -230,9 +231,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MENS",
-            "image_title": "Shorts",
-            "image_link": "shopify://collections/mens-shorts",
-            "image": "shopify://shop_images/39.jpg",
+            "image_title": "Knitwear",
+            "image_link": "shopify://collections/mens-knitwear",
+            "image": "shopify://shop_images/MENS_-_KNITWEAR.jpg",
             "image_order": 2
           }
         },
@@ -240,9 +241,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "WOMENS",
-            "image_title": "Shirts",
-            "image_link": "shopify://collections/womens-t-shirts",
-            "image": "shopify://shop_images/NAV_IMAGES_13.jpg",
+            "image_title": "Knitwear",
+            "image_link": "shopify://collections/womens-knitwear",
+            "image": "shopify://shop_images/WOMENS_KNITWEAR.jpg",
             "image_order": 0
           }
         },
@@ -252,7 +253,7 @@
             "menu_title": "WOMENS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/womens-polo-shirts",
-            "image": "shopify://shop_images/11.jpg",
+            "image": "shopify://shop_images/WOMENS_POLOS_a3760eeb-1f07-4b5e-92ac-37322a0f88c7.jpg",
             "image_order": 0
           }
         },
@@ -260,9 +261,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "WOMENS",
-            "image_title": "Dresses",
-            "image_link": "shopify://collections/womens-dresses",
-            "image": "shopify://shop_images/NAV_IMAGES.png",
+            "image_title": "Bags",
+            "image_link": "https://www.uspoloassn.co.uk/collections/womens-accessories?filter.p.m.custom.product_category=Bags&filter.v.price.gte=&filter.v.price.lte=&sort_by=best-selling",
+            "image": "shopify://shop_images/WOMENS_BAGS.jpg",
             "image_order": 0
           }
         },
@@ -282,7 +283,7 @@
             "menu_title": "KIDS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/10.jpg",
+            "image": "shopify://shop_images/KIDS_POLOS.jpg",
             "image_order": 0
           }
         },
@@ -292,7 +293,7 @@
             "menu_title": "SALE",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-summer-sale",
-            "image": "shopify://shop_images/63.jpg",
+            "image": "shopify://shop_images/MENS_SALE.jpg",
             "image_order": 0
           }
         },
@@ -302,7 +303,7 @@
             "menu_title": "SALE",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-summer-sale",
-            "image": "shopify://shop_images/62.jpg",
+            "image": "shopify://shop_images/WOMENS_SALE.jpg",
             "image_order": 1
           }
         },
@@ -312,7 +313,7 @@
             "menu_title": "SALE",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-summer-sale",
-            "image": "shopify://shop_images/61.jpg",
+            "image": "shopify://shop_images/KIDS_SALE.jpg",
             "image_order": 2
           }
         }
@@ -374,9 +375,8 @@
       "blocks": {
         "announcement_P4R7im": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "30% OFF ESSENTIALS - *DISCOUNT APPLIED AT CHECKOUT",
+            "text": "Spend & Save – *Discount Auto-Applied At Checkout",
             "link": "shopify://collections/new-arrivals"
           }
         }
