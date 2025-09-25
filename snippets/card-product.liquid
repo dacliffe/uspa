@@ -175,6 +175,8 @@
           {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
         </div>
 
+        {% render 'lipscore-rating-small', product: card_product %}
+
         <!-- Bottom Label -->
         {%- if card_product.metafields.custom.bottom_label != blank -%}
           <div class="product-card__bottom-label h5">
