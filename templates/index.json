@@ -400,9 +400,9 @@
         "column_TefaYi": {
           "type": "column",
           "settings": {
-            "title": "SWEATSHIRTS",
-            "image": "shopify://shop_images/2_018b3011-4b0e-42a8-aae2-d6c3e3cdaa53.jpg",
-            "url": "shopify://collections/sweatshirts-hoodies",
+            "title": "SHIRTS & LINEN",
+            "image": "shopify://shop_images/Untitled_design_3_d8c6b511-d1c7-4d72-b699-c85b8e1dd107.jpg",
+            "url": "shopify://collections/mens-shirts",
             "visibility": "both"
           }
         },
