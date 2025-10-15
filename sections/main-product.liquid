@@ -205,6 +205,29 @@
                 </p>
               {%- when 'swatches' -%}
                 {% render 'custom-swatches' %}
+
+              {%- when 'bottom_label' -%}
+                {%- if product.metafields.custom.bottom_label != blank -%}
+                  <div class="product-message-container" {{ block.shopify_attributes }}>
+                    <div class="product-message">
+                      <span class="bottom-label-text">
+                        {{- product.metafields.custom.bottom_label | upcase -}}
+                      </span>
+                    </div>
+                  </div>
+                  <style>
+                    .product-message-container {
+                      margin: 1rem 0;
+                    }
+                    .bottom-label-text {
+                      color: #a41e35;
+                      font-weight: 800;
+                      font-size: 1.2rem;
+                      line-height: 1.2;
+                      text-transform: uppercase;
+                    }
+                  </style>
+                {%- endif -%}
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>

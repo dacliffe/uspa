@@ -574,3 +574,13 @@
   z-index: 2;
   pointer-events: auto;
 }
+
+.product-card__bottom-label {
+  color: #a41e35;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+}

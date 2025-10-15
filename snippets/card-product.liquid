@@ -301,6 +301,12 @@
               {% render 'lipscore-rating-small', product: card_product %}
             </div>
           </div>
+          <!-- Bottom Label -->
+          {%- if card_product.metafields.custom.bottom_label != blank -%}
+            <div class="product-card__bottom-label h5">
+              {{ card_product.metafields.custom.bottom_label | upcase }}
+            </div>
+          {%- endif -%}
         </a>
         {%- assign style_group = card_product.metafields.custom.style_group.value -%}
         {%- if style_group != blank -%}
