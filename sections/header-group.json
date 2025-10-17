@@ -27,19 +27,11 @@
             "text": "EASY 28 DAY RETURNS",
             "link": ""
           }
-        },
-        "announcement_ijjVVh": {
-          "type": "announcement",
-          "settings": {
-            "text": "SIGN UP FOR 10% OFF",
-            "link": "https://manage.kmail-lists.com/subscriptions/subscribe?a=UmmeNB&g=UtaZeH"
-          }
         }
       },
       "block_order": [
         "announcement-bar-0",
-        "announcement_eVk4yM",
-        "announcement_ijjVVh"
+        "announcement_eVk4yM"
       ],
       "settings": {
         "auto_rotate": true,
@@ -77,7 +69,7 @@
             "menu_title": "NOWY",
             "image_title": "Mężczyźni",
             "image_link": "shopify://collections/mens-new-arrivals",
-            "image": "shopify://shop_images/44.jpg",
+            "image": "shopify://shop_images/NEW_-_MENS.jpg",
             "image_order": 1
           }
         },
@@ -87,7 +79,7 @@
             "menu_title": "NOWY",
             "image_title": "Kobiety",
             "image_link": "shopify://collections/womens-new-arrivals",
-            "image": "shopify://shop_images/NAV_IMAGES_11.jpg",
+            "image": "shopify://shop_images/NEW_-_WOMENS.jpg",
             "image_order": 2
           }
         },
@@ -97,7 +89,7 @@
             "menu_title": "NOWY",
             "image_title": "Dzieci",
             "image_link": "shopify://collections/kids-new-arrivals",
-            "image": "shopify://shop_images/40.jpg",
+            "image": "shopify://shop_images/NEW_-_KIDS.jpg",
             "image_order": 3
           }
         },
@@ -117,7 +109,7 @@
             "menu_title": "KOLEKCJA PODSTAWOWA",
             "image_title": "Mężczyźni",
             "image_link": "shopify://collections/mens-essentials",
-            "image": "shopify://shop_images/12.jpg",
+            "image": "shopify://shop_images/MENS_ESSENTIALS.jpg",
             "image_order": 0
           }
         },
@@ -127,7 +119,7 @@
             "menu_title": "KOLEKCJA PODSTAWOWA",
             "image_title": "Kobiety",
             "image_link": "shopify://collections/womens-essentials",
-            "image": "shopify://shop_images/13.jpg",
+            "image": "shopify://shop_images/WOMENS_ESSENTIALS.jpg",
             "image_order": 0
           }
         },
@@ -137,7 +129,7 @@
             "menu_title": "KOLEKCJA PODSTAWOWA",
             "image_title": "Dzieci",
             "image_link": "shopify://collections/kids-essentials",
-            "image": "shopify://shop_images/NAV_IMAGES_12.jpg",
+            "image": "shopify://shop_images/KIDS_-_ESSENTIALS.jpg",
             "image_order": 0
           }
         },
@@ -147,7 +139,7 @@
             "menu_title": "MĘSKIE",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/38.jpg",
+            "image": "shopify://shop_images/MENS_-_POLO.jpg",
             "image_order": 0
           }
         },
@@ -155,9 +147,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MĘSKIE",
-            "image_title": "T-shirts",
-            "image_link": "shopify://collections/mens-t-shirts",
-            "image": "shopify://shop_images/45.jpg",
+            "image_title": "Coats & Jackets",
+            "image_link": "shopify://collections/mens-coats-jackets",
+            "image": "shopify://shop_images/MENS_-_OUTERWEAR.jpg",
             "image_order": 1
           }
         },
@@ -165,9 +157,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MĘSKIE",
-            "image_title": "Shorts",
-            "image_link": "shopify://collections/mens-shorts-swimwear",
-            "image": "shopify://shop_images/39.jpg",
+            "image_title": "KNITWEAR",
+            "image_link": "shopify://collections/mens-knitwear-1",
+            "image": "shopify://shop_images/MENS_-_KNITWEAR.jpg",
             "image_order": 2
           }
         },
@@ -175,9 +167,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "DAMSKIE",
-            "image_title": "T-Shirts",
-            "image_link": "shopify://collections/womens-t-shirts-tops",
-            "image": "shopify://shop_images/NAV_IMAGES_13.jpg",
+            "image_title": "KNITWEAR",
+            "image_link": "shopify://collections/womens-knitwear",
+            "image": "shopify://shop_images/WOMENS_KNITWEAR.jpg",
             "image_order": 0
           }
         },
@@ -187,7 +179,7 @@
             "menu_title": "DAMSKIE",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/womens-polo-shirts-1",
-            "image": "shopify://shop_images/11.jpg",
+            "image": "shopify://shop_images/WOMENS_POLOS.jpg",
             "image_order": 0
           }
         },
@@ -195,9 +187,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "DAMSKIE",
-            "image_title": "Sukienki",
-            "image_link": "shopify://collections/womens-dresses",
-            "image": "shopify://shop_images/NAV_IMAGES.png",
+            "image_title": "BAGS",
+            "image_link": "shopify://collections/womens-accessories",
+            "image": "shopify://shop_images/WOMENS_BAGS.jpg",
             "image_order": 0
           }
         },
@@ -207,7 +199,7 @@
             "menu_title": "DZIECI",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/10.jpg",
+            "image": "shopify://shop_images/KIDS_POLOS.jpg",
             "image_order": 0
           }
         },
@@ -288,11 +280,37 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
+    },
+    "announcement_bar_kXVHL7": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_CX8pRL": {
+          "type": "announcement",
+          "settings": {
+            "text": "ZNIŻKA CZŁONKOWSKA -30% * RABAT NALICZANY W KASIE",
+            "link": "https://manage.kmail-lists.com/subscriptions/subscribe?a=TUq8DY&g=SbbKnJ"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_CX8pRL"
+      ],
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-055eabee-0096-4320-8a98-d4178b3ba047",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
     }
   },
   "order": [
     "announcement-bar",
     "header",
-    "announcement_bar_qQdiXV"
+    "announcement_bar_qQdiXV",
+    "announcement_bar_kXVHL7"
   ]
 }
