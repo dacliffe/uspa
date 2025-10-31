@@ -17,7 +17,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design_45.jpg",
             "mobile_image": "shopify://shop_images/Untitled_design_46.jpg",
-            "slide_link": "shopify://collections/up-to-40-off-summer-sale",
+            "slide_link": "shopify://collections/up-to-50-off-summer-sale",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
             "content_alignment": "center",
@@ -278,7 +278,7 @@
             "button3_text_color": "#ffffff",
             "button4_text": "ALL",
             "mobile_button4_text": "",
-            "button4_link": "shopify://collections/up-to-40-off-summer-sale",
+            "button4_link": "shopify://collections/up-to-50-off-summer-sale",
             "button4_type": "primary",
             "button4_theme_color": "#a41d35",
             "button4_text_color": "#ffffff",
