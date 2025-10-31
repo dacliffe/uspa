@@ -244,9 +244,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "WOMENS",
-            "image_title": "Knitwear",
-            "image_link": "shopify://collections/womens-knitwear-jumpers",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_13.jpg",
+            "image_title": "Handbags",
+            "image_link": "shopify://collections/bags",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES.jpg",
             "image_order": 0
           }
         },
