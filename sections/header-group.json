@@ -90,6 +90,36 @@
             "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
           }
         },
+        "mega_menu_image_A8WXkW": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "GIFTING",
+            "image_title": "Gifts For Him",
+            "image_link": "shopify://collections/gifts-for-him",
+            "image": "shopify://shop_images/24_4e8fdb9a-e716-4b21-a58c-72c6423cd419.jpg",
+            "image_order": -1
+          }
+        },
+        "mega_menu_image_YxDiXn": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "GIFTING",
+            "image_title": "Gifts For Her",
+            "image_link": "shopify://collections/gifts-for-her",
+            "image": "shopify://shop_images/25_1f3094e9-6d30-4445-b056-0b7ffccdc542.jpg",
+            "image_order": -1
+          }
+        },
+        "mega_menu_image_MTraQU": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "GIFTING",
+            "image_title": "Gifts For Kids",
+            "image_link": "shopify://collections/gifts-for-kids",
+            "image": "shopify://shop_images/23_abad5126-e4f3-4a1d-aa49-25119f5e0f13.jpg",
+            "image_order": -1
+          }
+        },
         "mega_menu_image_BCVmWY": {
           "type": "mega_menu_image",
           "settings": {
@@ -316,6 +346,9 @@
         "mega_menu_announcement_XVx8Uh",
         "menu_title_LzDcr7",
         "mega_menu_announcement_3WmCEd",
+        "mega_menu_image_A8WXkW",
+        "mega_menu_image_YxDiXn",
+        "mega_menu_image_MTraQU",
         "mega_menu_image_BCVmWY",
         "mega_menu_image_C3KY4m",
         "mega_menu_image_CAxBMb",
