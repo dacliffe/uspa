@@ -42,6 +42,7 @@
       "block_order": [
         "slide_mexkpX"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "layout": "full_bleed",
