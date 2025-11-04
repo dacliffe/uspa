@@ -74,7 +74,6 @@
         },
         "menu_link_color_qFb6pm": {
           "type": "menu_link_color",
-          "disabled": true,
           "settings": {
             "menu_link_handle": "sale",
             "link_color": "#a41d35"
