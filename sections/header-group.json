@@ -65,6 +65,7 @@
         },
         "mega_menu_announcement_XVx8Uh": {
           "type": "mega_menu_announcement",
+          "disabled": true,
           "settings": {
             "menu_title": "POLO SHIRTS",
             "announcement_text": "2 FOR $150* SELECTED POLO SHIRTS",
