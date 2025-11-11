@@ -387,6 +387,7 @@
       "blocks": {
         "announcement_YmXd3a": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "TAKE A FURTHER 11% OFF* SITEWIDE - TODAY ONLY",
             "link": "shopify://collections/new-arrivals-clothing-accessories"
