@@ -63,16 +63,6 @@
             "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
           }
         },
-        "mega_menu_announcement_XVx8Uh": {
-          "type": "mega_menu_announcement",
-          "disabled": true,
-          "settings": {
-            "menu_title": "POLO SHIRTS",
-            "announcement_text": "2 FOR $150* SELECTED POLO SHIRTS",
-            "announcement_link": "shopify://collections/2-for-149-polo-shirts",
-            "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
-          }
-        },
         "menu_link_color_qFb6pm": {
           "type": "menu_link_color",
           "settings": {
@@ -86,16 +76,6 @@
             "menu_title": "NEW",
             "title_text": "NEW ARRIVALS",
             "title_style": "h4"
-          }
-        },
-        "mega_menu_announcement_3WmCEd": {
-          "type": "mega_menu_announcement",
-          "disabled": true,
-          "settings": {
-            "menu_title": "POLO SHIRTS",
-            "announcement_text": "2 POLO SHIRTS FOR $150*",
-            "announcement_link": "shopify://collections/2-for-149-polo-shirts",
-            "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
           }
         },
         "mega_menu_image_A8WXkW": {
@@ -351,10 +331,8 @@
       },
       "block_order": [
         "mega_menu_announcement_HtEmxk",
-        "mega_menu_announcement_XVx8Uh",
         "menu_link_color_qFb6pm",
         "menu_title_LzDcr7",
-        "mega_menu_announcement_3WmCEd",
         "mega_menu_image_A8WXkW",
         "mega_menu_image_YxDiXn",
         "mega_menu_image_MTraQU",
@@ -404,6 +382,31 @@
         "padding_bottom": 8
       }
     },
+    "announcement_bar_7t46mh": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_YmXd3a": {
+          "type": "announcement",
+          "settings": {
+            "text": "TAKE A FURTHER 11% OFF* SITEWIDE - TODAY ONLY",
+            "link": "shopify://collections/new-arrivals-clothing-accessories"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_YmXd3a"
+      ],
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-055eabee-0096-4320-8a98-d4178b3ba047",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
     "announcement_bar_qQdiXV": {
       "type": "announcement-bar",
       "blocks": {
@@ -433,6 +436,7 @@
   "order": [
     "announcement-bar",
     "header",
+    "announcement_bar_7t46mh",
     "announcement_bar_qQdiXV"
   ]
 }
