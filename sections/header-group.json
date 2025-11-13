@@ -104,7 +104,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "SALE",
-            "image_title": "Mens sale",
+            "image_title": "Mens",
             "image_link": "shopify://collections/sale",
             "image": "shopify://shop_images/5_3ace41d6-4389-4976-b01a-db5b7884a36f.jpg",
             "image_order": 1
@@ -114,7 +114,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "SALE",
-            "image_title": "Womens sale",
+            "image_title": "Womens",
             "image_link": "shopify://collections/sale",
             "image": "shopify://shop_images/6_ba2794f1-6b14-484b-9b75-b663d8343c30.jpg",
             "image_order": 2
@@ -124,7 +124,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "SALE",
-            "image_title": "Kidswear sale",
+            "image_title": "Kidswear",
             "image_link": "shopify://collections/sale",
             "image": "shopify://shop_images/7_f62fa7f9-f724-488b-af37-869e41af964d.jpg",
             "image_order": 3
