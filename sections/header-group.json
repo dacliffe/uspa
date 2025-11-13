@@ -70,14 +70,6 @@
             "link_color": "#a41d35"
           }
         },
-        "menu_title_LzDcr7": {
-          "type": "menu_title",
-          "settings": {
-            "menu_title": "NEW",
-            "title_text": "NEW ARRIVALS",
-            "title_style": "h4"
-          }
-        },
         "mega_menu_image_A8WXkW": {
           "type": "mega_menu_image",
           "settings": {
@@ -106,6 +98,36 @@
             "image_link": "shopify://collections/gifts-for-kids",
             "image": "shopify://shop_images/23_abad5126-e4f3-4a1d-aa49-25119f5e0f13.jpg",
             "image_order": 3
+          }
+        },
+        "mega_menu_image_H7gjNL": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "sale",
+            "image_title": "Mens sale",
+            "image_link": "shopify://collections/sale",
+            "image": "shopify://shop_images/5_3ace41d6-4389-4976-b01a-db5b7884a36f.jpg",
+            "image_order": 1
+          }
+        },
+        "mega_menu_image_NmQ3pq": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "sale",
+            "image_title": "Womens sale",
+            "image_link": "shopify://collections/sale",
+            "image": "shopify://shop_images/6_ba2794f1-6b14-484b-9b75-b663d8343c30.jpg",
+            "image_order": 1
+          }
+        },
+        "mega_menu_image_U7gHgF": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "sale",
+            "image_title": "Kidswear sale",
+            "image_link": "shopify://collections/sale",
+            "image": "shopify://shop_images/7_f62fa7f9-f724-488b-af37-869e41af964d.jpg",
+            "image_order": 1
           }
         },
         "mega_menu_image_BCVmWY": {
@@ -332,10 +354,12 @@
       "block_order": [
         "mega_menu_announcement_HtEmxk",
         "menu_link_color_qFb6pm",
-        "menu_title_LzDcr7",
         "mega_menu_image_A8WXkW",
         "mega_menu_image_YxDiXn",
         "mega_menu_image_MTraQU",
+        "mega_menu_image_H7gjNL",
+        "mega_menu_image_NmQ3pq",
+        "mega_menu_image_U7gHgF",
         "mega_menu_image_BCVmWY",
         "mega_menu_image_C3KY4m",
         "mega_menu_image_CAxBMb",
