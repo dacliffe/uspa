@@ -54,20 +54,21 @@
     "header": {
       "type": "header",
       "blocks": {
-        "mega_menu_announcement_HtEmxk": {
-          "type": "mega_menu_announcement",
-          "settings": {
-            "menu_title": "NEW",
-            "announcement_text": "SPRING 25 NOW AVAILABLE",
-            "announcement_link": "shopify://collections/new-arrivals-clothing-accessories",
-            "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
-          }
-        },
         "menu_link_color_qFb6pm": {
           "type": "menu_link_color",
           "settings": {
             "menu_link_handle": "sale",
             "link_color": "#a41d35"
+          }
+        },
+        "mega_menu_image_RPYDbH": {
+          "type": "mega_menu_image",
+          "settings": {
+            "menu_title": "HOME",
+            "image_title": "All Home",
+            "image_link": "shopify://collections/home-1",
+            "image": "shopify://shop_images/Untitled_design_20.jpg",
+            "image_order": 1
           }
         },
         "mega_menu_image_A8WXkW": {
@@ -352,8 +353,8 @@
         }
       },
       "block_order": [
-        "mega_menu_announcement_HtEmxk",
         "menu_link_color_qFb6pm",
+        "mega_menu_image_RPYDbH",
         "mega_menu_image_A8WXkW",
         "mega_menu_image_YxDiXn",
         "mega_menu_image_MTraQU",
