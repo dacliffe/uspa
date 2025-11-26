@@ -248,14 +248,18 @@ window.fetchProductData = function (handle, cardWrapper, badgeValue, productId, 
           return formattedPrice;
         };
 
+        const priceElement = cardWrapper.querySelector('.price');
+
         if (comparePrice != null && comparePrice > 0) {
           if (regularPriceElement) regularPriceElement.textContent = formatPrice(comparePrice);
           if (salePriceElement) salePriceElement.textContent = formatPrice(comparePrice);
           if (finalPriceElement) finalPriceElement.textContent = formatPriceWithoutCurrency(price);
+          if (priceElement) priceElement.classList.add('price--on-sale');
         } else {
           if (regularPriceElement) regularPriceElement.textContent = formatPrice(price);
           if (salePriceElement) salePriceElement.textContent = '';
           if (finalPriceElement) finalPriceElement.textContent = '';
+          if (priceElement) priceElement.classList.remove('price--on-sale');
         }
 
         // Update the product title and URL - handle both anchor-based and direct h3 titles
@@ -469,11 +473,6 @@ window.initializeCardSwatches = function () {
       .then((res) => res.json())
       .then((data) => {
         swatch.classList.add('is-available');
-        const cardWrapper = swatch.closest('.card-wrapper');
-        const priceElement = cardWrapper?.querySelector('.price-item--sale.price-item--last');
-        if (priceElement) {
-          priceElement.textContent = `$${(data.product.variants[0].price / 100).toFixed(2)}`;
-        }
       })
       .catch((error) => {
         swatch.classList.add('not-available');
