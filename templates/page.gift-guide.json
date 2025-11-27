@@ -9,6 +9,23 @@
  */
 {
   "sections": {
+    "image_banner_XVxihb": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design_18.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
     "image_slider_6QpEGh": {
       "type": "image-slider",
       "blocks": {
@@ -211,6 +228,7 @@
     }
   },
   "order": [
+    "image_banner_XVxihb",
     "image_slider_6QpEGh",
     "main",
     "featured_collection_QV37tp",
