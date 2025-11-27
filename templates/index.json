@@ -12,6 +12,57 @@
     "image_slider_wRargf": {
       "type": "image-slider",
       "blocks": {
+        "image_slide_KLeiCg": {
+          "type": "image_slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Untitled_design_18.jpg",
+            "slide_link": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "left",
+            "mobile_vertical_alignment": "middle",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center",
+            "title": "Slide Title",
+            "subtitle": "Slide Subtitle",
+            "subtitle_font_size": 20,
+            "mobile_subtitle_font_size": 16,
+            "subtitle_bold": false,
+            "title_font_size": 40,
+            "mobile_title_font_size": 32,
+            "title_bold": true,
+            "title_color": "#ffffff",
+            "subtitle_color": "#ffffff",
+            "button1_text": "",
+            "mobile_button1_text": "",
+            "button1_link": "",
+            "button1_type": "primary",
+            "button1_theme_color": "#ffffff",
+            "button1_text_color": "#000000",
+            "button2_text": "",
+            "mobile_button2_text": "",
+            "button2_link": "",
+            "button2_type": "primary",
+            "button2_theme_color": "#ffffff",
+            "button2_text_color": "#000000",
+            "button3_text": "",
+            "mobile_button3_text": "",
+            "button3_link": "",
+            "button3_type": "primary",
+            "button3_theme_color": "#ffffff",
+            "button3_text_color": "#000000",
+            "button4_text": "",
+            "mobile_button4_text": "",
+            "button4_link": "",
+            "button4_type": "primary",
+            "button4_theme_color": "#ffffff",
+            "button4_text_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "desktop_button_font_size": 16,
+            "mobile_button_font_size": 14
+          }
+        },
         "image_slide_FRmwn7": {
           "type": "image_slide",
           "settings": {
@@ -170,6 +221,7 @@
         }
       },
       "block_order": [
+        "image_slide_KLeiCg",
         "image_slide_FRmwn7",
         "image_slide_RnWrHQ",
         "image_slide_txnJ6Y"
