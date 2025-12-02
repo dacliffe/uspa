@@ -127,6 +127,47 @@
         "padding_bottom": 36
       }
     },
+    "collection_list_bQYmHA": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_WqU9mJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mens-polo-shirts"
+          }
+        },
+        "featured_collection_jDh7ta": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mens-essentials"
+          }
+        },
+        "featured_collection_LP6wVN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mens-new-arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_WqU9mJ",
+        "featured_collection_jDh7ta",
+        "featured_collection_LP6wVN"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Shop by Category",
+        "heading_size": "h2",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection_xKbkPm": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -156,6 +197,47 @@
         "padding_bottom": 36
       }
     },
+    "collection_list_EzPj4j": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_TDPPcf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "womens-polo-shirts"
+          }
+        },
+        "featured_collection_YTRQxb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bags"
+          }
+        },
+        "featured_collection_kBPaXn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "womens-new-arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_TDPPcf",
+        "featured_collection_YTRQxb",
+        "featured_collection_kBPaXn"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Shop by Category",
+        "heading_size": "h2",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection_wLPVLF": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -181,6 +263,47 @@
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collection_list_iJPnpV": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_nE73Q4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "boys-clothing"
+          }
+        },
+        "featured_collection_kKhcLw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "girls-clothing"
+          }
+        },
+        "featured_collection_A87FeJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "kids-essentials"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_nE73Q4",
+        "featured_collection_kKhcLw",
+        "featured_collection_A87FeJ"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Shop by Category",
+        "heading_size": "h2",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -232,8 +355,11 @@
     "image_slider_6QpEGh",
     "main",
     "featured_collection_QV37tp",
+    "collection_list_bQYmHA",
     "featured_collection_xKbkPm",
+    "collection_list_EzPj4j",
     "featured_collection_wLPVLF",
+    "collection_list_iJPnpV",
     "collection_list_nteatt"
   ]
 }
