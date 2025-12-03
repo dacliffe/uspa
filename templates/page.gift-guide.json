@@ -139,13 +139,13 @@
         "featured_collection_jDh7ta": {
           "type": "featured_collection",
           "settings": {
-            "collection": "mens-essentials"
+            "collection": "mens-new-arrivals"
           }
         },
         "featured_collection_LP6wVN": {
           "type": "featured_collection",
           "settings": {
-            "collection": "mens-new-arrivals"
+            "collection": "mens-essentials"
           }
         }
       },
