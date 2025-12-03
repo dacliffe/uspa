@@ -122,7 +122,7 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "new-arrivals-clothing-accessories",
-    "cart_progress_threshold": "150",
+    "cart_progress_threshold": "175",
     "cart_pre_goal_message": "You're only <strong> [remainingForGoalFormatted] </strong>away from <strong>FREE SHIPPING</strong>",
     "cart_post_goal_message": "YOU'RE ELEGIBLE FOR  <strong>FREE SHIPPING!</strong>",
     "cart_progress_bar_color": "#a41d35",
