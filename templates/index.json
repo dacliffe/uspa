@@ -14,10 +14,11 @@
       "blocks": {
         "image_slide_hfmy6b": {
           "type": "image_slide",
+          "name": "Spend and Save",
           "settings": {
             "desktop_image": "shopify://shop_images/WEB-HP-1800x547_copy.jpg",
             "mobile_image": "shopify://shop_images/MOB-HP-360x240_copy_3.jpg",
-            "slide_link": "shopify://collections/best-seller",
+            "slide_link": "https://uspoloassn.com.au/collections/spend-save-event",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
             "content_alignment": "center",
@@ -183,7 +184,7 @@
             "mobile_horizontal_alignment": "center",
             "mobile_content_alignment": "center",
             "title": "SUMMER ESSENTIALS",
-            "subtitle": "NOW 30% OFF*",
+            "subtitle": "DISCOVER NEW ARRIVALS",
             "subtitle_font_size": 16,
             "mobile_subtitle_font_size": 16,
             "subtitle_bold": true,
