@@ -439,15 +439,14 @@
         "announcement_P4R7im": {
           "type": "announcement",
           "settings": {
-            "text": "2 POLO SHIRTS FOR $150*",
-            "link": "shopify://collections/2-for-149-polo-shirts"
+            "text": "Spend & Save up to $200* - Order In Time for Christmas",
+            "link": "shopify://collections/spend-save"
           }
         }
       },
       "block_order": [
         "announcement_P4R7im"
       ],
-      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
