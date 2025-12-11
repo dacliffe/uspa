@@ -440,7 +440,7 @@
           "type": "announcement",
           "settings": {
             "text": "Spend & Save up to $200* - Order In Time for Christmas",
-            "link": "shopify://collections/spend-save"
+            "link": "shopify://collections/spend-save-event"
           }
         }
       },
