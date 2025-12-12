@@ -438,6 +438,7 @@
       "blocks": {
         "announcement_P4R7im": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Spend & Save up to $200* - Order In Time for Christmas",
             "link": "shopify://collections/spend-save-event"
