@@ -9,6 +9,17 @@
  */
 {
   "sections": {
+    "custom_liquid_QV64A3": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<a href=\"https://www.uspoloassn.co.uk/collections/new-arrivals\" style=\"text-decoration:none; display:block;\">\n\n<div class=\"christmas-countdown\">\n  <div class=\"christmas-countdown__heading\">\n    Elevate Your Christmas Gifting with Our Spend & Save Event — Delivery Cut-Off Approaching\n  <div class=\"christmas-countdown__timer\">\n    <span class=\"christmas-countdown__value\" data-days>00</span>d :\n    <span class=\"christmas-countdown__value\" data-hours>00</span>h :\n    <span class=\"christmas-countdown__value\" data-minutes>00</span>m :\n    <span class=\"christmas-countdown__value\" data-seconds>00</span>s\n  </div>\n</div>\n\n<style>\n  .christmas-countdown {\n    background: #12284c;\n    color: #ffffff;\n    padding: 12px 16px;\n    text-align: center;\n    font-family: inherit;\n  }\n\n  .christmas-countdown__heading {\n    font-weight: 600;\n    font-size: 14px;\n    text-transform: uppercase;\n    letter-spacing: 0.05em;\n    margin-bottom: 4px;\n  }\n\n  .christmas-countdown__timer {\n    font-size: 18px;\n    font-weight: 700;\n    letter-spacing: 0.05em;\n  }\n\n  .christmas-countdown__value {\n    min-width: 24px;\n    display: inline-block;\n    text-align: center;\n  }\n\n  @media (min-width: 768px) {\n    .christmas-countdown__heading {\n      font-size: 15px;\n    }\n    .christmas-countdown__timer,\n    .christmas-countdown__value {\n      font-size: 20px;\n    }\n  }\n</style>\n\n<script>\n  (function() {\n    // Set your END DATE here: year, monthIndex (0=Jan, 11=Dec), day, hour, minute, second\n    // 20 December 2025 23:59:00\n    var END_DATE = new Date(2025, 11, 20, 23, 59, 0);\n\n    var timers = document.querySelectorAll('.christmas-countdown');\n    if (!timers.length) return;\n\n    function pad(num) {\n      return num < 10 ? '0' + num : '' + num;\n    }\n\n    timers.forEach(function(root) {\n      if (root._countdownInit) return;\n      root._countdownInit = true;\n\n      var daysEl = root.querySelector('[data-days]');\n      var hoursEl = root.querySelector('[data-hours]');\n      var minutesEl = root.querySelector('[data-minutes]');\n      var secondsEl = root.querySelector('[data-seconds]');\n\n      function update() {\n        var now = new Date().getTime();\n        var distance = END_DATE.getTime() - now;\n\n        if (distance <= 0) {\n          root.innerHTML =\n            '<div class=\"christmas-countdown__heading\">CHRISTMAS DELIVERY CUT-OFF HAS ENDED</div>';\n          clearInterval(intervalId);\n          return;\n        }\n\n        var seconds = Math.floor(distance / 1000);\n        var days = Math.floor(seconds / (60 * 60 * 24));\n        seconds -= days * 60 * 60 * 24;\n\n        var hours = Math.floor(seconds / (60 * 60));\n        seconds -= hours * 60 * 60;\n\n        var minutes = Math.floor(seconds / 60);\n        seconds -= minutes * 60;\n\n        if (daysEl) daysEl.textContent = pad(days);\n        if (hoursEl) hoursEl.textContent = pad(hours);\n        if (minutesEl) minutesEl.textContent = pad(minutes);\n        if (secondsEl) secondsEl.textContent = pad(seconds);\n      }\n\n      update();\n      var intervalId = setInterval(update, 1000);\n    });\n  })();\n</script>",
+        "color_scheme": "",
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
     "image_slider_wRargf": {
       "type": "image-slider",
       "blocks": {
@@ -734,6 +745,7 @@
     }
   },
   "order": [
+    "custom_liquid_QV64A3",
     "image_slider_wRargf",
     "split_banner_dWe33F",
     "column_list_rLCjzP",
