@@ -457,12 +457,38 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
+    },
+    "announcement_bar_fiRmid": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_mKWwM9": {
+          "type": "announcement",
+          "settings": {
+            "text": "TAKE AN EXTRA 10% OFF* - USE CODE TAF10 AT CHECKOUT",
+            "link": "shopify://collections/new-arrivals-clothing-accessories"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_mKWwM9"
+      ],
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-055eabee-0096-4320-8a98-d4178b3ba047",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
     }
   },
   "order": [
     "announcement-bar",
     "header",
     "announcement_bar_7t46mh",
-    "announcement_bar_qQdiXV"
+    "announcement_bar_qQdiXV",
+    "announcement_bar_fiRmid"
   ]
 }
