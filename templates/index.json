@@ -132,6 +132,7 @@
         "image_slide_MDy8a3": {
           "type": "image_slide",
           "name": "Gift Guide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design_18.jpg",
             "mobile_image": "shopify://shop_images/T_C_s_apply_1.jpg",
