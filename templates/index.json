@@ -78,6 +78,7 @@
         "image_slide_hfmy6b": {
           "type": "image_slide",
           "name": "Spend and Save",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design_34.jpg",
             "mobile_image": "shopify://shop_images/T_C_s_apply_3_dd88371a-8bbf-43a3-a917-25248c711ab1.jpg",
