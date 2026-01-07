@@ -472,6 +472,7 @@
       "block_order": [
         "announcement_mKWwM9"
       ],
+      "disabled": true,
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {
         "auto_rotate": false,
