@@ -464,7 +464,7 @@
         "announcement_mKWwM9": {
           "type": "announcement",
           "settings": {
-            "text": "FINAL HOURS - TAKE AN EXTRA 10% OFF* SITEWIDE",
+            "text": "30% OFF* ALL FULL PRICE | LIMITED TIME ONLY",
             "link": "shopify://collections/new-arrivals-clothing-accessories"
           }
         }
@@ -472,12 +472,11 @@
       "block_order": [
         "announcement_mKWwM9"
       ],
-      "disabled": true,
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
-        "color_scheme": "scheme-d6f39085-9077-4cd0-9b2d-b427a6003b4e",
+        "color_scheme": "scheme-055eabee-0096-4320-8a98-d4178b3ba047",
         "show_line_separator": true,
         "show_social": false,
         "enable_country_selector": false,
