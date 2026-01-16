@@ -116,7 +116,7 @@
           "settings": {
             "menu_title": "SALE",
             "image_title": "Sale Under $75",
-            "image_link": "shopify://collections/sale-under-100",
+            "image_link": "shopify://collections/sale-under-75",
             "image": "shopify://shop_images/MUP4243-C40-MS_1.webp",
             "image_order": 2
           }
@@ -126,7 +126,7 @@
           "settings": {
             "menu_title": "SALE",
             "image_title": "Sale Under $50",
-            "image_link": "shopify://collections/sale-under-100",
+            "image_link": "shopify://collections/sale-under-50",
             "image": "shopify://shop_images/MUP4381-G05-MS_1.webp",
             "image_order": 3
           }
