@@ -251,13 +251,13 @@
         "banner_Q8CfbK": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/Untitled_design_90.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design_91.jpg",
+            "image": "shopify://shop_images/13_af5c57f8-aa37-4fe8-991c-a190e5b199cd.jpg",
+            "mobile_image": "shopify://shop_images/15.jpg",
             "use_video": false,
             "title": "MENS",
             "title_size": 32,
             "title_weight": "500",
-            "subtitle": "New Arrivals",
+            "subtitle": "Transitional Styles",
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
@@ -267,9 +267,9 @@
             "button_text_2": "T-Shirts",
             "button_style_2": "secondary",
             "button_link_2": "shopify://collections/mens-t-shirts",
-            "button_text_3": "Shorts",
+            "button_text_3": "Sweatshirts",
             "button_style_3": "secondary",
-            "button_link_3": "shopify://collections/mens-shorts-swimwear",
+            "button_link_3": "shopify://collections/mens-hoodies-sweatshirts",
             "button_text_4": "",
             "button_style_4": "secondary",
             "button_link_4": "",
@@ -284,22 +284,22 @@
         "banner_hNy8aw": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/Untitled_design_2.jpg",
-            "mobile_image": "shopify://shop_images/LAYERS.jpg",
+            "image": "shopify://shop_images/12_a139f325-d482-4f94-972a-0319f6b9e2ae.jpg",
+            "mobile_image": "shopify://shop_images/14_9e0dd006-b0d9-4bff-98a9-44aed719bedf.jpg",
             "use_video": false,
             "title": "WOMENS",
             "title_size": 36,
             "title_weight": "500",
-            "subtitle": "New Arrivals",
+            "subtitle": "Transitional Styles",
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
             "button_text_1": "Polo Shirts",
             "button_style_1": "secondary",
             "button_link_1": "shopify://collections/womens-polo-shirts",
-            "button_text_2": "T- Shirts",
+            "button_text_2": "Handbags",
             "button_style_2": "secondary",
-            "button_link_2": "shopify://collections/womens-t-shirts",
+            "button_link_2": "shopify://collections/handbags-1",
             "button_text_3": "Knitwear",
             "button_style_3": "secondary",
             "button_link_3": "shopify://collections/womens-knitwear-jumpers",
@@ -338,37 +338,37 @@
         "column_7TQKQx": {
           "type": "column",
           "settings": {
-            "title": "POLO SHIRTS",
-            "image": "shopify://shop_images/Untitled_design_86.jpg",
-            "url": "shopify://collections/polo-shirts",
+            "title": "MENS CLOTHING",
+            "image": "shopify://shop_images/10_f58eee5a-ee93-4040-90e0-f791980b8bb0.jpg",
+            "url": "shopify://collections/mens-clothing",
             "visibility": "both"
           }
         },
         "column_3BC7C3": {
           "type": "column",
           "settings": {
-            "title": "SHORTS",
-            "image": "shopify://shop_images/3_174085c2-6cf4-406f-a01a-9e3fba515208.jpg",
-            "url": "shopify://collections/shorts-swimwear",
+            "title": "MENS ACCESSORIES",
+            "image": "shopify://shop_images/11_d4a21920-227f-43d0-a4d5-b84002023c41.jpg",
+            "url": "shopify://collections/accessories",
             "visibility": "both"
           }
         },
         "column_TefaYi": {
           "type": "column",
           "settings": {
-            "title": "SHIRTS & LINEN",
-            "image": "shopify://shop_images/Untitled_design_3_d8c6b511-d1c7-4d72-b699-c85b8e1dd107.jpg",
-            "url": "shopify://collections/mens-shirts",
+            "title": "WOMENS CLOTHING",
+            "image": "shopify://shop_images/8_c77e46f5-dbb2-4560-8310-44ec565e3e38.jpg",
+            "url": "shopify://collections/womens-clothing",
             "visibility": "both"
           }
         },
         "column_xkMD7V": {
           "type": "column",
           "settings": {
-            "title": "T-SHIRTS",
-            "image": "shopify://shop_images/4_548c12fb-b80f-4ff5-bf6c-a91722ce4a0f.jpg",
-            "url": "shopify://collections/coats-jackets",
-            "visibility": "mobile"
+            "title": "WOMENS ACCESSORIES",
+            "image": "shopify://shop_images/9_a67e5138-2bb9-4da1-bf63-96a08a8e81b2.jpg",
+            "url": "shopify://collections/handbags-1",
+            "visibility": "both"
           }
         }
       },
@@ -383,7 +383,7 @@
         "heading_size": "h2",
         "image_ratio": "adapt",
         "heading_type": "style-1",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "color_scheme": "",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
