@@ -61,6 +61,15 @@
             "link_color": "#a41d35"
           }
         },
+        "mega_menu_announcement_qxabmq": {
+          "type": "mega_menu_announcement",
+          "settings": {
+            "menu_title": "POLO SHIRTS",
+            "announcement_text": "2 Polo Shirts for $150* - Limited Time!",
+            "announcement_link": "https://uspoloassn.com.au/collections/2-polo-shirts-for-151",
+            "announcement_color": ""
+          }
+        },
         "mega_menu_image_RPYDbH": {
           "type": "mega_menu_image",
           "settings": {
@@ -69,36 +78,6 @@
             "image_link": "shopify://collections/home-1",
             "image": "shopify://shop_images/Untitled_design_20.jpg",
             "image_order": 1
-          }
-        },
-        "mega_menu_image_A8WXkW": {
-          "type": "mega_menu_image",
-          "settings": {
-            "menu_title": "GIFTING",
-            "image_title": "Polo Shirts from $40",
-            "image_link": "shopify://collections/polo-shirts-1",
-            "image": "shopify://shop_images/27.jpg",
-            "image_order": 1
-          }
-        },
-        "mega_menu_image_YxDiXn": {
-          "type": "mega_menu_image",
-          "settings": {
-            "menu_title": "GIFTING",
-            "image_title": "Gifts For Her",
-            "image_link": "shopify://collections/gifts-for-her",
-            "image": "shopify://shop_images/26_b7719c26-30fe-4e66-b30b-6310dbf1e733.jpg",
-            "image_order": 2
-          }
-        },
-        "mega_menu_image_MTraQU": {
-          "type": "mega_menu_image",
-          "settings": {
-            "menu_title": "GIFTING",
-            "image_title": "All Gifts",
-            "image_link": "shopify://pages/gift-guide",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_1.jpg",
-            "image_order": 3
           }
         },
         "mega_menu_image_H7gjNL": {
@@ -321,16 +300,6 @@
             "image_order": 0
           }
         },
-        "mega_menu_image_DKj7bQ": {
-          "type": "mega_menu_image",
-          "settings": {
-            "menu_title": "OFFERS",
-            "image_title": "Shop Chinos",
-            "image_link": "shopify://collections/2-chinos-for-200",
-            "image": "shopify://shop_images/NAV_2.jpg",
-            "image_order": 0
-          }
-        },
         "mega_menu_image_Rt8Bef": {
           "type": "mega_menu_image",
           "settings": {
@@ -340,24 +309,12 @@
             "image": "shopify://shop_images/NAV_3.jpg",
             "image_order": 0
           }
-        },
-        "mega_menu_image_GF7xPX": {
-          "type": "mega_menu_image",
-          "settings": {
-            "menu_title": "OFFERS",
-            "image_title": "Shop Shorts",
-            "image_link": "shopify://collections/2-shorts-for-150",
-            "image": "shopify://shop_images/NAV_4.jpg",
-            "image_order": 0
-          }
         }
       },
       "block_order": [
         "menu_link_color_qFb6pm",
+        "mega_menu_announcement_qxabmq",
         "mega_menu_image_RPYDbH",
-        "mega_menu_image_A8WXkW",
-        "mega_menu_image_YxDiXn",
-        "mega_menu_image_MTraQU",
         "mega_menu_image_H7gjNL",
         "mega_menu_image_NmQ3pq",
         "mega_menu_image_U7gHgF",
@@ -380,9 +337,7 @@
         "mega_menu_image_FgUDeF",
         "mega_menu_image_znBAPi",
         "mega_menu_image_nLXCrJ",
-        "mega_menu_image_DKj7bQ",
-        "mega_menu_image_Rt8Bef",
-        "mega_menu_image_GF7xPX"
+        "mega_menu_image_Rt8Bef"
       ],
       "settings": {
         "show_strip": true,
