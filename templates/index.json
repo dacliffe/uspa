@@ -534,7 +534,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "new-arrivals-clothing-accessories",
+        "collection": "bf30",
         "products_to_show": 6,
         "title": "NEW ARRIVALS",
         "heading_size": "h2",
