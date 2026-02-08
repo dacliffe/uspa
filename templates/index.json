@@ -385,6 +385,93 @@
         "button_font_size": 14
       }
     },
+    "split_banner_nWEYcr": {
+      "type": "split-banner",
+      "blocks": {
+        "banner_Cyptri": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/14_51e59784-b35c-4bb6-874d-2381fcfd7a88.jpg",
+            "mobile_image": "shopify://shop_images/16_3eddfeba-89af-4b67-863b-dceb543a4139.jpg",
+            "use_video": false,
+            "title": "2 FOR $150*",
+            "title_size": 32,
+            "title_weight": "500",
+            "subtitle": "POLO SHIRTS",
+            "subtitle_size": 18,
+            "subtitle_weight": "500",
+            "text": "SAVE UP TO $70*",
+            "button_text_1": "SHOP NOW",
+            "button_style_1": "secondary",
+            "button_link_1": "shopify://collections/2-polo-shirts-for-151",
+            "button_text_2": "",
+            "button_style_2": "secondary",
+            "button_link_2": "",
+            "button_text_3": "",
+            "button_style_3": "secondary",
+            "button_link_3": "",
+            "button_text_4": "",
+            "button_style_4": "secondary",
+            "button_link_4": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
+            "mobile_vertical_alignment": "middle",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "banner_BW6Trt": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/15_9f227c55-a93c-41f4-9857-5cf7029f8862.jpg",
+            "mobile_image": "shopify://shop_images/17.jpg",
+            "use_video": false,
+            "title": "2 FOR $80*",
+            "title_size": 36,
+            "title_weight": "500",
+            "subtitle": "T-SHIRTS",
+            "subtitle_size": 18,
+            "subtitle_weight": "500",
+            "text": "SAVE UP TO $40*",
+            "button_text_1": "SHOP NOW",
+            "button_style_1": "secondary",
+            "button_link_1": "shopify://collections/2-t-shirts-for-80",
+            "button_text_2": "",
+            "button_style_2": "secondary",
+            "button_link_2": "",
+            "button_text_3": "",
+            "button_style_3": "secondary",
+            "button_link_3": "",
+            "button_text_4": "",
+            "button_style_4": "primary",
+            "button_link_4": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
+            "mobile_vertical_alignment": "middle",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "banner_Cyptri",
+        "banner_BW6Trt"
+      ],
+      "settings": {
+        "gap": 12,
+        "mobile_gap": 10,
+        "padding_top": 16,
+        "padding_bottom": 0,
+        "overlay_color": "#000000",
+        "overlay_opacity": 15,
+        "button_bg_color": "#ffffff",
+        "button_text_color": "#000000",
+        "text_color": "#ffffff",
+        "button_font_size": 14
+      }
+    },
     "column_list_rLCjzP": {
       "type": "column-list",
       "blocks": {
@@ -747,6 +834,7 @@
     "custom_liquid_QV64A3",
     "image_slider_wRargf",
     "split_banner_dWe33F",
+    "split_banner_nWEYcr",
     "column_list_rLCjzP",
     "featured_collection",
     "hero_banner_yRrJ8B",
