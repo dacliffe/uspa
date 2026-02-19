@@ -129,6 +129,7 @@
         },
         "image_slide_jfMgKG": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design_15_a8ff31a8-df6f-42be-bcbe-8f256ed54f80.jpg",
             "mobile_image": "shopify://shop_images/T_C_s_apply_babefd06-9217-4df0-90ac-0675ab3fd19d.jpg",
