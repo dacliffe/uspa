@@ -17,6 +17,16 @@
         "padding_bottom": 28
       }
     },
+    "custom_liquid_bfdWw9": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"uspa-polo-icon\">\n  <img \n    src=\"https://cdn.shopify.com/s/files/1/0268/3771/2953/files/PoloShirt_ICON_Slogan-H_color_002_1.png?v=1772038005\"\n    alt=\"The Polo Shirt – An Icon Born from the Game\"\n    loading=\"lazy\"\n  >\n</div>\n\n<style>\n  .uspa-polo-icon {\n    text-align: center;\n    padding: 20px 0;\n  }\n\n  .uspa-polo-icon img {\n    width: 100%;\n    max-width: 900px;   /* ← adjust this number */\n    height: auto;\n    margin: 0 auto;\n    display: block;\n  }\n</style>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
     "custom_liquid_7hcGqW": {
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
@@ -50,6 +60,7 @@
   },
   "order": [
     "main",
+    "custom_liquid_bfdWw9",
     "custom_liquid_7hcGqW",
     "custom_liquid_HmU3HM",
     "custom_liquid_DCQyKF"
