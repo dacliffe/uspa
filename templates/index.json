@@ -460,6 +460,7 @@
         "banner_Cyptri",
         "banner_BW6Trt"
       ],
+      "disabled": true,
       "settings": {
         "gap": 12,
         "mobile_gap": 10,
