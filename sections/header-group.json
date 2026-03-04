@@ -292,6 +292,7 @@
         },
         "mega_menu_image_nLXCrJ": {
           "type": "mega_menu_image",
+          "disabled": true,
           "settings": {
             "menu_title": "OFFERS",
             "image_title": "Shop T-Shirts",
@@ -302,6 +303,7 @@
         },
         "mega_menu_image_Rt8Bef": {
           "type": "mega_menu_image",
+          "disabled": true,
           "settings": {
             "menu_title": "OFFERS",
             "image_title": "Shop Polo Shirts",
