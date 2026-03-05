@@ -214,7 +214,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MENS",
-            "image_title": "Mens T-Shirts",
+            "image_title": "T-Shirts",
             "image_link": "shopify://collections/mens-t-shirts",
             "image": "shopify://shop_images/Copy_of_NAV_IMAGES_16.jpg",
             "image_order": 0
@@ -224,7 +224,7 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MENS",
-            "image_title": "Mens Polo Shirts",
+            "image_title": "Polo Shirts",
             "image_link": "shopify://collections/mens-polo-shirts",
             "image": "shopify://shop_images/Copy_of_NAV_IMAGES_8.jpg",
             "image_order": 1
