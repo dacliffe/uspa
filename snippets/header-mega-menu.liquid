@@ -150,7 +150,7 @@
 
                   {%- comment -%} Find and render image blocks for this menu {%- endcomment -%}
                   {%- for block in section.blocks -%}
-                    {%- if block.type == 'mega_menu_image' and block.settings.menu_title == link.title -%}
+                    {%- if block.type == 'mega_menu_image' and block.settings.menu_title == link.title and block.settings.image != blank -%}
                       <div
                         class="product-card-wrapper"
                         style="--ratio-percent: 125%; order:{{ block.settings.image_order }}"
