@@ -344,6 +344,7 @@
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
           class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
           rel="nofollow"
+          data-account-destination="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
         >
           {%- if section.settings.enable_customer_avatar -%}
             <account-icon>
@@ -422,6 +423,17 @@
 {%- endif -%}
 
 {% javascript %}
+  (function() {
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a[data-account-destination]');
+      if (!link) return;
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      window.location.href = link.getAttribute('data-account-destination');
+    }, true);
+  })();
+
   class StickyHeader extends HTMLElement {
     constructor() {
       super();
