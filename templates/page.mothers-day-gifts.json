@@ -17,99 +17,72 @@
         "padding_bottom": 28
       }
     },
-    "image_banner_XKKTRF": {
-      "type": "image-banner",
+    "image_slider_m7CzN9": {
+      "type": "image-slider",
       "blocks": {
-        "heading_gR7qm4": {
-          "type": "heading",
+        "image_slide_kEC6YV": {
+          "type": "image_slide",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h1"
-          }
-        },
-        "text_WtnrHt": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "buttons_BBG3wK": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "slide_link": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "left",
+            "mobile_vertical_alignment": "middle",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center",
+            "title": "Slide Title",
+            "subtitle": "Slide Subtitle",
+            "subtitle_font_size": 20,
+            "mobile_subtitle_font_size": 16,
+            "subtitle_bold": false,
+            "title_font_size": 40,
+            "mobile_title_font_size": 32,
+            "title_bold": true,
+            "title_color": "#ffffff",
+            "subtitle_color": "#ffffff",
+            "button1_text": "",
+            "mobile_button1_text": "",
+            "button1_link": "",
+            "button1_type": "primary",
+            "button1_theme_color": "#ffffff",
+            "button1_text_color": "#000000",
+            "button2_text": "",
+            "mobile_button2_text": "",
+            "button2_link": "",
+            "button2_type": "primary",
+            "button2_theme_color": "#ffffff",
+            "button2_text_color": "#000000",
+            "button3_text": "",
+            "mobile_button3_text": "",
+            "button3_link": "",
+            "button3_type": "primary",
+            "button3_theme_color": "#ffffff",
+            "button3_text_color": "#000000",
+            "button4_text": "",
+            "mobile_button4_text": "",
+            "button4_link": "",
+            "button4_type": "primary",
+            "button4_theme_color": "#ffffff",
+            "button4_text_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "desktop_button_font_size": 16,
+            "mobile_button_font_size": 14
           }
         }
       },
       "block_order": [
-        "heading_gR7qm4",
-        "text_WtnrHt",
-        "buttons_BBG3wK"
+        "image_slide_kEC6YV"
       ],
-      "name": "t:sections.image-banner.presets.name",
+      "name": "Image Slider",
       "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
-      }
-    },
-    "collection_list_3TybwK": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_YmBxzD": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection_JHm9fC": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection_bdrhMK": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_YmBxzD",
-        "featured_collection_JHm9fC",
-        "featured_collection_bdrhMK"
-      ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "slide_interval": 5000,
+        "button_font_size": 16
       }
     }
   },
   "order": [
     "main",
-    "image_banner_XKKTRF",
-    "collection_list_3TybwK"
+    "image_slider_m7CzN9"
   ]
 }
