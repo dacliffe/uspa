@@ -187,7 +187,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/Untitled_design_36.jpg",
             "mobile_image": "shopify://shop_images/T_C_s_apply_5.jpg",
-            "slide_link": "shopify://collections/bf30",
+            "slide_link": "shopify://collections/apd30",
             "vertical_alignment": "middle",
             "horizontal_alignment": "left",
             "content_alignment": "left",
@@ -224,7 +224,7 @@
             "button3_text_color": "#13294c",
             "button4_text": "ALL",
             "mobile_button4_text": "",
-            "button4_link": "shopify://collections/bf30",
+            "button4_link": "shopify://collections/apd30",
             "button4_type": "primary",
             "button4_theme_color": "#ffffff",
             "button4_text_color": "#13294c",
@@ -536,7 +536,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "bf30",
+        "collection": "apd30",
         "products_to_show": 6,
         "title": "NEW ARRIVALS",
         "heading_size": "h2",
