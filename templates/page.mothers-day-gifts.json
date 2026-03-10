@@ -88,7 +88,7 @@
         "column_A37L6Y": {
           "type": "column",
           "settings": {
-            "title": "SAVE UP TO £100 OFF WOMENS BAGS",
+            "title": "SAVE UP TO £100 OFF BAGS",
             "image": "shopify://shop_images/WUB0098-300-MS_1_7dbd84ae-9930-4985-b28e-01bad22662f7.jpg",
             "url": "https://www.uspoloassn.co.uk/collections/womens-accessories",
             "visibility": "both"
@@ -97,7 +97,7 @@
         "column_bExNbk": {
           "type": "column",
           "settings": {
-            "title": "SAVE UP TO £100 OFF WOMENS KNITWEAR",
+            "title": "SAVE UP TO £100 OFF KNITWEAR",
             "image": "shopify://shop_images/WUP0400-D53-MS_1_bf27a971-95ed-4587-868c-cc9dfd07fb77.jpg",
             "url": "https://www.uspoloassn.co.uk/collections/womens-knitwear",
             "visibility": "both"
@@ -106,7 +106,7 @@
         "column_7hDc7x": {
           "type": "column",
           "settings": {
-            "title": "SAVE UP TO £100 ON THE HOME COLLECTION",
+            "title": "SAVE UP TO £100 ON THE HOME",
             "image": "shopify://shop_images/HUP0138-R96-PS_2_d2eddb4e-a896-41b5-8a6f-f609f229acbd.jpg",
             "url": "shopify://collections/home",
             "visibility": "both"
@@ -128,8 +128,8 @@
         "color_scheme": "",
         "columns_mobile": "3",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     },
     "split_banner_wUXANT": {
@@ -175,8 +175,8 @@
       "settings": {
         "gap": 20,
         "mobile_gap": 10,
-        "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_top": 16,
+        "padding_bottom": 16,
         "overlay_color": "#000000",
         "overlay_opacity": 15,
         "button_bg_color": "#ffffff",
