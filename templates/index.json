@@ -27,7 +27,7 @@
           "type": "image_slide",
           "settings": {
             "desktop_image": "shopify://shop_images/WEB_BANNER-FEB13-DESKTOP.png",
-            "mobile_image": "shopify://shop_images/UK-WEB_BANNER-MAR09-DRAFT_3-MOBILE_2_1.png",
+            "mobile_image": "shopify://shop_images/WEB_BANNER-FEB13-MOBILE_1.png",
             "slide_link": "shopify://collections/new-arrivals",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
