@@ -458,6 +458,7 @@
         },
         "column_3BC7C3": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "title": "T-SHIRTS SALE",
             "image": "shopify://shop_images/4_4c03b704-4510-4517-91de-f66f2bf0c13c.jpg",
