@@ -23,6 +23,58 @@
     "image_slider_wRargf": {
       "type": "image-slider",
       "blocks": {
+        "image_slide_dtW8aX": {
+          "type": "image_slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/WEBSITE_BANNER-MAR11-DRAFT_1-DESKTOP_2.png",
+            "mobile_image": "shopify://shop_images/WEBSITE_BANNER-MAR11-DRAFT_1-MOBILE_1.png",
+            "slide_link": "https://www.uspoloassn.co.uk/collections/kids-summer-sale",
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
+            "mobile_vertical_alignment": "bottom",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center",
+            "title": "",
+            "subtitle": "",
+            "subtitle_font_size": 20,
+            "mobile_subtitle_font_size": 15,
+            "subtitle_bold": true,
+            "title_font_size": 30,
+            "mobile_title_font_size": 25,
+            "title_bold": true,
+            "title_color": "#ffffff",
+            "subtitle_color": "#ffffff",
+            "button1_text": "POLO SHIRTS",
+            "mobile_button1_text": "POLO SHIRTS",
+            "button1_link": "https://www.uspoloassn.co.uk/collections/kids-sale-polo-shirts",
+            "button1_type": "primary",
+            "button1_theme_color": "#ffffff",
+            "button1_text_color": "#12284c",
+            "button2_text": "T-SHIRTS",
+            "mobile_button2_text": "T-SHIRTS",
+            "button2_link": "https://www.uspoloassn.co.uk/collections/kids-t-shirts",
+            "button2_type": "primary",
+            "button2_theme_color": "#ffffff",
+            "button2_text_color": "#12284c",
+            "button3_text": "KNITWEAR",
+            "mobile_button3_text": "KNITWEAR",
+            "button3_link": "https://www.uspoloassn.co.uk/collections/kids-sale-knitwear",
+            "button3_type": "primary",
+            "button3_theme_color": "#ffffff",
+            "button3_text_color": "#12284c",
+            "button4_text": "ALL KIDS SALE",
+            "mobile_button4_text": "ALL KIDS SALE",
+            "button4_link": "https://www.uspoloassn.co.uk/collections/kids-summer-sale",
+            "button4_type": "primary",
+            "button4_theme_color": "#ffffff",
+            "button4_text_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "desktop_button_font_size": 16,
+            "mobile_button_font_size": 14
+          }
+        },
         "image_slide_jg8RmQ": {
           "type": "image_slide",
           "settings": {
@@ -126,64 +178,12 @@
             "desktop_button_font_size": 16,
             "mobile_button_font_size": 14
           }
-        },
-        "image_slide_dtW8aX": {
-          "type": "image_slide",
-          "settings": {
-            "desktop_image": "shopify://shop_images/UK-WB-FEB02-DESKTOP.png",
-            "mobile_image": "shopify://shop_images/UK-WB-FEB02-MOBILE_1.png",
-            "slide_link": "https://www.uspoloassn.co.uk/collections/new-arrivals",
-            "vertical_alignment": "bottom",
-            "horizontal_alignment": "center",
-            "content_alignment": "center",
-            "mobile_vertical_alignment": "bottom",
-            "mobile_horizontal_alignment": "center",
-            "mobile_content_alignment": "center",
-            "title": "NEW SEASON ARRIVALS",
-            "subtitle": "THE LATEST STYLES, READY TO WEAR",
-            "subtitle_font_size": 20,
-            "mobile_subtitle_font_size": 15,
-            "subtitle_bold": true,
-            "title_font_size": 30,
-            "mobile_title_font_size": 25,
-            "title_bold": true,
-            "title_color": "#ffffff",
-            "subtitle_color": "#ffffff",
-            "button1_text": "MENS",
-            "mobile_button1_text": "MENS",
-            "button1_link": "https://www.uspoloassn.co.uk/collections/new-season-mens",
-            "button1_type": "primary",
-            "button1_theme_color": "#ffffff",
-            "button1_text_color": "#12284c",
-            "button2_text": "WOMENS",
-            "mobile_button2_text": "WOMENS",
-            "button2_link": "https://www.uspoloassn.co.uk/collections/new-season-womens",
-            "button2_type": "primary",
-            "button2_theme_color": "#ffffff",
-            "button2_text_color": "#12284c",
-            "button3_text": "KIDS",
-            "mobile_button3_text": "KIDS",
-            "button3_link": "https://www.uspoloassn.co.uk/collections/new-season-kids",
-            "button3_type": "primary",
-            "button3_theme_color": "#ffffff",
-            "button3_text_color": "#12284c",
-            "button4_text": "ALL",
-            "mobile_button4_text": "ALL",
-            "button4_link": "https://www.uspoloassn.co.uk/collections/new-season",
-            "button4_type": "primary",
-            "button4_theme_color": "#ffffff",
-            "button4_text_color": "#000000",
-            "overlay_opacity": 0,
-            "overlay_color": "#000000",
-            "desktop_button_font_size": 16,
-            "mobile_button_font_size": 14
-          }
         }
       },
       "block_order": [
+        "image_slide_dtW8aX",
         "image_slide_jg8RmQ",
-        "image_slide_zdNam3",
-        "image_slide_dtW8aX"
+        "image_slide_zdNam3"
       ],
       "settings": {
         "slide_interval": 4000,
@@ -334,7 +334,7 @@
         "padding_top": 16,
         "padding_bottom": 0,
         "overlay_color": "#000000",
-        "overlay_opacity": 15,
+        "overlay_opacity": 5,
         "button_bg_color": "#ffffff",
         "button_text_color": "#000000",
         "text_color": "#ffffff",
@@ -347,7 +347,7 @@
         "banner_NpeXi3": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/MEDIUM_2_29513905-f82e-4edf-a11f-404e90a8fe64.png",
+            "image": "shopify://shop_images/64818_20251026_SS26_Charleston_S02_1281_1.jpg",
             "use_video": false,
             "title": "MENS",
             "title_size": 36,
@@ -379,7 +379,7 @@
         "banner_UEmx48": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/MEDIUM_1_6713c24e-bffc-4789-ac0f-22172a71ab9d.png",
+            "image": "shopify://shop_images/64828_20251026_SS26_Charleston_S02_1439.jpg",
             "use_video": false,
             "title": "WOMENS",
             "title_size": 36,
@@ -442,7 +442,7 @@
           "type": "column",
           "settings": {
             "title": "NEW SEASON POLO SHIRTS",
-            "image": "shopify://shop_images/SMALL_3_04003fc6-e963-43d6-86a5-c061bb27d810.png",
+            "image": "shopify://shop_images/64918_20251029_SS26_Charleston_S14_0289.jpg",
             "url": "https://www.uspoloassn.co.uk/collections/polo-shirts-1",
             "visibility": "both"
           }
