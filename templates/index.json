@@ -77,6 +77,7 @@
         },
         "image_slide_zdNam3": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/GENERIC_1_4.png",
             "mobile_image": "shopify://shop_images/GENERIC_2_4.png",
