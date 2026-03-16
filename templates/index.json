@@ -25,10 +25,9 @@
       "blocks": {
         "image_slide_jg8RmQ": {
           "type": "image_slide",
-          "disabled": true,
           "settings": {
-            "desktop_image": "shopify://shop_images/WEB_BANNER-MAR04-DRAFT_3-DESKTOP.png",
-            "mobile_image": "shopify://shop_images/WEB_BANNER-MAR04-DRAFT_3-MOBILE.png",
+            "desktop_image": "shopify://shop_images/UK-WEBSITE_BANNERS-MAR16-DRAFT_1-DESKTOP.png",
+            "mobile_image": "shopify://shop_images/UK-WEBSITE_BANNERS-MAR16-DRAFT_1-MOBILE.png",
             "slide_link": "https://www.uspoloassn.co.uk/collections/members-month-30-off",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
