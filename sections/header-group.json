@@ -63,6 +63,7 @@
         },
         "mega_menu_announcement_qxabmq": {
           "type": "mega_menu_announcement",
+          "disabled": true,
           "settings": {
             "menu_title": "NEW",
             "announcement_text": "Spend & Save up to $200* - SHOP NOW",
