@@ -26,9 +26,9 @@
         "image_slide_U9QeTJ": {
           "type": "image_slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Untitled_design_61.jpg",
-            "mobile_image": "shopify://shop_images/T_C_s_apply_8.jpg",
-            "slide_link": "shopify://collections/spend-save-event",
+            "desktop_image": "shopify://shop_images/WEBSITE_BANNER-DRAFT_2-AUTUMN-DESKTOP_1.png",
+            "mobile_image": "shopify://shop_images/WEBSITE_BANNER-DRAFT_2-AUTUMN-MOBILE_1.jpg",
+            "slide_link": "shopify://collections/30-off",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
             "content_alignment": "center",
