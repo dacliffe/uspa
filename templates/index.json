@@ -65,7 +65,7 @@
             "button3_text_color": "#13294c",
             "button4_text": "SHOP ALL",
             "mobile_button4_text": "ALL",
-            "button4_link": "shopify://collections/spend-save-event",
+            "button4_link": "shopify://collections/30-off",
             "button4_type": "primary",
             "button4_theme_color": "#ffffff",
             "button4_text_color": "#000000",
