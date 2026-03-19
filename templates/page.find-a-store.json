@@ -11,9 +11,53 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
+      }
+    },
+    "rich_text_qRM9aV": {
+      "type": "rich-text",
+      "blocks": {
+        "text_whwRGR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>OUR STORE</p>"
+          }
+        },
+        "heading_bawbpK": {
+          "type": "heading",
+          "settings": {
+            "heading": "FIND US HERE",
+            "heading_size": "h1"
+          }
+        },
+        "button_jb8Dik": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get Directions",
+            "button_link": "https://www.google.com/maps/place/Eastern+Creek+Quarter+Shopping+Centre+-+ECQ/@-33.8301954,150.8585403,45349m/data=!3m1!1e3!4m10!1m2!2m1!1secq!3m6!1s0x6b129bc63a1196f1:0x3c6ea161d183aa9b!8m2!3d-33.7853061!4d150.8545183!15sCgNlY3FaBSIDZWNxkgEPc2hvcHBpbmdfY2VudGVymgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5QYkhGeWVXNTNSUkFC4AEA-gEECAAQSQ!16s%2Fg%2F11frt8b4hd?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "text_whwRGR",
+        "heading_bawbpK",
+        "button_jb8Dik"
+      ],
+      "name": "FIND US HERE",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "image_with_text_QxzThc": {
@@ -65,7 +109,27 @@
     },
     "custom_liquid_3giHB3": {
       "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+      "name": "OPENING HOURS",
+      "settings": {
+        "custom_liquid": "<div style=\"padding: 30px 0 20px 40px;\">\n  <h2 style=\"font-size: 1.6em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 28px;\">Opening Hours</h2>\n  <table style=\"width: 100%; max-width: 720px; border-collapse: collapse; font-size: 1.15em;\">\n    <tbody>\n      <tr><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; color: #333; width: 50%;\">Monday</td><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; text-align: right; color: #333;\">9:00am – 5:00pm</td></tr>\n      <tr><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; color: #333;\">Tuesday</td><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; text-align: right; color: #333;\">9:00am – 5:00pm</td></tr>\n      <tr><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; color: #333;\">Wednesday</td><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; text-align: right; color: #333;\">9:00am – 5:00pm</td></tr>\n      <tr><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; color: #333;\">Thursday</td><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; text-align: right; color: #333;\">9:00am – 5:00pm</td></tr>\n      <tr><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; color: #333;\">Friday</td><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; text-align: right; color: #333;\">9:00am – 5:00pm</td></tr>\n      <tr><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; color: #333;\">Saturday</td><td style=\"padding: 14px 0; border-bottom: 1px solid #e8e8e8; text-align: right; color: #333;\">9:00am – 5:00pm</td></tr>\n      <tr><td style=\"padding: 14px 0; color: #333;\">Sunday</td><td style=\"padding: 14px 0; text-align: right; color: #333;\">9:00am – 5:00pm</td></tr>\n    </tbody>\n  </table>\n  <p style=\"font-size: 0.9em; color: #777; margin-top: 18px; line-height: 1.6;\">Hours may vary on public holidays.</p>\n</div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_RPCqRV": {
+      "type": "custom-liquid",
+      "name": "HOW TO FIND US",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_qWQ6h3": {
+      "type": "custom-liquid",
+      "name": "SHOP ONLINE",
       "settings": {
         "custom_liquid": "",
         "color_scheme": "",
@@ -76,7 +140,10 @@
   },
   "order": [
     "main",
+    "rich_text_qRM9aV",
     "image_with_text_QxzThc",
-    "custom_liquid_3giHB3"
+    "custom_liquid_3giHB3",
+    "custom_liquid_RPCqRV",
+    "custom_liquid_qWQ6h3"
   ]
 }
