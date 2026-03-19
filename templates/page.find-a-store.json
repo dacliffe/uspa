@@ -15,9 +15,57 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "image_with_text_QxzThc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_4nHHGT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Australia's first U.S. Polo Assn. store",
+            "heading_size": "h1"
+          }
+        },
+        "text_qgwdgf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Address</p><p>Tenancy / Shop no.</p><p>Street address</p><p>Suburb, NSW, Postcode</p><p></p><p>Contact</p><p>Phone number</p><p>Store email</p>",
+            "text_style": "body"
+          }
+        },
+        "button_CPB3tT": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get Directions",
+            "button_link": "https://www.google.com/maps/place/Eastern+Creek+Quarter+Shopping+Centre+-+ECQ/@-33.8301954,150.8585403,45349m/data=!3m1!1e3!4m10!1m2!2m1!1secq!3m6!1s0x6b129bc63a1196f1:0x3c6ea161d183aa9b!8m2!3d-33.7853061!4d150.8545183!15sCgNlY3FaBSIDZWNxkgEPc2hvcHBpbmdfY2VudGVymgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5QYkhGeWVXNTNSUkFC4AEA-gEECAAQSQ!16s%2Fg%2F11frt8b4hd?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_4nHHGT",
+        "text_qgwdgf",
+        "button_CPB3tT"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_with_text_QxzThc"
   ]
 }
