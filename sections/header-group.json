@@ -63,12 +63,11 @@
         },
         "mega_menu_announcement_qxabmq": {
           "type": "mega_menu_announcement",
-          "disabled": true,
           "settings": {
             "menu_title": "NEW",
-            "announcement_text": "Spend & Save up to $200* - SHOP NOW",
+            "announcement_text": "Save 25% Off* All Full Price",
             "announcement_link": "https://uspoloassn.com.au/collections/2-polo-shirts-for-151",
-            "announcement_color": "scheme-055eabee-0096-4320-8a98-d4178b3ba047"
+            "announcement_color": "scheme-d6f39085-9077-4cd0-9b2d-b427a6003b4e"
           }
         },
         "mega_menu_image_RPYDbH": {
