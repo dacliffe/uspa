@@ -129,6 +129,7 @@
         },
         "image_slide_dtW8aX": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/WEBSITE_BANNER-MAR11-DRAFT_1-DESKTOP_2.png",
             "mobile_image": "shopify://shop_images/WEBSITE_BANNER-MAR11-DRAFT_1-MOBILE_1.png",
