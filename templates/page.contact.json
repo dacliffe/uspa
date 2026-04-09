@@ -18,7 +18,6 @@
     },
     "form": {
       "type": "contact-form",
-      "disabled": true,
       "settings": {
         "heading": "",
         "heading_size": "h1",
