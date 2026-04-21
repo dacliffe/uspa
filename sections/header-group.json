@@ -245,9 +245,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "WOMENS",
-            "image_title": "Shirts",
-            "image_link": "shopify://collections/womens-t-shirts",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_10.jpg",
+            "image_title": "Knitwear",
+            "image_link": "shopify://collections/womens-knitwear-jumpers",
+            "image": "shopify://shop_images/55.jpg",
             "image_order": 0
           }
         },
@@ -257,7 +257,7 @@
             "menu_title": "WOMENS",
             "image_title": "Pants",
             "image_link": "shopify://collections/womens-trousers",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_11.jpg",
+            "image": "shopify://shop_images/54.jpg",
             "image_order": 0
           }
         },
@@ -267,7 +267,7 @@
             "menu_title": "WOMENS",
             "image_title": "Handbags",
             "image_link": "shopify://collections/bags",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES.jpg",
+            "image": "shopify://shop_images/56.jpg",
             "image_order": 0
           }
         },
@@ -275,9 +275,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "KIDS",
-            "image_title": "T-shirts",
-            "image_link": "shopify://collections/kids-t-shirts",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_12.jpg",
+            "image_title": "Sweatshirts & Hoodies",
+            "image_link": "shopify://collections/kids-hoodies-sweatshirts",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_13_a0522333-aea5-4064-a258-a28551a46854.jpg",
             "image_order": 0
           }
         },
@@ -285,9 +285,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "KIDS",
-            "image_title": "Shirts",
-            "image_link": "shopify://collections/kids-shirts-overshirts",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_14.jpg",
+            "image_title": "Polo Shirts",
+            "image_link": "shopify://collections/kids-polo-shirts",
+            "image": "shopify://shop_images/53.jpg",
             "image_order": 0
           }
         },
