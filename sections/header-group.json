@@ -117,7 +117,7 @@
             "menu_title": "NEW",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-new-arrivals",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_3.jpg",
+            "image": "shopify://shop_images/47.jpg",
             "image_order": 1
           }
         },
@@ -127,7 +127,7 @@
             "menu_title": "NEW",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-new-arrivals",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_4.jpg",
+            "image": "shopify://shop_images/48.jpg",
             "image_order": 2
           }
         },
@@ -137,7 +137,7 @@
             "menu_title": "NEW",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-new-arrivals",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_5.jpg",
+            "image": "shopify://shop_images/49.jpg",
             "image_order": 3
           }
         },
@@ -215,10 +215,10 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MENS",
-            "image_title": "T-Shirts",
-            "image_link": "shopify://collections/mens-t-shirts",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_16.jpg",
-            "image_order": 0
+            "image_title": "Sweatshirts & Hoodies",
+            "image_link": "shopify://collections/mens-hoodies-sweatshirts",
+            "image": "shopify://shop_images/51.jpg",
+            "image_order": -3
           }
         },
         "mega_menu_image_fHV9A8": {
@@ -227,7 +227,7 @@
             "menu_title": "MENS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_8.jpg",
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_12_df5abc1d-311c-4bdd-9d04-62dfef0e848a.jpg",
             "image_order": 1
           }
         },
@@ -235,9 +235,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MENS",
-            "image_title": "Pants & Shorts",
-            "image_link": "shopify://collections/mens-pants",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_9.jpg",
+            "image_title": "Accessories",
+            "image_link": "shopify://collections/all-accessories",
+            "image": "shopify://shop_images/50.jpg",
             "image_order": 2
           }
         },
