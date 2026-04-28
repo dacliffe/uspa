@@ -90,6 +90,47 @@
         "button_font_size": 23
       }
     },
+    "collection_list_nteatt": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_XNMfrc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gifts-under-50"
+          }
+        },
+        "featured_collection_UGKqRh": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gifts-under-100"
+          }
+        },
+        "featured_collection_REkbYQ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gifts-under-200"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_XNMfrc",
+        "featured_collection_UGKqRh",
+        "featured_collection_REkbYQ"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Shop By Price Point",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -266,58 +307,17 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "collection_list_nteatt": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_XNMfrc": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "gifts-under-50"
-          }
-        },
-        "featured_collection_UGKqRh": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "gifts-under-100"
-          }
-        },
-        "featured_collection_REkbYQ": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "gifts-under-200"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_XNMfrc",
-        "featured_collection_UGKqRh",
-        "featured_collection_REkbYQ"
-      ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "title": "Shop By Price",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "image_banner_XVxihb",
     "image_slider_6QpEGh",
+    "collection_list_nteatt",
     "main",
     "featured_collection_QV37tp",
     "collection_list_bQYmHA",
     "featured_collection_xKbkPm",
     "collection_list_EzPj4j",
-    "featured_collection_wLPVLF",
-    "collection_list_nteatt"
+    "featured_collection_wLPVLF"
   ]
 }
