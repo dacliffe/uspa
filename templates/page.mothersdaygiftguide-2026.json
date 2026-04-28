@@ -177,6 +177,24 @@
             "collection": "handbags-1"
           }
         },
+        "featured_collection_qLejgL": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "home-1"
+          }
+        },
+        "featured_collection_UgCJCT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "womens-essentials"
+          }
+        },
+        "featured_collection_gCLXhq": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "womens-knitwear-jumpers"
+          }
+        },
         "featured_collection_jDh7ta": {
           "type": "featured_collection",
           "settings": {
@@ -192,6 +210,9 @@
       },
       "block_order": [
         "featured_collection_WqU9mJ",
+        "featured_collection_qLejgL",
+        "featured_collection_UgCJCT",
+        "featured_collection_gCLXhq",
         "featured_collection_jDh7ta",
         "featured_collection_LP6wVN"
       ],
