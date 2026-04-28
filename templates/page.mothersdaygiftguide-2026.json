@@ -13,7 +13,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Untitled_design_18.jpg",
+        "image": "shopify://shop_images/AU-WB-APR09-DRAFT_3-_DESKTOP_1.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
@@ -102,9 +102,9 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "gifts-for-him",
+        "collection": "gifts-for-her",
         "products_to_show": 4,
-        "title": "Gifts For Him",
+        "title": "Best Selling Gifts",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -133,19 +133,19 @@
         "featured_collection_WqU9mJ": {
           "type": "featured_collection",
           "settings": {
-            "collection": "mens-polo-shirts-1"
+            "collection": "handbags-1"
           }
         },
         "featured_collection_jDh7ta": {
           "type": "featured_collection",
           "settings": {
-            "collection": "mens-new-arrivals"
+            "collection": "womens-polo-shirts"
           }
         },
         "featured_collection_LP6wVN": {
           "type": "featured_collection",
           "settings": {
-            "collection": "mens-essentials"
+            "collection": "womens-sweatshirts-hoodies"
           }
         }
       },
@@ -172,7 +172,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "gifts-for-her",
+        "collection": "womens-new-arrivals",
         "products_to_show": 4,
         "title": "Gifts For Her",
         "heading_size": "h1",
@@ -242,9 +242,9 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "gifts-for-kids",
+        "collection": "girls-clothing",
         "products_to_show": 4,
-        "title": "Gifts For Kids",
+        "title": "Mini Me",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -263,47 +263,6 @@
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "collection_list_iJPnpV": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_nE73Q4": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "boys-clothing"
-          }
-        },
-        "featured_collection_kKhcLw": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "girls-clothing"
-          }
-        },
-        "featured_collection_A87FeJ": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "kids-essentials"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_nE73Q4",
-        "featured_collection_kKhcLw",
-        "featured_collection_A87FeJ"
-      ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "title": "Shop by Category",
-        "heading_size": "h2",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -359,7 +318,6 @@
     "featured_collection_xKbkPm",
     "collection_list_EzPj4j",
     "featured_collection_wLPVLF",
-    "collection_list_iJPnpV",
     "collection_list_nteatt"
   ]
 }
