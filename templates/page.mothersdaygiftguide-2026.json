@@ -258,76 +258,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "collection_list_EzPj4j": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_TDPPcf": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "womens-polo-shirts"
-          }
-        },
-        "featured_collection_YTRQxb": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "handbags-1"
-          }
-        },
-        "featured_collection_kBPaXn": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "womens-new-arrivals"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_TDPPcf",
-        "featured_collection_YTRQxb",
-        "featured_collection_kBPaXn"
-      ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "title": "Shop by Category",
-        "heading_size": "h2",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "featured_collection_wLPVLF": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "collection": "girls-clothing",
-        "products_to_show": 4,
-        "title": "Mini Me",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -337,8 +267,6 @@
     "main",
     "featured_collection_QV37tp",
     "collection_list_bQYmHA",
-    "featured_collection_xKbkPm",
-    "collection_list_EzPj4j",
-    "featured_collection_wLPVLF"
+    "featured_collection_xKbkPm"
   ]
 }
