@@ -28,7 +28,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/AU-WB-APR09-DRAFT_3-_DESKTOP_1.png",
             "mobile_image": "shopify://shop_images/AU-WB-APR09-DRAFT_3-MOBILE_1.png",
-            "slide_link": "shopify://collections/mothers-day-gifts",
+            "slide_link": "shopify://pages/mothers-day",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
             "content_alignment": "center",
@@ -47,7 +47,7 @@
             "subtitle_color": "#ffffff",
             "button1_text": "SHOP NOW",
             "mobile_button1_text": "",
-            "button1_link": "shopify://collections/mothers-day-gifts",
+            "button1_link": "shopify://pages/mothers-day",
             "button1_type": "primary",
             "button1_theme_color": "#ffffff",
             "button1_text_color": "#13294c",
