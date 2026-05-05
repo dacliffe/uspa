@@ -38,6 +38,7 @@
         },
         "announcement_eVk4yM": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "EASY 28 DAY RETURNS",
             "link": ""
