@@ -361,7 +361,7 @@
         "announcement_P4R7im": {
           "type": "announcement",
           "settings": {
-            "text": "Bank Holiday Exclusive: Extra 10% Off Sale | Use Code EXTRA10 | Ends Monday Midnight",
+            "text": "FRIENDS AND FAMILY: 30% OFF ALL FULL PRICE STYLES. *DISCOUNT AUTO APPLIED AT CHECKOUT",
             "link": "https://www.uspoloassn.co.uk/collections/members-month-30-off"
           }
         }
@@ -370,7 +370,6 @@
         "announcement_9BXPYk",
         "announcement_P4R7im"
       ],
-      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
