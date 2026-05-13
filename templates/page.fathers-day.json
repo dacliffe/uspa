@@ -299,6 +299,59 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "split_banner_a9969M": {
+      "type": "split-banner",
+      "blocks": {
+        "banner_nLUA4P": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/XL_BANNER_-_ESSENTIALS.png",
+            "use_video": false,
+            "title": "",
+            "title_size": 36,
+            "title_weight": "700",
+            "subtitle": "",
+            "subtitle_size": 24,
+            "subtitle_weight": "400",
+            "text": "",
+            "button_text_1": "",
+            "button_style_1": "primary",
+            "button_link_1": "",
+            "button_text_2": "",
+            "button_style_2": "primary",
+            "button_link_2": "",
+            "button_text_3": "",
+            "button_style_3": "primary",
+            "button_link_3": "",
+            "button_text_4": "",
+            "button_style_4": "primary",
+            "button_link_4": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
+            "mobile_vertical_alignment": "middle",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "banner_nLUA4P"
+      ],
+      "name": "Split Banner",
+      "settings": {
+        "gap": 20,
+        "mobile_gap": 10,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "overlay_color": "#000000",
+        "overlay_opacity": 15,
+        "button_bg_color": "#ffffff",
+        "button_text_color": "#FFFFFF",
+        "text_color": "#000000",
+        "button_font_size": 16
+      }
     }
   },
   "order": [
@@ -306,6 +359,7 @@
     "image_slider_m7CzN9",
     "split_banner_wUXANT",
     "column_list_B7Nrxi",
-    "featured_collection_LkTaKe"
+    "featured_collection_LkTaKe",
+    "split_banner_a9969M"
   ]
 }
