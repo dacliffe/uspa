@@ -150,7 +150,7 @@
             "subtitle_size": 24,
             "subtitle_weight": "400",
             "text": "",
-            "button_text_1": "",
+            "button_text_1": "SHOP POLO SHIRTS",
             "button_style_1": "primary",
             "button_link_1": "",
             "button_text_2": "",
@@ -162,10 +162,10 @@
             "button_text_4": "",
             "button_style_4": "primary",
             "button_link_4": "",
-            "vertical_alignment": "middle",
+            "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
             "content_alignment": "center",
-            "mobile_vertical_alignment": "middle",
+            "mobile_vertical_alignment": "bottom",
             "mobile_horizontal_alignment": "center",
             "mobile_content_alignment": "center"
           }
@@ -182,9 +182,9 @@
             "subtitle_size": 20,
             "subtitle_weight": "700",
             "text": "",
-            "button_text_1": "",
+            "button_text_1": "SHOP T-SHIRTS",
             "button_style_1": "primary",
-            "button_link_1": "shopify://collections/womens-new-arrivals",
+            "button_link_1": "https://www.uspoloassn.co.uk/collections/mens-t-shirts",
             "button_text_2": "",
             "button_style_2": "primary",
             "button_link_2": "",
@@ -194,10 +194,10 @@
             "button_text_4": "",
             "button_style_4": "primary",
             "button_link_4": "",
-            "vertical_alignment": "middle",
+            "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
             "content_alignment": "center",
-            "mobile_vertical_alignment": "middle",
+            "mobile_vertical_alignment": "bottom",
             "mobile_horizontal_alignment": "center",
             "mobile_content_alignment": "center"
           }
@@ -227,27 +227,27 @@
         "column_A37L6Y": {
           "type": "column",
           "settings": {
-            "title": "SAVE UP TO £100 OFF BAGS",
-            "image": "shopify://shop_images/WUB0098-300-MS_1_7dbd84ae-9930-4985-b28e-01bad22662f7.jpg",
-            "url": "https://www.uspoloassn.co.uk/collections/womens-accessories",
+            "title": "POLO SHIRTS FOR HIM",
+            "image": "shopify://shop_images/SMALL_BANNER_1_-_KNITWEAR.png",
+            "url": "https://www.uspoloassn.co.uk/collections/mens-polo-shirts",
             "visibility": "both"
           }
         },
         "column_bExNbk": {
           "type": "column",
           "settings": {
-            "title": "SAVE UP TO £100 OFF KNITWEAR",
-            "image": "shopify://shop_images/WUP0400-D53-MS_1_bf27a971-95ed-4587-868c-cc9dfd07fb77.jpg",
-            "url": "https://www.uspoloassn.co.uk/collections/womens-knitwear",
+            "title": "TROUSERS FOR HIM",
+            "image": "shopify://shop_images/SMALL_BANNER_2_-_TROUSERS.png",
+            "url": "https://www.uspoloassn.co.uk/collections/mens-trousers",
             "visibility": "both"
           }
         },
         "column_7hDc7x": {
           "type": "column",
           "settings": {
-            "title": "SAVE UP TO £100 ON THE HOME",
-            "image": "shopify://shop_images/HUP0138-R96-PS_2_d2eddb4e-a896-41b5-8a6f-f609f229acbd.jpg",
-            "url": "shopify://collections/home",
+            "title": "SHIRTS FOR HIM",
+            "image": "shopify://shop_images/SMALL_BANNER_3_-_SHIRTS_1.png",
+            "url": "https://www.uspoloassn.co.uk/collections/mens-shirts",
             "visibility": "both"
           }
         }
