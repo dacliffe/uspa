@@ -315,9 +315,9 @@
             "subtitle_size": 24,
             "subtitle_weight": "400",
             "text": "",
-            "button_text_1": "",
+            "button_text_1": "SHOP ESSENTIALS",
             "button_style_1": "primary",
-            "button_link_1": "",
+            "button_link_1": "https://www.uspoloassn.co.uk/collections/mens-wardrobe-essentials",
             "button_text_2": "",
             "button_style_2": "primary",
             "button_link_2": "",
@@ -348,7 +348,7 @@
         "overlay_color": "#000000",
         "overlay_opacity": 15,
         "button_bg_color": "#ffffff",
-        "button_text_color": "#FFFFFF",
+        "button_text_color": "#000000",
         "text_color": "#000000",
         "button_font_size": 16
       }
