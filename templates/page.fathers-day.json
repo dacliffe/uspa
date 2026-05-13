@@ -23,8 +23,8 @@
         "image_slide_kEC6YV": {
           "type": "image_slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/UK-WEB_BANNER-MAR09-DRAFT_3-DESKTOP_1.png",
-            "mobile_image": "shopify://shop_images/UK-WEB_BANNER-MAR09-DRAFT_3-MOBILE_1.png",
+            "desktop_image": "shopify://shop_images/HERO_BANNER_1_DESKTOP_-_FATHERS_DAY_GIFTING.png",
+            "mobile_image": "shopify://shop_images/HERO_BANNER_1_MOBILE_-_FATHERS_DAY_GIFTING.png",
             "slide_link": "https://www.uspoloassn.co.uk/collections/womens-new-arrivals",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
@@ -42,21 +42,73 @@
             "title_bold": true,
             "title_color": "#ffffff",
             "subtitle_color": "#ffffff",
-            "button1_text": "WOMENS BAGS",
-            "mobile_button1_text": "BAGS",
-            "button1_link": "shopify://collections/womens-accessories",
+            "button1_text": "T-SHIRTS",
+            "mobile_button1_text": "T-SHIRTS",
+            "button1_link": "https://www.uspoloassn.co.uk/collections/mens-t-shirt-sale",
             "button1_type": "primary",
             "button1_theme_color": "#ffffff",
             "button1_text_color": "#000000",
-            "button2_text": "WOMENS KNITWEAR",
-            "mobile_button2_text": "KNITWEAR",
-            "button2_link": "shopify://collections/womens-knitwear",
+            "button2_text": "POLO SHIRTS",
+            "mobile_button2_text": "POLO SHIRTS",
+            "button2_link": "https://www.uspoloassn.co.uk/collections/mens-polo-shirts",
             "button2_type": "primary",
             "button2_theme_color": "#ffffff",
             "button2_text_color": "#000000",
-            "button3_text": "HOME COLLECTION",
-            "mobile_button3_text": "HOME",
-            "button3_link": "shopify://collections/home",
+            "button3_text": "KNITWEAR",
+            "mobile_button3_text": "KNITWEAR",
+            "button3_link": "https://www.uspoloassn.co.uk/collections/mens-knitwear-sale",
+            "button3_type": "primary",
+            "button3_theme_color": "#ffffff",
+            "button3_text_color": "#000000",
+            "button4_text": "SHIRTS",
+            "mobile_button4_text": "SHIRTS",
+            "button4_link": "https://www.uspoloassn.co.uk/collections/mens-shirts",
+            "button4_type": "primary",
+            "button4_theme_color": "#ffffff",
+            "button4_text_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "desktop_button_font_size": 16,
+            "mobile_button_font_size": 14
+          }
+        },
+        "image_slide_MffEUk": {
+          "type": "image_slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/HERO_BANNER_2_DESKTOP_-_FATHERS_DAY_GIFTING.png",
+            "mobile_image": "shopify://shop_images/HERO_BANNER_2_MOBILE_-_FATHERS_DAY_GIFTING.png",
+            "slide_link": "https://www.uspoloassn.co.uk/collections/new-arrivals",
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
+            "mobile_vertical_alignment": "middle",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center",
+            "title": "",
+            "subtitle": "",
+            "subtitle_font_size": 20,
+            "mobile_subtitle_font_size": 16,
+            "subtitle_bold": false,
+            "title_font_size": 40,
+            "mobile_title_font_size": 32,
+            "title_bold": true,
+            "title_color": "#ffffff",
+            "subtitle_color": "#ffffff",
+            "button1_text": "SHOP NOW",
+            "mobile_button1_text": "SHOP NOW",
+            "button1_link": "https://www.uspoloassn.co.uk/collections/new-arrivals",
+            "button1_type": "primary",
+            "button1_theme_color": "#ffffff",
+            "button1_text_color": "#000000",
+            "button2_text": "",
+            "mobile_button2_text": "",
+            "button2_link": "",
+            "button2_type": "primary",
+            "button2_theme_color": "#ffffff",
+            "button2_text_color": "#000000",
+            "button3_text": "",
+            "mobile_button3_text": "",
+            "button3_link": "",
             "button3_type": "primary",
             "button3_theme_color": "#ffffff",
             "button3_text_color": "#000000",
@@ -74,11 +126,98 @@
         }
       },
       "block_order": [
-        "image_slide_kEC6YV"
+        "image_slide_kEC6YV",
+        "image_slide_MffEUk"
       ],
       "name": "Image Slider",
       "settings": {
         "slide_interval": 5000,
+        "button_font_size": 16
+      }
+    },
+    "split_banner_wUXANT": {
+      "type": "split-banner",
+      "blocks": {
+        "banner_3TpTWW": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/MEDIUM_BANNER_1_-_POLO_SHIRTS.png",
+            "use_video": false,
+            "title": "",
+            "title_size": 36,
+            "title_weight": "700",
+            "subtitle": "",
+            "subtitle_size": 24,
+            "subtitle_weight": "400",
+            "text": "",
+            "button_text_1": "",
+            "button_style_1": "primary",
+            "button_link_1": "",
+            "button_text_2": "",
+            "button_style_2": "primary",
+            "button_link_2": "",
+            "button_text_3": "",
+            "button_style_3": "primary",
+            "button_link_3": "",
+            "button_text_4": "",
+            "button_style_4": "primary",
+            "button_link_4": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
+            "mobile_vertical_alignment": "middle",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "banner_qzmxHn": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/MEDIUM_BANNER_1_-_T-SHIRTS.png",
+            "use_video": false,
+            "title": "",
+            "title_size": 30,
+            "title_weight": "700",
+            "subtitle": "",
+            "subtitle_size": 20,
+            "subtitle_weight": "700",
+            "text": "",
+            "button_text_1": "",
+            "button_style_1": "primary",
+            "button_link_1": "shopify://collections/womens-new-arrivals",
+            "button_text_2": "",
+            "button_style_2": "primary",
+            "button_link_2": "",
+            "button_text_3": "",
+            "button_style_3": "primary",
+            "button_link_3": "",
+            "button_text_4": "",
+            "button_style_4": "primary",
+            "button_link_4": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
+            "mobile_vertical_alignment": "middle",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "banner_3TpTWW",
+        "banner_qzmxHn"
+      ],
+      "name": "Split Banner",
+      "settings": {
+        "gap": 20,
+        "mobile_gap": 10,
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "button_bg_color": "#ffffff",
+        "button_text_color": "#000000",
+        "text_color": "#ffffff",
         "button_font_size": 16
       }
     },
@@ -132,64 +271,11 @@
         "padding_bottom": 16
       }
     },
-    "split_banner_wUXANT": {
-      "type": "split-banner",
-      "blocks": {
-        "banner_qzmxHn": {
-          "type": "banner",
-          "settings": {
-            "image": "shopify://shop_images/64930_20251029_SS26_Charleston_S14_0573_4.jpg",
-            "use_video": false,
-            "title": "GIFTS FOR MUM",
-            "title_size": 30,
-            "title_weight": "700",
-            "subtitle": "SAVE UP TO £100 ON SS26 NEW ARRIVALS",
-            "subtitle_size": 20,
-            "subtitle_weight": "700",
-            "text": "",
-            "button_text_1": "SHOP NOW",
-            "button_style_1": "primary",
-            "button_link_1": "shopify://collections/womens-new-arrivals",
-            "button_text_2": "",
-            "button_style_2": "primary",
-            "button_link_2": "",
-            "button_text_3": "",
-            "button_style_3": "primary",
-            "button_link_3": "",
-            "button_text_4": "",
-            "button_style_4": "primary",
-            "button_link_4": "",
-            "vertical_alignment": "middle",
-            "horizontal_alignment": "center",
-            "content_alignment": "center",
-            "mobile_vertical_alignment": "middle",
-            "mobile_horizontal_alignment": "center",
-            "mobile_content_alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "banner_qzmxHn"
-      ],
-      "name": "Split Banner",
-      "settings": {
-        "gap": 20,
-        "mobile_gap": 10,
-        "padding_top": 16,
-        "padding_bottom": 16,
-        "overlay_color": "#000000",
-        "overlay_opacity": 15,
-        "button_bg_color": "#ffffff",
-        "button_text_color": "#000000",
-        "text_color": "#ffffff",
-        "button_font_size": 16
-      }
-    },
     "featured_collection_LkTaKe": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "womens-new-arrivals",
+        "collection": "mens-clothing",
         "products_to_show": 4,
         "title": "BEST SELLING GIFTS FOR MOTHERS DAY",
         "heading_size": "h1",
@@ -218,8 +304,8 @@
   "order": [
     "main",
     "image_slider_m7CzN9",
-    "column_list_B7Nrxi",
     "split_banner_wUXANT",
+    "column_list_B7Nrxi",
     "featured_collection_LkTaKe"
   ]
 }
