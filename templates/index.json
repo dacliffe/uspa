@@ -78,8 +78,8 @@
         "image_slide_RnWrHQ": {
           "type": "image_slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/Untitled_design_51_981bd516-e727-450c-a8ad-d351f3004dcd.jpg",
-            "mobile_image": "shopify://shop_images/T_C_s_apply_7.jpg",
+            "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO.jpg",
+            "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO.jpg",
             "slide_link": "shopify://collections/new-arrivals-clothing-accessories",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
@@ -87,8 +87,8 @@
             "mobile_vertical_alignment": "bottom",
             "mobile_horizontal_alignment": "center",
             "mobile_content_alignment": "center",
-            "title": "A NEW SEASON, CONSIDERED",
-            "subtitle": "Build Your Wardrobe for the Season Ahead",
+            "title": "Your Winter Wardrobe, Sorted",
+            "subtitle": "New arrivals - online now",
             "subtitle_font_size": 16,
             "mobile_subtitle_font_size": 16,
             "subtitle_bold": false,
