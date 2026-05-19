@@ -29,7 +29,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/AU-WB-APR30-DRAFT_1-DESKTOP_1.png",
             "mobile_image": "shopify://shop_images/AU-WB-APR30-DRAFT_1-MOBILE_2.png",
-            "slide_link": "shopify://collections/spend-save",
+            "slide_link": "shopify://collections/spend-save-event",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
             "content_alignment": "center",
