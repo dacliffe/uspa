@@ -326,7 +326,7 @@
         "padding_top": 16,
         "padding_bottom": 0,
         "overlay_color": "#000000",
-        "overlay_opacity": 50,
+        "overlay_opacity": 15,
         "button_bg_color": "#ffffff",
         "button_text_color": "#000000",
         "text_color": "#ffffff",
