@@ -396,6 +396,7 @@
       "blocks": {
         "announcement_P4R7im": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Spend & Save up to $200* - Shop Now",
             "link": "shopify://collections/spend-save-event"
