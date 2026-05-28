@@ -181,27 +181,26 @@
             "mobile_button_font_size": 14
           }
         },
-        "image_slide_hfmy6b": {
+        "image_slide_VrtMai": {
           "type": "image_slide",
-          "name": "Spend and Save",
           "disabled": true,
           "settings": {
-            "desktop_image": "shopify://shop_images/Untitled_design_36.jpg",
-            "mobile_image": "shopify://shop_images/T_C_s_apply_5.jpg",
-            "slide_link": "shopify://collections/apd30",
-            "vertical_alignment": "middle",
-            "horizontal_alignment": "left",
-            "content_alignment": "left",
+            "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO.jpg",
+            "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO.jpg",
+            "slide_link": "shopify://collections/new-arrivals-clothing-accessories",
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
             "mobile_vertical_alignment": "bottom",
             "mobile_horizontal_alignment": "center",
             "mobile_content_alignment": "center",
-            "title": "30% OFF*",
-            "subtitle": "ALL FULL PRICE | USE CODE: EOS30",
-            "subtitle_font_size": 24,
-            "mobile_subtitle_font_size": 19,
+            "title": "30% Off Winter Essentials",
+            "subtitle": "Save on New arrivals",
+            "subtitle_font_size": 16,
+            "mobile_subtitle_font_size": 16,
             "subtitle_bold": false,
-            "title_font_size": 58,
-            "mobile_title_font_size": 51,
+            "title_font_size": 25,
+            "mobile_title_font_size": 30,
             "title_bold": true,
             "title_color": "#ffffff",
             "subtitle_color": "#ffffff",
@@ -223,16 +222,16 @@
             "button3_type": "primary",
             "button3_theme_color": "#ffffff",
             "button3_text_color": "#13294c",
-            "button4_text": "ALL",
+            "button4_text": "",
             "mobile_button4_text": "",
-            "button4_link": "shopify://collections/apd30",
+            "button4_link": "",
             "button4_type": "primary",
             "button4_theme_color": "#ffffff",
-            "button4_text_color": "#13294c",
-            "overlay_opacity": 20,
+            "button4_text_color": "#000000",
+            "overlay_opacity": 30,
             "overlay_color": "#000000",
-            "desktop_button_font_size": 19,
-            "mobile_button_font_size": 20
+            "desktop_button_font_size": 16,
+            "mobile_button_font_size": 14
           }
         },
         "image_slide_txnJ6Y": {
@@ -292,7 +291,7 @@
         "image_slide_tHD9Kh",
         "image_slide_nfT7gd",
         "image_slide_RnWrHQ",
-        "image_slide_hfmy6b",
+        "image_slide_VrtMai",
         "image_slide_txnJ6Y"
       ],
       "settings": {
