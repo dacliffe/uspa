@@ -183,6 +183,7 @@
         },
         "image_slide_RnWrHQ": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO.jpg",
             "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO.jpg",
