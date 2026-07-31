@@ -81,7 +81,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/AU-WB-APR24-DRAFT_1-DESKTOP_1.png",
             "mobile_image": "shopify://shop_images/AU-WB-APR24-DRAFT_1-MOBILE_1_1.png",
-            "slide_link": "",
+            "slide_link": "shopify://collections/2-for-150-mens-polos",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
             "content_alignment": "left",
@@ -100,7 +100,7 @@
             "subtitle_color": "#ffffff",
             "button1_text": "SHOP NOW",
             "mobile_button1_text": "",
-            "button1_link": "shopify://collections/2-for-149-polo-shirts",
+            "button1_link": "shopify://collections/2-for-150-mens-polos",
             "button1_type": "primary",
             "button1_theme_color": "#ffffff",
             "button1_text_color": "#000000",

@@ -397,15 +397,14 @@
         "announcement_P4R7im": {
           "type": "announcement",
           "settings": {
-            "text": "Save 30% Off Selected Full Price* - Shop Now",
-            "link": "shopify://collections/new-arrivals-clothing-accessories"
+            "text": "2 Selected Polo Shirts for $150 - Save up to $70* - Shop Now",
+            "link": "shopify://collections/2-for-150-mens-polos"
           }
         }
       },
       "block_order": [
         "announcement_P4R7im"
       ],
-      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
