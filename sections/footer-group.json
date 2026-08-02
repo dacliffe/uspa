@@ -18,7 +18,7 @@
           "type": "link_list",
           "settings": {
             "heading": "ABOUT",
-            "menu": "about-footer"
+            "menu": "about"
           }
         },
         "footer-1": {
@@ -38,7 +38,7 @@
         "uspa_logo_dGnxjq": {
           "type": "uspa_logo",
           "settings": {
-            "logo": "shopify://shop_images/uspa-footer-logo_-_Edited.png"
+            "logo": "shopify://shop_images/uspa-footer-logo_-_Edited_1.png"
           }
         },
         "footer-2": {
