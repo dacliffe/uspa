@@ -152,19 +152,19 @@
             "subtitle_color": "#ffffff",
             "button1_text": "MENS SALE",
             "mobile_button1_text": "",
-            "button1_link": "https://uspoloassn.com.au/collections/sale/mens",
+            "button1_link": "/collections/sale/mens",
             "button1_type": "primary",
             "button1_theme_color": "#ffffff",
             "button1_text_color": "#a41d35",
             "button2_text": "WOMENS SALE",
             "mobile_button2_text": "",
-            "button2_link": "https://uspoloassn.com.au/collections/sale/womens",
+            "button2_link": "/collections/sale/womens",
             "button2_type": "primary",
             "button2_theme_color": "#ffffff",
             "button2_text_color": "#a41d35",
             "button3_text": "KIDS SALE",
             "mobile_button3_text": "",
-            "button3_link": "https://uspoloassn.com.au/collections/sale/kids",
+            "button3_link": "/collections/sale/kids",
             "button3_type": "primary",
             "button3_theme_color": "#ffffff",
             "button3_text_color": "#a41d35",
@@ -565,10 +565,8 @@
       "type": "hero-banner",
       "disabled": true,
       "settings": {
-        "video_banner_image_desktop": "shopify://files/videos/55436_USPA%20-%20FW24%20-%20FALL%20DENIM%20-%20MASTER-2.mp4",
-        "video_banner_image_select_desktop": true,
-        "video_banner_image_mobile": "shopify://files/videos/55436_USPA%20-%20FW24%20-%20FALL%20DENIM%20-%20MASTER-2.mp4",
-        "video_banner_image_select_mobile": true,
+        "video_banner_image_select_desktop": false,
+        "video_banner_image_select_mobile": false,
         "banner_text": "",
         "banner_link": "/",
         "padding_top": 0,
@@ -814,22 +812,9 @@
         "padding_bottom": 36
       }
     },
-    "1751503386f85165b6": {
-      "type": "apps",
-      "blocks": {
-        "klaviyo_email_marketing_sms_form_embed_block_p6AABM": {
-          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
-          "settings": {
-            "formId": "<div class=\"klaviyo-form-TJdGgE\"></div>"
-          }
-        }
-      },
-      "block_order": [
-        "klaviyo_email_marketing_sms_form_embed_block_p6AABM"
-      ],
-      "settings": {
-        "include_margins": false
-      }
+    "klaviyo_signup_nz": {
+      "type": "klaviyo-signup",
+      "settings": {}
     }
   },
   "order": [
@@ -845,6 +830,6 @@
     "image_with_text_9DXJmj",
     "split_banner_Q7R3qX",
     "image_with_text_T4mbjc",
-    "1751503386f85165b6"
+    "klaviyo_signup_nz"
   ]
 }
