@@ -386,8 +386,16 @@
     "announcement_bar_qQdiXV": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_YePadp": {
+          "type": "announcement",
+          "settings": {
+            "text": "VIP Access: 30% Off* Afterpay Day - Shop Now",
+            "link": ""
+          }
+        },
         "announcement_P4R7im": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "2 Selected Polo Shirts for $150 - Save up to $70* - Shop Now",
             "link": "shopify://collections/2-for-150-mens-polos"
@@ -395,6 +403,7 @@
         }
       },
       "block_order": [
+        "announcement_YePadp",
         "announcement_P4R7im"
       ],
       "settings": {
