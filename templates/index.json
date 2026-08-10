@@ -79,8 +79,8 @@
         "image_slide_FAMgL7": {
           "type": "image_slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO_1.png",
-            "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_5.jpg",
+            "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO_2.png",
+            "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_7.jpg",
             "slide_link": "shopify://collections/new-arrivals-clothing-accessories",
             "vertical_alignment": "middle",
             "horizontal_alignment": "left",
