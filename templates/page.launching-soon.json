@@ -11,83 +11,39 @@
   "sections": {
     "image_banner_XVxihb": {
       "type": "image-banner",
+      "blocks": {
+        "heading_NgJLnT": {
+          "type": "heading",
+          "settings": {
+            "heading": "U.S. Polo Assn. New Zealand",
+            "heading_size": "h0"
+          }
+        },
+        "text_jA8Qnt": {
+          "type": "text",
+          "settings": {
+            "text": "Coming This September",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NgJLnT",
+        "text_jA8Qnt"
+      ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Untitled_design_18.jpg",
-        "image_overlay_opacity": 0,
+        "image": "shopify://shop_images/EMAIL_FOOTER.jpg",
+        "image_overlay_opacity": 50,
         "image_height": "adapt",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
         "show_text_box": false,
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
-      }
-    },
-    "image_slider_6QpEGh": {
-      "type": "image-slider",
-      "blocks": {
-        "image_slide_Jiga6K": {
-          "type": "image_slide",
-          "settings": {
-            "desktop_image": "shopify://shop_images/Untitled_design_18.jpg",
-            "slide_link": "",
-            "vertical_alignment": "middle",
-            "horizontal_alignment": "center",
-            "content_alignment": "left",
-            "mobile_vertical_alignment": "middle",
-            "mobile_horizontal_alignment": "center",
-            "mobile_content_alignment": "center",
-            "title": "Slide Title",
-            "subtitle": "Slide Subtitle",
-            "subtitle_font_size": 20,
-            "mobile_subtitle_font_size": 16,
-            "subtitle_bold": false,
-            "title_font_size": 40,
-            "mobile_title_font_size": 32,
-            "title_bold": true,
-            "title_color": "#ffffff",
-            "subtitle_color": "#ffffff",
-            "button1_text": "",
-            "mobile_button1_text": "",
-            "button1_link": "",
-            "button1_type": "primary",
-            "button1_theme_color": "#ffffff",
-            "button1_text_color": "#000000",
-            "button2_text": "",
-            "mobile_button2_text": "",
-            "button2_link": "",
-            "button2_type": "primary",
-            "button2_theme_color": "#ffffff",
-            "button2_text_color": "#000000",
-            "button3_text": "",
-            "mobile_button3_text": "",
-            "button3_link": "",
-            "button3_type": "primary",
-            "button3_theme_color": "#ffffff",
-            "button3_text_color": "#000000",
-            "button4_text": "",
-            "mobile_button4_text": "",
-            "button4_link": "",
-            "button4_type": "primary",
-            "button4_theme_color": "#ffffff",
-            "button4_text_color": "#000000",
-            "overlay_opacity": 0,
-            "overlay_color": "#000000",
-            "desktop_button_font_size": 16,
-            "mobile_button_font_size": 14
-          }
-        }
-      },
-      "block_order": [
-        "image_slide_Jiga6K"
-      ],
-      "disabled": true,
-      "settings": {
-        "slide_interval": 5000,
-        "button_font_size": 23
       }
     },
     "main": {
@@ -98,268 +54,76 @@
         "padding_bottom": 28
       }
     },
-    "featured_collection_QV37tp": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "collection": "gifts-for-him",
-        "products_to_show": 4,
-        "title": "Gifts For Him",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "collection_list_bQYmHA": {
-      "type": "collection-list",
+    "rich_text_gXrGGq": {
+      "type": "rich-text",
       "blocks": {
-        "featured_collection_WqU9mJ": {
-          "type": "featured_collection",
+        "heading_HUciYz": {
+          "type": "heading",
           "settings": {
-            "collection": "mens-polo-shirts-1"
+            "heading": "Coming This September",
+            "heading_size": "h1"
           }
         },
-        "featured_collection_jDh7ta": {
-          "type": "featured_collection",
+        "text_4MjcDf": {
+          "type": "text",
           "settings": {
-            "collection": "mens-new-arrivals"
-          }
-        },
-        "featured_collection_LP6wVN": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "mens-essentials"
+            "text": "<h5>Sign up below to be the first to know when we go live, plus get (10% off your first order/the first look).</h5>"
           }
         }
       },
       "block_order": [
-        "featured_collection_WqU9mJ",
-        "featured_collection_jDh7ta",
-        "featured_collection_LP6wVN"
+        "heading_HUciYz",
+        "text_4MjcDf"
       ],
-      "name": "t:sections.collection-list.presets.name",
+      "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "title": "Shop by Category",
-        "heading_size": "h2",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
-    "featured_collection_xKbkPm": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "collection": "gifts-for-her",
-        "products_to_show": 4,
-        "title": "Gifts For Her",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "collection_list_EzPj4j": {
-      "type": "collection-list",
+    "newsletter_aGGP3F": {
+      "type": "newsletter",
       "blocks": {
-        "featured_collection_TDPPcf": {
-          "type": "featured_collection",
+        "heading_tAcYUg": {
+          "type": "heading",
           "settings": {
-            "collection": "womens-polo-shirts"
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
           }
         },
-        "featured_collection_YTRQxb": {
-          "type": "featured_collection",
+        "paragraph_W7Pagw": {
+          "type": "paragraph",
           "settings": {
-            "collection": "handbags-1"
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
           }
         },
-        "featured_collection_kBPaXn": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "womens-new-arrivals"
-          }
+        "email_form_KY8hn7": {
+          "type": "email_form",
+          "settings": {}
         }
       },
       "block_order": [
-        "featured_collection_TDPPcf",
-        "featured_collection_YTRQxb",
-        "featured_collection_kBPaXn"
+        "heading_tAcYUg",
+        "paragraph_W7Pagw",
+        "email_form_KY8hn7"
       ],
-      "name": "t:sections.collection-list.presets.name",
+      "name": "t:sections.newsletter.presets.name",
       "settings": {
-        "title": "Shop by Category",
-        "heading_size": "h2",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
         "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "featured_collection_wLPVLF": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "collection": "gifts-for-kids",
-        "products_to_show": 4,
-        "title": "Gifts For Kids",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "collection_list_iJPnpV": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_nE73Q4": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "boys-clothing"
-          }
-        },
-        "featured_collection_kKhcLw": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "girls-clothing"
-          }
-        },
-        "featured_collection_A87FeJ": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "kids-essentials"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_nE73Q4",
-        "featured_collection_kKhcLw",
-        "featured_collection_A87FeJ"
-      ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "title": "Shop by Category",
-        "heading_size": "h2",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "collection_list_nteatt": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_XNMfrc": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "gifts-under-75"
-          }
-        },
-        "featured_collection_UGKqRh": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "gifts-under-100"
-          }
-        },
-        "featured_collection_REkbYQ": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "gifts-under-200"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_XNMfrc",
-        "featured_collection_UGKqRh",
-        "featured_collection_REkbYQ"
-      ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "title": "Shop By Price",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "image_banner_XVxihb",
-    "image_slider_6QpEGh",
     "main",
-    "featured_collection_QV37tp",
-    "collection_list_bQYmHA",
-    "featured_collection_xKbkPm",
-    "collection_list_EzPj4j",
-    "featured_collection_wLPVLF",
-    "collection_list_iJPnpV",
-    "collection_list_nteatt"
+    "rich_text_gXrGGq",
+    "newsletter_aGGP3F"
   ]
 }
