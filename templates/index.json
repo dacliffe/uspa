@@ -433,15 +433,6 @@
             "visibility": "both"
           }
         },
-        "column_3BC7C3": {
-          "type": "column",
-          "settings": {
-            "title": "MENS ACCESSORIES",
-            "image": "shopify://shop_images/11_d4a21920-227f-43d0-a4d5-b84002023c41.jpg",
-            "url": "shopify://collections/accessories",
-            "visibility": "both"
-          }
-        },
         "column_TefaYi": {
           "type": "column",
           "settings": {
@@ -451,10 +442,19 @@
             "visibility": "both"
           }
         },
+        "column_3BC7C3": {
+          "type": "column",
+          "settings": {
+            "title": "KIDS CLOTHING",
+            "image": "shopify://shop_images/section3_four_tile_kids.jpg",
+            "url": "shopify://collections/accessories",
+            "visibility": "both"
+          }
+        },
         "column_xkMD7V": {
           "type": "column",
           "settings": {
-            "title": "WOMENS ACCESSORIES",
+            "title": "ACCESSORIES",
             "image": "shopify://shop_images/section3_four_tile_accessories.jpg",
             "url": "shopify://collections/handbags-1",
             "visibility": "both"
@@ -463,8 +463,8 @@
       },
       "block_order": [
         "column_7TQKQx",
-        "column_3BC7C3",
         "column_TefaYi",
+        "column_3BC7C3",
         "column_xkMD7V"
       ],
       "settings": {
