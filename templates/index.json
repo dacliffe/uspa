@@ -428,7 +428,7 @@
           "type": "column",
           "settings": {
             "title": "MENS CLOTHING",
-            "image": "shopify://shop_images/10_f58eee5a-ee93-4040-90e0-f791980b8bb0.jpg",
+            "image": "shopify://shop_images/section3_four_tile_mens.jpg",
             "url": "shopify://collections/mens-clothing",
             "visibility": "both"
           }
@@ -446,7 +446,7 @@
           "type": "column",
           "settings": {
             "title": "WOMENS CLOTHING",
-            "image": "shopify://shop_images/8_c77e46f5-dbb2-4560-8310-44ec565e3e38.jpg",
+            "image": "shopify://shop_images/section3_four_tile_womens.jpg",
             "url": "shopify://collections/womens-clothing",
             "visibility": "both"
           }
@@ -455,7 +455,7 @@
           "type": "column",
           "settings": {
             "title": "WOMENS ACCESSORIES",
-            "image": "shopify://shop_images/9_a67e5138-2bb9-4da1-bf63-96a08a8e81b2.jpg",
+            "image": "shopify://shop_images/section3_four_tile_accessories.jpg",
             "url": "shopify://collections/handbags-1",
             "visibility": "both"
           }
