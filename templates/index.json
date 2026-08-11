@@ -252,8 +252,8 @@
         "banner_Q8CfbK": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/13_af5c57f8-aa37-4fe8-991c-a190e5b199cd.jpg",
-            "mobile_image": "shopify://shop_images/15.jpg",
+            "image": "shopify://shop_images/mens_desk_section_2.jpg",
+            "mobile_image": "shopify://shop_images/mens_mob_section_2.png",
             "use_video": false,
             "title": "MENS",
             "title_size": 32,
