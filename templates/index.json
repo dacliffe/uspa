@@ -668,7 +668,7 @@
           "type": "banner",
           "settings": {
             "image": "shopify://shop_images/HP_section_5_footer_banner_Desk.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design_58_3e1b0e3b-f811-45b9-974d-f097a089567f.jpg",
+            "mobile_image": "shopify://shop_images/HP_section_5_footer_banner_Mob.jpg",
             "use_video": false,
             "title": "THE ESSENTIALS",
             "title_size": 32,
