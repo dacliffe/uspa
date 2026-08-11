@@ -447,7 +447,7 @@
           "settings": {
             "title": "KIDS CLOTHING",
             "image": "shopify://shop_images/section3_four_tile_kids.jpg",
-            "url": "shopify://collections/accessories",
+            "url": "shopify://collections/kids-clothing",
             "visibility": "both"
           }
         },
