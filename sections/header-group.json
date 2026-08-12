@@ -390,7 +390,7 @@
           "type": "announcement",
           "settings": {
             "text": "30% Off* Afterpay Day Ends Sunday! - Shop Now",
-            "link": ""
+            "link": "shopify://collections/30-off"
           }
         },
         "announcement_P4R7im": {
