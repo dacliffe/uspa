@@ -388,6 +388,7 @@
       "blocks": {
         "announcement_YePadp": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "30% Off* Afterpay Day Ends Sunday! - Shop Now",
             "link": "shopify://collections/30-off"
