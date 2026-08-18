@@ -29,7 +29,7 @@
         "text_BKB4BD": {
           "type": "text",
           "settings": {
-            "text": "<p>Browse our ready-to-ship gift ideas, curated to make her day effortless.</p>",
+            "text": "<p>Browse our ready-to-ship gift ideas, curated to make his day effortless.</p>",
             "text_style": "subtitle"
           }
         },
@@ -37,7 +37,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP NOW",
-            "button_link": "shopify://pages/mothers-day",
+            "button_link": "shopify://collections/fathers-day",
             "button_style_secondary": false
           }
         }
@@ -49,7 +49,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/3_d0e08cb3-bbf8-46fc-9649-d5ad1be662fa.jpg",
+        "image": "shopify://shop_images/1448_4.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
