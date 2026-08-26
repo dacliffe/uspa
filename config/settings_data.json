@@ -165,6 +165,11 @@
         "type": "shopify://apps/gorgias-live-chat-helpdesk/blocks/gorgias/a66db725-7b96-4e3f-916e-6c8e6f87aaaa",
         "disabled": true,
         "settings": {}
+      },
+      "16364584301514234833": {
+        "type": "shopify://apps/order-editing/blocks/sidebar/04cce4a7-c7bb-4d13-af81-560a17babbf3",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {

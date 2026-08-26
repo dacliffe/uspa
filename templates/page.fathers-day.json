@@ -25,7 +25,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/HERO_BANNER_1_DESKTOP_-_FATHERS_DAY_GIFTING.png",
             "mobile_image": "shopify://shop_images/HERO_BANNER_1_MOBILE_-_FATHERS_DAY_GIFTING.png",
-            "slide_link": "https://www.uspoloassn.co.uk/collections/womens-new-arrivals",
+            "slide_link": "https://www.uspoloassn.co.uk/collections/mens-summer-sale",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
             "content_alignment": "center",
@@ -152,7 +152,7 @@
             "text": "",
             "button_text_1": "SHOP POLO SHIRTS",
             "button_style_1": "primary",
-            "button_link_1": "",
+            "button_link_1": "https://www.uspoloassn.co.uk/collections/mens-polo-shirts",
             "button_text_2": "",
             "button_style_2": "primary",
             "button_link_2": "",
@@ -207,6 +207,7 @@
         "banner_3TpTWW",
         "banner_qzmxHn"
       ],
+      "disabled": true,
       "name": "Split Banner",
       "settings": {
         "gap": 20,
@@ -227,7 +228,7 @@
         "column_A37L6Y": {
           "type": "column",
           "settings": {
-            "title": "POLO SHIRTS FOR HIM",
+            "title": "KNITWEAR FOR HIM",
             "image": "shopify://shop_images/SMALL_BANNER_1_-_KNITWEAR.png",
             "url": "https://www.uspoloassn.co.uk/collections/mens-polo-shirts",
             "visibility": "both"
@@ -277,7 +278,7 @@
       "settings": {
         "collection": "mens-clothing",
         "products_to_show": 4,
-        "title": "BEST SELLING GIFTS FOR MOTHERS DAY",
+        "title": "BEST SELLING GIFTS FOR FATHERS DAY",
         "heading_size": "h1",
         "description": "",
         "show_description": false,

@@ -1,0 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_liquid_YbKFFq": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"stl-section\" id=\"shop-the-look-block\">\n\n  <div class=\"stl-header\">\n    <h2 class=\"stl-heading\">Shop The Look</h2>\n    <p class=\"stl-edit-label\">Casual Edit</p>\n    <p class=\"stl-subtext\">\n      Effortless everyday style starts here. Lightweight essentials designed for comfort, versatility and easy wear from weekday to weekend.\n    </p>\n  </div>\n\n  <div class=\"stl-feature\">\n    <div class=\"stl-feature-image\">\n      <a href=\"https://www.uspoloassn.co.uk/a/bundles/shop-the-look-%E2%80%93-casual-i942\">\n        <img\n          src=\"https://www.uspoloassn.co.uk/cdn/shop/files/MUP3312-266-MS_1.jpg?v=1774981618&width=493\"\n          alt=\"Smart Casual EDI\"\n          loading=\"lazy\"\n          width=\"700\"\n        >\n      </a>\n    </div>\n\n    <div class=\"stl-feature-text\">\n      <ul class=\"stl-bullets\">\n        <li>Double Horsemen polo shirt</li>\n        <li>Relaxed 5 pocket jean</li>\n        <li>Washed casual cap</li>\n        <li>Effortless casual style</li>\n      </ul>\n      <a href=\"https://www.uspoloassn.co.uk/a/bundles/shop-the-look-%E2%80%93-casual-i942\" class=\"stl-cta-big\">\n        Shop This Look\n      </a>\n    </div>\n  </div>\n\n  <div class=\"stl-product-row\">\n    <a href=\"https://www.uspoloassn.co.uk/products/mens-double-horsemen-polo-shirt-in-riviera\" class=\"stl-product-tile\">\n      <img src=\"https://www.uspoloassn.co.uk/cdn/shop/files/MUP3312-266-PS_1.jpg?v=1774981621&width=493\" alt=\"Double Horsemen Polo Shirt\" loading=\"lazy\" width=\"493\">\n      <span class=\"stl-product-label\">DOUBLE HORSEMEN POLO SHIRT</span>\n    </a>\n    <a href=\"https://www.uspoloassn.co.uk/products/mens-core-5-pocket-trouser-in-bright-white?_pos=3&_sid=1199e1a35&_ss=r\" class=\"stl-product-tile\">\n      <img src=\"https://www.uspoloassn.co.uk/cdn/shop/files/MUP3385-002-PS_1.jpg?v=1774986705&width=493\" alt=\"5 Pocket Jean\" loading=\"lazy\" width=\"493\">\n      <span class=\"stl-product-label\">5 POCKET JEAN</span>\n    </a>\n    <a href=\"https://www.uspoloassn.co.uk/products/mens-washed-casual-cap-in-white-dark-sapphire-navy-dhm?_pos=10&_sid=563b8c85c&_ss=r\" class=\"stl-product-tile\">\n      <img src=\"https://www.uspoloassn.co.uk/cdn/shop/files/MUP3426-P90-PS_1.JPG?v=1774987330&width=493\" alt=\"Washed Casual Cap\" loading=\"lazy\" width=\"493\">\n      <span class=\"stl-product-label\">WASHED CASUAL CAP</span>\n    </a>\n  </div>\n\n</div>\n\n<style>\n  #shop-the-look-block {\n    --stl-navy: #16233F;\n    --stl-body: #55534C;\n    background: #FFFFFF;\n    color: #1A1A1A;\n    max-width: 1100px;\n    margin: 0 auto;\n    padding: 64px 24px;\n    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  }\n  #shop-the-look-block .stl-header {\n    text-align: center;\n    max-width: 800px;\n    margin: 0 auto 56px;\n  }\n  #shop-the-look-block .stl-heading {\n    font-weight: 400;\n    text-transform: uppercase;\n    letter-spacing: 0.04em;\n    font-size: clamp(32px, 4.5vw, 48px);\n    margin: 0 0 18px;\n  }\n  #shop-the-look-block .stl-edit-label {\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.05em;\n    font-size: clamp(18px, 2.2vw, 22px);\n    color: var(--stl-navy);\n    margin: 0 0 16px;\n  }\n  #shop-the-look-block .stl-subtext {\n    font-size: 15px;\n    line-height: 1.6;\n    color: var(--stl-body);\n    margin: 0;\n  }\n  #shop-the-look-block .stl-feature {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 48px;\n    align-items: center;\n    margin-bottom: 56px;\n  }\n  #shop-the-look-block .stl-feature-image img {\n    width: 100%;\n    height: auto;\n    display: block;\n    aspect-ratio: 4 / 5;\n    object-fit: cover;\n  }\n  #shop-the-look-block .stl-look-title {\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.03em;\n    font-size: 24px;\n    margin: 0 0 20px;\n    color: var(--stl-navy);\n  }\n  #shop-the-look-block .stl-bullets {\n    list-style: none;\n    margin: 0 0 32px;\n    padding: 0;\n  }\n  #shop-the-look-block .stl-bullets li {\n    position: relative;\n    padding-left: 20px;\n    margin-bottom: 12px;\n    font-weight: 600;\n    font-size: 15px;\n    color: var(--stl-navy);\n  }\n  #shop-the-look-block .stl-bullets li::before {\n    content: '';\n    position: absolute;\n    left: 0;\n    top: 8px;\n    width: 8px;\n    height: 8px;\n    background: var(--stl-navy);\n  }\n  #shop-the-look-block .stl-cta-big {\n    display: inline-block;\n    background: var(--stl-navy);\n    color: #FFFFFF;\n    text-decoration: none;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.06em;\n    font-size: 17px;\n    padding: 20px 48px;\n    border-radius: 4px;\n    box-shadow: 0 10px 22px rgba(22,35,63,0.25);\n    transition: background 0.2s ease, transform 0.2s ease;\n  }\n  #shop-the-look-block .stl-cta-big:hover {\n    background: #223059;\n    transform: translateY(-2px);\n  }\n  #shop-the-look-block .stl-product-row {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 20px;\n  }\n  #shop-the-look-block .stl-product-tile {\n    display: block;\n    text-decoration: none;\n    transition: opacity 0.2s ease;\n  }\n  #shop-the-look-block .stl-product-tile:hover { opacity: 0.85; }\n  #shop-the-look-block .stl-product-tile img {\n    width: 100%;\n    aspect-ratio: 4 / 5;\n    object-fit: cover;\n    display: block;\n  }\n  #shop-the-look-block .stl-product-label {\n    display: block;\n    background: var(--stl-navy);\n    color: #FFFFFF;\n    text-align: center;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.04em;\n    font-size: 12px;\n    padding: 12px 8px;\n  }\n\n  @media screen and (max-width: 749px) {\n    #shop-the-look-block { padding: 48px 20px; }\n    #shop-the-look-block .stl-feature { grid-template-columns: 1fr; gap: 28px; }\n    #shop-the-look-block .stl-product-row { grid-template-columns: 1fr; gap: 16px; }\n    #shop-the-look-block .stl-cta-big { display: block; text-align: center; }\n  }\n</style>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_YbKFFq"
+  ]
+}
