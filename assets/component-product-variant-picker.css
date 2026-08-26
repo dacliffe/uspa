@@ -151,3 +151,35 @@ variant-selects {
 }
 
 /* End custom styles for Swatch display type */
+
+/* Clean Size Charts trigger overrides */
+.Clean_Size_Chart .ccpops-trigger .ccpops-trigger__icon svg {
+  width: 2.8rem !important;
+  height: auto !important;
+}
+
+.Clean_Size_Chart .ccpops-trigger .ccpops-trigger__text {
+  font-size: 1.3rem !important;
+}
+
+.Clean_Size_Chart .ccpops-trigger--has-link-type-inline .ccpops-trigger .ccpops-trigger__icon ~ .ccpops-trigger__text {
+  padding-left: 3.6rem !important;
+}
+
+@media screen and (max-width: 767px) {
+  .Clean_Size_Chart .ccpops-trigger .ccpops-trigger__text {
+    font-size: 1.2rem !important;
+  }
+
+  .Clean_Size_Chart .ccpops-trigger--has-text-hidden-mob-true .ccpops-trigger .ccpops-trigger__text {
+    visibility: visible !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: auto !important;
+  }
+
+  .Clean_Size_Chart .ccpops-trigger--has-text-hidden-mob-true .ccpops-trigger .ccpops-trigger__icon {
+    left: 0 !important;
+    transform: translateY(-50%) !important;
+  }
+}
