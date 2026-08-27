@@ -268,9 +268,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "KIDS",
-            "image_title": "Sweatshirts & Hoodies",
-            "image_link": "shopify://collections/kids-hoodies-sweatshirts",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_13_a0522333-aea5-4064-a258-a28551a46854.jpg",
+            "image_title": "T-Shirts",
+            "image_link": "shopify://collections/kids-t-shirts",
+            "image": "shopify://shop_images/Kids_tees_8619b9e9-d048-401b-8d93-41894b91a29f.jpg",
             "image_order": 0
           }
         },
