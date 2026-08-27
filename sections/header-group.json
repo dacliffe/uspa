@@ -140,7 +140,7 @@
             "menu_title": "POLO SHIRTS",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/Mens_Polos.jpg",
+            "image": "shopify://shop_images/Polos_mens.jpg",
             "image_order": 1
           }
         },
@@ -160,7 +160,7 @@
             "menu_title": "POLO SHIRTS",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/Kids_polo_shirts_aa9a719b-7dd8-4fe9-8368-cf66817b580f.jpg",
+            "image": "shopify://shop_images/Polos_kids.jpg",
             "image_order": 2
           }
         },
@@ -220,7 +220,7 @@
             "menu_title": "MENS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/Polos_mens.jpg",
+            "image": "shopify://shop_images/Mens_Polos_58dea124-e649-4950-ae2a-b62fda291146.jpg",
             "image_order": 1
           }
         },
@@ -280,7 +280,7 @@
             "menu_title": "KIDS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/Polos_kids.jpg",
+            "image": "shopify://shop_images/Kids_polo_shirts_aa9a719b-7dd8-4fe9-8368-cf66817b580f.jpg",
             "image_order": 0
           }
         },
