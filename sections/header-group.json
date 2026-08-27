@@ -80,7 +80,7 @@
             "menu_title": "SALE",
             "image_title": "Sale Under $100",
             "image_link": "shopify://collections/sale-under-100",
-            "image": "shopify://shop_images/MUP3569-P02-MS_1.webp",
+            "image": "shopify://shop_images/Fathers_day_gifts_under_100.jpg",
             "image_order": 1
           }
         },
@@ -100,7 +100,7 @@
             "menu_title": "SALE",
             "image_title": "Sale Under $50",
             "image_link": "shopify://collections/sale-under-50",
-            "image": "shopify://shop_images/MUP4381-G05-MS_1.webp",
+            "image": "shopify://shop_images/Fathers_day_gifts_under_50.jpg",
             "image_order": 3
           }
         },
@@ -110,7 +110,7 @@
             "menu_title": "NEW",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-new-arrivals",
-            "image": "shopify://shop_images/47.jpg",
+            "image": "shopify://shop_images/New_mens.jpg",
             "image_order": 1
           }
         },
@@ -120,7 +120,7 @@
             "menu_title": "NEW",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-new-arrivals",
-            "image": "shopify://shop_images/48.jpg",
+            "image": "shopify://shop_images/New_womens.jpg",
             "image_order": 2
           }
         },
@@ -130,7 +130,7 @@
             "menu_title": "NEW",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-new-arrivals",
-            "image": "shopify://shop_images/49.jpg",
+            "image": "shopify://shop_images/New_kids.jpg",
             "image_order": 3
           }
         },
@@ -140,7 +140,7 @@
             "menu_title": "POLO SHIRTS",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/4_fc2a1177-8966-4259-acb1-b275a5e77930.jpg",
+            "image": "shopify://shop_images/Mens_Polos.jpg",
             "image_order": 1
           }
         },
@@ -150,7 +150,7 @@
             "menu_title": "POLO SHIRTS",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-polo-shirts",
-            "image": "shopify://shop_images/7.jpg",
+            "image": "shopify://shop_images/Polos_womens.jpg",
             "image_order": 2
           }
         },
@@ -160,7 +160,7 @@
             "menu_title": "POLO SHIRTS",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_7.jpg",
+            "image": "shopify://shop_images/Kids_polo_shirts_aa9a719b-7dd8-4fe9-8368-cf66817b580f.jpg",
             "image_order": 2
           }
         },
@@ -220,7 +220,7 @@
             "menu_title": "MENS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_12_df5abc1d-311c-4bdd-9d04-62dfef0e848a.jpg",
+            "image": "shopify://shop_images/Mens_Polos.jpg",
             "image_order": 1
           }
         },
@@ -240,7 +240,7 @@
             "menu_title": "WOMENS",
             "image_title": "Knitwear",
             "image_link": "shopify://collections/womens-knitwear-jumpers",
-            "image": "shopify://shop_images/55.jpg",
+            "image": "shopify://shop_images/womens_Knitwear.jpg",
             "image_order": 0
           }
         },
@@ -250,7 +250,7 @@
             "menu_title": "WOMENS",
             "image_title": "Pants",
             "image_link": "shopify://collections/womens-trousers",
-            "image": "shopify://shop_images/54.jpg",
+            "image": "shopify://shop_images/womens_trousers.jpg",
             "image_order": 0
           }
         },
@@ -260,7 +260,7 @@
             "menu_title": "WOMENS",
             "image_title": "Handbags",
             "image_link": "shopify://collections/bags",
-            "image": "shopify://shop_images/56.jpg",
+            "image": "shopify://shop_images/womens_bags.jpg",
             "image_order": 0
           }
         },
@@ -280,7 +280,7 @@
             "menu_title": "KIDS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/kids-polo-shirts",
-            "image": "shopify://shop_images/53.jpg",
+            "image": "shopify://shop_images/Kids_polo_shirts_aa9a719b-7dd8-4fe9-8368-cf66817b580f.jpg",
             "image_order": 0
           }
         },
