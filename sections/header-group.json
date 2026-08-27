@@ -208,9 +208,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MENS",
-            "image_title": "Sweatshirts & Hoodies",
-            "image_link": "shopify://collections/mens-hoodies-sweatshirts",
-            "image": "shopify://shop_images/51.jpg",
+            "image_title": "Mens T-Shirts",
+            "image_link": "shopify://collections/mens-t-shirts",
+            "image": "shopify://shop_images/Mens_tees.jpg",
             "image_order": 1
           }
         },
@@ -228,9 +228,9 @@
           "type": "mega_menu_image",
           "settings": {
             "menu_title": "MENS",
-            "image_title": "Accessories",
-            "image_link": "shopify://collections/all-accessories",
-            "image": "shopify://shop_images/50.jpg",
+            "image_title": "Mens Shirts",
+            "image_link": "shopify://collections/mens-shirts-t-shirts",
+            "image": "shopify://shop_images/Mens_Shirts.jpg",
             "image_order": 2
           }
         },
