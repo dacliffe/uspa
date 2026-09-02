@@ -77,8 +77,8 @@
             "menu_title": "HOME",
             "image_title": "All Home",
             "image_link": "shopify://collections/home-1",
-            "image_order": 1,
-            "image": "shopify://shop_images/Untitled_design_20.jpg"
+            "image": "shopify://shop_images/Untitled_design_20.jpg",
+            "image_order": 1
           }
         },
         "mega_menu_image_H7gjNL": {
@@ -114,8 +114,8 @@
             "menu_title": "NEW",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-new-arrivals",
-            "image_order": 1,
-            "image": "shopify://shop_images/47.jpg"
+            "image": "shopify://shop_images/47.jpg",
+            "image_order": 1
           }
         },
         "mega_menu_image_C3KY4m": {
@@ -124,8 +124,8 @@
             "menu_title": "NEW",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-new-arrivals",
-            "image_order": 2,
-            "image": "shopify://shop_images/48.jpg"
+            "image": "shopify://shop_images/48.jpg",
+            "image_order": 2
           }
         },
         "mega_menu_image_CAxBMb": {
@@ -134,8 +134,8 @@
             "menu_title": "NEW",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-new-arrivals",
-            "image_order": 3,
-            "image": "shopify://shop_images/49.jpg"
+            "image": "shopify://shop_images/49.jpg",
+            "image_order": 3
           }
         },
         "mega_menu_image_cFfpBf": {
@@ -144,8 +144,8 @@
             "menu_title": "POLO SHIRTS",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image_order": 1,
-            "image": "shopify://shop_images/4_fc2a1177-8966-4259-acb1-b275a5e77930.jpg"
+            "image": "shopify://shop_images/4_fc2a1177-8966-4259-acb1-b275a5e77930.jpg",
+            "image_order": 1
           }
         },
         "mega_menu_image_M7fGWE": {
@@ -154,8 +154,8 @@
             "menu_title": "POLO SHIRTS",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-polo-shirts",
-            "image_order": 2,
-            "image": "shopify://shop_images/7.jpg"
+            "image": "shopify://shop_images/7.jpg",
+            "image_order": 2
           }
         },
         "mega_menu_image_cD6Prn": {
@@ -164,8 +164,8 @@
             "menu_title": "POLO SHIRTS",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-polo-shirts",
-            "image_order": 2,
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_7.jpg"
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_7.jpg",
+            "image_order": 2
           }
         },
         "mega_menu_image_wFEU9d": {
@@ -183,8 +183,8 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Mens",
             "image_link": "shopify://collections/mens-essentials",
-            "image_order": 0,
-            "image": "shopify://shop_images/5.jpg"
+            "image": "shopify://shop_images/5.jpg",
+            "image_order": 0
           }
         },
         "mega_menu_image_6A9e9C": {
@@ -193,8 +193,8 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Womens",
             "image_link": "shopify://collections/womens-essentials",
-            "image_order": 0,
-            "image": "shopify://shop_images/can_you_add_the_man_into_a_nostalgic_landscape_scene_with_a_lake_and_forest_in_late_afternoon_light.jpg"
+            "image": "shopify://shop_images/can_you_add_the_man_into_a_nostalgic_landscape_scene_with_a_lake_and_forest_in_late_afternoon_light.jpg",
+            "image_order": 0
           }
         },
         "mega_menu_image_PVE3Jr": {
@@ -203,8 +203,8 @@
             "menu_title": "ESSENTIALS",
             "image_title": "Kids",
             "image_link": "shopify://collections/kids-essentials",
-            "image_order": 0,
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_6.jpg"
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_6.jpg",
+            "image_order": 0
           }
         },
         "mega_menu_image_exzE3b": {
@@ -213,8 +213,8 @@
             "menu_title": "MENS",
             "image_title": "Sweatshirts & Hoodies",
             "image_link": "shopify://collections/mens-hoodies-sweatshirts",
-            "image_order": 1,
-            "image": "shopify://shop_images/51.jpg"
+            "image": "shopify://shop_images/51.jpg",
+            "image_order": 1
           }
         },
         "mega_menu_image_fHV9A8": {
@@ -223,8 +223,8 @@
             "menu_title": "MENS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/mens-polo-shirts",
-            "image_order": 1,
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_12_df5abc1d-311c-4bdd-9d04-62dfef0e848a.jpg"
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_12_df5abc1d-311c-4bdd-9d04-62dfef0e848a.jpg",
+            "image_order": 1
           }
         },
         "mega_menu_image_XWVGcR": {
@@ -233,8 +233,8 @@
             "menu_title": "MENS",
             "image_title": "Accessories",
             "image_link": "shopify://collections/all-accessories",
-            "image_order": 2,
-            "image": "shopify://shop_images/50.jpg"
+            "image": "shopify://shop_images/50.jpg",
+            "image_order": 2
           }
         },
         "mega_menu_image_cb7xpa": {
@@ -243,8 +243,8 @@
             "menu_title": "WOMENS",
             "image_title": "Knitwear",
             "image_link": "shopify://collections/womens-knitwear-jumpers",
-            "image_order": 0,
-            "image": "shopify://shop_images/55.jpg"
+            "image": "shopify://shop_images/55.jpg",
+            "image_order": 0
           }
         },
         "mega_menu_image_RYYkJj": {
@@ -253,8 +253,8 @@
             "menu_title": "WOMENS",
             "image_title": "Pants",
             "image_link": "shopify://collections/womens-trousers",
-            "image_order": 0,
-            "image": "shopify://shop_images/54.jpg"
+            "image": "shopify://shop_images/54.jpg",
+            "image_order": 0
           }
         },
         "mega_menu_image_CqdQJG": {
@@ -263,8 +263,8 @@
             "menu_title": "WOMENS",
             "image_title": "Handbags",
             "image_link": "shopify://collections/bags",
-            "image_order": 0,
-            "image": "shopify://shop_images/56.jpg"
+            "image": "shopify://shop_images/56.jpg",
+            "image_order": 0
           }
         },
         "mega_menu_image_FgUDeF": {
@@ -273,8 +273,8 @@
             "menu_title": "KIDS",
             "image_title": "Sweatshirts & Hoodies",
             "image_link": "shopify://collections/kids-hoodies-sweatshirts",
-            "image_order": 0,
-            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_13_a0522333-aea5-4064-a258-a28551a46854.jpg"
+            "image": "shopify://shop_images/Copy_of_NAV_IMAGES_13_a0522333-aea5-4064-a258-a28551a46854.jpg",
+            "image_order": 0
           }
         },
         "mega_menu_image_znBAPi": {
@@ -283,8 +283,8 @@
             "menu_title": "KIDS",
             "image_title": "Polo Shirts",
             "image_link": "shopify://collections/kids-polo-shirts",
-            "image_order": 0,
-            "image": "shopify://shop_images/53.jpg"
+            "image": "shopify://shop_images/53.jpg",
+            "image_order": 0
           }
         },
         "mega_menu_image_nLXCrJ": {
@@ -294,8 +294,8 @@
             "menu_title": "OFFERS",
             "image_title": "Shop T-Shirts",
             "image_link": "shopify://collections/2-t-shirts-for-80",
-            "image_order": 0,
-            "image": "shopify://shop_images/31.jpg"
+            "image": "shopify://shop_images/31.jpg",
+            "image_order": 0
           }
         },
         "mega_menu_image_Rt8Bef": {
@@ -305,8 +305,8 @@
             "menu_title": "OFFERS",
             "image_title": "Shop Polo Shirts",
             "image_link": "shopify://collections/2-polo-shirts-for-151",
-            "image_order": 0,
-            "image": "shopify://shop_images/32.jpg"
+            "image": "shopify://shop_images/32.jpg",
+            "image_order": 0
           }
         }
       },
@@ -393,7 +393,7 @@
         "announcement_P4R7im": {
           "type": "announcement",
           "settings": {
-            "text": "2 Selected Polo Shirts for $150 - Save up to $70* - Shop Now",
+            "text": "2 for $x Offers - Shop Now",
             "link": "shopify://collections/2-for-150-mens-polos"
           }
         }

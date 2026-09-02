@@ -26,21 +26,21 @@
         "image_slide_VrtMai": {
           "type": "image_slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO_1.png",
-            "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_5.jpg",
+            "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO_6.jpg",
+            "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_10.jpg",
             "slide_link": "shopify://collections/new-arrivals-clothing-accessories",
-            "vertical_alignment": "middle",
-            "horizontal_alignment": "left",
-            "content_alignment": "left",
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "center",
+            "content_alignment": "center",
             "mobile_vertical_alignment": "bottom",
             "mobile_horizontal_alignment": "center",
             "mobile_content_alignment": "center",
-            "title": "Winter Done Right.",
-            "subtitle": "Shop the full range.",
-            "subtitle_font_size": 16,
+            "title": "WE'RE HERE, NEW ZEALAND",
+            "subtitle": "U.S. Polo Assn. has officially landed. Shop the range.",
+            "subtitle_font_size": 14,
             "mobile_subtitle_font_size": 16,
             "subtitle_bold": false,
-            "title_font_size": 35,
+            "title_font_size": 31,
             "mobile_title_font_size": 29,
             "title_bold": true,
             "title_color": "#ffffff",
@@ -69,7 +69,7 @@
             "button4_type": "primary",
             "button4_theme_color": "#ffffff",
             "button4_text_color": "#000000",
-            "overlay_opacity": 15,
+            "overlay_opacity": 30,
             "overlay_color": "#000000",
             "desktop_button_font_size": 16,
             "mobile_button_font_size": 14
@@ -305,8 +305,8 @@
         "banner_Q8CfbK": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/13_af5c57f8-aa37-4fe8-991c-a190e5b199cd.jpg",
-            "mobile_image": "shopify://shop_images/15.jpg",
+            "image": "shopify://shop_images/mens_desk_section_2.jpg",
+            "mobile_image": "shopify://shop_images/mens_mob_section_2.png",
             "use_video": false,
             "title": "MENS",
             "title_size": 32,
@@ -338,8 +338,8 @@
         "banner_hNy8aw": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/12_a139f325-d482-4f94-972a-0319f6b9e2ae.jpg",
-            "mobile_image": "shopify://shop_images/14_9e0dd006-b0d9-4bff-98a9-44aed719bedf.jpg",
+            "image": "shopify://shop_images/womens_desk_section_2.jpg",
+            "mobile_image": "shopify://shop_images/womens_mob_section_2_png.png",
             "use_video": false,
             "title": "WOMENS",
             "title_size": 36,
@@ -489,27 +489,27 @@
         "column_3BC7C3": {
           "type": "column",
           "settings": {
-            "title": "MENS ACCESSORIES",
-            "image": "shopify://shop_images/11_d4a21920-227f-43d0-a4d5-b84002023c41.jpg",
-            "url": "shopify://collections/accessories",
+            "title": "WOMENS CLOTHING",
+            "image": "shopify://shop_images/section3_four_tile_womens.jpg",
+            "url": "shopify://collections/womens-clothing",
             "visibility": "both"
           }
         },
         "column_TefaYi": {
           "type": "column",
           "settings": {
-            "title": "WOMENS CLOTHING",
-            "image": "shopify://shop_images/8_c77e46f5-dbb2-4560-8310-44ec565e3e38.jpg",
-            "url": "shopify://collections/womens-clothing",
+            "title": "KIDS CLOTHING",
+            "image": "shopify://shop_images/section3_four_tile_kids.jpg",
+            "url": "shopify://collections/kids-clothing",
             "visibility": "both"
           }
         },
         "column_xkMD7V": {
           "type": "column",
           "settings": {
-            "title": "WOMENS ACCESSORIES",
-            "image": "shopify://shop_images/9_a67e5138-2bb9-4da1-bf63-96a08a8e81b2.jpg",
-            "url": "shopify://collections/handbags-1",
+            "title": "ACCESSORIES",
+            "image": "shopify://shop_images/section3_four_tile_accessories.jpg",
+            "url": "shopify://collections/accessories",
             "visibility": "both"
           }
         }
@@ -540,7 +540,7 @@
         "products_to_show": 6,
         "title": "NEW ARRIVALS",
         "heading_size": "h2",
-        "description": "<p><strong>New Autumn Essentials Just Landed</strong></p>",
+        "description": "<p><strong>New Spring Essentials Just Landed</strong></p>",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 6,
@@ -718,8 +718,8 @@
         "banner_MmJ7xy": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/Untitled_design_59_70df96c8-d59d-4c0d-bb8c-ae3bea565764.jpg",
-            "mobile_image": "shopify://shop_images/Untitled_design_58_3e1b0e3b-f811-45b9-974d-f097a089567f.jpg",
+            "image": "shopify://shop_images/HP_section_5_footer_banner_Desk.jpg",
+            "mobile_image": "shopify://shop_images/HP_section_5_footer_banner_Mob.jpg",
             "use_video": false,
             "title": "THE ESSENTIALS",
             "title_size": 32,
