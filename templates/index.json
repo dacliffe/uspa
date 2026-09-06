@@ -25,6 +25,7 @@
       "blocks": {
         "image_slide_DTVnmq": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO_5.jpg",
             "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_9.jpg",
@@ -723,16 +724,16 @@
             "image": "shopify://shop_images/HP_section_5_footer_banner_Desk.jpg",
             "mobile_image": "shopify://shop_images/HP_section_5_footer_banner_Mob.jpg",
             "use_video": false,
-            "title": "FATHER'S DAY GIFTS",
+            "title": "THE ESSENTIALS",
             "title_size": 32,
             "title_weight": "500",
             "subtitle": "",
             "subtitle_size": 14,
             "subtitle_weight": "500",
             "text": "",
-            "button_text_1": "SHOP GIFTS",
+            "button_text_1": "SHOP NOW",
             "button_style_1": "secondary",
-            "button_link_1": "shopify://collections/fathers-day",
+            "button_link_1": "shopify://collections/essentials",
             "button_text_2": "",
             "button_style_2": "secondary",
             "button_link_2": "shopify://collections/womens-essentials",
