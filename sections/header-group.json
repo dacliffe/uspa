@@ -389,8 +389,8 @@
         "announcement_YePadp": {
           "type": "announcement",
           "settings": {
-            "text": "Spend & Save Event - Up to $200 Off* - Shop Now",
-            "link": "shopify://collections/spend-save"
+            "text": "2 Polo Shirts for $150 - Save up to $70* - Shop Now",
+            "link": "https://uspoloassn.com.au/collections/2-polo-shirts-for-150"
           }
         },
         "announcement_P4R7im": {

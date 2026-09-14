@@ -78,6 +78,7 @@
         },
         "image_slide_VrtMai": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO_4.jpg",
             "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_8.jpg",
@@ -183,7 +184,6 @@
         "image_slide_jMCm8U": {
           "type": "image_slide",
           "name": "2 for offers",
-          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/AU-WB-APR24-DRAFT_1-DESKTOP_1.png",
             "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_6.jpg",
