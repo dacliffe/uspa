@@ -152,6 +152,14 @@
         "type": "shopify://apps/gorgias-live-chat-helpdesk/blocks/gorgias/a66db725-7b96-4e3f-916e-6c8e6f87aaaa",
         "disabled": false,
         "settings": {}
+      },
+      "9215962420185474525": {
+        "type": "shopify://apps/lipscore-reviews/blocks/lipscore-init/e89bfb0c-cc26-450f-9297-cec873403986",
+        "disabled": false,
+        "settings": {
+          "init_repeat": true,
+          "init_repeat_delay": 0.3
+        }
       }
     },
     "color_schemes": {
