@@ -187,7 +187,7 @@
           "settings": {
             "desktop_image": "shopify://shop_images/SAVE_UP_TO_70.jpg",
             "mobile_image": "shopify://shop_images/Untitled_Design_-_2026-10-07T164424.637.jpg",
-            "slide_link": "shopify://collections/2-for-150-mens-polos",
+            "slide_link": "shopify://collections/2-for-150-mens-polos-shorts",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
             "content_alignment": "left",
@@ -206,7 +206,7 @@
             "subtitle_color": "#ffffff",
             "button1_text": "SHOP NOW",
             "mobile_button1_text": "",
-            "button1_link": "shopify://collections/2-for-150-mens-polos",
+            "button1_link": "shopify://collections/2-for-150-mens-polos-shorts",
             "button1_type": "primary",
             "button1_theme_color": "#ffffff",
             "button1_text_color": "#000000",
