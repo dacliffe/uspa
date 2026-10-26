@@ -389,8 +389,8 @@
         "announcement_YePadp": {
           "type": "announcement",
           "settings": {
-            "text": "2 Polo Shirts for $150 - Save up to $70* - Shop Now",
-            "link": "https://uspoloassn.com.au/collections/2-polo-shirts-for-150"
+            "text": "Fashion Frenzy - 25% Off Sitewide* | Ends 30 Oct",
+            "link": "shopify://collections/25-off-fashion-frenzy"
           }
         },
         "announcement_P4R7im": {

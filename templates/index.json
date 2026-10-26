@@ -78,10 +78,9 @@
         },
         "image_slide_VrtMai": {
           "type": "image_slide",
-          "disabled": true,
           "settings": {
-            "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO_4.jpg",
-            "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_8.jpg",
+            "desktop_image": "shopify://shop_images/SAVE_UP_TO_70.png",
+            "mobile_image": "shopify://shop_images/Untitled_Design_7.png",
             "slide_link": "shopify://collections/25-off-fashion-frenzy",
             "vertical_alignment": "bottom",
             "horizontal_alignment": "center",
@@ -184,6 +183,7 @@
         "image_slide_jMCm8U": {
           "type": "image_slide",
           "name": "2 for offers",
+          "disabled": true,
           "settings": {
             "desktop_image": "shopify://shop_images/SAVE_UP_TO_70.jpg",
             "mobile_image": "shopify://shop_images/Untitled_Design_-_2026-10-07T164424.637.jpg",
