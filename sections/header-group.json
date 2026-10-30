@@ -68,7 +68,7 @@
           "type": "menu_link_color",
           "settings": {
             "menu_link_handle": "sale",
-            "link_color": "#A41E35"
+            "link_color": "#a41e35"
           }
         },
         "mega_menu_image_RPYDbH": {
@@ -373,7 +373,7 @@
         "announcement_YePadp": {
           "type": "announcement",
           "settings": {
-            "text": "Fashion Frenzy - 25% Off Sitewide* | Ends 30 Oct",
+            "text": "Fashion Frenzy - 25% Off Sitewide* | EXTENDED",
             "link": "shopify://collections/25-off-fashion-frenzy"
           }
         },
