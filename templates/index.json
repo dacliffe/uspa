@@ -25,6 +25,7 @@
       "blocks": {
         "image_slide_VrtMai": {
           "type": "image_slide",
+          "name": "Hero",
           "settings": {
             "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO_5.png",
             "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_6.png",
@@ -77,7 +78,7 @@
         },
         "image_slide_jMCm8U": {
           "type": "image_slide",
-          "name": "2 for offers",
+          "name": "Sale",
           "settings": {
             "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO_2_07c9c4b2-a3b1-4eae-b0ed-473b35d4fd01.png",
             "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_1.png",
@@ -130,6 +131,7 @@
         },
         "image_slide_DTVnmq": {
           "type": "image_slide",
+          "name": "Gift Guide",
           "settings": {
             "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO_3.png",
             "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_2.png",
@@ -182,6 +184,7 @@
         },
         "image_slide_FAMgL7": {
           "type": "image_slide",
+          "name": "New",
           "settings": {
             "desktop_image": "shopify://shop_images/DESKTOP_WEB_HERO_2.png",
             "mobile_image": "shopify://shop_images/MOBILE_WEB_HERO_7.jpg",
