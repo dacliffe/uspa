@@ -11,6 +11,7 @@
   "sections": {
     "image_banner_XVxihb": {
       "type": "image-banner",
+      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/Untitled_Design_-_2026-11-02T102711.251.jpg",
@@ -29,6 +30,58 @@
     "image_slider_6QpEGh": {
       "type": "image-slider",
       "blocks": {
+        "image_slide_yfUtJ3": {
+          "type": "image_slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/UK-EC-NOV04-WEBSITE_BANNER-HOLIDAY_GIFT_GUIDE-desktop-2.jpg",
+            "mobile_image": "shopify://shop_images/UK-EC-NOV04-WEBSITE_BANNER-HOLIDAY_GIFT_GUIDE-mobile.jpg",
+            "slide_link": "https://uspoloassn.com.au/pages/gift-guide",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center",
+            "content_alignment": "left",
+            "mobile_vertical_alignment": "middle",
+            "mobile_horizontal_alignment": "center",
+            "mobile_content_alignment": "center",
+            "title": "",
+            "subtitle": "Slide Subtitle",
+            "subtitle_font_size": 20,
+            "mobile_subtitle_font_size": 16,
+            "subtitle_bold": false,
+            "title_font_size": 40,
+            "mobile_title_font_size": 32,
+            "title_bold": true,
+            "title_color": "#ffffff",
+            "subtitle_color": "#ffffff",
+            "button1_text": "MENS",
+            "mobile_button1_text": "MENS",
+            "button1_link": "https://uspoloassn.com.au/pages/gift-guide",
+            "button1_type": "primary",
+            "button1_theme_color": "#ffffff",
+            "button1_text_color": "#000000",
+            "button2_text": "WOMENS",
+            "mobile_button2_text": "WOMENS",
+            "button2_link": "https://uspoloassn.com.au/collections/gifts-for-her",
+            "button2_type": "primary",
+            "button2_theme_color": "#ffffff",
+            "button2_text_color": "#000000",
+            "button3_text": "KIDS",
+            "mobile_button3_text": "KIDS",
+            "button3_link": "https://uspoloassn.com.au/collections/gifts-for-kids",
+            "button3_type": "primary",
+            "button3_theme_color": "#ffffff",
+            "button3_text_color": "#000000",
+            "button4_text": "",
+            "mobile_button4_text": "",
+            "button4_link": "",
+            "button4_type": "primary",
+            "button4_theme_color": "#ffffff",
+            "button4_text_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "desktop_button_font_size": 16,
+            "mobile_button_font_size": 14
+          }
+        },
         "image_slide_Jiga6K": {
           "type": "image_slide",
           "settings": {
@@ -82,9 +135,13 @@
         }
       },
       "block_order": [
+        "image_slide_yfUtJ3",
         "image_slide_Jiga6K"
       ],
-      "disabled": true,
+      "custom_css": [
+        "h2 {font-size: 32px;}",
+        "@media screen and (max-width: 749px) {img {display: block; width: 100%; height: auto !important; max-height: none !important; aspect-ratio: 3 / 2; object-fit: contain !important; }}"
+      ],
       "settings": {
         "slide_interval": 5000,
         "button_font_size": 23
